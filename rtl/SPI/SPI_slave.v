@@ -8,13 +8,15 @@ module SPI_SLAVE(
 		input [1:0] MODE,
 		input [7:0] DATA,
 		
-		output wire MISO
+		output wire MISO,
+		output wire [7:0] OUT
     );
 
 	reg SHIFT_IN;
 	reg [7:0] SHIFT_REG;
 
 	assign MISO = SS ? 1'bZ : SHIFT_REG[7];
+	assign OUT = SHIFT_REG;
 	
 	
 	always@ (negedge SS)
@@ -77,5 +79,6 @@ always @(negedge SCK)
 						end
 				end	
 		end
+
 
 endmodule
