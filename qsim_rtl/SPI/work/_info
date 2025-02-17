@@ -1,0 +1,109 @@
+m255
+K4
+z2
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/SPI
+vAPB_interface_2
+2../../rtl/SPI/APB_interface.v
+Z1 !s10a 1739666607
+Z2 !s110 1739759148
+!i10b 1
+!s100 79Nh9:>hg67dYzU:<ZPMf0
+I_?Z7Jn<FelY:o2nBVhMBO2
+R0
+Z3 w1739666607
+8../../rtl/SPI/APB_interface.v
+F../../rtl/SPI/APB_interface.v
+!i122 2
+L0 3 132
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OP;L;2024.2;79
+r1
+!s85 0
+31
+Z6 !s108 1739759148.000000
+!s107 ../../rtl/SPI/APB_interface.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/APB_interface.v|
+!i113 1
+Z7 o+acc
+Z8 tCvgOpt 0
+n@a@p@b_interface_2
+vspi_master5
+2../../rtl/SPI/SPI_master.v
+R1
+R2
+!i10b 1
+!s100 ;7_Bk][GH66cTLcUhREWM0
+I14ChW_dU;VH_BPWgM[kPX1
+R0
+R3
+8../../rtl/SPI/SPI_master.v
+F../../rtl/SPI/SPI_master.v
+!i122 0
+L0 3 344
+R4
+R5
+r1
+!s85 0
+31
+!s108 1739759147.000000
+!s107 ../../rtl/SPI/SPI_master.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/SPI_master.v|
+!i113 1
+R7
+R8
+vSPI_SLAVE
+2../../rtl/SPI/SPI_slave.v
+!s10a 1739757156
+R2
+!i10b 1
+!s100 F`>fV78@30MAYe23L4AV71
+I5a6gjHIk5o59RzkiJa`VA1
+R0
+w1739757156
+8../../rtl/SPI/SPI_slave.v
+F../../rtl/SPI/SPI_slave.v
+!i122 1
+L0 3 79
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../../rtl/SPI/SPI_slave.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/SPI_slave.v|
+!i113 1
+R7
+R8
+n@s@p@i_@s@l@a@v@e
+vSPI_testmodul_3
+2SPI_testmodul_3.v
+!s110 1739760262
+!i10b 1
+!s100 1J7O?b8L>K<cPZPO5iK@M1
+IBQ8lR2N<W;bfj0WT]5DBb1
+R0
+w1739760256
+8SPI_testmodul_3.v
+FSPI_testmodul_3.v
+!i122 7
+L0 3 63
+R4
+R5
+r1
+!s85 0
+31
+!s108 1739760262.000000
+!s107 SPI_testmodul_3.v|
+!s90 -reportprogress|300|+acc|-incr|SPI_testmodul_3.v|
+!i113 1
+R7
+R8
+n@s@p@i_testmodul_3

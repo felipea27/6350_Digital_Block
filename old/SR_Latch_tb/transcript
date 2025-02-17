@@ -1,0 +1,56 @@
+# //  ModelSim DE 2024.2 May 20 2024 Linux 4.18.0-553.40.1.el8_10.x86_64
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do runsim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim DE vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 13:47:29 on Feb 13,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SR_Latch/SR_Latch.v 
+# -- Skipping module SR_Latch
+# 
+# Top level modules:
+# 	SR_Latch
+# End time: 13:47:29 on Feb 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 13:47:29 on Feb 13,2025
+# vlog -reportprogress 300 "+acc" -incr SR_Latch_tb.v 
+# -- Skipping module SR_Latch_tb
+# 
+# Top level modules:
+# 	SR_Latch_tb
+# End time: 13:47:29 on Feb 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-8690) Ignoring plusarg '+acc' with -novopt in effect.
+# vsim "+acc" -t ps -lib work SR_Latch_tb 
+# Start time: 13:47:29 on Feb 13,2025
+# Loading work.SR_Latch_tb
+# Loading work.SR_Latch
+# Time=0 | set=0 | rst=1 | en=0 | q=0
+# Time=10000 | set=0 | rst=0 | en=0 | q=0
+# Time=20000 | set=1 | rst=0 | en=0 | q=1
+# Time=30000 | set=0 | rst=0 | en=0 | q=1
+# Time=40000 | set=0 | rst=0 | en=1 | q=1
+# Time=50000 | set=1 | rst=0 | en=1 | q=1
+# Time=60000 | set=0 | rst=0 | en=1 | q=1
+# Time=70000 | set=0 | rst=0 | en=0 | q=0
+# ** Note: $finish    : SR_Latch_tb.v(44)
+#    Time: 90 ns  Iteration: 0  Instance: /SR_Latch_tb
+# 1
+# Break in Module SR_Latch_tb at SR_Latch_tb.v line 44
+# End time: 13:49:15 on Feb 13,2025, Elapsed time: 0:01:46
+# Errors: 0, Warnings: 1
