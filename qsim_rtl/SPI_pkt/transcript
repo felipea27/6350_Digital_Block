@@ -1,0 +1,67 @@
+# //  ModelSim DE 2024.2 May 20 2024 Linux 4.18.0-553.40.1.el8_10.x86_64
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do runsim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim DE vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 16:51:53 on Feb 16,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI_pkt/SPI_pkt.v 
+# -- Compiling module SPI_pkt
+# 
+# Top level modules:
+# 	SPI_pkt
+# End time: 16:51:53 on Feb 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 16:51:53 on Feb 16,2025
+# vlog -reportprogress 300 "+acc" -incr SPI_pkt_tb.v 
+# -- Skipping module SPI_pkt_tb
+# 
+# Top level modules:
+# 	SPI_pkt_tb
+# End time: 16:51:53 on Feb 16,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-8690) Ignoring plusarg '+acc' with -novopt in effect.
+# vsim "+acc" -t ps -lib work SPI_pkt_tb 
+# Start time: 16:51:53 on Feb 16,2025
+# Loading work.SPI_pkt_tb
+# Loading work.SPI_pkt
+# Time: 0 | din: 0 | SPI_in: 00000000 | byte_flg: 0
+# Time: 100000 | din: 1 | SPI_in: 00000001 | byte_flg: 0
+# Time: 200000 | din: 0 | SPI_in: 00000010 | byte_flg: 0
+# Time: 300000 | din: 1 | SPI_in: 00000101 | byte_flg: 0
+# Time: 400000 | din: 0 | SPI_in: 00001010 | byte_flg: 0
+# Time: 500000 | din: 1 | SPI_in: 00010101 | byte_flg: 0
+# Time: 600000 | din: 0 | SPI_in: 00101010 | byte_flg: 0
+# Time: 700000 | din: 1 | SPI_in: 01010101 | byte_flg: 0
+# Time: 800000 | din: 1 | SPI_in: 10101011 | byte_flg: 1
+# Time: 900000 | din: 1 | SPI_in: 01010111 | byte_flg: 0
+# Time: 1000000 | din: 1 | SPI_in: 10101111 | byte_flg: 0
+# Time: 1100000 | din: 0 | SPI_in: 01011110 | byte_flg: 0
+# Time: 1200000 | din: 0 | SPI_in: 10111100 | byte_flg: 0
+# Time: 1300000 | din: 1 | SPI_in: 01111001 | byte_flg: 0
+# Time: 1400000 | din: 1 | SPI_in: 11110011 | byte_flg: 0
+# Time: 1500000 | din: 0 | SPI_in: 11100110 | byte_flg: 0
+# Time: 1600000 | din: 0 | SPI_in: 11001100 | byte_flg: 1
+# Time: 1700000 | din: 0 | SPI_in: 10011000 | byte_flg: 0
+# Time: 1800000 | din: 0 | SPI_in: 00110000 | byte_flg: 0
+# ** Note: $finish    : SPI_pkt_tb.v(56)
+#    Time: 1900 ns  Iteration: 0  Instance: /SPI_pkt_tb
+# 1
+# Break in Module SPI_pkt_tb at SPI_pkt_tb.v line 56
+# End time: 16:52:52 on Feb 16,2025, Elapsed time: 0:00:59
+# Errors: 0, Warnings: 1
