@@ -10,7 +10,8 @@ module SPI_testmodul_3;
     reg [7:0] MDATA; 
     reg [7:0] DATA;  
     reg [1:0] MODE;   
-    reg [3:0] i;       
+    reg [3:0] i;
+    reg clk;    
     integer file;
     wire [7:0] OUT;
 
@@ -29,16 +30,59 @@ module SPI_testmodul_3;
         .MODE(MODE),
 	.OUT(OUT)
     );
+    
+    always #50 clk = ~clk;
+	
+    	reg SCK_int;
+	always @(posedge clk) begin
+    		if (SS == 0)  // Only toggle SCK when SS is low
+        		SCK_int = ~SCK_int;	
+		else
+			SCK = 0;
+	end
+	assign SCK = SCK_int;
 
-    always #50 SCK = ~SCK;
+
+    task send_packet(input [7:0] mdata, input [7:0] data);
+    integer i;
+    begin	
+	SS = 1;
+        SCK = 0;
+	MDATA = mdata;
+	DATA = data;
+	#50;
+        SS = 0;  // Reactivate Slave (SS low)
+        // Send another byte 
+        i = 3'd7;  // Reset counter
+        repeat (8) begin
+		SCK = 0;
+        	MOSI = MDATA[i]; 
+        	i = i - 1;
+		#50;
+		SCK = 1;	
+		master_data_received = {master_data_received[6:0], MISO};
+		#50;
+        end
+	SCK = 0;
+	#50;
+	slave_data_received = OUT; 
+	SS = 1;
+	SCK = 0;	
+	
+	$fwrite(file, "Master Sent: %h\n", MDATA);
+        $fwrite(file, "Slave Received: %h\n", slave_data_received);
+        $fwrite(file, "Slave Sent: %h\n", DATA);
+        $fwrite(file, "Master Received: %h\n", master_data_received);
+        $fwrite(file, "\n"); 
+    end
+endtask    
 
     initial begin
         // Initialize
         SCK = 0;
         SS = 1;   
-        MOSI = 0;  
-        MDATA = 8'b10111010; 
-        DATA = 8'b11101111;  
+        MOSI = 0;
+
         MODE = 2'b00; 
         i = 4'd7;
         master_data_received = 8'b00000000;
@@ -50,109 +94,12 @@ module SPI_testmodul_3;
     		$finish;
 	end
 
-        #100;
-        SS = 0;    // Activate
+	send_packet(8'hA5, 8'hB1);
+	#50;
+    	send_packet(8'h3C, 8'h1F);
+    	#50;
+	send_packet(8'hF0, 8'hEA);
 
-        // Send byte
-        repeat (8) begin
-            MOSI = MDATA[i];
-            i = i - 1;
-            #100;    
-	    master_data_received = {master_data_received[6:0], MISO};
-
-        end
- 	#100;	
-	slave_data_received = OUT; 
-	
-	$fwrite(file, "Master Sent: %h\n", MDATA);
-        $fwrite(file, "Slave Received: %h\n", slave_data_received);
-        $fwrite(file, "Slave Sent: %h\n", DATA);
-        $fwrite(file, "Master Received: %h\n", master_data_received);
-        $fwrite(file, "\n"); 
-
-        // byte was sent get ready for nxt 
-	SS = 1;
-        DATA = 8'b00110011;
-        MDATA = 8'b00001010;  
-        #100;
-        
-        SS = 0;  // Reactivate Slave (SS low)
-
-        // Send another byte 
-        i = 3'd7;  // Reset counter
-        repeat (8) begin
-            MOSI = MDATA[i]; 
-            i = i - 1;
-            #100;           
-	    master_data_received = {master_data_received[6:0], MISO};
-        end
-
-        #100;
-
-	slave_data_received = OUT; 
-	
-	#100	
-	$fwrite(file, "Master Sent: %h\n", MDATA);
-        $fwrite(file, "Slave Received: %h\n", slave_data_received);
-        $fwrite(file, "Slave Sent: %h\n", DATA);
-        $fwrite(file, "Master Received: %h\n", master_data_received);
-        $fwrite(file, "\n"); 
-
-        // byte was sent get ready for nxt 
-	SS = 1;
-        DATA = 8'b11110011;
-        MDATA = 8'b11011010;  
-        #100;
-        
-        SS = 0;  // Reactivate Slave (SS low)
-
-        // Send another byte 
-        i = 3'd7;  // Reset counter
-        repeat (8) begin
-            MOSI = MDATA[i]; 
-            i = i - 1;
-            #100;           
-	    master_data_received = {master_data_received[6:0], MISO};
-        end
-
-        #100;
-
-	slave_data_received = OUT; 
-	
-	#100	
-	$fwrite(file, "Master Sent: %h\n", MDATA);
-        $fwrite(file, "Slave Received: %h\n", slave_data_received);
-        $fwrite(file, "Slave Sent: %h\n", DATA);
-        $fwrite(file, "Master Received: %h\n", master_data_received);
-        $fwrite(file, "\n"); 
-
-	SS = 1;
-        DATA = 8'b10010111;
-        MDATA = 8'b00011110;  
-        #1000;
-
-
-        SS = 0;  // Reactivate Slave (SS low)
-
-        // Send another byte 
-        i = 3'd7;  // Reset counter
-        repeat (8) begin
-            MOSI = MDATA[i]; 
-            i = i - 1;
-            #100;           
-	    master_data_received = {master_data_received[6:0], MISO};
-        end
-
-        #100;
-
-	slave_data_received = OUT; 
-	
-	#100	
-	$fwrite(file, "Master Sent: %h\n", MDATA);
-        $fwrite(file, "Slave Received: %h\n", slave_data_received);
-        $fwrite(file, "Slave Sent: %h\n", DATA);
-        $fwrite(file, "Master Received: %h\n", master_data_received);
-        $fwrite(file, "\n"); 
         $finish;
 	end
 
@@ -162,4 +109,3 @@ module SPI_testmodul_3;
     end
 
 endmodule
-
