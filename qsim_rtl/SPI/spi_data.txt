@@ -1,20 +1,15 @@
-Master Sent: ba
-Slave Received: ba
-Slave Sent: ef
-Master Received: ef
+Master Sent: a5
+Slave Received: a5
+Slave Sent: b1
+Master Received: b1
 
-Master Sent: 0a
-Slave Received: 0a
-Slave Sent: 33
-Master Received: 33
+Master Sent: 3c
+Slave Received: 3c
+Slave Sent: 1f
+Master Received: 1f
 
-Master Sent: da
-Slave Received: da
-Slave Sent: f3
-Master Received: f3
-
-Master Sent: 1e
-Slave Received: 1e
-Slave Sent: 97
-Master Received: 97
+Master Sent: f0
+Slave Received: f0
+Slave Sent: ea
+Master Received: ea
 

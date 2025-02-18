@@ -1,21 +1,21 @@
 `timescale 1ns/1ps
 
-module SPI_pkt (clk, rst, din, SPI_in, en, byte_flg);
+module SPI_pkt (clk, rst, din, dout, en, byte_flg);
 
 	input clk, rst, din, en;
-	output reg [7:0] SPI_in;
+	output reg [7:0] dout;
 	output reg byte_flg; //maybe optional
 	
 	reg [2:0] counter; //maybe optional
 
 	always @(posedge clk) begin
 		if (rst) begin
-			SPI_in <= 8'b0;
+			dout <= 8'b0;
 			byte_flg <= 0;
 			counter <= 3'b0;
 		end
 		else if (en) begin
-			SPI_in <= {SPI_in[6:0], din};
+			dout <= {dout[6:0], din};
 			counter <= counter + 1;
 			if (counter  == 3'b111) begin
 				counter <= 0;
