@@ -13,17 +13,19 @@ module SPI_pkt (clk, rst, din, dout, en, byte_flg);
 			dout <= 8'b0;
 			byte_flg <= 0;
 			counter <= 3'b0;
-		end
-		else if (en) begin
-			dout <= {dout[6:0], din};
-			counter <= counter + 1;
-			if (counter  == 3'b111) begin
-				counter <= 0;
-				byte_flg <= 1;
+		end else begin
+			if (en) begin
+				dout <= {dout[6:0], din};
+				
+				if (counter  == 3'b111) begin
+					counter <= 0;
+					byte_flg <= 1;
+				end else
+					byte_flg <= 0;
+				end
+				
+				counter <= counter + 1;
 			end
-		else
-			byte_flg <= 0;
 		end
-	end
 endmodule 
 			

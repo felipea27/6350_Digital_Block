@@ -11,22 +11,23 @@ cModel Technology
 Z0 d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/SPI_pkt
 vSPI_pkt
 2../../rtl/SPI_pkt/SPI_pkt.v
-!s110 1739742713
+!s10a 1739872748
+!s110 1739873198
 !i10b 1
-!s100 1FV524k2PQWD<dRg?o<IV3
-Ih:NhWG@T1;nf0b`aSo80C3
+!s100 TXLjVhEMZIFP>SkXKYeic1
+I97QTekC^c>QWc?:amCN[N3
 R0
-w1739742709
+w1739872748
 8../../rtl/SPI_pkt/SPI_pkt.v
 F../../rtl/SPI_pkt/SPI_pkt.v
-!i122 8
-L0 3 26
+!i122 9
+L0 3 28
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 OP;L;2024.2;79
 r1
 !s85 0
 31
-!s108 1739742713.000000
+!s108 1739873198.000000
 !s107 ../../rtl/SPI_pkt/SPI_pkt.v|
 !s90 -reportprogress|300|+acc|-incr|../../rtl/SPI_pkt/SPI_pkt.v|
 !i113 1
@@ -35,23 +36,22 @@ Z4 tCvgOpt 0
 n@s@p@i_pkt
 vSPI_pkt_tb
 2SPI_pkt_tb.v
-!s10a 1739742335
-!s110 1739742340
+!s110 1739873299
 !i10b 1
-!s100 h[XlMSP[8Kz:>an<1keX90
-I06`JZnL?:a3h`7jZelZj83
+!s100 1X5DNacZS62TDfdUQMD@F3
+I]HEoQNI6bO==iL`L?9Qlz0
 R0
-w1739742335
+w1739873295
 8SPI_pkt_tb.v
 FSPI_pkt_tb.v
-!i122 4
+!i122 10
 L0 3 63
 R1
 R2
 r1
 !s85 0
 31
-!s108 1739742340.000000
+!s108 1739873299.000000
 !s107 SPI_pkt_tb.v|
 !s90 -reportprogress|300|+acc|-incr|SPI_pkt_tb.v|
 !i113 1

@@ -18,248 +18,71 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:20:49 on Feb 13,2025
+# Start time: 02:51:42 on Feb 19,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/TOP/TOP.v 
-# -- Skipping module TOP
+# -- Compiling module TOP
 # 
 # Top level modules:
 # 	TOP
-# End time: 14:20:49 on Feb 13,2025, Elapsed time: 0:00:00
+# End time: 02:51:42 on Feb 19,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:20:50 on Feb 13,2025
-# vlog -reportprogress 300 "+acc" -incr ../../rtl/CLK_Counter/CLK_Counter.v 
-# -- Skipping module CLK_Counter
-# 
-# Top level modules:
-# 	CLK_Counter
-# End time: 14:20:50 on Feb 13,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:20:50 on Feb 13,2025
+# Start time: 02:51:42 on Feb 19,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/Shift_Buffer/Shift_Buffer.v 
 # -- Skipping module Shift_Buffer
 # 
 # Top level modules:
 # 	Shift_Buffer
-# End time: 14:20:50 on Feb 13,2025, Elapsed time: 0:00:00
+# End time: 02:51:42 on Feb 19,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:20:50 on Feb 13,2025
-# vlog -reportprogress 300 "+acc" -incr ../../rtl/SR_Latch/SR_Latch.v 
-# -- Skipping module SR_Latch
+# Start time: 02:51:42 on Feb 19,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI_pkt/SPI_pkt.v 
+# -- Skipping module SPI_pkt
 # 
 # Top level modules:
-# 	SR_Latch
-# End time: 14:20:50 on Feb 13,2025, Elapsed time: 0:00:00
+# 	SPI_pkt
+# End time: 02:51:42 on Feb 19,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:20:50 on Feb 13,2025
+# Start time: 02:51:42 on Feb 19,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/Pkt_reg/Pkt_reg.v 
 # -- Skipping module Pkt_reg
 # 
 # Top level modules:
 # 	Pkt_reg
-# End time: 14:20:50 on Feb 13,2025, Elapsed time: 0:00:00
+# End time: 02:51:42 on Feb 19,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:20:50 on Feb 13,2025
+# Start time: 02:51:42 on Feb 19,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_slave.v 
+# -- Skipping module SPI_SLAVE
+# 
+# Top level modules:
+# 	SPI_SLAVE
+# End time: 02:51:42 on Feb 19,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 02:51:42 on Feb 19,2025
 # vlog -reportprogress 300 "+acc" -incr TOP_tb.v 
 # -- Skipping module TOP_tb
 # 
 # Top level modules:
 # 	TOP_tb
-# End time: 14:20:50 on Feb 13,2025, Elapsed time: 0:00:00
+# End time: 02:51:42 on Feb 19,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8690) Ignoring plusarg '+acc' with -novopt in effect.
 # vsim "+acc" -t ps -lib work TOP_tb 
-# Start time: 14:20:50 on Feb 13,2025
+# Start time: 02:51:42 on Feb 19,2025
 # Loading work.TOP_tb
 # Loading work.TOP
-# Loading work.SR_Latch
 # Loading work.Shift_Buffer
 # Loading work.Pkt_reg
-# Loading work.CLK_Counter
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/TOP_tb/uut/sr_latch_inst/en'.
-# Executing ONERROR command at macro ./waveformat.do line 13
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/TOP_tb/uut/sr_latch_inst/q'.
-# Executing ONERROR command at macro ./waveformat.do line 14
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/TOP_tb/uut/sr_latch_inst/set'.
-# Executing ONERROR command at macro ./waveformat.do line 15
-# Time=0 , din=0 , sr_latch_q=0 , pkt_rec=x
-# Time=50000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=200000 , din=0 , sr_latch_q=1 , pkt_rec=0
-# Time=1000150000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=2000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=2000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=2000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=5000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=5000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=5000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=7000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=7000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=7000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=9000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=9000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=9000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=11000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=11000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=11000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=13000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=13000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=13000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=14000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=14000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=14000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=15000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=15000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=15000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=16000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=16000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=16000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=18000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=18000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=18000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=19000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=19000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=19000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=20000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=20000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=20000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=22000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=22000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=22000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=23000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=23000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=23000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=24000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=24000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=24000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=25000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=25000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=25000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=26000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=26000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=26000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=28000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=28000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=28000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=29000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=29000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=29000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=30000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=30000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=30000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=32000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=32000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=32000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=33000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=33000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=33000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=35000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=35000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=35000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=36000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=36000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=36000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=37000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=37000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=37000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=38000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=38000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=38000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=39000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=39000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=39000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=40000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=40000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=40000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=41000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=41000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=41000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=42000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=42000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=42000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=44000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=44000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=44000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=45000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=45000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=45000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=46000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=46000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=46000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=48000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=48000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=48000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=49000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=49000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=49000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=51000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=51000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=51000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=52000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=52000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=52000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=53000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=53000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=53000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=55000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=55000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=55000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=56000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=56000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=56000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=57000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=57000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=57000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=59000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=59000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=59000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=60000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=60000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=60000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=61000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=61000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=61000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=63000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=63000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=63000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=64000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=64000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=64000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=65000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=65000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=65000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=66000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=66000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=66000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=67000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=67000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=67000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=68000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=68000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=68000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=69000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=69000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=69000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=70000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=70000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=70000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=71000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=71000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=71000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=74000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=74000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=74000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# Time=75000100000 , din=1 , sr_latch_q=1 , pkt_rec=0
-# Time=75000150000 , din=1 , sr_latch_q=0 , pkt_rec=0
-# Time=75000200000 , din=0 , sr_latch_q=0 , pkt_rec=0
-# ** Note: $finish    : TOP_tb.v(122)
-#    Time: 76000100 ns  Iteration: 0  Instance: /TOP_tb
-# 1
-# Break in Module TOP_tb at TOP_tb.v line 122
-add wave -r /*
-# End time: 14:21:39 on Feb 13,2025, Elapsed time: 0:00:49
+# Loading work.SPI_SLAVE
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/TOP_tb/uut/SPI_EN'.
+# Executing ONERROR command at macro ./waveformat.do line 20
+# ** Note: $stop    : TOP_tb.v(105)
+#    Time: 79008200 ns  Iteration: 0  Instance: /TOP_tb
+# Break in Module TOP_tb at TOP_tb.v line 105
+# End time: 02:54:07 on Feb 19,2025, Elapsed time: 0:02:25
 # Errors: 0, Warnings: 1

@@ -3,7 +3,7 @@
 module SPI_pkt_tb;
 
     reg clk, rst, din, en;
-    wire [7:0] SPI_in;
+    wire [7:0] dout;
     wire byte_flg;
 
     // Instantiate the SPI_pkt module
@@ -11,7 +11,7 @@ module SPI_pkt_tb;
         .clk(clk),
         .rst(rst),
         .din(din),
-        .SPI_in(SPI_in),
+        .dout(dout),
         .en(en),
 	.byte_flg(byte_flg)
     );
@@ -58,8 +58,8 @@ module SPI_pkt_tb;
 
     // Monitor values
     initial begin
-        $monitor("Time: %0t | din: %b | SPI_in: %b | byte_flg: %b", 
-                 $time, din, SPI_in, byte_flg);
+        $monitor("Time: %0t | dout: %b | din: %b | byte_flg: %b", 
+                 $time, dout, din, byte_flg);
     end
 
 endmodule
