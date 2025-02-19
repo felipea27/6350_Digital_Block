@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module SPI_testmodul_2(
+module SPI_testmodul2(
 	input PCLK,
 	input PRESETn,
 	input WR0, //CONFIG_SPI
@@ -59,7 +59,7 @@ SPI_SLAVE spi_slave0_00_2(
 	.MISO(w_MISO),
 	.SS(w_SS0),
 	.SCK(w_SCK),
-	.TEST_DATA(8'b11110000),
+	.DATA(8'b11110000),
 	.MODE(2'b00)//Set slave operating mode
 
 );
@@ -69,7 +69,7 @@ SPI_SLAVE spi_slave1_01_2(
 	.MISO(w_MISO),
 	.SS(w_SS1),
 	.SCK(w_SCK),
-	.TEST_DATA(8'b11110001),
+	.DATA(8'b11110001),
 	.MODE(2'b01)//Set slave operating mode
 
 );
@@ -79,7 +79,7 @@ SPI_SLAVE spi_slave2_10_2(
 	.MISO(w_MISO),
 	.SS(w_SS2),
 	.SCK(w_SCK),
-	.TEST_DATA(8'b11110010),
+	.DATA(8'b11110010),
 	.MODE(2'b10)//Set slave operating mode
 
 );
@@ -89,7 +89,7 @@ SPI_SLAVE spi_slave3_11_2(
 	.MISO(w_MISO),
 	.SS(w_SS3),
 	.SCK(w_SCK),
-	.TEST_DATA(8'b11110011),
+	.DATA(8'b11110011),
 	.MODE(2'b11)//Set slave operating mode
 
 );

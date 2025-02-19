@@ -8,10 +8,10 @@ vmap work work
 
 # Include Netlist and Testbench
 vlog +acc -incr ../../rtl/TOP/TOP.v 
-vlog +acc -incr ../../rtl/CLK_Counter/CLK_Counter.v 
 vlog +acc -incr ../../rtl/Shift_Buffer/Shift_Buffer.v 
-vlog +acc -incr ../../rtl/SR_Latch/SR_Latch.v 
+vlog +acc -incr ../../rtl/SPI_pkt/SPI_pkt.v 
 vlog +acc -incr ../../rtl/Pkt_reg/Pkt_reg.v 
+vlog +acc -incr ../../rtl/SPI/SPI_slave.v
 vlog +acc -incr TOP_tb.v 
 
 # Run Simulator 

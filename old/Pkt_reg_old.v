@@ -1,8 +1,8 @@
 `timescale 1ns/1ps
-module Pkt_reg (din, pkt_rec, en, clk, rst, dout, SPI_en);
-	input clk, rst, pkt_rec, en, SPI_en;
+module Pkt_reg (din, pkt_rec, en, clk, rst, dout);
+	input clk, rst, pkt_rec, en;
 	input [63:0] din;
-	output reg [7:0] dout;
+	output reg dout;
 
 	reg [63:0] pkt_reg;
 
@@ -14,12 +14,9 @@ module Pkt_reg (din, pkt_rec, en, clk, rst, dout, SPI_en);
 		else if (pkt_rec) begin
 			pkt_reg <= din;
 		end else if (en) begin
-			pkt_reg <= pkt_reg << 8;
+			dout <= pkt_reg[63];
+			pkt_reg <= pkt_reg << 1;
 		end
-		else if (SPI_en)
-			dout <= pkt_reg[63:56];
-		else
-			dout <= 0;
 	end
 
 endmodule

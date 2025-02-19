@@ -9,12 +9,8 @@ add wave -noupdate /TOP_tb/CS
 add wave -noupdate /TOP_tb/MOSI
 add wave -noupdate /TOP_tb/MISO
 add wave -noupdate /TOP_tb/uut/pkt_reg_inst/pkt_reg
-add wave -noupdate /TOP_tb/uut/pkt_reg_inst/pkt_rec
-add wave -noupdate /TOP_tb/uut/pkt_reg_inst/dout
-add wave -noupdate /TOP_tb/uut/SPI_slave_inst/SHIFT_REG
 
 add wave -noupdate /TOP_tb/uut/counter
-add wave -noupdate /TOP_tb/uut/state
 add wave -noupdate /TOP_tb/uut/SH_EN
 add wave -noupdate /TOP_tb/uut/PKT_EN
 add wave -noupdate /TOP_tb/uut/SPI_EN
