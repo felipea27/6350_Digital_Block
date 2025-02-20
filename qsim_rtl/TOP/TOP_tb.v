@@ -95,7 +95,15 @@ module TOP_tb;
 		din = 1; #1000000; din = 1; #1000000; din = 1; #1000000; din = 1; #1000000;
 		din = 1; #1000000;
 
-		repeat (8) send_packet(8'hC3);		
+		 send_packet(8'h00);		
+		 send_packet(8'hA1);		
+		 send_packet(8'hA2);		
+		 send_packet(8'hA3);		
+		 send_packet(8'hA4);		
+		 send_packet(8'hA5);		
+		 send_packet(8'hA6);		
+		 send_packet(8'hA7);		
+		 send_packet(8'hA8);		
 
 		// Send more random data to simulate continued operation
 		din = 0; #1000000; din = 1; #1000000; din = 0; #1000000; din = 0; #1000000;
@@ -111,8 +119,9 @@ module TOP_tb;
 		CS = 1;
 		SCK = 0;
 		MDATA = mdata;
-		#100;
+		#150;
 		CS = 0;  // Reactivate Slave (SS low)
+		#250;
 		// Send another byte 
 		i = 3'd7;  // Reset counter
 		repeat (8) begin
@@ -125,10 +134,7 @@ module TOP_tb;
 			#50;
 		end
 		SCK = 0;
-		#50
-		CS = 1;
-		SCK = 0;
-		#50;
+		#150;
 	    end
 	endtask
 

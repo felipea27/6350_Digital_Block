@@ -65,6 +65,7 @@ module TOP (
 	    CS_prev <= 1;
 	    PKT_LD <= 0;
 	    pkt_rec_prev <= 0;
+	    MODE <= 2'b00;
         end else begin
 	    CS_prev <= CS;
 	    pkt_rec_prev <= pkt_rec;
@@ -113,6 +114,7 @@ module TOP (
 		    if (CS == 1) begin
 			state <= PKT_STORE;
 			PKT_EN <= 1;
+			
                     	counter <= counter - 1;
 			end
 		end
