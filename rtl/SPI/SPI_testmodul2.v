@@ -14,8 +14,11 @@ module SPI_testmodul2(
 	input DR3,	//Optional
 	
 	output[7:0] PRDATA,
-	input [7:0] PWDATA
+	input [7:0] PWDATA,
 	
+        input din,
+	input sh_en,
+	output pkt_rec
     );
 	 
 
@@ -26,6 +29,11 @@ module SPI_testmodul2(
 	wire w_SS1;
 	wire w_SS2;
 	wire w_SS3;
+
+	wire o_S0;
+	wire o_S1;
+	wire o_S2;
+	wire o_S3;
 
 spi_master5 SPI_MASTER_2(
 	.i_PRESETn(PRESETn),
@@ -60,38 +68,45 @@ SPI_SLAVE spi_slave0_00_2(
 	.SS(w_SS0),
 	.SCK(w_SCK),
 	.DATA(8'b11110000),
+	.OUT(o_S0),
 	.MODE(2'b00)//Set slave operating mode
 
 );
 
 SPI_SLAVE spi_slave1_01_2(
-	.MOSI(w_MOSI),
-	.MISO(w_MISO),
-	.SS(w_SS1),
-	.SCK(w_SCK),
-	.DATA(8'b11110001),
-	.MODE(2'b01)//Set slave operating mode
+        .MOSI(w_MOSI),
+        .MISO(w_MISO),
+        .SS(w_SS1),
+        .SCK(w_SCK),
+        .DATA(8'b11110001),
+	.OUT(o_S1),
+        .MODE(2'b01)//Set slave operating mode
 
 );
 
 SPI_SLAVE spi_slave2_10_2(
-	.MOSI(w_MOSI),
-	.MISO(w_MISO),
-	.SS(w_SS2),
-	.SCK(w_SCK),
-	.DATA(8'b11110010),
-	.MODE(2'b10)//Set slave operating mode
+        .MOSI(w_MOSI),
+        .MISO(w_MISO),
+        .SS(w_SS2),
+        .SCK(w_SCK),
+        .DATA(8'b11110010),
+        .MODE(2'b10), //Set slave operating mode
+	.OUT(o_S2)
 
 );
 
-SPI_SLAVE spi_slave3_11_2(
+TOP top_slave (
+	.clk(PCLK),
 	.MOSI(w_MOSI),
+	.CS(w_SS3),
 	.MISO(w_MISO),
-	.SS(w_SS3),
 	.SCK(w_SCK),
-	.DATA(8'b11110011),
-	.MODE(2'b11)//Set slave operating mode
-
+        .din(din),
+	.rst(!PRESETn),
+	.sh_en(sh_en),
+	.pkt_rec(pkt_rec)
 );
+
+
 
 endmodule

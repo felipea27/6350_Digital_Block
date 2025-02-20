@@ -18,88 +18,112 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 02:15:51 on Feb 18,2025
+# Start time: 18:13:03 on Feb 20,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/APB_interface.v 
 # -- Skipping module APB_interface_2
 # 
 # Top level modules:
 # 	APB_interface_2
-# End time: 02:15:51 on Feb 18,2025, Elapsed time: 0:00:00
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 02:15:51 on Feb 18,2025
+# Start time: 18:13:03 on Feb 20,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_master.v 
 # -- Skipping module spi_master5
 # 
 # Top level modules:
 # 	spi_master5
-# End time: 02:15:51 on Feb 18,2025, Elapsed time: 0:00:00
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 02:15:51 on Feb 18,2025
+# Start time: 18:13:03 on Feb 20,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_slave.v 
 # -- Skipping module SPI_SLAVE
 # 
 # Top level modules:
 # 	SPI_SLAVE
-# End time: 02:15:51 on Feb 18,2025, Elapsed time: 0:00:00
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 02:15:51 on Feb 18,2025
+# Start time: 18:13:03 on Feb 20,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_testmodul2.v 
 # -- Skipping module SPI_testmodul2
 # 
 # Top level modules:
 # 	SPI_testmodul2
-# End time: 02:15:51 on Feb 18,2025, Elapsed time: 0:00:00
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 02:15:51 on Feb 18,2025
+# Start time: 18:13:03 on Feb 20,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/TOP/TOP.v 
+# -- Skipping module TOP
+# 
+# Top level modules:
+# 	TOP
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 18:13:03 on Feb 20,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/Pkt_reg/Pkt_reg.v 
+# -- Skipping module Pkt_reg
+# 
+# Top level modules:
+# 	Pkt_reg
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 18:13:03 on Feb 20,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/Shift_Buffer/Shift_Buffer.v 
+# -- Skipping module Shift_Buffer
+# 
+# Top level modules:
+# 	Shift_Buffer
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 18:13:03 on Feb 20,2025
 # vlog -reportprogress 300 "+acc" -incr APB_interface_testbench.v 
-# -- Skipping module testbench
+# -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 02:15:51 on Feb 18,2025, Elapsed time: 0:00:00
+# End time: 18:13:03 on Feb 20,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8690) Ignoring plusarg '+acc' with -novopt in effect.
 # vsim "+acc" -t ps -lib work testbench 
-# Start time: 02:15:51 on Feb 18,2025
+# Start time: 18:13:03 on Feb 20,2025
 # Loading work.testbench
 # Loading work.APB_interface_2
 # Loading work.SPI_testmodul2
 # Loading work.spi_master5
 # Loading work.SPI_SLAVE
+# Loading work.TOP
+# Loading work.Shift_Buffer
+# Loading work.Pkt_reg
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'SPI_MASTER_2'.  Expected 20, found 19.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/SPI_MASTER_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 30
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(30): [TFMPC] - Missing connection for port 'i_SPI_CLK'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave0_00_2'.  Expected 8, found 6.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave0_00_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 57
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(57): [TFMPC] - Missing connection for port 'PRESETn'.
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(57): [TFMPC] - Missing connection for port 'OUT'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave1_01_2'.  Expected 8, found 6.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave1_01_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 67
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(67): [TFMPC] - Missing connection for port 'PRESETn'.
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(67): [TFMPC] - Missing connection for port 'OUT'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave2_10_2'.  Expected 8, found 6.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave2_10_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 77
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(77): [TFMPC] - Missing connection for port 'PRESETn'.
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(77): [TFMPC] - Missing connection for port 'OUT'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave3_11_2'.  Expected 8, found 6.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave3_11_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 87
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/SPI_MASTER_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 38
+# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(38): [TFMPC] - Missing connection for port 'i_SPI_CLK'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave0_00_2'.  Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave0_00_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 65
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../rtl/SPI/SPI_slave.v(11).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave0_00_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 65
+# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(65): [TFMPC] - Missing connection for port 'PRESETn'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave1_01_2'.  Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave1_01_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 76
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../rtl/SPI/SPI_slave.v(11).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave1_01_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 76
+# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(76): [TFMPC] - Missing connection for port 'PRESETn'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave2_10_2'.  Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave2_10_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 87
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../rtl/SPI/SPI_slave.v(11).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave2_10_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 87
 # ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(87): [TFMPC] - Missing connection for port 'PRESETn'.
-# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(87): [TFMPC] - Missing connection for port 'OUT'.
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/testbench/PSLVERR'.
-# Executing ONERROR command at macro ./waveformat.do line 16
 # ** UI-Msg (Warning): (vish-4014) No objects found matching '/testbench/spi_clk'.
-# Executing ONERROR command at macro ./waveformat.do line 19
-# ** Note: $stop    : APB_interface_testbench.v(158)
-#    Time: 17468750 ps  Iteration: 0  Instance: /testbench
-# Break in Module testbench at APB_interface_testbench.v line 158
-add wave -position insertpoint  \
-sim:/testbench/SCK8
-add wave -r /*
-add wave -position insertpoint  \
-sim:/testbench/SCK8
-# End time: 02:18:32 on Feb 18,2025, Elapsed time: 0:02:41
-# Errors: 0, Warnings: 15
+# Executing ONERROR command at macro ./waveformat.do line 23
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/testbench/PSLVERR'.
+# Executing ONERROR command at macro ./waveformat.do line 30
+# ** Note: $stop    : APB_interface_testbench.v(270)
+#    Time: 721725500 ns  Iteration: 0  Instance: /testbench
+# Break in Module testbench at APB_interface_testbench.v line 270
+# End time: 18:20:46 on Feb 20,2025, Elapsed time: 0:07:43
+# Errors: 0, Warnings: 12

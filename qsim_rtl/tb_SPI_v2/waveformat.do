@@ -1,25 +1,33 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /testbench/i_PCLK
+add wave -noupdate /testbench/uut/SPI_modul2/w_SCK
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/SS
+
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/OUT
+
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/DATA
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/pkt_rec
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/state
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/pkt_reg_inst/pkt_reg
+
+add wave -noupdate /testbench/o_PWDATA
+add wave -noupdate /testbench/o_PRDATA
+
 add wave -noupdate /testbench/i_PRESETn
-
-
 add wave -noupdate /testbench/i_PADDR
 add wave -noupdate /testbench/i_BASE_ADDR
 add wave -noupdate -radix unsigned /testbench/i_PWDATA
 add wave -noupdate -radix unsigned /testbench/i_PRDATA
+
+add wave -noupdate /testbench/spi_clk
+
 add wave -noupdate /testbench/i_PWRITE
 add wave -noupdate /testbench/i_PSEL0
 
 add wave -noupdate /testbench/i_PENABLE
 add wave -noupdate /testbench/PREADY
 add wave -noupdate /testbench/PSLVERR
-
-
-add wave -noupdate /testbench/spi_clk
-add wave -noupdate /testbench/o_PWDATA
-add wave -noupdate /testbench/o_PRDATA
-
 
 
 TreeUpdate [SetDefaultTree]

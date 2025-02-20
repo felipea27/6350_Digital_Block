@@ -14,6 +14,12 @@ module testbench;
 	reg [7:0] i_PRDATA;
 	reg [9:0] i_BASE_ADDR;
 
+	reg din;
+	reg sh_en;
+	reg [63:0] MDATA;
+	reg [1:0] slave;
+	reg [1:0] mode;
+
 	// Outputs
 	wire o_WR0;
 	wire o_WR1;
@@ -26,6 +32,8 @@ module testbench;
 	wire PREADY;
 	wire [7:0] o_PWDATA;
 	wire [7:0] o_PRDATA;
+
+	wire pkt_rec;
 
 	// Instantiate the Unit Under Test (UUT)
 	APB_interface_2 uut (
@@ -48,7 +56,11 @@ module testbench;
 		.o_DR3(o_DR3),
 		.PREADY(PREADY),
 		.o_PWDATA(o_PWDATA), 
-		.o_PRDATA(o_PRDATA)
+		.o_PRDATA(o_PRDATA),
+
+		.din(din),
+		.sh_en(sh_en),
+		.pkt_rec(pkt_rec)
 	);
 	//READ parameters
 	localparam STATUS	= 4'b0000;
@@ -69,6 +81,8 @@ module testbench;
 	localparam SCK4	= 2'b01; //4MHZ
 	localparam SCK2	= 2'b10; //2MHZ
 	localparam SCK1	= 2'b11; //1MHZ
+
+
 	
 	task APB_READ(input RD);
 		begin
@@ -77,9 +91,9 @@ module testbench;
 			4'b0001: i_PADDR=16'b0000000001000100;
 			endcase
 			i_PWRITE=0;i_PSEL0=1;
-			#6.25
+			#100
 			i_PENABLE=1;
-			#6.25
+			#100
 			i_PSEL0=0; i_PENABLE=0;
 			
 		end
@@ -91,32 +105,124 @@ module testbench;
 
 			i_PWDATA=({2'b00, MODE, SLAVE, SCK});
 			i_PADDR=16'b0000000001000000; i_PWRITE=1; i_PSEL0=1; // CONFIG_REG write
-			#6.25
+			#100
 			i_PENABLE=1;
-			#6.25
+			#100
 			i_PSEL0=0; i_PENABLE=0;i_PWRITE=0;
 		///TX write-----------------------------------------------------------------------------
-			#6.25
+			#100
 			i_PADDR=16'b0000000001000100;i_PWRITE=1;i_PSEL0=1;i_PWDATA=DATA;// TX data
-			#6.25
+			#100
 			i_PENABLE=1;
-			#6.25
+			#100
 			i_PSEL0=0; i_PENABLE=0;i_PWRITE=0;
 		///CMD write-----------------------------------------------------------------------------				
-			#6.25
+			#100
 			i_PADDR=16'b0000000001001100;i_PWRITE=1;i_PSEL0=1;i_PWDATA=8'b00000010; //CMD REG
-			#6.25
+			#100
 			i_PENABLE=1;
-			#6.25
+			#100
 			i_PSEL0=0; i_PENABLE=0;i_PWRITE=0;
 		end
 	endtask
 	
-	
+	task BYTE_WRITE (SCK, input [63:0] mdata);
+		begin
+			MDATA = mdata;
+			slave = 2'b11;
+			mode = 2'b00;
+
+			APB_WRITE(mode, 2'b11, SCK, MDATA[63:56]);
+			#7200
+			APB_WRITE(mode, slave, SCK, MDATA[55:48]);
+			#7200
+			APB_WRITE(mode, slave, SCK, MDATA[47:40]);
+			#7200
+			APB_WRITE(mode, slave, SCK, MDATA[39:32]);
+			#7200
+			APB_WRITE(mode, slave, SCK, MDATA[31:24]);
+			#7200
+			APB_WRITE(mode, slave, SCK, MDATA[23:16]);
+			#7200
+			APB_WRITE(mode, slave, SCK, MDATA[15:8]);
+			#7200
+			APB_WRITE(mode, slave, SCK, MDATA[7:0]);
+			#7200;
+		end
+	endtask
+
+	task BYTE_RD ();
+		begin
+			repeat (8) begin
+				APB_WRITE(MODE00,SLAVE3,SCK4,8'b00000000);
+				#7200;
+				APB_READ(RX);
+				#800
+				APB_READ(STATUS);
+				#800;
+			end
+		end
+	endtask
+
+	task SEND_SYNC ();
+		begin
+			//Send Random 10 bits
+			repeat (10) begin
+				#1000000 din = $random % 2;
+			end
+			
+			//Send sync bits '11111' at locations 62, 61, 60, 59, 58
+			repeat (5) begin
+                       		din = 1;
+                       		#1000000;
+              		end
+
+			//Send random  bits from locations 57 to 37 (21 bits)
+			repeat (21) begin
+				#1000000 din = $random % 2;
+			end
+
+			//Send sync bits '11111' at locations 36, 35, 34, 33, 32
+			repeat (5) begin
+				#1000000 din = 1;
+			end
+
+			//Send random bits from locations 31 to 9 (23 bits)
+			repeat (23) begin
+				#1000000 din = $random % 2;
+			end
+
+			//Send sync bits '11111' at locations 2, 4, 5, 6, 8
+			repeat (8) begin
+				#1000000 din = 1;
+			end
+			
+			if (pkt_rec) begin        
+				disable SEND_SYNC; // Exit if pkt_rec
+			end
+
+			//Send random bits
+			repeat (10) begin
+				#1000000 din = $random % 2;
+			end
+
+		end
+	endtask
+
 	initial begin
-	i_PCLK=1'b0;
-	forever #3.125 i_PCLK=~i_PCLK;
+		i_PCLK=1'b0;
+		forever #50 i_PCLK=~i_PCLK;
 	end
+
+        initial begin
+		sh_en = 0;
+		forever begin
+			#500000 sh_en = 1;
+			#100 sh_en = 0;
+			#499900;
+		end
+        end
+
 
 	initial begin
 		// Initialize Inputs
@@ -129,31 +235,37 @@ module testbench;
 		i_PWDATA = 0;
 		i_PRDATA = 0;
 		i_BASE_ADDR = 10'b0000000001;
+		MDATA = 64'b0;
 
 		// Wait 100 ns for global reset to finish
 		
-		#3.125
-		#6.25
+		#50
+		#100
 		i_PRESETn = 1;
-		#25
+		#200
 		APB_WRITE(MODE00,SLAVE0,SCK4,8'b01010101);
-		#450
+		#7200
 		APB_READ(RX);
-		#50
+		#800
 		APB_READ(STATUS);
-		#50
+		#800
 		APB_WRITE(MODE01,SLAVE1,SCK8,8'b01010101);
-		#250
+		#4000
 		APB_READ(RX);
-		#50
+		#800
 		APB_WRITE(MODE10,SLAVE2,SCK8,8'b01010101);
-		#250
+		#4000
 		APB_READ(RX);
-		#50
-		APB_WRITE(MODE11,SLAVE3,SCK8,8'b01010101);
-		#250
+		#800
+		APB_WRITE(MODE00,SLAVE3,SCK8,8'b01010101);
+		#4000
 		APB_READ(RX);
-		#50
+		#800
+		BYTE_WRITE(SCK4, 64'h0123456789ABCD0F);
+		SEND_SYNC();
+		#800
+		BYTE_RD();
+
 			
 		$stop;
 
