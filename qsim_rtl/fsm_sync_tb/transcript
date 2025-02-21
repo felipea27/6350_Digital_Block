@@ -1,0 +1,47 @@
+# //  ModelSim DE 2024.2 May 20 2024 Linux 4.18.0-553.40.1.el8_10.x86_64
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do runsim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim DE vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 11:30:50 on Feb 21,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/fsm_sync/fsm_sync.v 
+# -- Skipping module fsm_sync
+# 
+# Top level modules:
+# 	fsm_sync
+# End time: 11:30:50 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 11:30:50 on Feb 21,2025
+# vlog -reportprogress 300 "+acc" -incr fsm_sync_tb.v 
+# -- Compiling module fsm_sync_tb
+# 
+# Top level modules:
+# 	fsm_sync_tb
+# End time: 11:30:50 on Feb 21,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -t ps -lib work fsm_sync_tb 
+# Start time: 11:30:50 on Feb 21,2025
+# Loading work.fsm_sync_tb
+# Loading work.fsm_sync
+# ** Note: $finish    : fsm_sync_tb.v(54)
+#    Time: 9000200 ns  Iteration: 0  Instance: /fsm_sync_tb
+# 1
+# Break in Module fsm_sync_tb at fsm_sync_tb.v line 54
+# End time: 11:37:03 on Feb 21,2025, Elapsed time: 0:06:13
+# Errors: 0, Warnings: 0

@@ -30,34 +30,35 @@ module fsm_sync_tb;
         rst = 0; 
         #100;
 
-        #5;
-        rfin = 1; 
-        #90; //here we wait to emulate rfin
-        rfin = 0;
-	    #1000000; //wait for the next signal
+		
+	repeat (3) begin
+		#10;
+		rfin = 1; 
+		#90; //here we wait to emulate rfin
+		rfin = 0;
+		#999900;
 
 
 		#10;
-        rfin = 0; 
-        #90; //here we wait to emulate rfin
-        rfin = 0;
-	    #1000000; //wait for the next signal
+		rfin = 1; 
+		#90; //here we wait to emulate rfin
+		rfin = 0;
+		#999900;
 
 		#10;
-        rfin = 0; 
-        #90; //here we wait to emulate rfin
-        rfin = 0;
-	    #1000000; //wait for the next signal
-
-	repeat(3) @(posedge clk);
+		rfin = 0; 
+		#90; //here we wait to emulate rfin
+		rfin = 0;
+		#999900;
+	end
 	$finish;
            
     end
 
 
-    initial begin
-        $monitor("At time %t, clk = %b, rst = %b, rfin = %b, state = %b", $time, clk, rst, rfin, state);
-    end
+//    initial begin
+//        $monitor("At time %t, clk = %b, rst = %b, rfin = %b, state = %b", $time, clk, rst, rfin, state);
+//    end
 
 
 endmodule
