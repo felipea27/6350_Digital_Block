@@ -18,30 +18,33 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 11:30:50 on Feb 21,2025
+# Start time: 15:11:12 on Feb 21,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/fsm_sync/fsm_sync.v 
-# -- Skipping module fsm_sync
+# -- Compiling module fsm_sync
 # 
 # Top level modules:
 # 	fsm_sync
-# End time: 11:30:50 on Feb 21,2025, Elapsed time: 0:00:00
+# End time: 15:11:12 on Feb 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 11:30:50 on Feb 21,2025
+# Start time: 15:11:12 on Feb 21,2025
 # vlog -reportprogress 300 "+acc" -incr fsm_sync_tb.v 
-# -- Compiling module fsm_sync_tb
+# -- Skipping module fsm_sync_tb
 # 
 # Top level modules:
 # 	fsm_sync_tb
-# End time: 11:30:50 on Feb 21,2025, Elapsed time: 0:00:00
+# End time: 15:11:12 on Feb 21,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -t ps -lib work fsm_sync_tb 
-# Start time: 11:30:50 on Feb 21,2025
+# Start time: 15:11:12 on Feb 21,2025
 # Loading work.fsm_sync_tb
 # Loading work.fsm_sync
-# ** Note: $finish    : fsm_sync_tb.v(54)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 6, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /fsm_sync_tb/uut File: fsm_sync_tb.v Line: 11
+# ** Warning: (vsim-3722) fsm_sync_tb.v(11): [TFMPC] - Missing connection for port 'sh_en_sync2'.
+# ** Note: $finish    : fsm_sync_tb.v(69)
 #    Time: 9000200 ns  Iteration: 0  Instance: /fsm_sync_tb
 # 1
-# Break in Module fsm_sync_tb at fsm_sync_tb.v line 54
-# End time: 11:37:03 on Feb 21,2025, Elapsed time: 0:06:13
-# Errors: 0, Warnings: 0
+# Break in Module fsm_sync_tb at fsm_sync_tb.v line 69
+# End time: 15:14:18 on Feb 21,2025, Elapsed time: 0:03:06
+# Errors: 0, Warnings: 2

@@ -3,14 +3,18 @@ module fsm_sync (
     input wire clk,        // System clock
     input wire rst,        // Asynchronous reset
     input wire rfin,         // Input signal
-    output reg state           // Output signal
+    input wire sh_en,
+    output reg state,           // Output signal
+    output reg sh_en_sync2	//synchronized sh_en
 );
+
 
     parameter IDLE = 1'b0, ACTIVE = 1'b1;
     reg next_state;
+    reg sh_en_prev;
 
-    // Timer for 1 ms delay
-    reg [20:0] timer;  
+    //Synchronizing sh_en
+    reg sh_en_sync1;
 
     // State Transition Logic
     always @(posedge clk or negedge clk) begin
@@ -19,6 +23,19 @@ module fsm_sync (
         else
             state <= next_state;
     end
+
+    always @(posedge clk) begin
+	    if (rst) begin
+		    sh_en_sync1 <= 1'b0;
+		    sh_en_sync2 <= 1'b0;
+		    sh_en_prev <= 1'b0;
+	    end else begin
+		    sh_en_sync1 <= sh_en;
+		    sh_en_sync2 <= sh_en_sync1;
+		    sh_en_prev <= sh_en_sync2;
+	    end
+    end
+
 
     // Next State Logic and Timer Control
     always @(*) begin
@@ -29,20 +46,10 @@ module fsm_sync (
                     next_state = ACTIVE;
             end
             ACTIVE: begin
-                if (timer == 20'd9999)  // 1us timer completion (for 1ns clock period)
+		if (~sh_en && sh_en_prev)
                     next_state = IDLE;
             end
         endcase
-    end
-
-    // Timer Logic
-    always @(posedge clk) begin
-        if (rst)
-            timer <= 0;
-        else if (state == ACTIVE)
-            timer <= (timer == 20'd9999) ? 0 : timer + 1;  // Increment timer
-        else
-            timer <= 0;
     end
 
 endmodule
