@@ -13,7 +13,7 @@ module fsm_sync (
     reg [20:0] timer;  
 
     // State Transition Logic
-    always @(posedge clk or negedge clk or posedge rst) begin
+    always @(posedge clk or negedge clk) begin
         if (rst)
             state <= IDLE;
         else
@@ -36,7 +36,7 @@ module fsm_sync (
     end
 
     // Timer Logic
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst)
             timer <= 0;
         else if (state == ACTIVE)
