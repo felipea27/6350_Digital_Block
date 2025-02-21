@@ -6,12 +6,14 @@ module fsm_sync_tb;
     reg rst; 
     reg rfin;
     wire state;
+    reg sh_en;
 
     fsm_sync uut( 
         .clk(clk),
         .rst(rst),
         .rfin(rfin),
-        .state(state)
+        .state(state),
+	.sh_en(sh_en)
     );
 
     always begin
@@ -23,6 +25,7 @@ module fsm_sync_tb;
         clk = 0;
         rst = 0;
         rfin = 0;
+	sh_en = 0;
 
         // Reset the circuit
         rst = 1; 
@@ -36,20 +39,32 @@ module fsm_sync_tb;
 		rfin = 1; 
 		#90; //here we wait to emulate rfin
 		rfin = 0;
-		#999900;
+		#500050;
+		sh_en = 1;
+		#100;
+		sh_en = 0;
+		#499750;
 
 
 		#10;
 		rfin = 1; 
 		#90; //here we wait to emulate rfin
 		rfin = 0;
-		#999900;
+		#500050;
+		sh_en = 1;
+		#100;
+		sh_en = 0;
+		#499750;
 
 		#10;
 		rfin = 0; 
 		#90; //here we wait to emulate rfin
 		rfin = 0;
-		#999900;
+		#500050;
+		sh_en = 1;
+		#100;
+		sh_en = 0;
+		#499750;
 	end
 	$finish;
            

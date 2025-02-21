@@ -11,23 +11,22 @@ cModel Technology
 Z0 d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/fsm_sync_tb
 vfsm_sync
 2../../rtl/fsm_sync/fsm_sync.v
-!s10a 1740154721
-!s110 1740154776
+!s110 1740168672
 !i10b 1
-!s100 6L42`0ZUSBL`n0>I>N`QK0
-IDXj5i>8?<VX_V5W7_zVJ:3
+!s100 1T@aSTjR8MPHKmXnXd3SM2
+IZEggi=zHSAY6?iL`Z`zj^2
 R0
-w1740154721
+w1740168659
 8../../rtl/fsm_sync/fsm_sync.v
 F../../rtl/fsm_sync/fsm_sync.v
-!i122 0
-L0 2 47
+!i122 13
+L0 2 54
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 OP;L;2024.2;79
 r1
 !s85 0
 31
-!s108 1740154776.000000
+!s108 1740168672.000000
 !s107 ../../rtl/fsm_sync/fsm_sync.v|
 !s90 -reportprogress|300|+acc|-incr|../../rtl/fsm_sync/fsm_sync.v|
 !i113 1
@@ -35,22 +34,23 @@ Z3 o+acc
 Z4 tCvgOpt 0
 vfsm_sync_tb
 2fsm_sync_tb.v
-!s110 1740155450
+!s10a 1740168196
+!s110 1740168201
 !i10b 1
-!s100 2j@Hj>6Y8dnH7;@<mSFDO1
-IQK2@;DYVUc^Lnf@H4fXcc3
+!s100 R[a]k@BKE;CbJO50:EEeH2
+IIebVc9O`2W98DP4=OAR4h3
 R0
-w1740155445
+w1740168196
 8fsm_sync_tb.v
 Ffsm_sync_tb.v
-!i122 5
-L0 2 63
+!i122 12
+L0 2 78
 R1
 R2
 r1
 !s85 0
 31
-!s108 1740155450.000000
+!s108 1740168201.000000
 !s107 fsm_sync_tb.v|
 !s90 -reportprogress|300|+acc|-incr|fsm_sync_tb.v|
 !i113 1
