@@ -12,6 +12,7 @@ vlog +acc -incr ../../rtl/SPI/SPI_master.v
 vlog +acc -incr ../../rtl/SPI/SPI_slave.v
 vlog +acc -incr ../../rtl/SPI/SPI_testmodul2.v
 vlog +acc -incr ../../rtl/TOP/TOP.v
+vlog +acc -incr ../../rtl/fsm_sync/fsm_sync.v
 vlog +acc -incr ../../rtl/Pkt_reg/Pkt_reg.v
 vlog +acc -incr ../../rtl/Shift_Buffer/Shift_Buffer.v
 

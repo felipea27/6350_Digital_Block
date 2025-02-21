@@ -16,7 +16,7 @@ module SPI_testmodul2(
 	output[7:0] PRDATA,
 	input [7:0] PWDATA,
 	
-        input din,
+        input rfin,
 	input sh_en,
 	output pkt_rec
     );
@@ -101,7 +101,7 @@ TOP top_slave (
 	.CS(w_SS3),
 	.MISO(w_MISO),
 	.SCK(w_SCK),
-        .din(din),
+        .rfin(rfin),
 	.rst(!PRESETn),
 	.sh_en(sh_en),
 	.pkt_rec(pkt_rec)

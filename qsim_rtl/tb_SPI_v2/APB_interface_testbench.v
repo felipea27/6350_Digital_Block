@@ -14,7 +14,7 @@ module testbench;
 	reg [7:0] i_PRDATA;
 	reg [9:0] i_BASE_ADDR;
 
-	reg din;
+	reg rfin;
 	reg sh_en;
 	reg [63:0] MDATA;
 	reg [1:0] slave;
@@ -58,7 +58,7 @@ module testbench;
 		.o_PWDATA(o_PWDATA), 
 		.o_PRDATA(o_PRDATA),
 
-		.din(din),
+		.rfin(rfin),
 		.sh_en(sh_en),
 		.pkt_rec(pkt_rec)
 	);
@@ -168,33 +168,56 @@ module testbench;
 		begin
 			//Send Random 10 bits
 			repeat (10) begin
-				#1000000 din = $random % 2;
+				#100;
+			       	rfin = $random % 2;
+				#100;
+				rfin = 0;
+				#999800;
 			end
 			
 			//Send sync bits '11111' at locations 62, 61, 60, 59, 58
 			repeat (5) begin
-                       		din = 1;
-                       		#1000000;
+				#100;
+                       		rfin = 1;
+				#100;
+				rfin = 0;
+				#999800;
               		end
 
 			//Send random  bits from locations 57 to 37 (21 bits)
 			repeat (21) begin
-				#1000000 din = $random % 2;
+				#100;
+			       	rfin = $random % 2;
+				#100;
+				rfin = 0;
+				#999800;
 			end
 
 			//Send sync bits '11111' at locations 36, 35, 34, 33, 32
 			repeat (5) begin
-				#1000000 din = 1;
+				#100;
+                       		rfin = 1;
+				#100;
+				rfin = 0;
+				#999800;
 			end
 
 			//Send random bits from locations 31 to 9 (23 bits)
 			repeat (23) begin
-				#1000000 din = $random % 2;
+				#100;
+			       	rfin = $random % 2;
+				#100;
+				rfin = 0;
+				#999800;
 			end
 
 			//Send sync bits '11111' at locations 2, 4, 5, 6, 8
 			repeat (8) begin
-				#1000000 din = 1;
+				#100;
+                       		rfin = 1;
+				#100;
+				rfin = 0;
+				#999800;
 			end
 			
 			if (pkt_rec) begin        
@@ -203,7 +226,11 @@ module testbench;
 
 			//Send random bits
 			repeat (10) begin
-				#1000000 din = $random % 2;
+				#100;
+			       	rfin = $random % 2;
+				#100;
+				rfin = 0;
+				#999800;
 			end
 
 		end
