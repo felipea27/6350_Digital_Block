@@ -1,4 +1,4 @@
-`timescale 10ns / 1ps
+`timescale 1ns / 1ps
 
 
 module testbench;
@@ -19,6 +19,10 @@ module testbench;
 	reg [63:0] MDATA;
 	reg [1:0] slave;
 	reg [1:0] mode;
+	reg RX_MODE;
+	reg [9:0] rfdata1 = 10'b0001011100;
+	reg [20:0] rfdata2 = 21'b011101010011101100010;
+	reg [22:0] rfdata3 = 23'b01010110010101101101010;
 
 	// Outputs
 	wire o_WR0;
@@ -34,6 +38,9 @@ module testbench;
 	wire [7:0] o_PRDATA;
 
 	wire pkt_rec;
+	wire TX_OUT;
+	integer tx_file;
+	integer rx_file;
 
 	// Instantiate the Unit Under Test (UUT)
 	APB_interface_2 uut (
@@ -60,7 +67,9 @@ module testbench;
 
 		.rfin(rfin),
 		.sh_en(sh_en),
-		.pkt_rec(pkt_rec)
+		.pkt_rec(pkt_rec),
+		.RX(RX_MODE),
+		.TX_OUT(TX_OUT)
 	);
 	//READ parameters
 	localparam STATUS	= 4'b0000;
@@ -101,6 +110,8 @@ module testbench;
 	
 	task APB_WRITE(input[1:0] MODE, SLAVE,SCK, input [7:0] DATA);
 		begin
+	    	$fwrite(tx_file, "Data sent: %b\n", DATA[7:0]);
+
 		///CONFIG write-------------------------------------------------------------------------	
 
 			i_PWDATA=({2'b00, MODE, SLAVE, SCK});
@@ -131,33 +142,28 @@ module testbench;
 			MDATA = mdata;
 			slave = 2'b11;
 			mode = 2'b00;
-
-			APB_WRITE(mode, 2'b11, SCK, MDATA[63:56]);
-			#7200
-			APB_WRITE(mode, slave, SCK, MDATA[55:48]);
-			#7200
-			APB_WRITE(mode, slave, SCK, MDATA[47:40]);
-			#7200
-			APB_WRITE(mode, slave, SCK, MDATA[39:32]);
-			#7200
-			APB_WRITE(mode, slave, SCK, MDATA[31:24]);
-			#7200
-			APB_WRITE(mode, slave, SCK, MDATA[23:16]);
-			#7200
-			APB_WRITE(mode, slave, SCK, MDATA[15:8]);
-			#7200
-			APB_WRITE(mode, slave, SCK, MDATA[7:0]);
-			#7200;
+			RX_MODE = 0;
+			
+			repeat (8) begin
+				APB_WRITE(mode, 2'b11, SCK, MDATA[63:56]);
+				repeat (8) #999200;
+				MDATA = MDATA << 8;
+				#8000;
+			end
 		end
 	endtask
 
 	task BYTE_RD ();
 		begin
+			$fwrite(rx_file, "PACKET: %h\n", uut.SPI_modul2.top_slave.pkt_reg_inst.pkt_reg);
 			repeat (8) begin
+				RX_MODE = 1;
 				APB_WRITE(MODE00,SLAVE3,SCK4,8'b00000000);
 				#7200;
+				$fwrite(rx_file, "RX_IN: %h\n", uut.SPI_modul2.top_slave.SPI_IN);
 				APB_READ(RX);
 				#800
+	    			$fwrite(rx_file, "PR_DATA: %h\n", o_PRDATA);
 				APB_READ(STATUS);
 				#800;
 			end
@@ -166,12 +172,14 @@ module testbench;
 
 	task SEND_SYNC ();
 		begin
+			RX_MODE = 1;
 			//Send Random 10 bits
 			repeat (10) begin
 				#100;
-			       	rfin = $random % 2;
+			       	rfin = rfdata1[9];
 				#100;
 				rfin = 0;
+				rfdata1 = rfdata1 << 1;
 				#999800;
 			end
 			
@@ -187,9 +195,10 @@ module testbench;
 			//Send random  bits from locations 57 to 37 (21 bits)
 			repeat (21) begin
 				#100;
-			       	rfin = $random % 2;
+			       	rfin = rfdata2[20];
 				#100;
 				rfin = 0;
+				rfdata2 = rfdata2 << 1;
 				#999800;
 			end
 
@@ -205,14 +214,15 @@ module testbench;
 			//Send random bits from locations 31 to 9 (23 bits)
 			repeat (23) begin
 				#100;
-			       	rfin = $random % 2;
+			       	rfin = rfdata3[22];
 				#100;
 				rfin = 0;
+				rfdata3 = rfdata3 << 1;
 				#999800;
 			end
 
 			//Send sync bits '11111' at locations 2, 4, 5, 6, 8
-			repeat (8) begin
+			repeat (9) begin
 				#100;
                        		rfin = 1;
 				#100;
@@ -220,21 +230,28 @@ module testbench;
 				#999800;
 			end
 			
-			if (pkt_rec) begin        
-				disable SEND_SYNC; // Exit if pkt_rec
-			end
-
-			//Send random bits
-			repeat (10) begin
-				#100;
-			       	rfin = $random % 2;
-				#100;
-				rfin = 0;
-				#999800;
-			end
+		//	if (pkt_rec) begin        
+		//		return;
+		//	end
+		//
+		//	//Send random bits
+		//	repeat (10) begin
+		//		#100;
+		//	     	rfin = $random % 2;
+		//		#100;
+		//		rfin = 0;
+		//		#999800;
+		//	end
 
 		end
 	endtask
+
+	always @(posedge sh_en) begin
+	    #400;
+	    //repeat (1) @(posedge i_PCLK); // Wait for one clock cycles
+	    $fwrite(tx_file, "Time: %0t, ", $time);
+	    $fwrite(tx_file, "TX_OUT: %b\n", TX_OUT);
+	end
 
 	initial begin
 		i_PCLK=1'b0;
@@ -265,7 +282,21 @@ module testbench;
 		MDATA = 64'b0;
 
 		// Wait 100 ns for global reset to finish
-		
+	
+		tx_file = $fopen("TX_OUT.txt", "w");
+		if (tx_file == 0) begin
+			$display("Error opening file for writing!");
+			$finish;
+		end
+
+		rx_file = $fopen("PRDATA.txt", "w");
+		if (rx_file == 0) begin
+			$display("Error opening file for writing!");
+			$finish;
+		end
+
+
+
 		#50
 		#100
 		i_PRESETn = 1;
@@ -284,22 +315,21 @@ module testbench;
 		#4000
 		APB_READ(RX);
 		#800
-		APB_WRITE(MODE00,SLAVE3,SCK8,8'b01010101);
-		#4000
-		APB_READ(RX);
-		#800
-		BYTE_WRITE(SCK4, 64'h0123456789ABCD0F);
+		//APB_WRITE(MODE00,SLAVE3,SCK8,8'b01010101);
+		//#4000
+		//APB_READ(RX);
+		//#800
+		BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
 		SEND_SYNC();
 		#800
 		BYTE_RD();
 
+		$fclose(tx_file);
+		$fclose(rx_file);
 			
 		$stop;
-
-        
-		
-
 	end
       
+
 endmodule
 

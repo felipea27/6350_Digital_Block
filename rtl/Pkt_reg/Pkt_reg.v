@@ -19,7 +19,7 @@ module Pkt_reg (din, pkt_rec, en, clk, rst, dout, SPI_en);
 		else if (SPI_en)
 			dout <= pkt_reg[63:56];
 		else
-			dout <= 0;
+			dout <= 8'b0;
 	end
 
 endmodule
