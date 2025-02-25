@@ -15,10 +15,12 @@ module SPI_testmodul2(
 	
 	output[7:0] PRDATA,
 	input [7:0] PWDATA,
-	
+
+	input RX,
         input rfin,
 	input sh_en,
-	output pkt_rec
+	output pkt_rec,
+	output TX_OUT
     );
 	 
 
@@ -104,7 +106,9 @@ TOP top_slave (
         .rfin(rfin),
 	.rst(!PRESETn),
 	.sh_en(sh_en),
-	.pkt_rec(pkt_rec)
+	.pkt_rec(pkt_rec),
+	.RX(RX),
+	.TX_OUT(TX_OUT)
 );
 
 

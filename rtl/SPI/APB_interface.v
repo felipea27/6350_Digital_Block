@@ -27,9 +27,11 @@ module APB_interface_2(
 	output [7:0] o_PRDATA,
 	output reg [7:0] o_PWDATA,
 
+	input RX,
 	input sh_en,
 	input rfin,
-	output pkt_rec
+	output pkt_rec,
+	output TX_OUT
 	);
 	
 	assign PREADY= (i_PSEL0 & i_PENABLE);
@@ -134,8 +136,9 @@ SPI_testmodul2 SPI_modul2(
 
 	.rfin(rfin),
 	.sh_en(sh_en),
-	.pkt_rec(pkt_rec)
-	
+	.pkt_rec(pkt_rec),
+	.RX(RX),
+	.TX_OUT(TX_OUT)
 );
 
 		

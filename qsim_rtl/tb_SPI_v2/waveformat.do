@@ -5,15 +5,17 @@ add wave -noupdate /testbench/uut/SPI_modul2/w_SCK
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/SS
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/DIN
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/rfin
-add wave -noupdate /testbench/uut/SPI_modul2/top_slave/sh_en
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SH_EN
-add wave -noupdate /testbench/uut/SPI_modul2/top_slave/fsm_sync/state
 
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/OUT
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/TX_OUT
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/tx_buf_inst/buffer
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/shift_buf_inst/shift_reg
 
-add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/DATA
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/SHIFT_REG
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/pkt_rec
-add wave -noupdate /testbench/uut/SPI_modul2/top_slave/state
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/rx_state
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/tx_state
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/pkt_reg_inst/pkt_reg
 
 add wave -noupdate /testbench/o_PWDATA

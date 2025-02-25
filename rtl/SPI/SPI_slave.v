@@ -16,8 +16,14 @@ module SPI_SLAVE(
 	reg [7:0] SHIFT_REG;
 
 	assign MISO = SS ? 1'bZ : SHIFT_REG[7];
+	//assign OUT = SHIFT_REG;
+
+	always@ (negedge PRESETn) begin
+		SHIFT_REG <= 0;
+		SHIFT_IN <= 0;
+	end
 	
-	
+
 	always@ (negedge SS)
 			begin
 				SHIFT_IN<=MOSI;
