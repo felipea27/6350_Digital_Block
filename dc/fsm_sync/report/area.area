@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : area
+Design : fsm_sync
+Version: V-2023.12-SP1
+Date   : Wed Feb 26 14:25:09 2025
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    VIRL_std_cells (File: /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db)
+
+Number of ports:                            6
+Number of nets:                            23
+Number of cells:                           19
+Number of combinational cells:             11
+Number of sequential cells:                 4
+Number of macros/black boxes:               0
+Number of buf/inv:                          4
+Number of references:                       6
+
+Combinational area:                 47.039999
+Buf/Inv area:                       12.544000
+Noncombinational area:              73.299202
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   120.339201
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+fsm_sync                           120.3392    100.0   47.0400    73.2992  0.0000  fsm_sync
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                  47.0400    73.2992  0.0000
+
+1
