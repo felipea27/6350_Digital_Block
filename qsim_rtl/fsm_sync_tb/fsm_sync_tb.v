@@ -46,6 +46,7 @@ module fsm_sync_tb;
 	    integer rand_factor;
 	    integer adj_total_period, adj_position, adj_high_time;
 	    integer delay_before, delay_after;
+	    integer rand_delay;
 
 	begin
 	    // Randomness factor between -2% and +2%
@@ -70,7 +71,9 @@ module fsm_sync_tb;
 	    #adj_high_time;
 	    rfin = 0;
 	    #delay_after;
-	end
+	    #rand_delay;
+		
+        end
 	endtask
 
 
@@ -85,12 +88,12 @@ module fsm_sync_tb;
         rst = 1; 
         #100;
         rst = 0; 
-        #100;
-
-	repeat (8) begin
+        #51;
+	
+	repeat (64) begin
 
 		RFIN(1, 1000000, 30, 100);  
-		RFIN(0, 1000000, 30, 100);  
+		RFIN(1, 1000000, 30, 100);  
 		RFIN(1, 1000000, 30, 100);  
 		RFIN(1, 1000000, 30, 100);  
 	end	

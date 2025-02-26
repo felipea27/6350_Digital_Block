@@ -1,0 +1,560 @@
+# //  ModelSim DE 2024.2 May 20 2024 Linux 4.18.0-553.37.1.el8_10.x86_64
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do runsim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim DE vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 15:24:27 on Feb 26,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/fsm_sync/fsm_sync.v 
+# -- Compiling module fsm_sync
+# 
+# Top level modules:
+# 	fsm_sync
+# End time: 15:24:27 on Feb 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 15:24:27 on Feb 26,2025
+# vlog -reportprogress 300 "+acc" -incr fsm_sync_tb.v 
+# ** Warning: fsm_sync_tb.v(65): (vlog-2643) Unterminated string literal continues onto next line.
+# -- Skipping module fsm_sync_tb
+# 
+# Top level modules:
+# 	fsm_sync_tb
+# End time: 15:24:28 on Feb 26,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vsim -t ps -lib work fsm_sync_tb 
+# Start time: 15:24:28 on Feb 26,2025
+# Loading work.fsm_sync_tb
+# Loading work.fsm_sync
+# time:               151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:           1010151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:           2030151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:           3050151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:           4070151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:           5070151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:           6070151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:           7060151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:           8080151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:           9070151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          10090151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          11100151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          12100151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          13120151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          14120151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          15140151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          16120151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          17140151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          18160151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          19140151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          20130151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          21130151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          22150151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          23140151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          24130151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          25140151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          26150151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          27170151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          28180151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          29180151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          30180151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          31190151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          32170151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          33180151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          34170151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          35190151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          36170151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          37190151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          38170151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          39150151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          40160151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          41140151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          42130151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          43140151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          44160151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          45150151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          46150151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          47150151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          48130151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          49110151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          50120151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          51110151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          52090151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          53090151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          54090151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          55070151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          56070151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          57070151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          58060151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          59050151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          60040151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          61040151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          62060151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          63070151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          64080151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          65070151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          66050151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          67030151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          68050151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          69070151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          70060151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          71070151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          72060151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          73080151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          74090151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          75110151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          76090151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          77070151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          78080151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          79090151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          80090151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          81090151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          82090151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          83070151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          84090151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          85070151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          86060151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          87040151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          88060151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:          89060151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          90080151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          91060151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:          92040151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          93050151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          94070151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          95060151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          96070151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:          97090151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:          98080151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:          99090151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         100090151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         101100151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         102110151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         103120151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         104100151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         105100151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         106110151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         107110151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         108090151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         109080151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         110090151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         111070151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         112050151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         113050151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         114070151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         115090151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         116080151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         117070151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         118050151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         119060151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         120080151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         121070151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         122070151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         123050151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         124040151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         125050151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         126040151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         127040151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         128030151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         129040151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         130050151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         131030151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         132050151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         133040151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         134020151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         135020151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         136030151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         137010151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         138000151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         139020151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         140020151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         141040151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         142040151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         143020151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         144030151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         145050151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         146040151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         147020151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         148000151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         148990151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         150010151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         151030151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         152040151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         153030151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         154010151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         155000151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         156010151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         156990151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         157990151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         158990151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         159980151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         160980151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         161970151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         162960151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         163970151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         164950151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         165940151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         166960151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         167950151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         168940151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         169930151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         170930151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         171930151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         172920151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         173910151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         174920151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         175940151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         176940151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         177920151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         178930151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         179930151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         180920151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         181920151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         182910151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         183930151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         184950151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         185960151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         186970151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         187990151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         188980151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         189960151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         190940151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         191950151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         192970151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         193960151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         194950151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         195940151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         196920151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         197920151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         198910151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         199910151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         200890151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         201910151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         202900151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         203910151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         204890151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         205900151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         206910151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         207930151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         208940151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         209920151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         210900151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         211920151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         212940151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         213950151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         214970151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         215950151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         216950151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         217970151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         218990151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         219980151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         220980151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         221980151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         223000151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         223980151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         224980151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         225980151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         226980151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         227990151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         228980151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         229990151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         230970151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         231960151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         232960151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         233950151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         234950151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         235940151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         236930151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         237930151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         238950151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         239960151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         240960151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         241940151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         242940151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         243960151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         244960151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         245960151000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 		    adj_position:          30
+# time:         246940151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         247950151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         248950151000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 		    adj_position:          30
+# time:         249960151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         250950151000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 		    adj_position:          30
+# time:         251950151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         252940151000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 		    adj_position:          30
+# time:         253960151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# time:         254950151000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 		    adj_position:          30
+# ** Note: $finish    : fsm_sync_tb.v(100)
+#    Time: 255940151 ns  Iteration: 1  Instance: /fsm_sync_tb
+# 1
+# Break in Module fsm_sync_tb at fsm_sync_tb.v line 100
+# End time: 15:25:06 on Feb 26,2025, Elapsed time: 0:00:38
+# Errors: 0, Warnings: 0
