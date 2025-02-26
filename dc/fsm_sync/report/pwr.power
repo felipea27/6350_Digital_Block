@@ -1,0 +1,60 @@
+Loading db file '/tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : fsm_sync
+Version: V-2023.12-SP1
+Date   : Wed Feb 26 14:25:10 2025
+****************************************
+
+
+Library(s) Used:
+
+    VIRL_std_cells (File: /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db)
+
+
+Operating Conditions: WC_TIMING   Library: VIRL_std_cells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =   6.0650 uW   (71%)
+  Net Switching Power  =   2.4670 uW   (29%)
+                         ---------
+Total Dynamic Power    =   8.5320 uW  (100%)
+
+Cell Leakage Power     =   1.8326 uW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential     3.6525e-03        5.5036e-05        9.2524e+05        4.6328e-03  (  44.70%)
+combinational  2.4125e-03        2.4120e-03        9.0738e+05        5.7318e-03  (  55.30%)
+--------------------------------------------------------------------------------------------------
+Total          6.0650e-03 mW     2.4670e-03 mW     1.8326e+06 pW     1.0365e-02 mW
+1

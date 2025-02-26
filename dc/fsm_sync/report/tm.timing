@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fsm_sync
+Version: V-2023.12-SP1
+Date   : Wed Feb 26 14:25:09 2025
+****************************************
+
+Operating Conditions: WC_TIMING   Library: VIRL_std_cells
+Wire Load Model Mode: top
+
+  Startpoint: state_reg (rising edge-triggered flip-flop)
+  Endpoint: state (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  state_reg/CK (VIRL_SDN_MSRRB_1)          0.00       0.00 r
+  state_reg/Q (VIRL_SDN_MSRRB_1)           0.14       0.14 r
+  U20/X (VIRL_SDN_BUF_1)                   0.33       0.47 r
+  state (out)                              0.00       0.47 r
+  data arrival time                                   0.47
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

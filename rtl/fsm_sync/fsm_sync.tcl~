@@ -1,0 +1,19 @@
+set target_library [list /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.lib]
+set link_library [list  /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.lib]
+set symbol_library ""
+
+read_file -format verilog {fsm_sync.v}
+analyze -library WORK -format verilog {fsm_sync.v}
+elaborate fsm_sync -architecture verilog -library WORK
+analyze {}
+
+create clock -name "clk" -period 100 -waveform {50 100}
+
+compile -exact_map
+
+file mkdir report 
+write -hierarchy -format verilog -output /report/fsm_sync_gtlvl.v
+write_sdc -nosplit -version 2.0 /report/fsm_sync.sdc
+report_area -hierarchy > /report/fsm_sync.area
+report_timing > /report/fsm_sync.timing
+report_power > /report/fsm_sync.power
