@@ -175,59 +175,35 @@ module testbench;
 			RX_MODE = 1;
 			//Send Random 10 bits
 			repeat (10) begin
-				#100;
-			       	rfin = rfdata1[9];
-				#100;
-				rfin = 0;
+				RFIN(rfdata1[9], 1000000, 30, 100);
 				rfdata1 = rfdata1 << 1;
-				#999800;
 			end
 			
 			//Send sync bits '11111' at locations 62, 61, 60, 59, 58
 			repeat (5) begin
-				#100;
-                       		rfin = 1;
-				#100;
-				rfin = 0;
-				#999800;
+				RFIN(1, 1000000, 30, 100);
               		end
 
 			//Send random  bits from locations 57 to 37 (21 bits)
 			repeat (21) begin
-				#100;
-			       	rfin = rfdata2[20];
-				#100;
-				rfin = 0;
+				RFIN(rfdata2[20], 1000000, 30, 100);
 				rfdata2 = rfdata2 << 1;
-				#999800;
 			end
 
 			//Send sync bits '11111' at locations 36, 35, 34, 33, 32
 			repeat (5) begin
-				#100;
-                       		rfin = 1;
-				#100;
-				rfin = 0;
-				#999800;
+				RFIN(1, 1000000, 30, 100);
 			end
 
 			//Send random bits from locations 31 to 9 (23 bits)
 			repeat (23) begin
-				#100;
-			       	rfin = rfdata3[22];
-				#100;
-				rfin = 0;
+				RFIN(rfdata3[20], 1000000, 30, 100);
 				rfdata3 = rfdata3 << 1;
-				#999800;
 			end
 
 			//Send sync bits '11111' at locations 2, 4, 5, 6, 8
 			repeat (9) begin
-				#100;
-                       		rfin = 1;
-				#100;
-				rfin = 0;
-				#999800;
+				RFIN(1, 1000000, 30, 100);
 			end
 			
 		//	if (pkt_rec) begin        
@@ -245,6 +221,45 @@ module testbench;
 
 		end
 	endtask
+
+    task RFIN;
+
+            input reg rfin_value;
+            input integer total_period;
+            input integer position;
+            input integer high_time;
+
+            integer temp_rand;
+            integer rand_factor;
+            integer adj_total_period, adj_position, adj_high_time;
+            integer delay_before, delay_after;
+
+        begin
+            // Randomness factor between -2% and +2%
+            temp_rand = $random;
+            rand_factor = (temp_rand < 0 ? -temp_rand : temp_rand) % 5 - 2;
+
+            // Adjust values with randomness
+            adj_total_period = total_period + (total_period * rand_factor / 100);
+            adj_position = position + (position * rand_factor / 100);
+            adj_high_time = high_time + (high_time * rand_factor / 100);
+
+            // Calculate delays
+            delay_before = (adj_total_period * adj_position) / 100;
+            delay_after = adj_total_period - delay_before - adj_high_time;
+
+            $display("time: %t, delay_before: %d, delay_after: %d, rf_high: %d, rndm: %d, adj_total_period: %d, 
+                    adj_position: %d", $time, delay_before, delay_after, adj_high_time, rand_factor, adj_total_period, adj_position);
+
+            // Apply the rfin signal timing
+            #delay_before;
+            rfin = rfin_value;
+            #adj_high_time;
+            rfin = 0;
+            #delay_after;
+        end
+        endtask
+
 
 	always @(posedge sh_en) begin
 	    #400;
