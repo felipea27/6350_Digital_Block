@@ -248,8 +248,8 @@ module testbench;
             delay_before = (adj_total_period * adj_position) / 100;
             delay_after = adj_total_period - delay_before - adj_high_time;
 
-            $display("time: %t, delay_before: %d, delay_after: %d, rf_high: %d, rndm: %d, adj_total_period: %d, 
-                    adj_position: %d", $time, delay_before, delay_after, adj_high_time, rand_factor, adj_total_period, adj_position);
+            $display("time: %t, delay_before: %d, delay_after: %d, rf_high: %d, rfin: %d, rndm: %d, adj_total_period: %d, 
+                    adj_position: %d", $time, delay_before, delay_after, adj_high_time, rfin_value, rand_factor, adj_total_period, adj_position);
 
             // Apply the rfin signal timing
             #delay_before;

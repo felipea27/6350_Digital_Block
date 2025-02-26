@@ -17,7 +17,7 @@ module fsm_sync (
     reg sh_en_sync1;
 
     // State Transition Logic
-    always @(posedge clk ) begin
+    always @(posedge clk or negedge clk) begin
         if (rst)
             state <= IDLE;
         else
