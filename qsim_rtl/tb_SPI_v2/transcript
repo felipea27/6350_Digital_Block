@@ -18,98 +18,99 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:22 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/APB_interface.v 
 # -- Skipping module APB_interface_2
 # 
 # Top level modules:
 # 	APB_interface_2
-# End time: 14:13:50 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:23 on Feb 26,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:23 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_master.v 
 # -- Skipping module spi_master5
 # 
 # Top level modules:
 # 	spi_master5
-# End time: 14:13:50 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:23 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:23 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_slave.v 
 # -- Skipping module SPI_SLAVE
 # 
 # Top level modules:
 # 	SPI_SLAVE
-# End time: 14:13:50 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:23 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:24 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_testmodul2.v 
 # -- Skipping module SPI_testmodul2
 # 
 # Top level modules:
 # 	SPI_testmodul2
-# End time: 14:13:50 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:24 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:24 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/TOP/TOP.v 
 # -- Skipping module TOP
 # 
 # Top level modules:
 # 	TOP
-# End time: 14:13:50 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:24 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:24 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/fsm_sync/fsm_sync.v 
 # -- Skipping module fsm_sync
 # 
 # Top level modules:
 # 	fsm_sync
-# End time: 14:13:50 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:25 on Feb 26,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:25 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/Pkt_reg/Pkt_reg.v 
 # -- Skipping module Pkt_reg
 # 
 # Top level modules:
 # 	Pkt_reg
-# End time: 14:13:50 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:25 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:50 on Feb 25,2025
+# Start time: 14:27:25 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/Shift_Buffer/Shift_Buffer.v 
 # -- Skipping module Shift_Buffer
 # 
 # Top level modules:
 # 	Shift_Buffer
-# End time: 14:13:51 on Feb 25,2025, Elapsed time: 0:00:01
+# End time: 14:27:26 on Feb 26,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:51 on Feb 25,2025
+# Start time: 14:27:26 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/TX_Buffer/TX_Buffer.v 
 # -- Skipping module TX_Buffer
 # 
 # Top level modules:
 # 	TX_Buffer
-# End time: 14:13:51 on Feb 25,2025, Elapsed time: 0:00:00
+# End time: 14:27:26 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 14:13:51 on Feb 25,2025
+# Start time: 14:27:26 on Feb 26,2025
 # vlog -reportprogress 300 "+acc" -incr APB_interface_testbench.v 
-# -- Compiling module testbench
+# ** Warning: APB_interface_testbench.v(251): (vlog-2643) Unterminated string literal continues onto next line.
+# -- Skipping module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 14:13:51 on Feb 25,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 14:27:27 on Feb 26,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
 # ** Warning: (vsim-8690) Ignoring plusarg '+acc' with -novopt in effect.
 # vsim "+acc" -t ps -lib work testbench 
-# Start time: 14:13:51 on Feb 25,2025
+# Start time: 14:27:27 on Feb 26,2025
 # Loading work.testbench
 # Loading work.APB_interface_2
 # Loading work.SPI_testmodul2
@@ -142,8 +143,225 @@
 # Executing ONERROR command at macro ./waveformat.do line 30
 # ** UI-Msg (Warning): (vish-4014) No objects found matching '/testbench/PSLVERR'.
 # Executing ONERROR command at macro ./waveformat.do line 37
-# ** Note: $stop    : APB_interface_testbench.v(330)
-#    Time: 137121950 ns  Iteration: 0  Instance: /testbench
-# Break in Module testbench at APB_interface_testbench.v line 330
-# End time: 14:14:04 on Feb 25,2025, Elapsed time: 0:00:13
-# Errors: 0, Warnings: 12
+# time:          64041150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:          65051150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          66071150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          67091150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          68111150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:          69111150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:          70111150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:          71101150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          72121150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:          73111150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          74131150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:          75141150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:          76141150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          77161150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:          78161150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          79181150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:          80161150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          81181150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          82201150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:          83181150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:          84171150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:          85171150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          86191150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:          87181150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:          88171150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:          89181150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:          90191150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          91211150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:          92221150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:          93221150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:          94221150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:          95231150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:          96211150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:          97221150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:          98211150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:          99231150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         100211150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:         101231150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         102211150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         103191150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:         104201150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         105181150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         106171150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:         107181150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:         108201150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         109191150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:         110191150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:         111191150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         112171150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         113151150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:         114161150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         115151150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         116131150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:         117131150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:         118131150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         119111150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:         120111150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:         121111150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         122101150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         123091150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         124081150000, delay_before:      300000, delay_after:      699900, rf_high:         100, rndm:           0, adj_total_period:     1000000, 
+# 
+#                     adj_position:          30
+# time:         125081150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:         126101150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:         127111150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:         128121150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         129111150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         130091150000, delay_before:      294000, delay_after:      685902, rf_high:          98, rndm:          -2, adj_total_period:      980000, 
+# 
+#                     adj_position:          30
+# time:         131071150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:         132091150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# time:         133111150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         134101150000, delay_before:      303000, delay_after:      706899, rf_high:         101, rndm:           1, adj_total_period:     1010000, 
+# 
+#                     adj_position:          30
+# time:         135111150000, delay_before:      297000, delay_after:      692901, rf_high:          99, rndm:          -1, adj_total_period:      990000, 
+# 
+#                     adj_position:          30
+# time:         136101150000, delay_before:      306000, delay_after:      713898, rf_high:         102, rndm:           2, adj_total_period:     1020000, 
+# 
+#                     adj_position:          30
+# ** Note: $stop    : APB_interface_testbench.v(345)
+#    Time: 137201950 ns  Iteration: 0  Instance: /testbench
+# Break in Module testbench at APB_interface_testbench.v line 345
