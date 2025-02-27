@@ -51,8 +51,9 @@ module fsm_sync_tb;
 	begin
 	    // Randomness factor between -2% and +2%
 	    temp_rand = $random;  
-	    rand_factor = (temp_rand < 0 ? -temp_rand : temp_rand) % 5 - 2;
-	    
+	    rand_factor = ((temp_rand < 0 ? -temp_rand : temp_rand) % 5 - 2)/5;
+	    rand_factor = 0;
+
 	    // Adjust values with randomness
 	    adj_total_period = total_period + (total_period * rand_factor / 100);
 	    adj_position = position + (position * rand_factor / 100);
@@ -71,7 +72,6 @@ module fsm_sync_tb;
 	    #adj_high_time;
 	    rfin = 0;
 	    #delay_after;
-	    #rand_delay;
 		
         end
 	endtask

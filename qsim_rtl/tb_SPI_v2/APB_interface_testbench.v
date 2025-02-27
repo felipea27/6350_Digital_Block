@@ -21,8 +21,11 @@ module testbench;
 	reg [1:0] mode;
 	reg RX_MODE;
 	reg [9:0] rfdata1 = 10'b0001011100;
+	reg [9:0] rfdata1c; 
 	reg [20:0] rfdata2 = 21'b011101010011101100010;
+	reg [20:0] rfdata2c;
 	reg [22:0] rfdata3 = 23'b01010110010101101101010;
+	reg [22:0] rfdata3c;
 
 	// Outputs
 	wire o_WR0;
@@ -41,6 +44,9 @@ module testbench;
 	wire TX_OUT;
 	integer tx_file;
 	integer rx_file;
+	integer timing_file;
+	time rfin_time, sh_en_time;
+	integer i = 0;
 
 	// Instantiate the Unit Under Test (UUT)
 	APB_interface_2 uut (
@@ -155,55 +161,62 @@ module testbench;
 
 	task BYTE_RD ();
 		begin
-			$fwrite(rx_file, "PACKET: %h\n", uut.SPI_modul2.top_slave.pkt_reg_inst.pkt_reg);
+			#800;
+			$fwrite(rx_file, "P: %h\nR: ", uut.SPI_modul2.top_slave.pkt_reg_inst.pkt_reg);
 			repeat (8) begin
 				RX_MODE = 1;
 				APB_WRITE(MODE00,SLAVE3,SCK4,8'b00000000);
 				#7200;
-				$fwrite(rx_file, "RX_IN: %h\n", uut.SPI_modul2.top_slave.SPI_IN);
+				//$fwrite(rx_file, "RX_IN: %h\n", uut.SPI_modul2.top_slave.SPI_IN);
 				APB_READ(RX);
 				#800
-	    			$fwrite(rx_file, "PR_DATA: %h\n", o_PRDATA);
+	    			$fwrite(rx_file, "%h", o_PRDATA);
 				APB_READ(STATUS);
 				#800;
 			end
+			$fwrite(rx_file, "\n");
 		end
 	endtask
 
-	task SEND_SYNC ();
+	task SEND_SYNC;
+		input integer position;
 		begin
+		//	$display("%d", position);
+			rfdata1c = rfdata1;
+			rfdata2c = rfdata2;
+			rfdata3c = rfdata3;
 			RX_MODE = 1;
 			//Send Random 10 bits
 			repeat (10) begin
-				RFIN(rfdata1[9], 1000000, 30, 100);
-				rfdata1 = rfdata1 << 1;
+				RFIN(rfdata1c[9], 1000000, position, 100);
+				rfdata1c = rfdata1c << 1;
 			end
 			
 			//Send sync bits '11111' at locations 62, 61, 60, 59, 58
 			repeat (5) begin
-				RFIN(1, 1000000, 30, 100);
+				RFIN(1, 1000000, position, 100);
               		end
 
 			//Send random  bits from locations 57 to 37 (21 bits)
 			repeat (21) begin
-				RFIN(rfdata2[20], 1000000, 30, 100);
-				rfdata2 = rfdata2 << 1;
+				RFIN(rfdata2c[20], 1000000, position, 100);
+				rfdata2c = rfdata2c << 1;
 			end
 
 			//Send sync bits '11111' at locations 36, 35, 34, 33, 32
 			repeat (5) begin
-				RFIN(1, 1000000, 30, 100);
+				RFIN(1, 1000000, position, 100);
 			end
 
 			//Send random bits from locations 31 to 9 (23 bits)
 			repeat (23) begin
-				RFIN(rfdata3[20], 1000000, 30, 100);
-				rfdata3 = rfdata3 << 1;
+				RFIN(rfdata3c[20], 1000000, position, 100);
+				rfdata3c = rfdata3c << 1;
 			end
 
 			//Send sync bits '11111' at locations 2, 4, 5, 6, 8
 			repeat (9) begin
-				RFIN(1, 1000000, 30, 100);
+				RFIN(1, 1000000, position, 100);
 			end
 			
 		//	if (pkt_rec) begin        
@@ -233,28 +246,34 @@ module testbench;
             integer rand_factor;
             integer adj_total_period, adj_position, adj_high_time;
             integer delay_before, delay_after;
+	    integer percent;
 
         begin
             // Randomness factor between -2% and +2%
             temp_rand = $random;
-            rand_factor = (temp_rand < 0 ? -temp_rand : temp_rand) % 5 - 2;
+            rand_factor = ((temp_rand < 0 ? -temp_rand : temp_rand) % 5 - 2);
+	   // rand_factor = 0;
+	    percent = 100;
 
             // Adjust values with randomness
-            adj_total_period = total_period + (total_period * rand_factor / 100);
-            adj_position = position + (position * rand_factor / 100);
-            adj_high_time = high_time + (high_time * rand_factor / 100);
+            adj_total_period = total_period + (total_period * rand_factor / percent);
+            adj_position = position + (position * rand_factor / percent);
+            adj_high_time = high_time + (high_time * rand_factor / percent);
 
             // Calculate delays
-            delay_before = (adj_total_period * adj_position) / 100;
+            delay_before = (adj_total_period * adj_position) / percent;
             delay_after = adj_total_period - delay_before - adj_high_time;
 
-            $display("time: %t, delay_before: %d, delay_after: %d, rf_high: %d, rfin: %d, rndm: %d, adj_total_period: %d, 
-                    adj_position: %d", $time, delay_before, delay_after, adj_high_time, rfin_value, rand_factor, adj_total_period, adj_position);
+           // $display("time: %t, delay_before: %d, delay_after: %d, rf_high: %d, rfin: %d, rndm: %d, adj_total_period: %d, 
+           //         adj_position: %d", $time, delay_before, delay_after, adj_high_time, rfin_value, rand_factor, adj_total_period, adj_position);
 
             // Apply the rfin signal timing
             #delay_before;
-            rfin = rfin_value;
-            #adj_high_time;
+            
+	    rfin = rfin_value;
+	    rfin_time = $time;
+            
+	    #adj_high_time;
             rfin = 0;
             #delay_after;
         end
@@ -262,10 +281,11 @@ module testbench;
 
 
 	always @(posedge sh_en) begin
-	    #400;
-	    //repeat (1) @(posedge i_PCLK); // Wait for one clock cycles
-	    $fwrite(tx_file, "Time: %0t, ", $time);
-	    $fwrite(tx_file, "TX_OUT: %b\n", TX_OUT);
+		sh_en_time = $time;
+    	        $fwrite(timing_file, "%0t\n",  sh_en_time - rfin_time);
+	   	#400;
+	    	$fwrite(tx_file, "Time: %0t, ", $time);
+	    	$fwrite(tx_file, "TX_OUT: %b\n", TX_OUT);
 	end
 
 	initial begin
@@ -310,7 +330,11 @@ module testbench;
 			$finish;
 		end
 
-
+		timing_file = $fopen("timing_log.txt", "w");
+   		if (!timing_file) begin
+			$display("Error: Could not open file.");
+			$finish;
+		end
 
 		#50
 		#100
@@ -335,9 +359,20 @@ module testbench;
 		//APB_READ(RX);
 		//#800
 		BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		SEND_SYNC();
+		
+		//SEND_SYNC(0);
+		repeat(20) begin
+			i = i + 1; // Increment counter
+			$display("Iteration: %0d", i);
+			fork
+				BYTE_RD();
+				SEND_SYNC(30);
+			join
+		end
 		#800
 		BYTE_RD();
+
+
 
 		$fclose(tx_file);
 		$fclose(rx_file);
