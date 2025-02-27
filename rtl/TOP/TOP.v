@@ -131,11 +131,11 @@ module TOP (
 				rx_state <= SPI_TRANSFER;
                     		SPI_RDY <= 1;
                     	end
+                        if (counter == 0) 
+			  	rx_state <= LOAD;
                 end
         
 		SPI_TRANSFER: begin
-                    if (counter == 0) 
-			    rx_state <= LOAD;
 		    if (CS == 1) begin
 			rx_state <= PKT_STORE;
 			PKT_EN <= 1;
