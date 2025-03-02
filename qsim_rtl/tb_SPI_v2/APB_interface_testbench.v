@@ -45,8 +45,12 @@ module testbench;
 	integer tx_file;
 	integer rx_file;
 	integer timing_file;
+	integer rand_file;
+	integer gaus_file;
 	time rfin_time, sh_en_time;
 	integer i = 0;
+	integer i2 = 0;
+	real gaussian_values[0:9999]; // Array to store 10,000 values
 
 	// Instantiate the Unit Under Test (UUT)
 	APB_interface_2 uut (
@@ -162,7 +166,6 @@ module testbench;
 	task BYTE_RD ();
 		begin
 			#800;
-			$fwrite(rx_file, "P: %h\nR: ", uut.SPI_modul2.top_slave.pkt_reg_inst.pkt_reg);
 			repeat (8) begin
 				RX_MODE = 1;
 				APB_WRITE(MODE00,SLAVE3,SCK4,8'b00000000);
@@ -181,7 +184,8 @@ module testbench;
 	task SEND_SYNC;
 		input integer position;
 		begin
-		//	$display("%d", position);
+
+	    		$fwrite(rx_file, "7dd4ec5f595b51ff\n");
 			rfdata1c = rfdata1;
 			rfdata2c = rfdata2;
 			rfdata3c = rfdata3;
@@ -218,41 +222,29 @@ module testbench;
 			repeat (9) begin
 				RFIN(1, 1000000, position, 100);
 			end
-			
-		//	if (pkt_rec) begin        
-		//		return;
-		//	end
-		//
-		//	//Send random bits
-		//	repeat (10) begin
-		//		#100;
-		//	     	rfin = $random % 2;
-		//		#100;
-		//		rfin = 0;
-		//		#999800;
-		//	end
-
 		end
 	endtask
 
-    task RFIN;
+     task RFIN;
 
-            input reg rfin_value;
-            input integer total_period;
-            input integer position;
-            input integer high_time;
+	    input reg rfin_value;
+	    input integer total_period;
+	    input integer position;
+	    input integer high_time;
 
-            integer temp_rand;
-            integer rand_factor;
-            integer adj_total_period, adj_position, adj_high_time;
-            integer delay_before, delay_after;
+	    integer rand_index;
+	    integer adj_total_period, adj_position, adj_high_time;
+	    integer delay_before, delay_after;
 	    integer percent;
+	    real rand_factor;
 
-        begin
-            // Randomness factor between -2% and +2%
-            temp_rand = $random;
-            rand_factor = ((temp_rand < 0 ? -temp_rand : temp_rand) % 5 - 2);
-	   // rand_factor = 0;
+	begin
+
+	    rand_index = $random;
+	    rand_index = ((rand_index < 0 ? -rand_index : rand_index) % 10000);
+	    rand_factor = gaussian_values[rand_index];
+    	    //rand_factor = 0;
+	    $fwrite(rand_file, "%f\n",  rand_factor);
 	    percent = 100;
 
             // Adjust values with randomness
@@ -264,8 +256,8 @@ module testbench;
             delay_before = (adj_total_period * adj_position) / percent;
             delay_after = adj_total_period - delay_before - adj_high_time;
 
-           // $display("time: %t, delay_before: %d, delay_after: %d, rf_high: %d, rfin: %d, rndm: %d, adj_total_period: %d, 
-           //         adj_position: %d", $time, delay_before, delay_after, adj_high_time, rfin_value, rand_factor, adj_total_period, adj_position);
+            // $display("time: %t, delay_before: %d, delay_after: %d, rf_high: %d, rfin: %d, rndm: %d, adj_total_period: %d, 
+            //         adj_position: %d", $time, delay_before, delay_after, adj_high_time, rfin_value, rand_factor, adj_total_period, adj_position);
 
             // Apply the rfin signal timing
             #delay_before;
@@ -275,10 +267,13 @@ module testbench;
             
 	    #adj_high_time;
             rfin = 0;
-            #delay_after;
-        end
+	    #delay_after;
+    end
         endtask
-
+	
+	always @(posedge pkt_rec) begin
+		BYTE_RD();
+	end
 
 	always @(posedge sh_en) begin
 		sh_en_time = $time;
@@ -318,60 +313,73 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("TX_OUT.txt", "w");
+		tx_file = $fopen("DATA/TX_OUT.txt", "w");
 		if (tx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rx_file = $fopen("PRDATA.txt", "w");
+		rx_file = $fopen("DATA/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		timing_file = $fopen("timing_log.txt", "w");
+		timing_file = $fopen("DATA/timing_log.txt", "w");
    		if (!timing_file) begin
 			$display("Error: Could not open file.");
 			$finish;
 		end
 
+		rand_file = $fopen("DATA/rand_factors.txt", "w");
+   		if (!rand_file) begin
+			$display("Error: Could not open file.");
+			$finish;
+		end
+
+		
+		gaus_file = $fopen("gaussian_values.txt", "r");
+
+		// Read the file and store values in the array
+		for (i2 = 0; i2 < 10000; i2 = i2 + 1) begin
+		    $fscanf(gaus_file, "%f\n", gaussian_values[i2]);
+		end
+
+		$fclose(gaus_file);
+
 		#50
 		#100
 		i_PRESETn = 1;
 		#200
-		APB_WRITE(MODE00,SLAVE0,SCK4,8'b01010101);
-		#7200
-		APB_READ(RX);
-		#800
-		APB_READ(STATUS);
-		#800
-		APB_WRITE(MODE01,SLAVE1,SCK8,8'b01010101);
-		#4000
-		APB_READ(RX);
-		#800
-		APB_WRITE(MODE10,SLAVE2,SCK8,8'b01010101);
-		#4000
-		APB_READ(RX);
-		#800
+		//APB_WRITE(MODE00,SLAVE0,SCK4,8'b01010101);
+		//#7200
+		//APB_READ(RX);
+		//#800
+		//APB_READ(STATUS);
+		//#800
+		//APB_WRITE(MODE01,SLAVE1,SCK8,8'b01010101);
+		//#4000
+		//APB_READ(RX);
+		//#800
+		//APB_WRITE(MODE10,SLAVE2,SCK8,8'b01010101);
+		//#4000
+		//APB_READ(RX);
+		//#800
 		//APB_WRITE(MODE00,SLAVE3,SCK8,8'b01010101);
 		//#4000
 		//APB_READ(RX);
 		//#800
-		BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
 		
+		BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
+		#980453;	//alignment so that position is true	
 		//SEND_SYNC(0);
-		repeat(20) begin
+		repeat(101) begin
 			i = i + 1; // Increment counter
 			$display("Iteration: %0d", i);
-			fork
-				BYTE_RD();
-				SEND_SYNC(30);
-			join
+			SEND_SYNC(0);
+			#800;
 		end
-		#800
-		BYTE_RD();
-
+		
 
 
 		$fclose(tx_file);

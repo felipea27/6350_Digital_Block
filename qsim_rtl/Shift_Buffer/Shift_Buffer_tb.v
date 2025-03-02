@@ -8,6 +8,9 @@ module Shift_Buffer_tb;
     wire [63:0] dout;         // 64-bit output (shifted data)
     wire pkt_rec;             // Packet received flag
     reg en;
+    integer i;
+    integer ex_file;
+    reg [255:0] filename;
 
     // Instantiate the Shift_Buffer module
     Shift_Buffer uut (
@@ -24,6 +27,7 @@ module Shift_Buffer_tb;
         clk = 0;
         forever #500000 clk = ~clk; // Period is 1 ms (500ns high, 500ns low)
     end
+
     // Stimulus: Apply reset and then send data
     initial begin
         // Initialize signals
@@ -31,6 +35,12 @@ module Shift_Buffer_tb;
         clk = 0;
         rst = 0;
 	en = 1;
+	i = 5;  // Example value for i
+        // Concatenate the string parts to create the filename
+        filename = {"ex", i, ".txt"};
+        ex_file = $fopen(filename, "r");
+	$display( "%s", filename);
+        $fwrite(ex_file, "hi");
 
         // Apply reset
         rst = 1;

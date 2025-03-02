@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/SH_SYNC
+vSH_SYNC
+2../../rtl/SH_SYNC/SH_SYNC.v
+!s110 1740764626
+!i10b 1
+!s100 7E8M@=o7=nX2REcLTXGd[2
+IWMe>Rc^mdAK7;T3:8:odj3
+R0
+w1740764486
+8../../rtl/SH_SYNC/SH_SYNC.v
+F../../rtl/SH_SYNC/SH_SYNC.v
+!i122 6
+L0 1 176
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 OP;L;2024.2;79
+r1
+!s85 0
+31
+Z3 !s108 1740764626.000000
+!s107 ../../rtl/SH_SYNC/SH_SYNC.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SH_SYNC/SH_SYNC.v|
+!i113 1
+Z4 o+acc
+Z5 tCvgOpt 0
+n@s@h_@s@y@n@c
+vSH_SYNC_tb
+2SH_SYNC_tb.v
+!s110 1740764627
+!i10b 1
+!s100 =R`MQzL7iGK?b]Doeik_G2
+IHNO3TlVJk2[K8c`dT7G=32
+R0
+w1740764592
+8SH_SYNC_tb.v
+FSH_SYNC_tb.v
+!i122 7
+L0 3 146
+R1
+R2
+r1
+!s85 0
+31
+R3
+!s107 SH_SYNC_tb.v|
+!s90 -reportprogress|300|+acc|-incr|SH_SYNC_tb.v|
+!i113 1
+R4
+R5
+n@s@h_@s@y@n@c_tb

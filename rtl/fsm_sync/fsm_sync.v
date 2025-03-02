@@ -4,8 +4,9 @@ module fsm_sync (
     input wire rst,        // Asynchronous reset
     input wire rfin,         // Input signal
     input wire sh_en,
-    output reg state,           // Output signal
-    output reg sh_en_sync2	//synchronized sh_en
+    input wire fsm_rst, 	// allow sync-ing
+    output reg rfin_sync,         // Input signal
+    output reg state           // Output signal
 );
 
 
@@ -14,7 +15,7 @@ module fsm_sync (
     reg sh_en_prev;
 
     //Synchronizing sh_en
-    reg sh_en_sync1;
+//    reg sh_en_sync1;
 
     // State Transition Logic
     always @(posedge clk or negedge clk) begin
@@ -26,13 +27,14 @@ module fsm_sync (
 
     always @(posedge clk) begin
 	    if (rst) begin
-		    sh_en_sync1 <= 1'b0;
-		    sh_en_sync2 <= 1'b0;
+//		    sh_en_sync1 <= 1'b0;
+//		    sh_en_sync2 <= 1'b0;
 		    sh_en_prev <= 1'b0;
+		    rfin_sync <= 1'b0;
 	    end else begin
-		    sh_en_sync1 <= sh_en;
-		    sh_en_sync2 <= sh_en_sync1;
-		    sh_en_prev <= sh_en_sync2;
+//		    sh_en_sync1 <= sh_en;
+//		    sh_en_sync2 <= sh_en_sync1;
+		    sh_en_prev <= sh_en;
 	    end
     end
 
@@ -48,6 +50,8 @@ module fsm_sync (
             ACTIVE: begin
 		if (~sh_en && sh_en_prev)
                     next_state = IDLE;
+	        else if (fsm_rst)
+		    next_state = IDLE;
             end
         endcase
     end
