@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
-module Shift_Buffer (din, clk, rst, dout, pkt_rec, en);
-	input din, clk, rst, en;
+module Shift_Buffer (din, clk, rst, dout, pkt_rec, en, pkt_rst);
+	input din, clk, rst, en, pkt_rst;
 	output [63:0] dout;
 	output reg pkt_rec;
 
@@ -13,6 +13,11 @@ module Shift_Buffer (din, clk, rst, dout, pkt_rec, en);
 		if (rst) begin
 			shift_reg <= 64'b0;
 			pkt_rec <= 0;
+			sync1 <= 5'b0;
+			sync2 <= 5'b0;
+			sync3 <= 5'b0;	
+		end else if (pkt_rst) begin
+			shift_reg <= 64'b0;
 			sync1 <= 5'b0;
 			sync2 <= 5'b0;
 			sync3 <= 5'b0;	

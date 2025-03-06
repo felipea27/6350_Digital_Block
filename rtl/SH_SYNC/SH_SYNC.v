@@ -17,7 +17,9 @@ module SH_SYNC (
     localparam SEND_8PULSES = 3'b101;
 
     localparam TIMEOUT_THRESHOLD = 20000; // 2 ms timeout
-    localparam PULSE_INTERVAL_1MS = 10000; // 1 ms 
+//    localparam PULSE_INTERVAL_1MS = 10000; // 1 ms 
+    localparam PULSE_INTERVAL_1MS = 9999; // 1 ms - 100ns for 1 clk cycle 
+    localparam PACKET_SIZE = 64; // How many sh_en pulses 
 
     reg [2:0] state, next_state;
 
@@ -32,6 +34,8 @@ module SH_SYNC (
     reg rfin_prev, rfin_sync1, rfin_sync2, rfin_edge;
     reg rfin2_prev, rfin2_sync1, rfin2_sync2;
     reg [3:0] pulse_8_count; // Counts the 8 pulses for RX low case
+    reg tx_rdy_prev;
+    reg tx_rdy_p;
 
     // State transition logic
     always @(posedge clk) begin
@@ -70,7 +74,7 @@ module SH_SYNC (
             end
 
             WAIT_TXRDY: begin
-                if (tx_rdy) 
+                if (tx_rdy_p) 
                     next_state = SEND_8PULSES;
                 else if (RX)
 		    next_state = IDLE;
@@ -79,7 +83,7 @@ module SH_SYNC (
             end
 
             SEND_8PULSES: begin
-                if (pulse_8_count == 8) 
+                if (pulse_8_count == PACKET_SIZE) 
                     next_state = IDLE;
                 else if (RX)
 		    next_state = IDLE;
@@ -106,12 +110,16 @@ module SH_SYNC (
             rfin_prev <= 0;
             first_pulse_flag <= 1;
 	    fsm_rst <= 0;
+	    tx_rdy_prev <= 0;
+	    tx_rdy_p <= 0;
         end else begin
             rfin_sync1 <= rfin;
             rfin_sync2 <= rfin_sync1;
             rfin_prev <= rfin_sync2;
 	    rfin_edge <= rfin_sync2 && !rfin_prev;
 
+	    tx_rdy_prev <= tx_rdy;
+	    tx_rdy_p <= tx_rdy && !tx_rdy_prev;
             case (state)
                 IDLE: begin
                     counter <= 0;
@@ -172,6 +180,7 @@ module SH_SYNC (
 
                 WAIT_TXRDY: begin
                     sh_en <= 0; // Wait without sending pulses
+		    counter <= PULSE_INTERVAL_1MS;
                 end
 
                 SEND_8PULSES: begin

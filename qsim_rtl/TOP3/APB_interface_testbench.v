@@ -16,15 +16,11 @@ module testbench;
 
 	reg rfin;
 	reg [63:0] MDATA;
+	reg [63:0] MDATA_I;
+	reg [63:0] data_sent;
 	reg [1:0] slave;
 	reg [1:0] mode;
 	reg RX_MODE;
-	reg [9:0] rfdata1 = 10'b0001011100;
-	reg [9:0] rfdata1c; 
-	reg [20:0] rfdata2 = 21'b011101010011101100010;
-	reg [20:0] rfdata2c;
-	reg [22:0] rfdata3 = 23'b01010110010101101101010;
-	reg [22:0] rfdata3c;
 
 	// Outputs
 	wire o_WR0;
@@ -47,10 +43,12 @@ module testbench;
 	integer timing_file;
 	integer rand_file;
 	integer gaus_file;
+	integer packet_file;
 	time rfin_time, sh_en_time;
 	integer i = 0;
 	integer i2 = 0;
 	real gaussian_values[0:9999]; // Array to store 10,000 values
+	reg [63:0] packets [0:9999]; // Array to store 10,000 values
 
 
 //	assign sh_en = .uut.SPI_modul2.top_slave.SH_EN;
@@ -156,12 +154,12 @@ module testbench;
 			mode = 2'b00;
 			RX_MODE = 0;
 	    		$fwrite(tx_file, "Data sent: %b\n", MDATA);
-			
+			#1000000;	
 			repeat (8) begin
 				APB_WRITE(mode, 2'b11, SCK, MDATA[63:56]);
-				repeat (8) #999200;
+				repeat (8) #999900; //#1000000;
+				//$display($time);
 				MDATA = MDATA << 8;
-				#8000;
 			end
 		end
 	endtask
@@ -185,53 +183,22 @@ module testbench;
 	endtask
 
 	task SEND_SYNC;
-		input integer position;
+		input reg [63:0] mdata;
+		input integer mean_high;
+		input integer mean_period; 
 		begin
-
-			rfdata1c = rfdata1;
-			rfdata2c = rfdata2;
-			rfdata3c = rfdata3;
+			MDATA_I = mdata;
 			RX_MODE = 1;
-			//Send Random 10 bits
-			repeat (10) begin
-				RFIN(rfdata1c[9], 1000000, position, 100);
-				rfdata1c = rfdata1c << 1;
-			end
-	    		
+			//Send Preamble bits
 			repeat (8) begin
-				RFIN(1, 1000000, position, 100);
+				RFIN(1, mean_period, 50, mean_high);
               		end
 
-			$fwrite(rx_file, "Sending: fdd4ec5f595b51ff\n");
+			$fwrite(rx_file, "Sending: %h\n", MDATA_I);
 			
-			// send bit 63
-			RFIN(1, 1000000, position, 100);
-
-			//Send sync bits '11111' at locations 62, 61, 60, 59, 58
-			repeat (5) begin
-				RFIN(1, 1000000, position, 100);
-              		end
-
-			//Send random  bits from locations 57 to 37 (21 bits)
-			repeat (21) begin
-				RFIN(rfdata2c[20], 1000000, position, 100);
-				rfdata2c = rfdata2c << 1;
-			end
-
-			//Send sync bits '11111' at locations 36, 35, 34, 33, 32
-			repeat (5) begin
-				RFIN(1, 1000000, position, 100);
-			end
-
-			//Send random bits from locations 31 to 9 (23 bits)
-			repeat (23) begin
-				RFIN(rfdata3c[20], 1000000, position, 100);
-				rfdata3c = rfdata3c << 1;
-			end
-
-			//Send sync bits '11111' at locations 2, 4, 5, 6, 8
-			repeat (9) begin
-				RFIN(1, 1000000, position, 100);
+			repeat (64) begin
+				RFIN(MDATA_I[63], mean_period, 50, mean_high);
+				MDATA_I = MDATA_I << 1;	
 			end
 		end
 	endtask
@@ -275,7 +242,6 @@ module testbench;
             
 	    rfin = rfin_value;
 	    rfin_time = $time;
-            
 	    #adj_high_time;
             rfin = 0;
 	    #delay_after;
@@ -294,11 +260,13 @@ module testbench;
         always @(posedge sh_en) begin
                 sh_en_time = $time;
                 $fwrite(timing_file, "%0t\n",  sh_en_time - rfin_time);
-                #250;
-		if(RX_MODE == 0) begin
-                	$fwrite(tx_file, "Time: %0t, ", $time);
-                	$fwrite(tx_file, "TX_OUT: %b\n", TX_OUT);
-		end
+		fork begin
+			#250;
+			if(RX_MODE == 0) begin
+				$fwrite(tx_file, "Time: %0t, ", $time);
+				$fwrite(tx_file, "TX_OUT: %b\n", TX_OUT);
+			end
+		end join
 	end
 
 	
@@ -319,32 +287,32 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("DATA/p9/TX_OUT.txt", "w");
+		tx_file = $fopen("DATA/std2/TX_OUT.txt", "w");
 		if (tx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rx_file = $fopen("DATA/p9/PRDATA.txt", "w");
+		rx_file = $fopen("DATA/std2/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		timing_file = $fopen("DATA/p9/timing_log.txt", "w");
+		timing_file = $fopen("DATA/std2/timing_log.txt", "w");
    		if (!timing_file) begin
 			$display("Error: Could not open file.");
 			$finish;
 		end
 
-		rand_file = $fopen("DATA/p9/rand_factors.txt", "w");
+		rand_file = $fopen("DATA/std2/rand_factors.txt", "w");
    		if (!rand_file) begin
 			$display("Error: Could not open file.");
 			$finish;
 		end
 
 		
-		gaus_file = $fopen("gaussian_values.txt", "r");
+		gaus_file = $fopen("std/gaussian_values2.txt", "r");
 
 		// Read the file and store values in the array
 		for (i2 = 0; i2 < 10000; i2 = i2 + 1) begin
@@ -353,22 +321,33 @@ module testbench;
 
 		$fclose(gaus_file);
 
+		$readmemb("packets.txt", packets); // read in array of packets
+
 		#50
 		#100
 		i_PRESETn = 1;
 		#200
 		
 		BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		#980453;	//alignment so that position is true	
-		//SEND_SYNC(90);
-		repeat(1000) begin
-			i = i + 1; // Increment counter
-			$display("Iteration: %0d", i);
-			SEND_SYNC(90);
-			#800;
+		repeat(1) begin	
+			repeat(1) begin
+				i = i + 1; // Increment counter
+				//$display("RX Iteration: %0d", i);
+				MDATA = packets[i];
+				//$display("%b", MDATA);
+				SEND_SYNC(MDATA, 100, 1000000);
+				#800;
+			end
+			i = i-1;
+			#1000000;
+			
+			repeat(1) begin
+				i = i + 1; // Increment counter
+				$display("TX Iteration: %0d", i);
+				MDATA = packets[i];
+				BYTE_WRITE(SCK4, MDATA);
+			end
 		end
-
-		#800000;
 
 		$fclose(tx_file);
 		$fclose(rx_file);

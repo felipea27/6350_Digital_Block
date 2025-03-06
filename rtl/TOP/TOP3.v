@@ -23,6 +23,7 @@ module TOP (
     reg SPI_LD;
     reg [1:0] SPI_MODE;
     reg PKT_LD;
+    reg PKT_RST;
     reg pkt_rec_prev;
    
     //TX registers 
@@ -58,7 +59,7 @@ module TOP (
     // Shift Buffer
     Shift_Buffer shift_buf_inst (
         .din(DIN), .clk(clk), .rst(rst), .dout(SHIFT_OUT),
-        .pkt_rec(pkt_rec), .en(SH_EN)
+        .pkt_rec(pkt_rec), .en(SH_EN), .pkt_rst(PKT_RST)
     );
 
     // Packet Register
@@ -92,6 +93,7 @@ module TOP (
 	    SPI_LD <= 0;
 	    PKT_EN <= 0;
 	    PKT_LD <= 0;
+	    PKT_RST <= 0;
 	    pkt_rec_prev <= 0;
 	    SPI_MODE <= 2'b00;
 
@@ -104,6 +106,7 @@ module TOP (
 
         end else if (RX) begin
 	    pkt_rec_prev <= pkt_rec;
+	    tx_state <= TX_INIT;
             case (rx_state)
                 INIT: begin
                     counter <= 0;
@@ -119,6 +122,7 @@ module TOP (
 		    SPI_RDY <= 0;
 		    SPI_LD <= 0;
 		    PKT_EN <= 0;
+		    PKT_RST <= 0;
                     counter <= 4'd8;
 			if (pkt_rec_prev == 0 && pkt_rec == 1) begin //needs to be posedge of of pkt_rec
 				rx_state <= PKT_STORE;
@@ -131,10 +135,12 @@ module TOP (
 		    PKT_LD <= 0;
 		    SPI_RDY <= 0;
 		    PKT_EN <= 0;
+		    PKT_RST <= 1;
 		    rx_state <= SPI_SHIFT;
                 end
         
 		SPI_SHIFT: begin
+			PKT_RST <= 0;
 			if (CS == 0) begin
 				rx_state <= SPI_TRANSFER;
                     		SPI_RDY <= 1;
