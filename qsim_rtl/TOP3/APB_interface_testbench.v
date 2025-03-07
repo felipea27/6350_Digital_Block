@@ -15,7 +15,7 @@ module testbench;
 	reg [9:0] i_BASE_ADDR;
 
 	reg rfin;
-	reg [63:0] MDATA;
+	reg [71:0] MDATA;
 	reg [63:0] MDATA_I;
 	reg [63:0] data_sent;
 	reg [1:0] slave;
@@ -101,6 +101,7 @@ module testbench;
 	localparam SCK4	= 2'b01; //4MHZ
 	localparam SCK2	= 2'b10; //2MHZ
 	localparam SCK1	= 2'b11; //1MHZ
+	localparam PREAMBLE = 8'hff;
 
 
 	
@@ -149,14 +150,14 @@ module testbench;
 	
 	task BYTE_WRITE (SCK, input [63:0] mdata);
 		begin
-			MDATA = mdata;
+			MDATA = {PREAMBLE, mdata};
 			slave = 2'b11;
 			mode = 2'b00;
 			RX_MODE = 0;
 	    		$fwrite(tx_file, "Data sent: %b\n", MDATA);
 			#1000000;	
-			repeat (8) begin
-				APB_WRITE(mode, 2'b11, SCK, MDATA[63:56]);
+			repeat (9) begin // ADJUST FOR PREAMBLE
+				APB_WRITE(mode, 2'b11, SCK, MDATA[71:64]); // ADJUST FOR PREAMBLE
 				repeat (8) #999900; //#1000000;
 				//$display($time);
 				MDATA = MDATA << 8;
@@ -330,7 +331,7 @@ module testbench;
 		
 		BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
 		repeat(1) begin	
-			repeat(1) begin
+			repeat(10) begin
 				i = i + 1; // Increment counter
 				//$display("RX Iteration: %0d", i);
 				MDATA = packets[i];
@@ -338,10 +339,10 @@ module testbench;
 				SEND_SYNC(MDATA, 100, 1000000);
 				#800;
 			end
-			i = i-1;
+			i = i-10;
 			#1000000;
 			
-			repeat(1) begin
+			repeat(10) begin
 				i = i + 1; // Increment counter
 				$display("TX Iteration: %0d", i);
 				MDATA = packets[i];

@@ -14,12 +14,12 @@ module SH_SYNC (
     localparam COMPUTE    = 3'b010;
     localparam GENERATE   = 3'b011;
     localparam WAIT_TXRDY = 3'b100;
-    localparam SEND_8PULSES = 3'b101;
+    localparam SEND_TX_PULSES = 3'b101;
 
-    localparam TIMEOUT_THRESHOLD = 20000; // 2 ms timeout
-//    localparam PULSE_INTERVAL_1MS = 10000; // 1 ms 
+    localparam TIMEOUT_THRESHOLD = 14000; // 1.4 ms timeout
     localparam PULSE_INTERVAL_1MS = 9999; // 1 ms - 100ns for 1 clk cycle 
-    localparam PACKET_SIZE = 64; // How many sh_en pulses 
+    localparam PACKET_SIZE = 64; 
+    localparam PREAMBLE_SIZE = 8; 
 
     reg [2:0] state, next_state;
 
@@ -33,7 +33,7 @@ module SH_SYNC (
     reg first_pulse_flag;
     reg rfin_prev, rfin_sync1, rfin_sync2, rfin_edge;
     reg rfin2_prev, rfin2_sync1, rfin2_sync2;
-    reg [3:0] pulse_8_count; // Counts the 8 pulses for RX low case
+    reg [6:0] pulse_pack_count; 
     reg tx_rdy_prev;
     reg tx_rdy_p;
 
@@ -56,7 +56,7 @@ module SH_SYNC (
             end
 
             COLLECTING: begin
-                if (pulse_count == 8) 
+                if (pulse_count == PREAMBLE_SIZE) 
                     next_state = COMPUTE;
                 else if (timeout_counter >= TIMEOUT_THRESHOLD) 
                     next_state = IDLE;
@@ -67,7 +67,7 @@ module SH_SYNC (
             COMPUTE: next_state = GENERATE;
 
             GENERATE: begin
-                if (pulse_gen_count == 65) 
+                if (pulse_gen_count == PACKET_SIZE + 1) 
                     next_state = IDLE;
                 else 
                     next_state = GENERATE;
@@ -75,20 +75,20 @@ module SH_SYNC (
 
             WAIT_TXRDY: begin
                 if (tx_rdy_p) 
-                    next_state = SEND_8PULSES;
+                    next_state = SEND_TX_PULSES;
                 else if (RX)
 		    next_state = IDLE;
 	    	else
                     next_state = WAIT_TXRDY;
             end
 
-            SEND_8PULSES: begin
-                if (pulse_8_count == PACKET_SIZE) 
+            SEND_TX_PULSES: begin
+                if (pulse_pack_count == PACKET_SIZE + PREAMBLE_SIZE) 
                     next_state = IDLE;
                 else if (RX)
 		    next_state = IDLE;
 	    	else
-                    next_state = SEND_8PULSES;
+                    next_state = SEND_TX_PULSES;
             end
 
             default: next_state = IDLE;
@@ -102,7 +102,7 @@ module SH_SYNC (
             pulse_count <= 0;
             avg_interval <= 0;
             pulse_gen_count <= 0;
-            pulse_8_count <= 0;
+            pulse_pack_count <= 0;
             sh_en <= 0;
             timeout_counter <= 0;
             rfin_sync1 <= 0;
@@ -126,7 +126,7 @@ module SH_SYNC (
                     interval_sum <= 0;
                     pulse_count <= 0;
                     pulse_gen_count <= 0;
-                    pulse_8_count <= 0;
+                    pulse_pack_count <= 0;
                     sh_en <= 0;
                     first_pulse_flag <= 1;
 		    fsm_rst <= 0;
@@ -155,13 +155,13 @@ module SH_SYNC (
 
                 COMPUTE: begin
 		    fsm_rst <= 0;
-		    if (pulse_count == 8) begin
-                        avg_interval <= interval_sum / 7;
+		    if (pulse_count == PREAMBLE_SIZE) begin
+                        avg_interval <= interval_sum / (PREAMBLE_SIZE-1);
 		    end
                 end
 
                 GENERATE: begin
-                    if (pulse_gen_count < 66) begin
+                    if (pulse_gen_count < PACKET_SIZE + 2) begin
                         if ((first_pulse_flag && counter == avg_interval / 2) || 
                            // (!first_pulse_flag && counter == 10000)) begin
                             (!first_pulse_flag && counter == avg_interval)) begin
@@ -180,14 +180,14 @@ module SH_SYNC (
 
                 WAIT_TXRDY: begin
                     sh_en <= 0; // Wait without sending pulses
-		    counter <= PULSE_INTERVAL_1MS;
+		    counter <= PULSE_INTERVAL_1MS/2;
                 end
 
-                SEND_8PULSES: begin
+                SEND_TX_PULSES: begin
                     if (counter == PULSE_INTERVAL_1MS) begin
                         sh_en <= 1;
                         counter <= 0;
-                        pulse_8_count <= pulse_8_count + 1;
+                        pulse_pack_count <= pulse_pack_count + 1;
                     end else begin
                         sh_en <= 0;
                         counter <= counter + 1;

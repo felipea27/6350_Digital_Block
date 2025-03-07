@@ -25,4 +25,4 @@ vlog +acc -incr APB_interface_testbench.v
 vsim +acc -t ps -lib work testbench
 do waveformat.do   
 run -all
-quit -f
+#quit -f
