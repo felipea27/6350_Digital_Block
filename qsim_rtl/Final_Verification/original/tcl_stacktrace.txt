@@ -1,0 +1,50 @@
+Sat Mar 01 00:55:57 EST 2025
+Trace back: 
+    while executing
+"vsim_kernel ContextView absname $id"
+    (object "::AbstractDataset::simDataset0" method "::SimDataset::absname" body line 13)
+    invoked from within
+"$this absname $id"
+    (object "::AbstractDataset::simDataset0" method "::AbstractDataset::fullname" body line 2)
+    invoked from within
+"[$w GetData nameSpace] fullname $id"
+    (procedure "QStructure::FormatGet" line 2)
+    invoked from within
+"QStructure::FormatGet .main_pane.structure PkDfKq"
+    ("eval" body line 1)
+    invoked from within
+"eval $itk_option(-fmtgetcommand) $raw"
+    (object "::.main_pane.structure.interior.cs.body.struct" method "::vsimwidgets::Hierarchy::selection" body line 57)
+    invoked from within
+"$w selection get"
+    (procedure "QStructure::_selectHandler" line 8)
+    invoked from within
+"QStructure::_selectHandler .main_pane.structure.interior.cs.body.struct 0 4000"
+    (command handling selection)
+  <2:/tools/mentor/ModelSim/2024.2/modelsim_dlx/linuxpe/tk8.6/bgerror.tcl:106: ::tkerror {}
+  <1:eval:1: ::tk::dialog::error::bgerror {}
+Sat Mar 01 11:56:37 EST 2025
+Trace back: 
+    while executing
+"vsim_kernel ContextView absname $id"
+    (object "::AbstractDataset::simDataset0" method "::SimDataset::absname" body line 13)
+    invoked from within
+"$this absname $id"
+    (object "::AbstractDataset::simDataset0" method "::AbstractDataset::fullname" body line 2)
+    invoked from within
+"[$w GetData nameSpace] fullname $id"
+    (procedure "QStructure::FormatGet" line 2)
+    invoked from within
+"QStructure::FormatGet .main_pane.structure PkDfKq"
+    ("eval" body line 1)
+    invoked from within
+"eval $itk_option(-fmtgetcommand) $raw"
+    (object "::.main_pane.structure.interior.cs.body.struct" method "::vsimwidgets::Hierarchy::selection" body line 57)
+    invoked from within
+"$w selection get"
+    (procedure "QStructure::_selectHandler" line 8)
+    invoked from within
+"QStructure::_selectHandler .main_pane.structure.interior.cs.body.struct 0 4000"
+    (command handling selection)
+  <2:/tools/mentor/ModelSim/2024.2/modelsim_dlx/linuxpe/tk8.6/bgerror.tcl:106: ::tkerror {}
+  <1:eval:1: ::tk::dialog::error::bgerror {}

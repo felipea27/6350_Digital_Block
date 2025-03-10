@@ -60,7 +60,9 @@ module SH_SYNC (
                     next_state = COMPUTE;
                 else if (timeout_counter >= TIMEOUT_THRESHOLD) 
                     next_state = IDLE;
-                else 
+                else if (!RX)
+		    next_state = WAIT_TXRDY;
+	    	else
                     next_state = COLLECTING;
             end
 
@@ -69,7 +71,9 @@ module SH_SYNC (
             GENERATE: begin
                 if (pulse_gen_count == PACKET_SIZE + 1) 
                     next_state = IDLE;
-                else 
+                else if (!RX)
+		    next_state = WAIT_TXRDY;
+    		else	    
                     next_state = GENERATE;
             end
 
