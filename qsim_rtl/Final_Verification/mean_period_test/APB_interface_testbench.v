@@ -100,7 +100,7 @@ module testbench;
 	localparam SCK4	= 2'b01; //4MHZ
 	localparam SCK2	= 2'b10; //2MHZ
 	localparam SCK1	= 2'b11; //1MHZ
-	localparam PREAMBLE = 8'hff;
+	localparam PREAMBLE = 8'b11111111;
 
 
 	
@@ -190,8 +190,8 @@ module testbench;
 			MDATA_I = mdata;
 			RX_MODE = 1;
 			//Send Preamble bits
-			repeat (8) begin
-				RFIN(1, mean_period, 50, mean_high); // Adjust for mean period
+			repeat (8) begin //Adjust for preamble 
+				RFIN(1, 1010000, 50, mean_high); // Adjust for mean period
               		end
 
 			$fwrite(rx_file, "Sending: %h\n", MDATA_I);
@@ -220,8 +220,8 @@ module testbench;
 
 	    rand_index = $random;
 	    rand_index = ((rand_index < 0 ? -rand_index : rand_index) % 10000);
-	    rand_factor = gaussian_values[rand_index];
-    	    //rand_factor = 0;
+	    //rand_factor = gaussian_values[rand_index];
+    	    rand_factor = 0;
 	    $fwrite(rand_file, "%f\n",  rand_factor);
 	    percent = 100;
 
@@ -284,33 +284,33 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("../DATA/std2/TX_OUT.txt", "w");
-		if (tx_file == 0) begin
-			$display("Error opening file for writing!");
-			$finish;
-		end
+	//	tx_file = $fopen("DATA/std1/TX_OUT.txt", "w");
+	//	if (tx_file == 0) begin
+	//		$display("Error opening file for writing!");
+	//		$finish;
+	//	end
 
-		rx_file = $fopen("../DATA/std2/PRDATA.txt", "w");
+		rx_file = $fopen("DATA/period_1010000/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rand_file = $fopen("../DATA/std2/rand_factors.txt", "w");
-   		if (!rand_file) begin
-			$display("Error: Could not open file.");
-			$finish;
-		end
+	//	rand_file = $fopen("DATA/std0/rand_factors.txt", "w");
+   	//	if (!rand_file) begin
+	//		$display("Error: Could not open file.");
+	//		$finish;
+	//	end
 
 		
-		gaus_file = $fopen("../std/gaussian_values2.txt", "r");
+	//	gaus_file = $fopen("../std/gaussian_values0.txt", "r");
 
-		// Read the file and store values in the array
-		for (i2 = 0; i2 < 10000; i2 = i2 + 1) begin
-		    $fscanf(gaus_file, "%f\n", gaussian_values[i2]);
-		end
+	//	// Read the file and store values in the array
+	//	for (i2 = 0; i2 < 10000; i2 = i2 + 1) begin
+	//	    $fscanf(gaus_file, "%f\n", gaussian_values[i2]);
+	//	end
 
-		$fclose(gaus_file);
+	//	$fclose(gaus_file);
 
 		$readmemb("../packets.txt", packets); // read in array of packets
 
@@ -319,8 +319,9 @@ module testbench;
 		i_PRESETn = 1;
 		#200
 		
-		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		repeat(50) begin	
+	//	BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
+		repeat(1) begin	
+
 			repeat(10) begin
 				i = i + 1; // Increment counter
 				//$display("RX Iteration: %0d", i);
@@ -339,6 +340,7 @@ module testbench;
 		//		BYTE_WRITE(SCK4, MDATA);
 		//	end
 		end
+		#10000000
 
 		$fclose(tx_file);
 		$fclose(rx_file);
