@@ -1,20 +1,37 @@
-set target_library [list /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db]
-set link_library [list /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db]
-set symbol_library ""
+set top_level fsm_sync
 
-set design fsm_sync ;#change design name
+source -verbose "../common_scripts/libs.tcl" 
 
-read_file -format verilog {../../rtl/fsm_sync/fsm_sync.v}  ;#change path
-analyze -library WORK -format verilog {../../rtl/fsm_sync/fsm_sync.v} ;#change path
-elaborate $design -architecture verilog -library WORK
-analyze {}
+analyze -format verilog "../../rtl/$top_level/$top_level.v"
+elaborate $top_level
+list_designs
 
-source constraints.tcl
+if {[check_error -v] == 1} { exit 1}
 
-compile -exact_map
+current_design $top_level
+
+link
+
+set_max_fanout 4 $top_level
+set_max_fanout 4 [all_inputs]
+set_max_capacitance 0.005 [all_inputs]
+check_design
+
+source -verbose "./timing.tcl"
+
+set_fix_multiple_port_nets -all -buffer_constants
+
+check_design
+current_design $top_level
+
+link
+
+compile_ultra
+
+check_design
 
 file mkdir report 
-write -hierarchy -format verilog -output ./report/gtlvl.v
+write -hierarchy -format verilog -output "${top_level}.nl.v"
 write_sdc -nosplit -version 2.0 ./report/con.sdc
 report_area -hierarchy > ./report/area.area
 report_timing > ./report/tm.timing
