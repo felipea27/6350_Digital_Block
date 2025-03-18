@@ -1,6 +1,7 @@
 dc_shell -f dc.tcl
 
-rmdir cksum_dir
+rm -rf cksum_dir
+rm -rf alib-52
 rm *.mr
 rm *.log
 rm *svf
