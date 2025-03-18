@@ -3,30 +3,30 @@
 Report : area
 Design : fsm_sync
 Version: V-2023.12-SP1
-Date   : Wed Feb 26 14:25:09 2025
+Date   : Fri Mar  7 17:34:20 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
 Library(s) Used:
 
-    VIRL_std_cells (File: /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db)
+    gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /users/ssokolovskiy/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
 Number of ports:                            6
-Number of nets:                            23
-Number of cells:                           19
-Number of combinational cells:             11
+Number of nets:                            14
+Number of cells:                           10
+Number of combinational cells:              6
 Number of sequential cells:                 4
 Number of macros/black boxes:               0
-Number of buf/inv:                          4
-Number of references:                       6
+Number of buf/inv:                          1
+Number of references:                       7
 
-Combinational area:                 47.039999
-Buf/Inv area:                       12.544000
-Noncombinational area:              73.299202
+Combinational area:                  1.628640
+Buf/Inv area:                        0.125280
+Noncombinational area:               4.635360
 Macro/Black Box area:                0.000000
-Net Interconnect area:      undefined  (No wire load specified)
+Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   120.339201
+Total cell area:                     6.264000
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -37,8 +37,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-fsm_sync                           120.3392    100.0   47.0400    73.2992  0.0000  fsm_sync
+fsm_sync                             6.2640    100.0    1.6286     4.6354  0.0000  fsm_sync
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                  47.0400    73.2992  0.0000
+Total                                                   1.6286     4.6354  0.0000
 
 1

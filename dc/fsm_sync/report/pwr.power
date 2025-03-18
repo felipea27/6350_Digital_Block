@@ -1,34 +1,33 @@
-Loading db file '/tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db'
-Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
-Warning: There is no defined clock in the design. (PWR-80)
-Warning: Design has unannotated primary inputs. (PWR-414)
-Warning: Design has unannotated sequential cell outputs. (PWR-415)
  
 ****************************************
 Report : power
         -analysis_effort low
 Design : fsm_sync
 Version: V-2023.12-SP1
-Date   : Wed Feb 26 14:25:10 2025
+Date   : Fri Mar  7 17:34:20 2025
 ****************************************
 
 
 Library(s) Used:
 
-    VIRL_std_cells (File: /tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db)
+    gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /users/ssokolovskiy/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
 
-Operating Conditions: WC_TIMING   Library: VIRL_std_cells
-Wire Load Model Mode: top
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+fsm_sync               ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 
 
-Global Operating Voltage = 1.08 
+Global Operating Voltage = 0.8  
 Power-specific unit information :
     Voltage Units = 1V
     Capacitance Units = 1.000000pf
     Time Units = 1ns
     Dynamic Power Units = 1mW    (derived from V,C,T units)
-    Leakage Power Units = 1pW
+    Leakage Power Units = 1nW
 
 
 Attributes
@@ -36,14 +35,13 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   6.0650 uW   (71%)
-  Net Switching Power  =   2.4670 uW   (29%)
+  Cell Internal Power  = 121.1830 nW   (97%)
+  Net Switching Power  =   3.7909 nW    (3%)
                          ---------
-Total Dynamic Power    =   8.5320 uW  (100%)
+Total Dynamic Power    = 124.9740 nW  (100%)
 
-Cell Leakage Power     =   1.8326 uW
+Cell Leakage Power     =  46.1191 nW
 
-Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
@@ -51,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
-register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential     3.6525e-03        5.5036e-05        9.2524e+05        4.6328e-03  (  44.70%)
-combinational  2.4125e-03        2.4120e-03        9.0738e+05        5.7318e-03  (  55.30%)
+clock_network  1.1254e-04            0.0000            0.0000        1.1254e-04  (  65.78%)  i
+register       6.6499e-06        2.8898e-06           37.3388        4.6878e-05  (  27.40%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  1.9923e-06        9.0117e-07            8.7802        1.1674e-05  (   6.82%)
 --------------------------------------------------------------------------------------------------
-Total          6.0650e-03 mW     2.4670e-03 mW     1.8326e+06 pW     1.0365e-02 mW
+Total          1.2118e-04 mW     3.7909e-06 mW        46.1191 nW     1.7109e-04 mW
 1
