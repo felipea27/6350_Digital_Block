@@ -9,23 +9,31 @@ module fsm_sync (
     output reg state           // Output signal
 );
 
-
     parameter IDLE = 1'b0, ACTIVE = 1'b1;
-    reg next_state;
+    reg next_state_pos; 
+    reg state_pos;
+    reg next_state_neg;
+    reg state_neg;
     reg sh_en_prev;
 
-    //Synchronizing sh_en
-//    reg sh_en_sync1;
 
-    // State Transition Logic
-    always @(posedge clk or negedge clk) begin
+    // State Transition Logic for positive edge triggered
+    always @(posedge clk or posedge rst) begin
         if (rst)
-            state <= IDLE;
+            state_pos <= IDLE;
         else
-            state <= next_state;
+            state_pos <= next_state_pos;
     end
 
-    always @(posedge clk) begin
+    // State Transition Logic for negative edge triggered
+    always @(negedge clk or posedge rst) begin
+        if (rst)
+            state_neg <= IDLE;
+        else
+            state_neg <= next_state_neg;
+    end
+
+    always @(posedge clk or posedge rst) begin
 	    if (rst) begin
 //		    sh_en_sync1 <= 1'b0;
 //		    sh_en_sync2 <= 1'b0;
@@ -41,20 +49,40 @@ module fsm_sync (
 
     // Next State Logic and Timer Control
     always @(*) begin
-        next_state = state;  // Default to same state
-        case (state)
+        next_state_pos = state_pos;  // Default to same state
+        case (state_pos)
             IDLE: begin
                 if (rfin)
-                    next_state = ACTIVE;
+                    next_state_pos = ACTIVE;
             end
             ACTIVE: begin
 		if (~sh_en && sh_en_prev)
-                    next_state = IDLE;
+                    next_state_pos = IDLE;
 	        else if (fsm_rst)
-		    next_state = IDLE;
+		    next_state_pos = IDLE;
             end
         endcase
     end
+
+   always @(*) begin
+        next_state_neg = state_neg;  // Default to same state
+        case (state_neg)
+            IDLE: begin
+                if (rfin)
+                    next_state_neg = ACTIVE;
+            end
+            ACTIVE: begin
+		if (~sh_en && sh_en_prev)
+                    next_state_neg = IDLE;
+	        else if (fsm_rst)
+		    next_state_neg = IDLE;
+            end
+        endcase
+    end
+
+   always @(*) begin
+	state = (state_neg|state_pos);
+   end
 
 endmodule
 
