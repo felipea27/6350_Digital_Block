@@ -29,8 +29,7 @@ module Dual_Buf (clk, rst, rfin, dout, pkt_rec, sh_en1, sh_en2);
                 .rst(rst),
                 .rfin(rfin),
                 .sh_en(sh_en1),
-                .state(din1),
-                .sh_en_sync2(SH_EN1)
+                .fsm_rst(din1)
         );
 
 
@@ -48,8 +47,7 @@ module Dual_Buf (clk, rst, rfin, dout, pkt_rec, sh_en1, sh_en2);
                 .rst(rst),
                 .rfin(rfin),
                 .sh_en(sh_en2),
-                .state(din2),
-                .sh_en_sync2(SH_EN2)
+                .fsm_rst(din2)
         );
 
 	

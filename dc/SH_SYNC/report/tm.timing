@@ -1,0 +1,165 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SH_SYNC
+Version: V-2023.12-SP1
+Date   : Tue Mar 18 14:30:18 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: interval_sum_reg[30]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: avg_interval_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SH_SYNC            ZeroWLM               gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  interval_sum_reg[30]/CK (UDB116SVT24_FDPQB_1P5)         0.00       0.00 r
+  interval_sum_reg[30]/QN (UDB116SVT24_FDPQB_1P5)         0.06       0.06 r
+  U441/X (UDB116SVT24_INV_0P75)                           0.01       0.07 f
+  U442/X (UDB116SVT24_INV_0P75)                           0.01       0.08 r
+  U830/X (UDB116SVT24_OAI311_1)                           0.03       0.11 f
+  U831/X (UDB116SVT24_NR2_0P75)                           0.02       0.13 r
+  U839/X (UDB116SVT24_OAI22_0P75)                         0.01       0.14 f
+  U840/X (UDB116SVT24_AOI21_0P75)                         0.02       0.16 r
+  U841/X (UDB116SVT24_OR2_0P75)                           0.02       0.18 r
+  U842/X (UDB116SVT24_NR2_0P75)                           0.01       0.19 f
+  U843/X (UDB116SVT24_EN2_V2_0P75)                        0.02       0.21 f
+  U847/X (UDB116SVT24_AOI21_0P75)                         0.02       0.23 r
+  U851/X (UDB116SVT24_ND2_MM_0P75)                        0.01       0.25 f
+  U853/X (UDB116SVT24_OAI21_0P75)                         0.01       0.26 r
+  U854/X (UDB116SVT24_OAI21_0P75)                         0.02       0.28 f
+  U855/X (UDB116SVT24_AOI21_0P75)                         0.02       0.30 r
+  U856/X (UDB116SVT24_AN2_1)                              0.02       0.31 r
+  U857/X (UDB116SVT24_AOI21_0P75)                         0.01       0.32 f
+  U858/X (UDB116SVT24_OAI21B_1)                           0.02       0.34 f
+  U862/X (UDB116SVT24_AOI21_0P75)                         0.02       0.36 r
+  U866/X (UDB116SVT24_ND2_MM_0P75)                        0.01       0.37 f
+  U867/X (UDB116SVT24_OAI21_0P75)                         0.01       0.38 r
+  U868/X (UDB116SVT24_OAI21_0P75)                         0.02       0.40 f
+  U869/X (UDB116SVT24_AOI21_0P75)                         0.02       0.42 r
+  U870/X (UDB116SVT24_AN2_1)                              0.02       0.44 r
+  U871/X (UDB116SVT24_AOI21_0P75)                         0.01       0.45 f
+  U872/X (UDB116SVT24_OAI21B_1)                           0.02       0.47 f
+  U876/X (UDB116SVT24_AOI21_0P75)                         0.02       0.49 r
+  U880/X (UDB116SVT24_ND2_MM_0P75)                        0.01       0.50 f
+  U881/X (UDB116SVT24_OAI21_0P75)                         0.01       0.51 r
+  U882/X (UDB116SVT24_OAI21_0P75)                         0.02       0.53 f
+  U883/X (UDB116SVT24_AOI21_0P75)                         0.02       0.55 r
+  U884/X (UDB116SVT24_AN2_1)                              0.02       0.57 r
+  U885/X (UDB116SVT24_AOI21_0P75)                         0.01       0.57 f
+  U886/X (UDB116SVT24_OAI21B_1)                           0.02       0.59 f
+  U890/X (UDB116SVT24_AOI21_0P75)                         0.02       0.61 r
+  U894/X (UDB116SVT24_ND2_MM_0P75)                        0.01       0.63 f
+  U895/X (UDB116SVT24_OAI21_0P75)                         0.01       0.63 r
+  U896/X (UDB116SVT24_OAI21_0P75)                         0.02       0.65 f
+  U897/X (UDB116SVT24_AOI21_0P75)                         0.02       0.67 r
+  U898/X (UDB116SVT24_AN2_1)                              0.02       0.69 r
+  U899/X (UDB116SVT24_AOI21_0P75)                         0.01       0.70 f
+  U900/X (UDB116SVT24_OAI21B_1)                           0.02       0.72 f
+  U904/X (UDB116SVT24_AOI21_0P75)                         0.02       0.74 r
+  U906/X (UDB116SVT24_ND2_MM_0P75)                        0.01       0.75 f
+  U907/X (UDB116SVT24_OAI21_0P75)                         0.01       0.76 r
+  U908/X (UDB116SVT24_OAI21_0P75)                         0.02       0.78 f
+  U911/X (UDB116SVT24_AOI21_0P75)                         0.02       0.80 r
+  U915/X (UDB116SVT24_AN2_1)                              0.02       0.82 r
+  U916/X (UDB116SVT24_AOI21_0P75)                         0.01       0.82 f
+  U917/X (UDB116SVT24_OAI21B_1)                           0.02       0.85 f
+  U918/X (UDB116SVT24_AOI21_0P75)                         0.02       0.86 r
+  U922/X (UDB116SVT24_EN2_V2_0P75)                        0.03       0.89 f
+  U924/X (UDB116SVT24_OR3B_0P75)                          0.03       0.92 f
+  U925/X (UDB116SVT24_AN2_1)                              0.02       0.93 f
+  U930/X (UDB116SVT24_NR2_0P75)                           0.01       0.94 r
+  U933/X (UDB116SVT24_INV_0P75)                           0.01       0.95 f
+  U934/X (UDB116SVT24_EN2_V2_0P75)                        0.03       0.98 f
+  U935/X (UDB116SVT24_AN3B_0P75)                          0.01       0.99 r
+  U938/X (UDB116SVT24_NR2_0P75)                           0.01       1.00 f
+  U940/X (UDB116SVT24_NR2_0P75)                           0.02       1.02 r
+  U941/X (UDB116SVT24_EN2_V2_0P75)                        0.03       1.04 r
+  U943/X (UDB116SVT24_NR3_0P75)                           0.01       1.06 f
+  U946/X (UDB116SVT24_NR2_0P75)                           0.01       1.07 r
+  U948/X (UDB116SVT24_OR2_0P75)                           0.02       1.09 r
+  U951/X (UDB116SVT24_OAI21_0P75)                         0.03       1.12 f
+  U953/X (UDB116SVT24_NR3_0P75)                           0.02       1.14 r
+  U954/X (UDB116SVT24_NR2B_0P75)                          0.01       1.15 f
+  U957/X (UDB116SVT24_NR2_0P75)                           0.01       1.16 r
+  U958/X (UDB116SVT24_INV_0P75)                           0.01       1.18 f
+  U959/X (UDB116SVT24_EO2_V2_1)                           0.02       1.20 f
+  U962/X (UDB116SVT24_AN3B_0P75)                          0.02       1.21 f
+  U965/X (UDB116SVT24_NR2_0P75)                           0.01       1.23 r
+  U967/X (UDB116SVT24_OR2_0P75)                           0.02       1.25 r
+  U969/X (UDB116SVT24_OAI21_0P75)                         0.03       1.28 f
+  U970/X (UDB116SVT24_NR3_0P75)                           0.02       1.29 r
+  U973/X (UDB116SVT24_NR2_0P75)                           0.01       1.31 f
+  U975/X (UDB116SVT24_OR2_0P75)                           0.02       1.33 f
+  U979/X (UDB116SVT24_EN2_V2_0P75)                        0.03       1.36 f
+  U980/X (UDB116SVT24_NR3_0P75)                           0.02       1.37 r
+  U981/X (UDB116SVT24_NR2B_0P75)                          0.01       1.39 f
+  U984/X (UDB116SVT24_NR2_0P75)                           0.01       1.40 r
+  U985/X (UDB116SVT24_INV_0P75)                           0.01       1.41 f
+  U986/X (UDB116SVT24_EO2_V2_1)                           0.02       1.43 f
+  U989/X (UDB116SVT24_AN3B_0P75)                          0.02       1.45 f
+  U992/X (UDB116SVT24_NR2_0P75)                           0.01       1.46 r
+  U994/X (UDB116SVT24_OR2_0P75)                           0.02       1.48 r
+  U996/X (UDB116SVT24_OAI21_0P75)                         0.03       1.51 f
+  U997/X (UDB116SVT24_NR3_0P75)                           0.02       1.53 r
+  U1000/X (UDB116SVT24_NR2_0P75)                          0.01       1.54 f
+  U1002/X (UDB116SVT24_OR2_0P75)                          0.02       1.56 f
+  U1006/X (UDB116SVT24_EN2_V2_0P75)                       0.03       1.59 f
+  U1007/X (UDB116SVT24_NR3_0P75)                          0.02       1.61 r
+  U1008/X (UDB116SVT24_NR2B_0P75)                         0.01       1.62 f
+  U1011/X (UDB116SVT24_NR2_0P75)                          0.01       1.63 r
+  U1012/X (UDB116SVT24_INV_0P75)                          0.01       1.65 f
+  U1013/X (UDB116SVT24_EO2_V2_1)                          0.02       1.67 f
+  U1016/X (UDB116SVT24_AN3B_0P75)                         0.02       1.68 f
+  U1019/X (UDB116SVT24_NR2_0P75)                          0.01       1.70 r
+  U1021/X (UDB116SVT24_OR2_0P75)                          0.02       1.72 r
+  U1023/X (UDB116SVT24_OAI21_0P75)                        0.03       1.75 f
+  U1024/X (UDB116SVT24_NR3_0P75)                          0.02       1.76 r
+  U1027/X (UDB116SVT24_NR2_0P75)                          0.01       1.77 f
+  U1029/X (UDB116SVT24_OR2_0P75)                          0.02       1.80 f
+  U1033/X (UDB116SVT24_EN2_V2_0P75)                       0.03       1.83 f
+  U1034/X (UDB116SVT24_NR3_0P75)                          0.02       1.84 r
+  U1035/X (UDB116SVT24_NR2_0P75)                          0.01       1.85 f
+  U1037/X (UDB116SVT24_OR2_0P75)                          0.02       1.88 f
+  U1042/X (UDB116SVT24_EN2_V2_0P75)                       0.03       1.91 f
+  U1043/X (UDB116SVT24_NR3_0P75)                          0.02       1.92 r
+  U1044/X (UDB116SVT24_NR2B_0P75)                         0.01       1.94 f
+  U1046/X (UDB116SVT24_NR2_0P75)                          0.02       1.95 r
+  U1047/X (UDB116SVT24_EN2_V2_0P75)                       0.03       1.98 r
+  U1050/X (UDB116SVT24_ND3_0P75)                          0.02       2.00 f
+  U1054/X (UDB116SVT24_ND2_MM_0P75)                       0.01       2.01 r
+  U1058/X (UDB116SVT24_ND2_MM_0P75)                       0.01       2.02 f
+  U1061/X (UDB116SVT24_OAI31_1)                           0.02       2.03 r
+  U1062/X (UDB116SVT24_AOI31_0P75)                        0.01       2.04 f
+  U1063/X (UDB116SVT24_OAI22_0P75)                        0.01       2.06 r
+  avg_interval_reg[0]/D (UDB116SVT24_FDPQB_2)             0.00       2.06 r
+  data arrival time                                                  2.06
+
+  clock clk (rise edge)                                 100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  clock uncertainty                                      -0.10      99.90
+  avg_interval_reg[0]/CK (UDB116SVT24_FDPQB_2)            0.00      99.90 r
+  library setup time                                      0.00      99.90
+  data required time                                                99.90
+  --------------------------------------------------------------------------
+  data required time                                                99.90
+  data arrival time                                                 -2.06
+  --------------------------------------------------------------------------
+  slack (MET)                                                       97.84
+
+
+1

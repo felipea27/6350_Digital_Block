@@ -1,4 +1,6 @@
-#set link_library [list "/tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db"]
-#set target_library [list "/tech/gf/GF_22nm/IP/synopsys/dwc_comp_gf22nsd81p11saduv02ms/std_cells.db"]
-set link_library [list "/users/ssokolovskiy/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db"]
-set target_library [list "/users/ssokolovskiy/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db"]
+set link_library [list "/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db"]
+set target_library [list "/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db"]
+
+
+analyze -format verilog "../fsm_sync/fsm_sync.nl.v"
+analyze -format verilog "../Shift_Buffer/Shift_Buffer.nl.v"
