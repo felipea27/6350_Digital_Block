@@ -2,9 +2,9 @@
 ****************************************
 Report : power
         -analysis_effort low
-Design : fsm_sync
+Design : Dual_Buf
 Version: V-2023.12-SP1
-Date   : Tue Mar 18 14:04:23 2025
+Date   : Tue Mar 18 14:16:40 2025
 ****************************************
 
 
@@ -18,7 +18,7 @@ Wire Load Model Mode: enclosed
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-fsm_sync               ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+Dual_Buf               ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 
 
 Global Operating Voltage = 0.8  
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =  81.5743 nW   (92%)
-  Net Switching Power  =   6.7243 nW    (8%)
+  Cell Internal Power  =   0.0000 mW        
+  Net Switching Power  =   0.0000 mW        
                          ---------
-Total Dynamic Power    =  88.2986 nW  (100%)
+Total Dynamic Power    =   0.0000 mW        
 
-Cell Leakage Power     =  33.1950 nW
+Cell Leakage Power     = 120.5113 nW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  7.1513e-05            0.0000            0.0000        7.1513e-05  (  58.86%)  i
-register       6.7452e-06        1.0895e-06           20.7378        2.8572e-05  (  23.52%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  3.3164e-06        5.6347e-06           12.4555        2.1407e-05  (  17.62%)
+combinational      0.0000            0.0000          120.5096        1.2051e-04  ( 100.00%)
 --------------------------------------------------------------------------------------------------
-Total          8.1574e-05 mW     6.7243e-06 mW        33.1933 nW     1.2149e-04 mW
+Total              0.0000 mW         0.0000 mW       120.5096 nW     1.2051e-04 mW
 1
