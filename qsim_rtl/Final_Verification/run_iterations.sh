@@ -56,7 +56,7 @@ do
         # If we have reached the max number of parallel jobs, wait for one to finish
         if (( running_jobs >= max_jobs )); then
             # Wait for any background job to finish
-            wait -n
+            wait -p PID
             # Decrement the counter as one job has finished
             running_jobs=$((running_jobs - 1))
         fi
@@ -70,6 +70,14 @@ do
 
         ./run.sh > "../logs/log_std$std.txt" 2>&1
         echo "Simulation with std=$std completed."
+	
+	cd ~
+	rm -rf /simulation/fandrade/DATA_bs/std$std
+   	mv ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/original/DATA/std$std /simulation/fandrade/DATA_bs/
+   	#mv ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/original/logs/log_std$std.txt /simulation/fandrade/DATAp$num/
+    	cd ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/original/
+	
+	./nuke.sh
 	rm -rf *wlf
     fi
 done

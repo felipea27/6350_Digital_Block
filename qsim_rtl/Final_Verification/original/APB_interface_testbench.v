@@ -284,26 +284,26 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("../DATA/std2/TX_OUT.txt", "w");
-		if (tx_file == 0) begin
-			$display("Error opening file for writing!");
-			$finish;
-		end
+//		tx_file = $fopen("DATA/std1/TX_OUT.txt", "w");
+//		if (tx_file == 0) begin
+//			$display("Error opening file for writing!");
+//			$finish;
+//		end
 
-		rx_file = $fopen("../DATA/std2/PRDATA.txt", "w");
+		rx_file = $fopen("../DATA/std0/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rand_file = $fopen("../DATA/std2/rand_factors.txt", "w");
-   		if (!rand_file) begin
-			$display("Error: Could not open file.");
-			$finish;
-		end
+//		rand_file = $fopen("DATA/std0/rand_factors.txt", "w");
+  // 		if (!rand_file) begin
+//			$display("Error: Could not open file.");
+//			$finish;
+//		end
 
 		
-		gaus_file = $fopen("../std/gaussian_values2.txt", "r");
+		gaus_file = $fopen("../std/gaussian_values0.txt", "r");
 
 		// Read the file and store values in the array
 		for (i2 = 0; i2 < 10000; i2 = i2 + 1) begin
@@ -312,7 +312,7 @@ module testbench;
 
 		$fclose(gaus_file);
 
-		$readmemb("../packets.txt", packets); // read in array of packets
+		$readmemb("../packets_bs.txt", packets); // read in array of packets
 
 		#50
 		#100
@@ -320,8 +320,8 @@ module testbench;
 		#200
 		
 		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		repeat(50) begin	
-			repeat(10) begin
+		repeat(1) begin	
+			repeat(500) begin
 				i = i + 1; // Increment counter
 				//$display("RX Iteration: %0d", i);
 				MDATA = packets[i];
@@ -339,10 +339,11 @@ module testbench;
 		//		BYTE_WRITE(SCK4, MDATA);
 		//	end
 		end
-
+	
 		$fclose(tx_file);
-		$fclose(rx_file);
-			
+		//$fclose(rx_file);
+		
+		#100000000		
 		$stop;
 	end
       

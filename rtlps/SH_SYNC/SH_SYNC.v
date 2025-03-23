@@ -1,0 +1,209 @@
+module SH_SYNC (
+    input wire clk,
+    input wire rst,
+    input wire rfin,
+    input wire RX,
+    input wire tx_rdy,
+    output reg sh_en,
+    output reg fsm_rst
+);
+
+    // State encoding
+    localparam IDLE       = 3'b000;
+    localparam COLLECTING = 3'b001;
+    localparam COMPUTE    = 3'b010;
+    localparam GENERATE   = 3'b011;
+    localparam WAIT_TXRDY = 3'b100;
+    localparam SEND_TX_PULSES = 3'b101;
+
+    localparam TIMEOUT_THRESHOLD = 14000; // 1.4 ms timeout
+    localparam PULSE_INTERVAL_1MS = 9999; // 1 ms - 100ns for 1 clk cycle 
+    localparam PACKET_SIZE = 64; 
+    localparam PREAMBLE_SIZE = 8; 
+
+    reg [2:0] state, next_state;
+
+    // Internal registers
+    reg [15:0] counter;
+    reg [31:0] interval_sum;
+    reg [3:0] pulse_count;
+    reg [15:0] avg_interval;
+    reg [6:0] pulse_gen_count;
+    reg [15:0] timeout_counter;
+    reg first_pulse_flag;
+    reg rfin_prev, rfin_sync1, rfin_sync2, rfin_edge;
+    reg rfin2_prev, rfin2_sync1, rfin2_sync2;
+    reg [6:0] pulse_pack_count; 
+    reg tx_rdy_prev;
+    reg tx_rdy_p;
+
+    // State transition logic
+    always @(posedge clk) begin
+        if (rst) 
+            state <= IDLE;
+        else 
+            state <= next_state;
+    end
+
+    // Next-state logic
+    always @(*) begin
+        case (state)
+            IDLE: begin
+                if (RX) 
+                    next_state = (rfin_sync2 && !rfin_prev) ? COLLECTING : IDLE;
+                else 
+                    next_state = WAIT_TXRDY;
+            end
+
+            COLLECTING: begin
+                if (pulse_count == PREAMBLE_SIZE) 
+                    next_state = COMPUTE;
+                else if (timeout_counter >= TIMEOUT_THRESHOLD) 
+                    next_state = IDLE;
+                else if (!RX)
+		    next_state = WAIT_TXRDY;
+	    	else
+                    next_state = COLLECTING;
+            end
+
+            COMPUTE: next_state = GENERATE;
+
+            GENERATE: begin
+                if (pulse_gen_count == PACKET_SIZE + 1) 
+                    next_state = IDLE;
+                else if (!RX)
+		    next_state = WAIT_TXRDY;
+    		else	    
+                    next_state = GENERATE;
+            end
+
+            WAIT_TXRDY: begin
+                if (tx_rdy_p) 
+                    next_state = SEND_TX_PULSES;
+                else if (RX)
+		    next_state = IDLE;
+	    	else
+                    next_state = WAIT_TXRDY;
+            end
+
+            SEND_TX_PULSES: begin
+                if (pulse_pack_count == PACKET_SIZE + PREAMBLE_SIZE) 
+                    next_state = IDLE;
+                else if (RX)
+		    next_state = IDLE;
+	    	else
+                    next_state = SEND_TX_PULSES;
+            end
+
+            default: next_state = IDLE;
+        endcase
+    end
+    
+    always @(posedge clk) begin
+        if (rst) begin
+            counter <= 0;
+            interval_sum <= 0;
+            pulse_count <= 0;
+            avg_interval <= 0;
+            pulse_gen_count <= 0;
+            pulse_pack_count <= 0;
+            sh_en <= 0;
+            timeout_counter <= 0;
+            rfin_sync1 <= 0;
+            rfin_sync2 <= 0;
+            rfin_prev <= 0;
+            first_pulse_flag <= 1;
+	    fsm_rst <= 0;
+	    tx_rdy_prev <= 0;
+	    tx_rdy_p <= 0;
+        end else begin
+            rfin_sync1 <= rfin;
+            rfin_sync2 <= rfin_sync1;
+            rfin_prev <= rfin_sync2;
+	    rfin_edge <= rfin_sync2 && !rfin_prev;
+
+	    tx_rdy_prev <= tx_rdy;
+	    tx_rdy_p <= tx_rdy && !tx_rdy_prev;
+            case (state)
+                IDLE: begin
+                    counter <= 0;
+                    interval_sum <= 0;
+                    pulse_count <= 0;
+                    pulse_gen_count <= 0;
+                    pulse_pack_count <= 0;
+                    sh_en <= 0;
+                    first_pulse_flag <= 1;
+		    fsm_rst <= 0;
+                end
+
+                COLLECTING: begin
+                    timeout_counter <= timeout_counter + 1;
+                    counter <= counter + 1;
+                    if (rfin_edge) begin
+			fsm_rst <= 1;
+			rfin_sync1 <= 0;
+                        if (pulse_count > 0) 
+                            interval_sum <= interval_sum + counter;
+                        timeout_counter <= 0;
+                        pulse_count <= pulse_count + 1;
+                        counter <= 0;
+	 	    end else begin
+			fsm_rst <= 0;
+		    end
+
+		    if (timeout_counter >= TIMEOUT_THRESHOLD) begin
+			fsm_rst <= 1; 
+                        timeout_counter <= 0;
+		    end
+		end
+
+                COMPUTE: begin
+		    fsm_rst <= 0;
+		    if (pulse_count == PREAMBLE_SIZE) begin
+                        avg_interval <= interval_sum / (PREAMBLE_SIZE-1);
+		    end
+                end
+
+                GENERATE: begin
+                    if (pulse_gen_count < PACKET_SIZE + 2) begin
+                        if ((first_pulse_flag && counter == avg_interval / 2) || 
+                           // (!first_pulse_flag && counter == 10000)) begin
+                            (!first_pulse_flag && counter == avg_interval)) begin
+                            sh_en <= 1;
+                            counter <= 0;
+                            pulse_gen_count <= pulse_gen_count + 1;
+                            first_pulse_flag <= 0;
+                        end else begin
+                            sh_en <= 0;
+                            counter <= counter + 1;
+                        end
+                    end else begin
+                        pulse_gen_count <= 0;
+                    end
+                end
+
+                WAIT_TXRDY: begin
+                    sh_en <= 0; // Wait without sending pulses
+		    counter <= PULSE_INTERVAL_1MS/2;
+                end
+
+                SEND_TX_PULSES: begin
+                    if (counter == PULSE_INTERVAL_1MS) begin
+                        sh_en <= 1;
+                        counter <= 0;
+                        pulse_pack_count <= pulse_pack_count + 1;
+                    end else begin
+                        sh_en <= 0;
+                        counter <= counter + 1;
+                    end
+                end
+
+                default: begin
+                    sh_en <= 0;
+                end
+            endcase
+        end
+    end
+
+endmodule
+
