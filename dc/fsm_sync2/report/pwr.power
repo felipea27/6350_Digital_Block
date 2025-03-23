@@ -2,9 +2,9 @@
 ****************************************
 Report : power
         -analysis_effort low
-Design : SPI_SLAVE
+Design : fsm_sync
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 02:42:45 2025
+Date   : Tue Mar 18 14:04:23 2025
 ****************************************
 
 
@@ -18,7 +18,7 @@ Wire Load Model Mode: enclosed
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-SPI_SLAVE              ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+fsm_sync               ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 
 
 Global Operating Voltage = 0.8  
@@ -35,14 +35,13 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =  26.9826 nW   (83%)
-  Net Switching Power  =   5.6467 nW   (17%)
+  Cell Internal Power  =  81.5743 nW   (92%)
+  Net Switching Power  =   6.7243 nW    (8%)
                          ---------
-Total Dynamic Power    =  32.6293 nW  (100%)
+Total Dynamic Power    =  88.2986 nW  (100%)
 
-Cell Leakage Power     = 181.4671 nW
+Cell Leakage Power     =  33.1950 nW
 
-Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
                  Internal         Switching           Leakage            Total
 Power Group      Power            Power               Power              Power   (   %    )  Attrs
@@ -50,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
-register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential     2.4279e-05        1.2483e-07          147.1016        1.7150e-04  (  80.11%)
-combinational  2.7040e-06        5.5219e-06           34.3655        4.2591e-05  (  19.89%)
+clock_network  7.1513e-05            0.0000            0.0000        7.1513e-05  (  58.86%)  i
+register       6.7452e-06        1.0895e-06           20.7378        2.8572e-05  (  23.52%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  3.3164e-06        5.6347e-06           12.4555        2.1407e-05  (  17.62%)
 --------------------------------------------------------------------------------------------------
-Total          2.6983e-05 mW     5.6467e-06 mW       181.4671 nW     2.1410e-04 mW
+Total          8.1574e-05 mW     6.7243e-06 mW        33.1933 nW     1.2149e-04 mW
 1
