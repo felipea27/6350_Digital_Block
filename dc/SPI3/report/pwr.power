@@ -1,2 +1,59 @@
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : SPI_slave
+Version: V-2023.12-SP1
+Date   : Thu Mar 20 09:16:25 2025
+****************************************
+
+
+Library(s) Used:
+
+    gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
+
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+SPI_slave              ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+
+
+Global Operating Voltage = 0.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =  55.7429 nW   (66%)
+  Net Switching Power  =  28.3816 nW   (34%)
+                         ---------
+Total Dynamic Power    =  84.1245 nW  (100%)
+
+Cell Leakage Power     = 310.4632 nW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential     3.8449e-05        1.5480e-06          220.4790        2.6048e-04  (  66.01%)
+combinational  1.7294e-05        2.6834e-05           89.9842        1.3411e-04  (  33.99%)
+--------------------------------------------------------------------------------------------------
+Total          5.5743e-05 mW     2.8382e-05 mW       310.4632 nW     3.9459e-04 mW
+1
