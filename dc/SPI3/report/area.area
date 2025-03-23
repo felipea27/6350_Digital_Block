@@ -3,30 +3,66 @@
 Report : area
 Design : SPI_slave
 Version: V-2023.12-SP1
-Date   : Thu Mar 20 09:16:25 2025
+Date   : Sun Mar 23 17:01:03 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	counter_reg[0]/Q U52/A1 U52/X U56/A1 U56/X SS_neg_flag_reg/G SS_neg_flag_reg/Q U57/A1 U57/X counter_reg[0]/G 
+Information: Timing loop detected. (OPT-150)
+	counter_reg[1]/G counter_reg[1]/Q U52/A2 U52/X U56/A1 U56/X SS_neg_flag_reg/G SS_neg_flag_reg/Q U57/A1 U57/X 
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
 Library(s) Used:
 
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
-Number of ports:                           22
-Number of nets:                           103
-Number of cells:                           90
-Number of combinational cells:             61
-Number of sequential cells:                29
+Number of ports:                           23
+Number of nets:                            77
+Number of cells:                           63
+Number of combinational cells:             41
+Number of sequential cells:                22
 Number of macros/black boxes:               0
-Number of buf/inv:                         30
-Number of references:                      13
+Number of buf/inv:                         18
+Number of references:                      18
 
-Combinational area:                 14.031360
-Buf/Inv area:                        4.322160
-Noncombinational area:              36.832321
+Combinational area:                 10.022400
+Buf/Inv area:                        2.380320
+Noncombinational area:              21.109680
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                    50.863681
+Total cell area:                    31.132080
 Total area:                 undefined
 
 Information: This design contains unmapped logic. (RPT-7)
@@ -39,9 +75,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-SPI_slave                           50.8637    100.0   14.0314    36.8323  0.0000  SPI_slave
+SPI_slave                           31.1321    100.0   10.0224    21.1097  0.0000  SPI_slave
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                  14.0314    36.8323  0.0000
-SPI_SLAVE                           25.1813    100.0    5.8255    19.3558  0.0000  SPI_SLAVE
---------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                   5.8255    19.3558  0.0000
+Total                                                  10.0224    21.1097  0.0000
+
+1

@@ -1,6 +1,7 @@
 ###################################################################
 
-# Created by write_sdc on Thu Mar 20 09:16:25 2025
+# Created by write_sdc on Sun Mar 23 17:01:03 2025
+
 ###################################################################
 set sdc_version 2.0
 
@@ -19,6 +20,8 @@ set_max_capacitance 0.005 [get_ports PRESETn]
 set_max_capacitance 0.005 [get_ports MOSI]
 set_max_capacitance 0.005 [get_ports SCK]
 set_max_capacitance 0.005 [get_ports SS]
+set_max_capacitance 0.005 [get_ports {MODE[1]}]
+set_max_capacitance 0.005 [get_ports {MODE[0]}]
 set_max_capacitance 0.005 [get_ports {DATA[7]}]
 set_max_capacitance 0.005 [get_ports {DATA[6]}]
 set_max_capacitance 0.005 [get_ports {DATA[5]}]
@@ -31,6 +34,8 @@ set_max_fanout 4 [get_ports PRESETn]
 set_max_fanout 4 [get_ports MOSI]
 set_max_fanout 4 [get_ports SCK]
 set_max_fanout 4 [get_ports SS]
+set_max_fanout 4 [get_ports {MODE[1]}]
+set_max_fanout 4 [get_ports {MODE[0]}]
 set_max_fanout 4 [get_ports {DATA[7]}]
 set_max_fanout 4 [get_ports {DATA[6]}]
 set_max_fanout 4 [get_ports {DATA[5]}]
@@ -39,13 +44,14 @@ set_max_fanout 4 [get_ports {DATA[3]}]
 set_max_fanout 4 [get_ports {DATA[2]}]
 set_max_fanout 4 [get_ports {DATA[1]}]
 set_max_fanout 4 [get_ports {DATA[0]}]
-set_max_fanout 4 [get_ports SPI_RDY]
 create_clock -name vclk  -period 100  -waveform {0 50}
 set_clock_uncertainty 0.1  [get_clocks vclk]
 set_input_delay -clock vclk  0.02  [get_ports PRESETn]
 set_input_delay -clock vclk  0.02  [get_ports MOSI]
 set_input_delay -clock vclk  0.02  [get_ports SCK]
 set_input_delay -clock vclk  0.02  [get_ports SS]
+set_input_delay -clock vclk  0.02  [get_ports {MODE[1]}]
+set_input_delay -clock vclk  0.02  [get_ports {MODE[0]}]
 set_input_delay -clock vclk  0.02  [get_ports {DATA[7]}]
 set_input_delay -clock vclk  0.02  [get_ports {DATA[6]}]
 set_input_delay -clock vclk  0.02  [get_ports {DATA[5]}]
@@ -54,7 +60,6 @@ set_input_delay -clock vclk  0.02  [get_ports {DATA[3]}]
 set_input_delay -clock vclk  0.02  [get_ports {DATA[2]}]
 set_input_delay -clock vclk  0.02  [get_ports {DATA[1]}]
 set_input_delay -clock vclk  0.02  [get_ports {DATA[0]}]
-set_input_delay -clock vclk  0.02  [get_ports SPI_RDY]
 set_output_delay -clock vclk  0.02  [get_ports {OUT[7]}]
 set_output_delay -clock vclk  0.02  [get_ports {OUT[6]}]
 set_output_delay -clock vclk  0.02  [get_ports {OUT[5]}]

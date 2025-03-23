@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : SPI_slave
 Version: V-2023.12-SP1
-Date   : Thu Mar 20 09:16:25 2025
+Date   : Sun Mar 23 17:01:03 2025
 ****************************************
 
 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =  55.7429 nW   (66%)
-  Net Switching Power  =  28.3816 nW   (34%)
+  Cell Internal Power  =  44.3857 nW   (69%)
+  Net Switching Power  =  20.3082 nW   (31%)
                          ---------
-Total Dynamic Power    =  84.1245 nW  (100%)
+Total Dynamic Power    =  64.6939 nW  (100%)
 
-Cell Leakage Power     = 310.4632 nW
+Cell Leakage Power     = 227.6355 nW
 
 Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
@@ -52,8 +52,8 @@ memory             0.0000            0.0000            0.0000            0.0000 
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
 register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential     3.8449e-05        1.5480e-06          220.4790        2.6048e-04  (  66.01%)
-combinational  1.7294e-05        2.6834e-05           89.9842        1.3411e-04  (  33.99%)
+sequential     3.3593e-05        2.5904e-06          171.8719        2.0806e-04  (  71.17%)
+combinational  1.0792e-05        1.7718e-05           55.7636        8.4274e-05  (  28.83%)
 --------------------------------------------------------------------------------------------------
-Total          5.5743e-05 mW     2.8382e-05 mW       310.4632 nW     3.9459e-04 mW
+Total          4.4386e-05 mW     2.0308e-05 mW       227.6355 nW     2.9233e-04 mW
 1
