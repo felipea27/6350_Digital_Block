@@ -284,11 +284,11 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-//		tx_file = $fopen("DATA/std1/TX_OUT.txt", "w");
-//		if (tx_file == 0) begin
-//			$display("Error opening file for writing!");
-//			$finish;
-//		end
+		tx_file = $fopen("DATA/std0/TX_OUT.txt", "w");
+		if (tx_file == 0) begin
+			$display("Error opening file for writing!");
+			$finish;
+		end
 
 		rx_file = $fopen("../DATA/std0/PRDATA.txt", "w");
 		if (rx_file == 0) begin
@@ -320,8 +320,8 @@ module testbench;
 		#200
 		
 		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		repeat(1) begin	
-			repeat(500) begin
+		repeat(10) begin	
+			repeat(10) begin
 				i = i + 1; // Increment counter
 				//$display("RX Iteration: %0d", i);
 				MDATA = packets[i];
@@ -329,19 +329,19 @@ module testbench;
 				SEND_SYNC(MDATA, 100, 1000000);
 				#800;
 			end
-		//	i = i-10;
-		//	#1000000;
-		//	
-		//	repeat(10) begin
-		//		i = i + 1; // Increment counter
-		//		$display("TX Iteration: %0d", i);
-		//		MDATA = packets[i];
-		//		BYTE_WRITE(SCK4, MDATA);
-		//	end
+			i = i-10;
+			#1000000;
+			
+			repeat(10) begin
+				i = i + 1; // Increment counter
+				$display("TX Iteration: %0d", i);
+				MDATA = packets[i];
+				BYTE_WRITE(SCK4, MDATA);
+			end
 		end
 	
 		$fclose(tx_file);
-		//$fclose(rx_file);
+		$fclose(rx_file);
 		
 		#100000000		
 		$stop;

@@ -4,6 +4,9 @@ add wave -noupdate /testbench/i_PCLK
 add wave -noupdate /testbench/RX_MODE
 add wave -noupdate /testbench/uut/SPI_modul2/w_SCK
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/SS
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/PRESETn
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/SS_neg_flag
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/counter
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/DIN
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/rfin
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SH_EN
