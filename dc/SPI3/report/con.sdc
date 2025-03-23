@@ -1,7 +1,6 @@
 ###################################################################
 
 # Created by write_sdc on Thu Mar 20 09:16:25 2025
-
 ###################################################################
 set sdc_version 2.0
 
@@ -28,7 +27,6 @@ set_max_capacitance 0.005 [get_ports {DATA[3]}]
 set_max_capacitance 0.005 [get_ports {DATA[2]}]
 set_max_capacitance 0.005 [get_ports {DATA[1]}]
 set_max_capacitance 0.005 [get_ports {DATA[0]}]
-set_max_capacitance 0.005 [get_ports SPI_RDY]
 set_max_fanout 4 [get_ports PRESETn]
 set_max_fanout 4 [get_ports MOSI]
 set_max_fanout 4 [get_ports SCK]
