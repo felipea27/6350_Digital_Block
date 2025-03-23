@@ -1,83 +1,76 @@
-`timescale 1ns / 1ps
-
 module SPI_slave(
-		input PRESETn,
-		input MOSI,
-		input SCK, 
-		input SS,
-		input [7:0] DATA,
-                input SPI_RDY,
-	
-		output reg [7:0] OUT,	
-		output wire MISO
+        input PRESETn, //PRESETn
+        input MOSI,
+        input SCK,
+        input SS,
+        input [1:0] MODE,
+        input [7:0] DATA,
+    
+        output reg [7:0] OUT,    
+        output wire MISO
     );
 
-    reg [7:0] SHIFT_MISO;
-    reg [7:0] SHIFT_MOSI;
-    reg [7:0] DATA_REG;
-    reg [2:0] count;
-    reg MOSI_RDY;
+    reg SHIFT_IN;
+    reg [7:0] SHIFT_REG;
+    reg SS_neg_flag;
+    reg [3:0] counter;
 
-    assign MISO = SS ? 1'bZ : SHIFT_MISO[7];
+    assign MISO = SS ? 1'bZ : SHIFT_REG[7];
+    //assign OUT = SHIFT_REG;
 
+//    always@ (negedge rst) begin //PRESETn
+//        SHIFT_REG <= 0;
+//        SHIFT_IN <= 0;
+//        SS_neg_flag <= 1;
+//        counter <= 4'd0;
+//    end
+    
 
-    always@(posedge SPI_RDY or negedge PRESETn or posedge SCK)
-    begin
-        if(!PRESETn)
-        begin
-            SHIFT_MISO <= 8'b0;
-        end 
-        else if(SPI_RDY)
-        begin
-            SHIFT_MISO <= DATA;
-        end     
-	else if(!SS && !SPI_RDY)
-        begin
-            SHIFT_MISO <= SHIFT_MISO << 1;
-        end       
-    end
+//    always@ (negedge SS)
+//            begin
+//                SHIFT_IN<=MOSI;
+//                SHIFT_REG<=DATA;//initial value //SYNTHESIS ISSUE
+//            end
 
-    always@(posedge SCK or negedge PRESETn)
-    begin
-        if(!PRESETn)
-        begin
-            SHIFT_MOSI <= 8'b0;
-        end
-        else
-        begin
-            SHIFT_MOSI <= SHIFT_MOSI << 1;
-            SHIFT_MOSI[0] <= MOSI;
-        end
-    end
-
+    always@ (posedge SS)
+            begin    
+                OUT<=SHIFT_REG;
+            end        
+    
     always @(posedge SCK or negedge PRESETn) begin
-        if (!PRESETn) begin
-            count <= 3'b000;     
-            MOSI_RDY <= 1'b0;   
-        end else begin
-            count <= count + 1;  
+            if (PRESETn == 0) begin 
+                SHIFT_IN <= 0;
+            end else
+            if(SS==0) begin
+                if(MODE==2'b00) begin
+                    SHIFT_IN<=MOSI;
+                end
+                        
+            end
+        end
 
-            if (count == 3'b111 && SS == 1)
-		begin
-                MOSI_RDY <= 1'b1;
-		end
-            else
-		begin
-                MOSI_RDY <= 1'b0;
-		end
+always @(negedge SCK or negedge SS or negedge PRESETn) begin
+        if (PRESETn == 0) begin
+            SHIFT_REG <= 0;
+            SS_neg_flag <= 1;
+            counter <= 4'd0;
+        end else
+        if(SS==0) begin
+            if(MODE==2'b00) begin
+                if (SS_neg_flag) begin
+                    SHIFT_REG <= DATA; //initialize Shift reg for tx
+                    SS_neg_flag <= 0;    
+                end 
+                else begin
+                    counter <= counter +1;
+                    SHIFT_REG <= SHIFT_REG << 1;
+                    SHIFT_REG[0]<=SHIFT_IN;
+                end
+                if (counter == 4'd7) begin
+                    SS_neg_flag <= 1;
+                    counter <= 0;
+                end
+            end    
         end
     end
-
-    always@(posedge MOSI_RDY or negedge PRESETn)
-    begin
-        if(!PRESETn)
-        begin
-            OUT <= 8'b0;
-        end
-        else
-        begin
-            OUT <= SHIFT_MOSI;
-        end
-    end
-
 endmodule
