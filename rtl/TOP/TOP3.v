@@ -71,7 +71,7 @@ module TOP (
 
     // SPI Slave module
     SPI_SLAVE SPI_slave_inst (
-	    .PRESETn(rst), .MOSI(MOSI), .SCK(SCK),
+	    .PRESETn(!rst), .MOSI(MOSI), .SCK(SCK),
 	    .SS(CS), .MODE(SPI_MODE), .DATA(SPI_IN),
 	    .MISO(MISO), .OUT(SPI_OUT)
     );
