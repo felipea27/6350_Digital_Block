@@ -20,7 +20,6 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   SPI_slave          ZeroWLM               gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
-
   Point                                    Incr       Path
   -----------------------------------------------------------
   clock vclk (rise edge)                   0.00       0.00
