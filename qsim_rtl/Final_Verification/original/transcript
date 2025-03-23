@@ -18,108 +18,112 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:32 on Mar 23,2025
+# Start time: 16:49:07 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/APB_interface.v 
 # -- Skipping module APB_interface_2
 # 
 # Top level modules:
 # 	APB_interface_2
-# End time: 02:54:32 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 16:49:08 on Mar 23,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:32 on Mar 23,2025
+# Start time: 16:49:08 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_master.v 
 # -- Skipping module spi_master5
 # 
 # Top level modules:
 # 	spi_master5
-# End time: 02:54:33 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 16:49:08 on Mar 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:33 on Mar 23,2025
+# Start time: 16:49:08 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_slave.v 
-# -- Compiling module SPI_SLAVE
+# -- Skipping module SPI_SLAVE
 # 
 # Top level modules:
 # 	SPI_SLAVE
-# End time: 02:54:33 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 16:49:08 on Mar 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:33 on Mar 23,2025
+# Start time: 16:49:08 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_testmodul2.v 
 # -- Skipping module SPI_testmodul2
 # 
 # Top level modules:
 # 	SPI_testmodul2
-# End time: 02:54:33 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 16:49:09 on Mar 23,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:33 on Mar 23,2025
+# Start time: 16:49:09 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/TOP/TOP3.v 
-# -- Skipping module TOP
+# -- Compiling module TOP
 # 
 # Top level modules:
 # 	TOP
-# End time: 02:54:34 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 16:49:09 on Mar 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:34 on Mar 23,2025
+# Start time: 16:49:09 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/fsm_sync/fsm_sync.v 
 # -- Skipping module fsm_sync
 # 
 # Top level modules:
 # 	fsm_sync
-# End time: 02:54:34 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 16:49:09 on Mar 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:34 on Mar 23,2025
+# Start time: 16:49:09 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/Pkt_reg/Pkt_reg.v 
-# -- Compiling module Pkt_reg
+# -- Skipping module Pkt_reg
 # 
 # Top level modules:
 # 	Pkt_reg
-# End time: 02:54:34 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 16:49:10 on Mar 23,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:34 on Mar 23,2025
+# Start time: 16:49:10 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/Shift_Buffer/Shift_Buffer.v 
 # -- Skipping module Shift_Buffer
 # 
 # Top level modules:
 # 	Shift_Buffer
-# End time: 02:54:35 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 16:49:10 on Mar 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:35 on Mar 23,2025
+# Start time: 16:49:10 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/TX_Buffer/TX_Buffer.v 
 # -- Skipping module TX_Buffer
 # 
 # Top level modules:
 # 	TX_Buffer
-# End time: 02:54:35 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 16:49:10 on Mar 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:35 on Mar 23,2025
+# Start time: 16:49:10 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SH_SYNC/SH_SYNC.v 
 # -- Skipping module SH_SYNC
 # 
 # Top level modules:
 # 	SH_SYNC
-# End time: 02:54:35 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 16:49:11 on Mar 23,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:54:35 on Mar 23,2025
+# Start time: 16:49:11 on Mar 23,2025
 # vlog -reportprogress 300 "+acc" -incr APB_interface_testbench.v 
 # -- Skipping module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 02:54:36 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 16:49:11 on Mar 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
 # vsim "+acc" -t ps -lib work testbench 
-# Start time: 02:54:36 on Mar 23,2025
+# Start time: 16:49:11 on Mar 23,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: ../../../rtl/TOP/TOP3.v(47): (vopt-2685) [TFMPC] - Too few port connections for 'fsm_sync_inst'.  Expected 7, found 6.
+# ** Warning: ../../../rtl/TOP/TOP3.v(47): (vopt-2718) [TFMPC] - Missing connection for port 'rfin_sync'.
+# ** Note: (vopt-143) Recognized 2 FSMs in module "TOP(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
 # Loading work.testbench(fast)
 # Loading work.APB_interface_2(fast)
 # Loading work.SPI_testmodul2(fast)
@@ -140,6 +144,109 @@
 # ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../../rtl/SPI3/SPI_slave.v(11).
 #    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave2_10_2 File: ../../../rtl/SPI3/SPI_testmodul2.v Line: 89
 # ** UI-Msg: (vish-4014) No objects found matching '/testbench/uut/SPI_modul2/top_slave/sh_sync_inst/fsm_en'.
-# Executing ONERROR command at macro ./waveformat.do line 11
-# End time: 14:26:05 on Mar 23,2025, Elapsed time: 11:31:29
-# Errors: 0, Warnings: 5
+# Executing ONERROR command at macro ./waveformat.do line 14
+# TX Iteration: 1
+# TX Iteration: 2
+# TX Iteration: 3
+# TX Iteration: 4
+# TX Iteration: 5
+# TX Iteration: 6
+# TX Iteration: 7
+# TX Iteration: 8
+# TX Iteration: 9
+# TX Iteration: 10
+# TX Iteration: 11
+# TX Iteration: 12
+# TX Iteration: 13
+# TX Iteration: 14
+# TX Iteration: 15
+# TX Iteration: 16
+# TX Iteration: 17
+# TX Iteration: 18
+# TX Iteration: 19
+# TX Iteration: 20
+# TX Iteration: 21
+# TX Iteration: 22
+# TX Iteration: 23
+# TX Iteration: 24
+# TX Iteration: 25
+# TX Iteration: 26
+# TX Iteration: 27
+# TX Iteration: 28
+# TX Iteration: 29
+# TX Iteration: 30
+# TX Iteration: 31
+# TX Iteration: 32
+# TX Iteration: 33
+# TX Iteration: 34
+# TX Iteration: 35
+# TX Iteration: 36
+# TX Iteration: 37
+# TX Iteration: 38
+# TX Iteration: 39
+# TX Iteration: 40
+# TX Iteration: 41
+# TX Iteration: 42
+# TX Iteration: 43
+# TX Iteration: 44
+# TX Iteration: 45
+# TX Iteration: 46
+# TX Iteration: 47
+# TX Iteration: 48
+# TX Iteration: 49
+# TX Iteration: 50
+# TX Iteration: 51
+# TX Iteration: 52
+# TX Iteration: 53
+# TX Iteration: 54
+# TX Iteration: 55
+# TX Iteration: 56
+# TX Iteration: 57
+# TX Iteration: 58
+# TX Iteration: 59
+# TX Iteration: 60
+# TX Iteration: 61
+# TX Iteration: 62
+# TX Iteration: 63
+# TX Iteration: 64
+# TX Iteration: 65
+# TX Iteration: 66
+# TX Iteration: 67
+# TX Iteration: 68
+# TX Iteration: 69
+# TX Iteration: 70
+# TX Iteration: 71
+# TX Iteration: 72
+# TX Iteration: 73
+# TX Iteration: 74
+# TX Iteration: 75
+# TX Iteration: 76
+# TX Iteration: 77
+# TX Iteration: 78
+# TX Iteration: 79
+# TX Iteration: 80
+# TX Iteration: 81
+# TX Iteration: 82
+# TX Iteration: 83
+# TX Iteration: 84
+# TX Iteration: 85
+# TX Iteration: 86
+# TX Iteration: 87
+# TX Iteration: 88
+# TX Iteration: 89
+# TX Iteration: 90
+# TX Iteration: 91
+# TX Iteration: 92
+# TX Iteration: 93
+# TX Iteration: 94
+# TX Iteration: 95
+# TX Iteration: 96
+# TX Iteration: 97
+# TX Iteration: 98
+# TX Iteration: 99
+# TX Iteration: 100
+# ** Note: $stop    : APB_interface_testbench.v(347)
+#    Time: 14610080350 ns  Iteration: 0  Instance: /testbench
+# Break in Module testbench at APB_interface_testbench.v line 347
+# End time: 16:51:23 on Mar 23,2025, Elapsed time: 0:02:12
+# Errors: 0, Warnings: 7

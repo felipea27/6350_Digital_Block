@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : SPI_SLAVE
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 02:42:45 2025
+Date   : Sun Mar 23 16:41:13 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
@@ -27,8 +27,8 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.02       0.02 f
   SS (in)                                  0.00       0.02 f
-  U20/X (UDB116SVT24_INV_0P75)             0.01       0.03 r
-  U21/X (UDB116SVT24_INV_0P75)             0.01       0.04 f
+  U46/X (UDB116SVT24_INV_0P75)             0.01       0.03 r
+  U47/X (UDB116SVT24_INV_0P75)             0.01       0.04 f
   MISO_tri/output (**TSGEN**)              0.00       0.04 f
   MISO (out)                               0.00       0.04 f
   data arrival time                                   0.04
