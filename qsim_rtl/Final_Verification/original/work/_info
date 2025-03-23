@@ -5,6 +5,16 @@ Z0 !s99 nomlopt
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -14,10 +24,10 @@ R0
 cModel Technology
 Z1 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/original
 T_opt
-!s110 1742712877
-V4K5ih`?m<UB^=AQPgeE0n3
+!s110 1742762952
+V@T23FocAhmCkH@mAcU0JS2
 04 9 4 work testbench fast 0
-=1-5667e9aff8b2-67dfb02c-e8f2b-10d83
+=1-5667e9aff8b2-67e073c8-2410a-13e72
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
 Z2 tCvgOpt 0
@@ -71,6 +81,7 @@ r1
 R9
 R2
 vPkt_reg
+!s10a 1742530258
 !s110 1742712874
 !i10b 1
 !s100 k2G`zVEh4ke]^T@B1V]B20
@@ -165,22 +176,23 @@ R8
 R9
 R2
 vSPI_SLAVE
-!s110 1742712873
+!s10a 1742762848
+!s110 1742762286
 !i10b 1
-!s100 lbTeo9IdSN?ZQRefnjeEo3
-IbZFZcUIcQic;go5RboUED0
+!s100 Lz;jBoNKmh_goh[15E_F<0
+ITOB=l[SO9l9g1E3zk3gcC0
 R1
-w1742711945
+w1742762244
 8../../../rtl/SPI3/SPI_slave.v
 F../../../rtl/SPI3/SPI_slave.v
-!i122 13
-L0 3 62
+!i122 24
+L0 3 76
 R6
 R7
 r1
 !s85 0
 31
-!s108 1742712873.000000
+!s108 1742762286.000000
 !s107 ../../../rtl/SPI3/SPI_slave.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/SPI_slave.v|
 !i113 0
@@ -189,7 +201,7 @@ R2
 n@s@p@i_@s@l@a@v@e
 vSPI_testmodul2
 R3
-Z12 !s110 1742515838
+!s110 1742515838
 !i10b 1
 !s100 ]Yfd@N3bUcLn;[cUA^4e]1
 I0>:I]P>I4b9_n]LfQYjJj2
@@ -204,7 +216,7 @@ R7
 r1
 !s85 0
 31
-Z13 !s108 1742515838.000000
+!s108 1742515838.000000
 !s107 ../../../rtl/SPI3/SPI_testmodul2.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/SPI_testmodul2.v|
 !i113 0
@@ -212,46 +224,45 @@ R9
 R2
 n@s@p@i_testmodul2
 vtestbench
-!s10a 1742515889
-!s110 1742515922
+!s10a 1742755427
+!s110 1742755455
 !i10b 1
-!s100 X4Ym1I]zaPSTJ1OCDdPne3
-Io[HCMbCf3C95L?c3GGLe>2
+!s100 ^bQ74JXXDcNBe<<Qf`^^G2
+I;Wid]V@WS3mSeYYfkgfZ02
 R1
-w1742515889
+w1742755427
 8APB_interface_testbench.v
 FAPB_interface_testbench.v
-!i122 11
+!i122 17
 L0 4 348
 R6
 R7
 r1
 !s85 0
 31
-!s108 1742515921.000000
+!s108 1742755455.000000
 !s107 APB_interface_testbench.v|
 !s90 -reportprogress|300|+acc|-incr|APB_interface_testbench.v|
 !i113 0
 R9
 R2
 vTOP
-!s10a 1742671573
-R12
+!s110 1742762949
 !i10b 1
-!s100 Aj9<L:]T?azG?K5Rj5;H_1
-IdXR=302KKYh_L7G8H>EcR1
+!s100 gXYa9;59Yd>Z802<V]?zA0
+IzfXGn][7IdcR=X0?PV[l[2
 R1
-w1741380253
+w1742762926
 8../../../rtl/TOP/TOP3.v
 F../../../rtl/TOP/TOP3.v
-!i122 4
+!i122 25
 L0 2 202
 R6
 R7
 r1
 !s85 0
 31
-R13
+!s108 1742762949.000000
 !s107 ../../../rtl/TOP/TOP3.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/TOP/TOP3.v|
 !i113 0
