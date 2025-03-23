@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf testp*
+#rm -rf test*
 
 echo "Searching for .nfs* files in the current directory..."
 nfs_files=$(find . -type f -name ".nfs*")

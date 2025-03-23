@@ -20,7 +20,7 @@ find . -name "*.txt" -delete
 cd ~
 cd ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/testp$num/
 # Loop to run the simulation with std from 0 to 100 in increments of 5
-for std in $(seq 0 1 100)
+for std in $(seq 0 1 50)
 do
     echo "Starting simulation with std=$std..."
     mkdir -p "DATA/std$std"
