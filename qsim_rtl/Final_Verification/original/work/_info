@@ -4,6 +4,7 @@ z2
 Z0 !s99 nomlopt
 R0
 R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -13,10 +14,10 @@ R0
 cModel Technology
 Z1 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/original
 T_opt
-!s110 1742516635
-Vd61_SB34gV8>J5ACFaA8E2
+!s110 1742712877
+V4K5ih`?m<UB^=AQPgeE0n3
 04 9 4 work testbench fast 0
-=1-5667e9aff8b2-67dcb19a-c4c90-1011d
+=1-5667e9aff8b2-67dfb02c-e8f2b-10d83
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
 Z2 tCvgOpt 0
@@ -47,6 +48,7 @@ Z9 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 n@a@p@b_interface_2
 vfsm_sync
+!s10a 1742516587
 !s110 1742516632
 !i10b 1
 !s100 ]7[[5ZTAnhk`6_mh0;<XQ3
@@ -69,23 +71,22 @@ r1
 R9
 R2
 vPkt_reg
-!s10a 1741380258
-Z10 !s110 1742515839
+!s110 1742712874
 !i10b 1
-!s100 g<LoHeJ5akd[m:b5@HdQ02
-I6]S=>95AHnU;]k1NlEi6n0
+!s100 k2G`zVEh4ke]^T@B1V]B20
+I9jQz@=c>0WaQbN9mcT[lB1
 R1
-w1741380258
+w1742530258
 8../../../rtl/Pkt_reg/Pkt_reg.v
 F../../../rtl/Pkt_reg/Pkt_reg.v
-!i122 6
-L0 2 24
+!i122 14
+L0 2 26
 R6
 R7
 r1
 !s85 0
 31
-Z11 !s108 1742515839.000000
+!s108 1742712874.000000
 !s107 ../../../rtl/Pkt_reg/Pkt_reg.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/Pkt_reg/Pkt_reg.v|
 !i113 0
@@ -93,8 +94,8 @@ R9
 R2
 n@pkt_reg
 vSH_SYNC
-!s10a 1741365903
-Z12 !s110 1742515840
+!s10a 1742526499
+Z10 !s110 1742515840
 !i10b 1
 !s100 b0LdLI0FUgAT[2TURc=e=2
 IX8>JziPY_zgHV_=KRNlSk2
@@ -109,7 +110,7 @@ R7
 r1
 !s85 0
 31
-Z13 !s108 1742515840.000000
+Z11 !s108 1742515840.000000
 !s107 ../../../rtl/SH_SYNC/SH_SYNC.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/SH_SYNC/SH_SYNC.v|
 !i113 0
@@ -117,8 +118,8 @@ R9
 R2
 n@s@h_@s@y@n@c
 vShift_Buffer
-!s10a 1741848726
-R10
+!s10a 1742527232
+!s110 1742515839
 !i10b 1
 !s100 `]1VX0G<o0kCB11cPILI12
 IlA`ZK4J7QL:FbJ2[jW2U81
@@ -133,7 +134,7 @@ R7
 r1
 !s85 0
 31
-R11
+!s108 1742515839.000000
 !s107 ../../../rtl/Shift_Buffer/Shift_Buffer.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/Shift_Buffer/Shift_Buffer.v|
 !i113 0
@@ -164,23 +165,22 @@ R8
 R9
 R2
 vSPI_SLAVE
-R3
-Z14 !s110 1742515838
+!s110 1742712873
 !i10b 1
-!s100 @L?4C3`4OYbN_MU3;Fd[?0
-IO1a4gAPcJAIXGa?VjYz^`1
+!s100 lbTeo9IdSN?ZQRefnjeEo3
+IbZFZcUIcQic;go5RboUED0
 R1
-R5
+w1742711945
 8../../../rtl/SPI3/SPI_slave.v
 F../../../rtl/SPI3/SPI_slave.v
-!i122 2
-L0 3 91
+!i122 13
+L0 3 62
 R6
 R7
 r1
 !s85 0
 31
-R8
+!s108 1742712873.000000
 !s107 ../../../rtl/SPI3/SPI_slave.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/SPI_slave.v|
 !i113 0
@@ -189,7 +189,7 @@ R2
 n@s@p@i_@s@l@a@v@e
 vSPI_testmodul2
 R3
-R14
+Z12 !s110 1742515838
 !i10b 1
 !s100 ]Yfd@N3bUcLn;[cUA^4e]1
 I0>:I]P>I4b9_n]LfQYjJj2
@@ -204,7 +204,7 @@ R7
 r1
 !s85 0
 31
-Z15 !s108 1742515838.000000
+Z13 !s108 1742515838.000000
 !s107 ../../../rtl/SPI3/SPI_testmodul2.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/SPI_testmodul2.v|
 !i113 0
@@ -235,8 +235,8 @@ r1
 R9
 R2
 vTOP
-!s10a 1741380253
-R14
+!s10a 1742671573
+R12
 !i10b 1
 !s100 Aj9<L:]T?azG?K5Rj5;H_1
 IdXR=302KKYh_L7G8H>EcR1
@@ -251,7 +251,7 @@ R7
 r1
 !s85 0
 31
-R15
+R13
 !s107 ../../../rtl/TOP/TOP3.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/TOP/TOP3.v|
 !i113 0
@@ -260,7 +260,7 @@ R2
 n@t@o@p
 vTX_Buffer
 R3
-R12
+R10
 !i10b 1
 !s100 ?2_3hRWNViR6bBhI40DdH2
 IGhMN6g[4;YSB=@hV>7Qbg1
@@ -275,7 +275,7 @@ R7
 r1
 !s85 0
 31
-R13
+R11
 !s107 ../../../rtl/TX_Buffer/TX_Buffer.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/TX_Buffer/TX_Buffer.v|
 !i113 0
