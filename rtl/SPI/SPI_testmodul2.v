@@ -64,38 +64,6 @@ spi_master5 SPI_MASTER_2(
 );
 
 
-SPI_SLAVE spi_slave0_00_2(
-	.MOSI(w_MOSI),
-	.MISO(w_MISO),
-	.SS(w_SS0),
-	.SCK(w_SCK),
-	.DATA(8'b11110000),
-	.OUT(o_S0),
-	.MODE(2'b00)//Set slave operating mode
-
-);
-
-SPI_SLAVE spi_slave1_01_2(
-        .MOSI(w_MOSI),
-        .MISO(w_MISO),
-        .SS(w_SS1),
-        .SCK(w_SCK),
-        .DATA(8'b11110001),
-	.OUT(o_S1),
-        .MODE(2'b01)//Set slave operating mode
-
-);
-
-SPI_SLAVE spi_slave2_10_2(
-        .MOSI(w_MOSI),
-        .MISO(w_MISO),
-        .SS(w_SS2),
-        .SCK(w_SCK),
-        .DATA(8'b11110010),
-        .MODE(2'b10), //Set slave operating mode
-	.OUT(o_S2)
-
-);
 
 TOP top_slave (
 	.clk(PCLK),

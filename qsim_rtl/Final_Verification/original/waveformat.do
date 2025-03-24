@@ -10,7 +10,13 @@ add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SPI_slave_inst/counter
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/DIN
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/rfin
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/SH_EN
-add wave -noupdate /testbench/uut/SPI_modul2/top_slave/sh_sync_inst/state
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/FSM_RST
+
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/fsm_sync_inst/state_pos
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/fsm_sync_inst/state_neg
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/fsm_sync_inst/state
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/fsm_sync_inst/sh_en_prev
+add wave -noupdate /testbench/uut/SPI_modul2/top_slave/fsm_sync_inst/sh_en
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/sh_sync_inst/fsm_en
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/sh_sync_inst/timeout_counter
 add wave -noupdate /testbench/uut/SPI_modul2/top_slave/sh_sync_inst/pulse_gen_count
