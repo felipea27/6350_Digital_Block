@@ -45,7 +45,7 @@ module TOP (
 
     // Sync rfin & sh_en
     fsm_sync fsm_sync_inst (
-	.clk(clk), .rst(rst), .rfin(rfin),
+	.clk(clk), .rst(rst), .rfin(rfin), .fsm_rst(FSM_RST),
 	.sh_en(SH_EN), .state(DIN)
     );
 
