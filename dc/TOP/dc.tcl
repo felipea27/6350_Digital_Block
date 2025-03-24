@@ -1,8 +1,8 @@
-set top_level fsm_sync
+set top_level TOP
 
 source -verbose "../common_scripts/libs.tcl" 
 
-analyze -format verilog "../../rtl/$top_level/fsm_sync2.v"
+analyze -format verilog "../../rtl/$top_level/TOP3.v"
 elaborate $top_level
 list_designs
 
@@ -17,7 +17,7 @@ set_max_fanout 4 [all_inputs]
 set_max_capacitance 0.005 [all_inputs]
 check_design
 
-source -verbose "./timing.tcl"
+source -verbose "../common_scripts/timing.tcl"
 
 set_fix_multiple_port_nets -all -buffer_constants
 

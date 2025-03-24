@@ -4,3 +4,8 @@ set target_library [list "/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl
 
 analyze -format verilog "../fsm_sync/fsm_sync.nl.v"
 analyze -format verilog "../Shift_Buffer/Shift_Buffer.nl.v"
+analyze -format verilog "../SH_SYNC/SH_SYNC.nl.v"
+analyze -format verilog "../Pkt_reg/Pkt_reg.nl.v"
+analyze -format verilog "../SPI3/SPI_slave.nl.v"
+analyze -format verilog "../TX_Buffer/TX_Buffer.nl.v"
+
