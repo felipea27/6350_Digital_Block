@@ -14,9 +14,8 @@ module fsm_sync_tb;
         .clk(clk),
         .rst(rst),
         .rfin(rfin),
-        .state(state),
-	.sh_en(sh_en),
-	.sh_en_sync2(SH_EN)
+		.sh_en(sh_en),
+		.state(state)
     );
 
     always begin

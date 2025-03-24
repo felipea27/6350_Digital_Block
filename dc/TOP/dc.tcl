@@ -1,8 +1,8 @@
-set top_level Dual_Buf
+set top_level TOP
 
 source -verbose "../common_scripts/libs.tcl" 
 
-analyze -format verilog "../../rtl/$top_level/$top_level.v"
+analyze -format verilog "../../rtl/$top_level/TOP3.v"
 elaborate $top_level
 list_designs
 

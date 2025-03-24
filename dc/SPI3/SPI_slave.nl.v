@@ -1,11 +1,11 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Ultra(TM) in wire load mode
 // Version   : V-2023.12-SP1
-// Date      : Sun Mar 23 16:41:13 2025
+// Date      : Sun Mar 23 20:26:06 2025
 /////////////////////////////////////////////////////////////
 
 
-module SPI_SLAVE ( PRESETn, MOSI, SCK, SS, MODE, DATA, OUT, MISO );
+module SPI_slave ( PRESETn, MOSI, SCK, SS, MODE, DATA, OUT, MISO );
   input [1:0] MODE;
   input [7:0] DATA;
   output [7:0] OUT;
