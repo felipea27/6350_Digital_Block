@@ -18,108 +18,108 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:08 on Mar 24,2025
+# Start time: 18:08:02 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/APB_interface.v 
 # -- Skipping module APB_interface_2
 # 
 # Top level modules:
 # 	APB_interface_2
-# End time: 17:24:08 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:03 on Mar 24,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:08 on Mar 24,2025
+# Start time: 18:08:03 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_master.v 
 # -- Skipping module spi_master5
 # 
 # Top level modules:
 # 	spi_master5
-# End time: 17:24:08 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:03 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:09 on Mar 24,2025
+# Start time: 18:08:03 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_slave.v 
 # -- Skipping module SPI_slave
 # 
 # Top level modules:
 # 	SPI_slave
-# End time: 17:24:09 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:03 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:09 on Mar 24,2025
+# Start time: 18:08:03 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_testmodul2.v 
 # -- Skipping module SPI_testmodul2
 # 
 # Top level modules:
 # 	SPI_testmodul2
-# End time: 17:24:09 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:04 on Mar 24,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:09 on Mar 24,2025
+# Start time: 18:08:04 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/TOP/TOP3.v 
 # -- Skipping module TOP
 # 
 # Top level modules:
 # 	TOP
-# End time: 17:24:10 on Mar 24,2025, Elapsed time: 0:00:01
+# End time: 18:08:04 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:10 on Mar 24,2025
+# Start time: 18:08:04 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/fsm_sync/fsm_sync.v 
-# -- Skipping module fsm_sync
+# -- Compiling module fsm_sync
 # 
 # Top level modules:
 # 	fsm_sync
-# End time: 17:24:10 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:04 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:10 on Mar 24,2025
+# Start time: 18:08:05 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/Pkt_reg/Pkt_reg.v 
 # -- Skipping module Pkt_reg
 # 
 # Top level modules:
 # 	Pkt_reg
-# End time: 17:24:10 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:05 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:10 on Mar 24,2025
+# Start time: 18:08:05 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/Shift_Buffer/Shift_Buffer.v 
 # -- Skipping module Shift_Buffer
 # 
 # Top level modules:
 # 	Shift_Buffer
-# End time: 17:24:11 on Mar 24,2025, Elapsed time: 0:00:01
+# End time: 18:08:05 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:11 on Mar 24,2025
+# Start time: 18:08:05 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/TX_Buffer/TX_Buffer.v 
 # -- Skipping module TX_Buffer
 # 
 # Top level modules:
 # 	TX_Buffer
-# End time: 17:24:11 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:05 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:11 on Mar 24,2025
+# Start time: 18:08:06 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SH_SYNC/SH_SYNC.v 
 # -- Skipping module SH_SYNC
 # 
 # Top level modules:
 # 	SH_SYNC
-# End time: 17:24:11 on Mar 24,2025, Elapsed time: 0:00:00
+# End time: 18:08:06 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:24:11 on Mar 24,2025
+# Start time: 18:08:06 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr APB_interface_testbench.v 
 # -- Skipping module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 17:24:12 on Mar 24,2025, Elapsed time: 0:00:01
+# End time: 18:08:06 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
 # vsim "+acc" -t ps -lib work testbench 
-# Start time: 17:24:12 on Mar 24,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 18:08:06 on Mar 24,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.testbench(fast)
 # Loading work.APB_interface_2(fast)
 # Loading work.SPI_testmodul2(fast)
@@ -143,5 +143,6 @@
 # TX Iteration: 6
 # TX Iteration: 7
 # TX Iteration: 8
-# End time: 17:26:05 on Mar 24,2025, Elapsed time: 0:01:53
+# TX Iteration: 9
+# End time: 18:08:39 on Mar 24,2025, Elapsed time: 0:00:33
 # Errors: 0, Warnings: 2

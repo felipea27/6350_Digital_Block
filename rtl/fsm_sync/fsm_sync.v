@@ -19,7 +19,7 @@ module fsm_sync (
 
 
     // State Transition Logic for positive edge triggered
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst)
             state_pos <= IDLE;
         else
@@ -27,14 +27,14 @@ module fsm_sync (
     end
 
     // State Transition Logic for negative edge triggered
-    always @(negedge clk or posedge rst) begin
+    always @(negedge clk) begin
         if (rst)
             state_neg <= IDLE;
         else
             state_neg <= next_state_neg;
     end
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
 	    if (rst) begin
 		    sh_en_prev <= 1'b0;
 	    end else begin
@@ -48,21 +48,14 @@ module fsm_sync (
 		next_state_pos = state_pos;
         case (state_pos)
             IDLE: begin
-				if (rst) 
-				begin
-					next_state_pos = IDLE;
-				end 
-                else if (rfin)
-				begin
-					 next_state_pos = ACTIVE;
-				end
-            end
-            ACTIVE: begin
-		if (rst) 
+	    	if (rfin)
 		begin
-			next_state_pos = IDLE;
-		end 
-		else if (~sh_en && sh_en_prev)
+			 next_state_pos = ACTIVE;
+		end
+            end
+
+            ACTIVE: begin
+		if (~sh_en && sh_en_prev)
                 	next_state_pos = IDLE;
 		else if(fsm_rst)
 			next_state_pos = IDLE;
@@ -74,21 +67,13 @@ module fsm_sync (
 		next_state_neg = state_neg;
         case (state_neg)
             IDLE: begin
-		if (rst) 
-		begin
-			next_state_neg = IDLE;
-		end 
-                else if (rfin)
+                if (rfin)
 		begin
 			 next_state_neg = ACTIVE;
 		end
             end
             ACTIVE: begin
-		if (rst) 
-		begin
-			next_state_neg = IDLE;
-		end 
-                else if (~sh_en && sh_en_prev)
+                if (~sh_en && sh_en_prev)
                 	next_state_neg = IDLE;
 		else if(fsm_rst)
 			next_state_neg = IDLE; 
@@ -98,7 +83,7 @@ module fsm_sync (
 
 
    always @(*) begin
-	state = (state_neg|state_pos);
+	state = (next_state_neg|next_state_pos);
    end
 
 endmodule
