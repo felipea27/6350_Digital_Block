@@ -4,6 +4,12 @@ z2
 Z0 !s99 nomlopt
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -13,16 +19,15 @@ R0
 cModel Technology
 Z1 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/original
 T_opt
-!s110 1742850178
-Vg`9_JG;?lnCOnWeDeRIG:3
+!s110 1742854087
+V?8mj:b<e`F<HRoQIXBzh01
 04 9 4 work testbench fast 0
-=1-5667e9aff8b2-67e1c881-93a41-a9c1
+=1-5667e9aff8b2-67e1d7c7-4b72f-792d
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
 Z2 tCvgOpt 0
 n@_opt
 OL;O;2021.3;73
-R1
 vAPB_interface_2
 Z3 !s10a 1741237640
 !s110 1742849149
@@ -48,23 +53,22 @@ Z7 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 n@a@p@b_interface_2
 vfsm_sync
-!s10a 1742850161
-!s110 1742850175
+!s110 1742854084
 !i10b 1
-!s100 4XRbXEKJfDKPgI`:WG:T>2
-Ii0n41<JhTG5E0:]7QX?oa2
+!s100 EZd<4jlXoYogeJ`b387Xm0
+I@lfPfL<:LVVibdgjM6[SI2
 R1
-w1742850161
+w1742854068
 8../../../rtl/fsm_sync/fsm_sync.v
 F../../../rtl/fsm_sync/fsm_sync.v
-!i122 13
-L0 3 102
+!i122 20
+L0 3 87
 R5
 R6
 r1
 !s85 0
 31
-!s108 1742850174.000000
+!s108 1742854084.000000
 !s107 ../../../rtl/fsm_sync/fsm_sync.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/fsm_sync/fsm_sync.v|
 !i113 0
