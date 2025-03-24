@@ -1,9 +1,9 @@
  
 ****************************************
 Report : area
-Design : SPI_SLAVE
+Design : SPI_slave
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 16:41:13 2025
+Date   : Sun Mar 23 20:26:06 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -75,7 +75,7 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-SPI_SLAVE                           31.1321    100.0   10.0224    21.1097  0.0000  SPI_SLAVE
+SPI_slave                           31.1321    100.0   10.0224    21.1097  0.0000  SPI_slave
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
 Total                                                  10.0224    21.1097  0.0000
 

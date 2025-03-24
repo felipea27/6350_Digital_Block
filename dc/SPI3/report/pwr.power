@@ -2,9 +2,9 @@
 ****************************************
 Report : power
         -analysis_effort low
-Design : SPI_SLAVE
+Design : SPI_slave
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 16:41:13 2025
+Date   : Sun Mar 23 20:26:06 2025
 ****************************************
 
 
@@ -18,7 +18,7 @@ Wire Load Model Mode: enclosed
 
 Design        Wire Load Model            Library
 ------------------------------------------------
-SPI_SLAVE              ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+SPI_slave              ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 
 
 Global Operating Voltage = 0.8  

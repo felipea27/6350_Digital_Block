@@ -1,4 +1,4 @@
-set top_level SPI_SLAVE
+set top_level SPI_slave
 
 source -verbose "../common_scripts/libs.tcl" 
 

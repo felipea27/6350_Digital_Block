@@ -46,8 +46,7 @@ module TOP (
     // Sync rfin & sh_en
     fsm_sync fsm_sync_inst (
 	.clk(clk), .rst(rst), .rfin(rfin),
-	.sh_en(SH_EN), .state(DIN),
-	.fsm_rst(FSM_RST)
+	.sh_en(SH_EN), .state(DIN)
     );
 
     SH_SYNC sh_sync_inst (
@@ -70,7 +69,7 @@ module TOP (
     );
 
     // SPI Slave module
-    SPI_SLAVE SPI_slave_inst (
+    SPI_slave SPI_slave_inst (
 	    .PRESETn(!rst), .MOSI(MOSI), .SCK(SCK),
 	    .SS(CS), .MODE(SPI_MODE), .DATA(SPI_IN),
 	    .MISO(MISO), .OUT(SPI_OUT)
