@@ -18,117 +18,112 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:05 on Mar 23,2025
+# Start time: 17:24:08 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/APB_interface.v 
 # -- Skipping module APB_interface_2
 # 
 # Top level modules:
 # 	APB_interface_2
-# End time: 22:40:06 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 17:24:08 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:06 on Mar 23,2025
+# Start time: 17:24:08 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_master.v 
 # -- Skipping module spi_master5
 # 
 # Top level modules:
 # 	spi_master5
-# End time: 22:40:06 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 17:24:08 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:06 on Mar 23,2025
+# Start time: 17:24:09 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_slave.v 
 # -- Skipping module SPI_slave
 # 
 # Top level modules:
 # 	SPI_slave
-# End time: 22:40:06 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 17:24:09 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:06 on Mar 23,2025
+# Start time: 17:24:09 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI3/SPI_testmodul2.v 
 # -- Skipping module SPI_testmodul2
 # 
 # Top level modules:
 # 	SPI_testmodul2
-# End time: 22:40:07 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 17:24:09 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:07 on Mar 23,2025
+# Start time: 17:24:09 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/TOP/TOP3.v 
 # -- Skipping module TOP
 # 
 # Top level modules:
 # 	TOP
-# End time: 22:40:07 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 17:24:10 on Mar 24,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:07 on Mar 23,2025
+# Start time: 17:24:10 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/fsm_sync/fsm_sync.v 
-# -- Compiling module fsm_sync
+# -- Skipping module fsm_sync
 # 
 # Top level modules:
 # 	fsm_sync
-# End time: 22:40:07 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 17:24:10 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:07 on Mar 23,2025
+# Start time: 17:24:10 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/Pkt_reg/Pkt_reg.v 
 # -- Skipping module Pkt_reg
 # 
 # Top level modules:
 # 	Pkt_reg
-# End time: 22:40:08 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 17:24:10 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:08 on Mar 23,2025
+# Start time: 17:24:10 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/Shift_Buffer/Shift_Buffer.v 
 # -- Skipping module Shift_Buffer
 # 
 # Top level modules:
 # 	Shift_Buffer
-# End time: 22:40:08 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 17:24:11 on Mar 24,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:08 on Mar 23,2025
+# Start time: 17:24:11 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/TX_Buffer/TX_Buffer.v 
 # -- Skipping module TX_Buffer
 # 
 # Top level modules:
 # 	TX_Buffer
-# End time: 22:40:08 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 17:24:11 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:08 on Mar 23,2025
+# Start time: 17:24:11 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr ../../../rtl/SH_SYNC/SH_SYNC.v 
 # -- Skipping module SH_SYNC
 # 
 # Top level modules:
 # 	SH_SYNC
-# End time: 22:40:09 on Mar 23,2025, Elapsed time: 0:00:01
+# End time: 17:24:11 on Mar 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 22:40:09 on Mar 23,2025
+# Start time: 17:24:11 on Mar 24,2025
 # vlog -reportprogress 300 "+acc" -incr APB_interface_testbench.v 
 # -- Skipping module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 22:40:09 on Mar 23,2025, Elapsed time: 0:00:00
+# End time: 17:24:12 on Mar 24,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
 # vsim "+acc" -t ps -lib work testbench 
-# Start time: 22:40:09 on Mar 23,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: ../../../rtl/TOP/TOP3.v(47): (vopt-2685) [TFMPC] - Too few port connections for 'fsm_sync_inst'.  Expected 7, found 6.
-# ** Warning: ../../../rtl/TOP/TOP3.v(47): (vopt-2718) [TFMPC] - Missing connection for port 'rfin_sync'.
-# ** Note: (vopt-143) Recognized 2 FSMs in module "TOP(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Start time: 17:24:12 on Mar 24,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.testbench(fast)
 # Loading work.APB_interface_2(fast)
 # Loading work.SPI_testmodul2(fast)
 # Loading work.spi_master5(fast)
-# Loading work.SPI_SLAVE(fast)
 # Loading work.TOP(fast)
 # Loading work.fsm_sync(fast)
 # Loading work.SH_SYNC(fast)
@@ -138,14 +133,8 @@
 # Loading work.TX_Buffer(fast)
 # ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
 #    Time: 0 ps  Iteration: 0  Instance: /testbench File: APB_interface_testbench.v Line: 310
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../../rtl/SPI3/SPI_slave.v(11).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave0_00_2 File: ../../../rtl/SPI3/SPI_testmodul2.v Line: 67
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../../rtl/SPI3/SPI_slave.v(11).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave1_01_2 File: ../../../rtl/SPI3/SPI_testmodul2.v Line: 78
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../../rtl/SPI3/SPI_slave.v(11).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave2_10_2 File: ../../../rtl/SPI3/SPI_testmodul2.v Line: 89
 # ** UI-Msg: (vish-4014) No objects found matching '/testbench/uut/SPI_modul2/top_slave/sh_sync_inst/fsm_en'.
-# Executing ONERROR command at macro ./waveformat.do line 14
+# Executing ONERROR command at macro ./waveformat.do line 20
 # TX Iteration: 1
 # TX Iteration: 2
 # TX Iteration: 3
@@ -154,9 +143,5 @@
 # TX Iteration: 6
 # TX Iteration: 7
 # TX Iteration: 8
-# TX Iteration: 9
-# TX Iteration: 10
-# Break key hit
-# Simulation stop requested.
-# End time: 22:40:30 on Mar 23,2025, Elapsed time: 0:00:21
-# Errors: 0, Warnings: 7
+# End time: 17:26:05 on Mar 24,2025, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 2
