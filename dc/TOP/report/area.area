@@ -4,22 +4,14 @@ Warning: Design 'TOP' has '1' unresolved references. For more detailed informati
 Report : area
 Design : TOP
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 20:30:38 2025
+Date   : Thu Mar 27 12:44:22 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
 Information: Timing loop detected. (OPT-150)
-	U1107/A1 U1107/X U1121/A1 U1121/X 
+	SPI_slave_inst/U21/A SPI_slave_inst/U21/X SPI_slave_inst/U23/A2 SPI_slave_inst/U23/X SPI_slave_inst/SS_neg_flag_reg/G SPI_slave_inst/SS_neg_flag_reg/Q 
 Information: Timing loop detected. (OPT-150)
-	U1108/A2 U1108/X U1121/A2 U1121/X 
-Warning: Disabling timing arc between pins 'A1' and 'X' on cell 'U1107'
-         to break a timing loop. (OPT-314)
-Warning: Disabling timing arc between pins 'A2' and 'X' on cell 'U1108'
-         to break a timing loop. (OPT-314)
-Warning: Disabling timing arc between pins 'A1' and 'X' on cell 'U1104'
-         to break a timing loop. (OPT-314)
-Warning: Disabling timing arc between pins 'A2' and 'X' on cell 'U1105'
-         to break a timing loop. (OPT-314)
+	SPI_slave_inst/counter_reg[0]/Q SPI_slave_inst/U19/A1 SPI_slave_inst/U19/X SPI_slave_inst/U20/A2 SPI_slave_inst/U20/X SPI_slave_inst/U22/A SPI_slave_inst/U22/X SPI_slave_inst/U23/B SPI_slave_inst/U23/X SPI_slave_inst/SS_neg_flag_reg/G SPI_slave_inst/SS_neg_flag_reg/Q SPI_slave_inst/U25/A2 SPI_slave_inst/U25/X SPI_slave_inst/counter_reg[0]/G 
 Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SPI_slave_inst/SS_neg_flag_reg'
          to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SPI_slave_inst/SS_neg_flag_reg'
@@ -57,21 +49,21 @@ Library(s) Used:
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
 Number of ports:                           34
-Number of nets:                          1790
-Number of cells:                         1763
-Number of combinational cells:           1448
-Number of sequential cells:               314
+Number of nets:                          1777
+Number of cells:                         1750
+Number of combinational cells:           1441
+Number of sequential cells:               308
 Number of macros/black boxes:               0
-Number of buf/inv:                        539
+Number of buf/inv:                        528
 Number of references:                      55
 
-Combinational area:                341.012153
-Buf/Inv area:                       74.228397
-Noncombinational area:             343.455126
+Combinational area:                337.003192
+Buf/Inv area:                       72.725037
+Noncombinational area:             348.027848
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   684.467279
+Total cell area:                   685.031040
 Total area:                 undefined
 
 Information: This design contains black box (unknown) components. (RPT-8)
@@ -84,9 +76,9 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-TOP                                684.4673    100.0  331.3656   322.4081  0.0000  TOP
-SPI_slave_inst                      30.6936      4.5    9.6466    21.0470  0.0000  SPI_slave
+TOP                                685.0310    100.0  327.3566   326.9182  0.0000  TOP
+SPI_slave_inst                      30.7562      4.5    9.6466    21.1097  0.0000  SPI_slave
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                 341.0122   343.4551  0.0000
+Total                                                 337.0032   348.0278  0.0000
 
 1
