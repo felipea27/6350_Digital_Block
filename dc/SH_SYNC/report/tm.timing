@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : SH_SYNC
 Version: V-2023.12-SP1
-Date   : Tue Mar 18 14:30:18 2025
+Date   : Thu Mar 27 12:36:13 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C

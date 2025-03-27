@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : fsm_sync
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 20:06:14 2025
+Date   : Thu Mar 27 12:19:13 2025
 ****************************************
 
 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =  73.8820 nW   (94%)
-  Net Switching Power  =   4.5617 nW    (6%)
+  Cell Internal Power  =  94.6324 nW   (93%)
+  Net Switching Power  =   6.9445 nW    (7%)
                          ---------
-Total Dynamic Power    =  78.4438 nW  (100%)
+Total Dynamic Power    = 101.5769 nW  (100%)
 
-Cell Leakage Power     =  34.5944 nW
+Cell Leakage Power     =  35.6452 nW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  6.6862e-05            0.0000            0.0000        6.6862e-05  (  59.15%)  i
-register       4.0222e-06        7.2360e-07           20.7606        2.5506e-05  (  22.56%)
+clock_network  8.2381e-05            0.0000            0.0000        8.2381e-05  (  60.03%)  i
+register       8.2412e-06        1.1076e-06           24.8856        3.4234e-05  (  24.95%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  2.9979e-06        3.8381e-06           13.8338        2.0670e-05  (  18.29%)
+combinational  4.0104e-06        5.8369e-06           10.7597        2.0607e-05  (  15.02%)
 --------------------------------------------------------------------------------------------------
-Total          7.3882e-05 mW     4.5617e-06 mW        34.5944 nW     1.1304e-04 mW
+Total          9.4632e-05 mW     6.9445e-06 mW        35.6452 nW     1.3722e-04 mW
 1

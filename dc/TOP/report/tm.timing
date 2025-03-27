@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : TOP
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 20:30:38 2025
+Date   : Thu Mar 27 12:44:22 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
@@ -30,29 +30,29 @@ Wire Load Model Mode: enclosed
   clock network delay (ideal)                             0.00       0.00
   sh_sync_inst/sh_en_reg/CK (UDB116SVT24_FDPQB_2)         0.00       0.00 r
   sh_sync_inst/sh_en_reg/QN (UDB116SVT24_FDPQB_2)         0.06       0.06 r
-  U1134/X (UDB116SVT24_INV_0P75)                          0.01       0.07 f
-  U1128/X (UDB116SVT24_BUF_1)                             0.02       0.09 f
-  U1445/X (UDB116SVT24_BUF_1)                             0.02       0.10 f
-  U1125/X (UDB116SVT24_INV_0P75)                          0.01       0.12 r
-  U2322/X (UDB116SVT24_ND2_MM_0P75)                       0.01       0.13 f
-  U1107/X (UDB116SVT24_ND2_MM_0P75)                       0.01       0.14 r
-  U1121/X (UDB116SVT24_AOI21_0P75)                        0.02       0.15 f
-  fsm_sync_inst/state_neg_reg/D (UDB116SVT24_FDNRBQ_V2_1)
-                                                          0.00       0.15 f
-  data arrival time                                                  0.15
+  U1135/X (UDB116SVT24_INV_0P75)                          0.01       0.07 f
+  U1326/X (UDB116SVT24_BUF_1)                             0.02       0.09 f
+  U1484/X (UDB116SVT24_BUF_1)                             0.02       0.11 f
+  U1489/X (UDB116SVT24_INV_0P75)                          0.01       0.12 r
+  U2221/X (UDB116SVT24_AO21B_0P75)                        0.02       0.14 r
+  U2222/X (UDB116SVT24_OA2BB2_0P75)                       0.02       0.15 f
+  U2237/X (UDB116SVT24_AN2_1)                             0.01       0.17 f
+  fsm_sync_inst/state_neg_reg/D (UDB116SVT24_FDNQ_V2_1)
+                                                          0.00       0.17 f
+  data arrival time                                                  0.17
 
   clock clk (fall edge)                                  50.00      50.00
   clock network delay (ideal)                             0.00      50.00
   clock uncertainty                                      -0.10      49.90
-  fsm_sync_inst/state_neg_reg/CK (UDB116SVT24_FDNRBQ_V2_1)
+  fsm_sync_inst/state_neg_reg/CK (UDB116SVT24_FDNQ_V2_1)
                                                           0.00      49.90 f
-  library setup time                                     -0.01      49.89
-  data required time                                                49.89
+  library setup time                                      0.00      49.90
+  data required time                                                49.90
   --------------------------------------------------------------------------
-  data required time                                                49.89
-  data arrival time                                                 -0.15
+  data required time                                                49.90
+  data arrival time                                                 -0.17
   --------------------------------------------------------------------------
-  slack (MET)                                                       49.74
+  slack (MET)                                                       49.73
 
 
 1
