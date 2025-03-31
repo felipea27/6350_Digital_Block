@@ -6,7 +6,11 @@ Report : timing
         -max_paths 1
 Design : SPI_slave
 Version: V-2023.12-SP1
+<<<<<<< HEAD:dc/SPI/report/tm.timing
 Date   : Sun Mar 30 22:12:47 2025
+=======
+Date   : Thu Mar 27 12:32:01 2025
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8:dc/SPI3/report/tm.timing
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C

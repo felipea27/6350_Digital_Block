@@ -19,9 +19,9 @@ add wave -noupdate /SH_SYNC_tb/uut/n223 #rfin_edge
 add wave -noupdate /SH_SYNC_tb/uut/n208 #pc1
 add wave -noupdate /SH_SYNC_tb/uut/n203 #pc0
 
-add wave -noupdate /SH_SYNC_tb/uut/n553 #pc1
-add wave -noupdate /SH_SYNC_tb/uut/n554 #pc1
-add wave -noupdate /SH_SYNC_tb/uut/n555 #pc1
+add wave -noupdate /SH_SYNC_tb/uut/n553 #pc1 int
+add wave -noupdate /SH_SYNC_tb/uut/n554 #pc1 int
+add wave -noupdate /SH_SYNC_tb/uut/n555 #pc1 int
 
 
 add wave -noupdate /SH_SYNC_tb/uut/tx
@@ -33,6 +33,8 @@ add wave -noupdate /SH_SYNC_tb/uut/interval_sum
 add wave -noupdate /SH_SYNC_tb/uut/pulse_count
 add wave -noupdate /SH_SYNC_tb/uut/avg_interval
 add wave -noupdate /SH_SYNC_tb/uut/timeout_counter
+add wave -noupdate /SH_SYNC_tb/uut/ *
+
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {3 ns} 0}
 quietly wave cursor active 1

@@ -4,7 +4,11 @@ Report : power
         -analysis_effort low
 Design : TOP
 Version: V-2023.12-SP1
+<<<<<<< HEAD
 Date   : Fri Mar 28 11:27:45 2025
+=======
+Date   : Thu Mar 27 12:44:22 2025
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8
 ****************************************
 
 
@@ -36,12 +40,21 @@ Attributes
 i - Including register clock pin internal power
 
 
+<<<<<<< HEAD
   Cell Internal Power  =   8.5697 uW   (98%)
   Net Switching Power  = 132.1865 nW    (2%)
                          ---------
 Total Dynamic Power    =   8.7019 uW  (100%)
 
 Cell Leakage Power     =   4.1615 uW
+=======
+  Cell Internal Power  =   8.3728 uW   (98%)
+  Net Switching Power  = 136.5827 nW    (2%)
+                         ---------
+Total Dynamic Power    =   8.5094 uW  (100%)
+
+Cell Leakage Power     =   4.1043 uW
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8
 
 
                  Internal         Switching           Leakage            Total
@@ -50,10 +63,19 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+<<<<<<< HEAD
 clock_network  8.4042e-03            0.0000            0.0000        8.4042e-03  (  65.33%)  i
 register       3.3705e-05        7.6641e-06        2.3684e+03        2.4098e-03  (  18.73%)
 sequential     3.7998e-05        2.3996e-06          175.4268        2.1582e-04  (   1.68%)
 combinational  9.3795e-05        1.2212e-04        1.6177e+03        1.8336e-03  (  14.25%)
 --------------------------------------------------------------------------------------------------
 Total          8.5697e-03 mW     1.3219e-04 mW     4.1615e+03 nW     1.2863e-02 mW
+=======
+clock_network  8.2071e-03            0.0000            0.0000        8.2071e-03  (  65.07%)  i
+register       3.3588e-05        7.3548e-06        2.3049e+03        2.3459e-03  (  18.60%)
+sequential     3.7985e-05        2.3870e-06          175.8191        2.1619e-04  (   1.71%)
+combinational  9.4129e-05        1.2684e-04        1.6236e+03        1.8446e-03  (  14.62%)
+--------------------------------------------------------------------------------------------------
+Total          8.3728e-03 mW     1.3658e-04 mW     4.1043e+03 nW     1.2614e-02 mW
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8
 1
