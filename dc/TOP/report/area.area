@@ -4,14 +4,24 @@ Warning: Design 'TOP' has '1' unresolved references. For more detailed informati
 Report : area
 Design : TOP
 Version: V-2023.12-SP1
+<<<<<<< HEAD
 Date   : Fri Mar 28 11:27:45 2025
+=======
+Date   : Thu Mar 27 12:44:22 2025
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8
 ****************************************
 
 Information: Updating design information... (UID-85)
 Information: Timing loop detected. (OPT-150)
+<<<<<<< HEAD
 	SPI_slave_inst/U22/A SPI_slave_inst/U22/X SPI_slave_inst/U23/A2 SPI_slave_inst/U23/X SPI_slave_inst/SS_neg_flag_reg/G SPI_slave_inst/SS_neg_flag_reg/Q 
 Information: Timing loop detected. (OPT-150)
 	SPI_slave_inst/counter_reg[0]/Q SPI_slave_inst/U18/A1 SPI_slave_inst/U18/X SPI_slave_inst/U19/A2 SPI_slave_inst/U19/X SPI_slave_inst/U20/A SPI_slave_inst/U20/X SPI_slave_inst/U23/B SPI_slave_inst/U23/X SPI_slave_inst/SS_neg_flag_reg/G SPI_slave_inst/SS_neg_flag_reg/Q SPI_slave_inst/U21/A2 SPI_slave_inst/U21/X SPI_slave_inst/counter_reg[0]/G 
+=======
+	SPI_slave_inst/U21/A SPI_slave_inst/U21/X SPI_slave_inst/U23/A2 SPI_slave_inst/U23/X SPI_slave_inst/SS_neg_flag_reg/G SPI_slave_inst/SS_neg_flag_reg/Q 
+Information: Timing loop detected. (OPT-150)
+	SPI_slave_inst/counter_reg[0]/Q SPI_slave_inst/U19/A1 SPI_slave_inst/U19/X SPI_slave_inst/U20/A2 SPI_slave_inst/U20/X SPI_slave_inst/U22/A SPI_slave_inst/U22/X SPI_slave_inst/U23/B SPI_slave_inst/U23/X SPI_slave_inst/SS_neg_flag_reg/G SPI_slave_inst/SS_neg_flag_reg/Q SPI_slave_inst/U25/A2 SPI_slave_inst/U25/X SPI_slave_inst/counter_reg[0]/G 
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8
 Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SPI_slave_inst/SS_neg_flag_reg'
          to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SPI_slave_inst/SS_neg_flag_reg'
@@ -48,6 +58,7 @@ Library(s) Used:
 
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
+<<<<<<< HEAD
 Number of ports:                           35
 Number of nets:                          1758
 Number of cells:                         1730
@@ -64,6 +75,24 @@ Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
 Total cell area:                   684.905760
+=======
+Number of ports:                           34
+Number of nets:                          1777
+Number of cells:                         1750
+Number of combinational cells:           1441
+Number of sequential cells:               308
+Number of macros/black boxes:               0
+Number of buf/inv:                        528
+Number of references:                      55
+
+Combinational area:                337.003192
+Buf/Inv area:                       72.725037
+Noncombinational area:             348.027848
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   685.031040
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8
 Total area:                 undefined
 
 Information: This design contains black box (unknown) components. (RPT-8)
@@ -76,9 +105,16 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
+<<<<<<< HEAD
 TOP                                684.9058    100.0  326.9182   327.3566  0.0000  TOP
 SPI_slave_inst                      30.6310      4.5    9.5213    21.1097  0.0000  SPI_slave
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
 Total                                                 336.4394   348.4663  0.0000
+=======
+TOP                                685.0310    100.0  327.3566   326.9182  0.0000  TOP
+SPI_slave_inst                      30.7562      4.5    9.6466    21.1097  0.0000  SPI_slave
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 337.0032   348.0278  0.0000
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8
 
 1

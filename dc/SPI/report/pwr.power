@@ -4,7 +4,11 @@ Report : power
         -analysis_effort low
 Design : SPI_slave
 Version: V-2023.12-SP1
+<<<<<<< HEAD:dc/SPI/report/pwr.power
 Date   : Sun Mar 30 22:12:47 2025
+=======
+Date   : Thu Mar 27 12:32:01 2025
+>>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8:dc/SPI3/report/pwr.power
 ****************************************
 
 

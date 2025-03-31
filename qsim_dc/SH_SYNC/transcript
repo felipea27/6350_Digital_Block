@@ -18,7 +18,7 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:31:44 on Mar 31,2025
+# Start time: 14:21:47 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/3.0/gf22nspslogl24edl116f.v 
 # -- Skipping module UDB116SVT24_ADDABCD_0P75
 # -- Skipping module UDB116SVT24_ADDABCD_1
@@ -2764,10 +2764,10 @@
 # 	UDB116SVT24_TIE1_V1_1
 # 	UDB116SVT24_TIEDIN_1
 # 	UDB116SVT24_TIEDIN_ECOCT_1
-# End time: 02:31:46 on Mar 31,2025, Elapsed time: 0:00:02
+# End time: 14:21:48 on Mar 31,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:31:48 on Mar 31,2025
+# Start time: 14:21:51 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/rtl_primitives.v 
 # -- Compiling module snps_mux2
 # -- Compiling module snps_mux4
@@ -2814,10 +2814,10 @@
 # 	snps_dff_sr_0
 # 	snps_dff_sr_1
 # 	snps_x_out_latch
-# End time: 02:31:48 on Mar 31,2025, Elapsed time: 0:00:00
+# End time: 14:21:52 on Mar 31,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:31:48 on Mar 31,2025
+# Start time: 14:21:52 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/std_primitives.v 
 # -- Compiling UDP snps_mux2
 # -- Compiling UDP snps_mux4
@@ -2846,10 +2846,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 02:31:48 on Mar 31,2025, Elapsed time: 0:00:00
+# End time: 14:21:52 on Mar 31,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:31:48 on Mar 31,2025
+# Start time: 14:21:52 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/atpg_primitives.v 
 # -- Compiling module snps_mux2
 # -- Compiling module snps_mux4
@@ -2897,123 +2897,16 @@
 # 	snps_dff_sr_0
 # 	snps_dff_sr_1
 # 	snps_x_out_latch
-# End time: 02:31:49 on Mar 31,2025, Elapsed time: 0:00:01
+# End time: 14:21:52 on Mar 31,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:31:49 on Mar 31,2025
+# Start time: 14:21:52 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" -incr ../../dc/SH_SYNC/SH_SYNC.nl.v 
-# -- Skipping module SH_SYNC
-# 
-# Top level modules:
-# 	SH_SYNC
-# End time: 02:31:49 on Mar 31,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 02:31:49 on Mar 31,2025
-# vlog -reportprogress 300 "+acc" -incr SH_SYNC_tb.v 
-# -- Skipping module SH_SYNC_tb
-# 
-# Top level modules:
-# 	SH_SYNC_tb
-# End time: 02:31:49 on Mar 31,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
-# vsim "+acc" -t ps -lib work SH_SYNC_tb 
-# Start time: 02:31:49 on Mar 31,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading work.SH_SYNC_tb(fast)
-# Loading work.SH_SYNC(fast)
-# Loading work.UDB116SVT24_FDPQB_2(fast)
-# Loading work.snps_dff_err(fast)
-# Loading work.snps_dff(fast)
-# Loading work.UDB116SVT24_ADDF_V1_1(fast)
-# Loading work.UDB116SVT24_FDPQB_1P5(fast)
-# Loading work.UDB116SVT24_OR4_1(fast)
-# Loading work.UDB116SVT24_AO21_1(fast)
-# Loading work.UDB116SVT24_INV_0P75(fast)
-# Loading work.UDB116SVT24_BUF_1(fast)
-# Loading work.UDB116SVT24_OA31_1(fast)
-# Loading work.UDB116SVT24_OR2_0P75(fast)
-# Loading work.UDB116SVT24_NR2_0P75(fast)
-# Loading work.UDB116SVT24_NR2B_0P75(fast)
-# Loading work.UDB116SVT24_ND2_MM_0P75(fast)
-# Loading work.UDB116SVT24_AOI21_0P75(fast)
-# Loading work.UDB116SVT24_ND4_0P75(fast)
-# Loading work.UDB116SVT24_OR3B_0P75(fast)
-# Loading work.UDB116SVT24_AOAI211_0P75(fast)
-# Loading work.UDB116SVT24_OAI22_0P75(fast)
-# Loading work.UDB116SVT24_NR3_0P75(fast)
-# Loading work.UDB116SVT24_AO21B_0P75(fast)
-# Loading work.UDB116SVT24_OAI21_0P75(fast)
-# Loading work.UDB116SVT24_OAI31_1(fast)
-# Loading work.UDB116SVT24_AN3B_0P75(fast)
-# Loading work.UDB116SVT24_NR4_0P75(fast)
-# Loading work.UDB116SVT24_ND4B_1(fast)
-# Loading work.UDB116SVT24_AOI31_0P75(fast)
-# Loading work.UDB116SVT24_AN2_1(fast)
-# Loading work.UDB116SVT24_OA2BB2_0P75(fast)
-# Loading work.UDB116SVT24_AOI2222_V2_0P75(fast)
-# Loading work.UDB116SVT24_AOI22_1(fast)
-# Loading work.UDB116SVT24_OAI2111_1(fast)
-# Loading work.UDB116SVT24_INV_1(fast)
-# Loading work.UDB116SVT24_ND3_0P75(fast)
-# Loading work.UDB116SVT24_AOI211_0P75(fast)
-# Loading work.UDB116SVT24_OAI211_0P75(fast)
-# Loading work.UDB116SVT24_OAI21B_1(fast)
-# Loading work.UDB116SVT24_AO221_0P75(fast)
-# Loading work.UDB116SVT24_OAOI211_0P75(fast)
-# Loading work.UDB116SVT24_ND2B_0P75(fast)
-# Loading work.UDB116SVT24_OAI311_1(fast)
-# Loading work.UDB116SVT24_EO2_V2_1(fast)
-# Loading work.UDB116SVT24_AOI21B_0P75(fast)
-# Loading work.UDB116SVT24_EN2_V2_0P75(fast)
-# Loading work.UDB116SVT24_AO21_0P75(fast)
-# Loading work.UDB116SVT24_AOI32_1(fast)
-# Loading work.UDB116SVT24_OAI32_1(fast)
-# Loading work.UDB116SVT24_OAOAI2111_1(fast)
-# Loading work.UDB116SVT24_MAJI3_1(fast)
-# Loading work.UDB116SVT24_AO22_1(fast)
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/rfin_prev_reg'.
-# Executing ONERROR command at macro ./waveformat.do line 9
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/rfin_edge'.
-# Executing ONERROR command at macro ./waveformat.do line 10
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/rfin_sync1'.
-# Executing ONERROR command at macro ./waveformat.do line 11
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/rfin_sync2'.
-# Executing ONERROR command at macro ./waveformat.do line 12
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/state'.
-# Executing ONERROR command at macro ./waveformat.do line 13
-# ** UI-Msg: (vish-4014) No objects found matching '#state2'.
-# Executing ONERROR command at macro ./waveformat.do line 15
-# ** UI-Msg: (vish-4014) No objects found matching '#state1'.
-# Executing ONERROR command at macro ./waveformat.do line 16
-# ** UI-Msg: (vish-4014) No objects found matching '#state0'.
-# Executing ONERROR command at macro ./waveformat.do line 17
-# ** UI-Msg: (vish-4014) No objects found matching '#rfin_edge'.
-# Executing ONERROR command at macro ./waveformat.do line 18
-# ** UI-Msg: (vish-4014) No objects found matching '#pc1'.
-# Executing ONERROR command at macro ./waveformat.do line 19
-# ** UI-Msg: (vish-4014) No objects found matching '#pc0'.
-# Executing ONERROR command at macro ./waveformat.do line 20
-# ** UI-Msg: (vish-4014) No objects found matching '#pc1'.
-# Executing ONERROR command at macro ./waveformat.do line 22
-# ** UI-Msg: (vish-4014) No objects found matching '#pc1'.
-# Executing ONERROR command at macro ./waveformat.do line 23
-# ** UI-Msg: (vish-4014) No objects found matching '#pc1'.
-# Executing ONERROR command at macro ./waveformat.do line 24
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/tx'.
-# Executing ONERROR command at macro ./waveformat.do line 27
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/tx_rdy_p'.
-# Executing ONERROR command at macro ./waveformat.do line 29
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/tx_rdy_prev'.
-# Executing ONERROR command at macro ./waveformat.do line 30
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/counter'.
-# Executing ONERROR command at macro ./waveformat.do line 31
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/interval_sum'.
-# Executing ONERROR command at macro ./waveformat.do line 32
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/pulse_count'.
-# Executing ONERROR command at macro ./waveformat.do line 33
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/avg_interval'.
-# Executing ONERROR command at macro ./waveformat.do line 34
-# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/timeout_counter'.
-# Executing ONERROR command at macro ./waveformat.do line 35
+# ** Error: (vlog-13069) ../../dc/SH_SYNC/SH_SYNC.nl.v(4): near "<<<": syntax error, unexpected << or <<<.
+# End time: 14:21:53 on Mar 31,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: /tools/cad/mgc/modelsim_2021.3/modeltech/linux_x86_64/vlog failed.
+# Error in macro ./runsim.do line 16
+# /tools/cad/mgc/modelsim_2021.3/modeltech/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +acc -incr ../../dc/SH_SYNC/SH_SYNC.nl.v "
