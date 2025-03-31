@@ -8,6 +8,7 @@ module Shift_Buffer_tb;
     wire [63:0] dout;         // 64-bit output (shifted data)
     wire pkt_rec;             // Packet received flag
     reg en;
+    reg pkt_rst;
     integer i;
     integer ex_file;
     reg [255:0] filename;
@@ -19,33 +20,33 @@ module Shift_Buffer_tb;
         .clk(clk),
         .rst(rst),
         .dout(dout),
+	.pkt_rst(pkt_rst),
         .pkt_rec(pkt_rec)
     );
 
-    // Clock generation: 1ms period, 10 kHz clock
     initial begin
         clk = 0;
-        forever #500000 clk = ~clk; // Period is 1 ms (500ns high, 500ns low)
+        forever #500000 clk = ~clk; 
     end
 
-    // Stimulus: Apply reset and then send data
     initial begin
         // Initialize signals
         din = 0;
         clk = 0;
-        rst = 0;
+        rst = 1;
+	pkt_rst = 0;
 	en = 1;
 	i = 5;  // Example value for i
-        // Concatenate the string parts to create the filename
+       
         filename = {"ex", i, ".txt"};
         ex_file = $fopen(filename, "r");
 	$display( "%s", filename);
         $fwrite(ex_file, "hi");
 
         // Apply reset
-        rst = 1;
-        #1400000;
         rst = 0;
+        #1400000;
+        rst = 1;
 
         // Test: Send data with sync pattern at various locations
         // The sync bits we are looking for are 11111 at specific positions

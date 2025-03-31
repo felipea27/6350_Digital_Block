@@ -1,30 +1,32 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Ultra(TM) in wire load mode
 // Version   : V-2023.12-SP1
-// Date      : Sun Mar 23 20:06:14 2025
+// Date      : Thu Mar 27 01:57:02 2025
 /////////////////////////////////////////////////////////////
 
 
-module fsm_sync ( clk, rst, rfin, sh_en, state );
-  input clk, rst, rfin, sh_en;
+module fsm_sync ( clk, rst, rfin, sh_en, fsm_rst, state );
+  input clk, rst, rfin, sh_en, fsm_rst;
   output state;
-  wire   state_pos, next_state_pos, state_neg, next_state_neg, sh_en_prev, n1,
-         n2, n3, n4, n5, n6;
+  wire   state_pos, N10, state_neg, N12, sh_en_prev, n8, n9, n10, n11, n12,
+         n13, n14;
 
-  UDB116SVT24_FDPRBQ_V2_1 state_pos_reg ( .D(next_state_pos), .CK(clk), .RD(n6), .Q(state_pos) );
-  UDB116SVT24_FDNRBQ_V2_1 state_neg_reg ( .D(next_state_neg), .CK(clk), .RD(n6), .Q(state_neg) );
-  UDB116SVT24_ND2_MM_0P75 U6 ( .A1(next_state_pos), .A2(n3), .X(n2) );
-  UDB116SVT24_OAI21B_1 U7 ( .A1(next_state_pos), .A2(rfin), .B(state_pos), .X(
-        n1) );
-  UDB116SVT24_ND2_MM_0P75 U9 ( .A1(next_state_neg), .A2(n3), .X(n5) );
-  UDB116SVT24_OAI21B_1 U10 ( .A1(rfin), .A2(next_state_neg), .B(state_neg), 
-        .X(n4) );
-  UDB116SVT24_FDPRBQ_V2_1 sh_en_prev_reg ( .D(sh_en), .CK(clk), .RD(n6), .Q(
+  UDB116SVT24_FDNQ_V2_1 state_neg_reg ( .D(N12), .CK(clk), .Q(state_neg) );
+  UDB116SVT24_FDPCBQ_1 sh_en_prev_reg ( .D(sh_en), .RS(rst), .CK(clk), .Q(
         sh_en_prev) );
-  UDB116SVT24_INV_0P75 U12 ( .A(rst), .X(n6) );
-  UDB116SVT24_AOI21_1 U13 ( .A1(n2), .A2(n1), .B(rst), .X(next_state_pos) );
-  UDB116SVT24_AOI21_1 U14 ( .A1(n5), .A2(n4), .B(rst), .X(next_state_neg) );
-  UDB116SVT24_ND2B_1 U15 ( .A(sh_en), .B(sh_en_prev), .X(n3) );
-  UDB116SVT24_OR2_0P75 U16 ( .A1(state_neg), .A2(state_pos), .X(state) );
+  UDB116SVT24_FDPQ_1 state_pos_reg ( .D(N10), .CK(clk), .Q(state_pos) );
+  UDB116SVT24_INV_0P75 U14 ( .A(sh_en), .X(n8) );
+  UDB116SVT24_AOI21_0P75 U15 ( .A1(sh_en_prev), .A2(n8), .B(fsm_rst), .X(n11)
+         );
+  UDB116SVT24_INV_0P75 U16 ( .A(state_pos), .X(n9) );
+  UDB116SVT24_AOI22_1 U17 ( .A1(state_pos), .A2(n11), .B1(rfin), .B2(n9), .X(
+        n14) );
+  UDB116SVT24_INV_0P75 U18 ( .A(rst), .X(n12) );
+  UDB116SVT24_NR2_0P75 U19 ( .A1(n14), .A2(n12), .X(N10) );
+  UDB116SVT24_INV_0P75 U20 ( .A(state_neg), .X(n10) );
+  UDB116SVT24_AOI22_1 U21 ( .A1(state_neg), .A2(n11), .B1(rfin), .B2(n10), .X(
+        n13) );
+  UDB116SVT24_NR2_0P75 U22 ( .A1(n13), .A2(n12), .X(N12) );
+  UDB116SVT24_ND2_MM_0P75 U23 ( .A1(n14), .A2(n13), .X(state) );
 endmodule
 

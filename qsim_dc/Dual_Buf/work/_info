@@ -1,0 +1,109 @@
+m255
+K4
+z2
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/Dual_Buf
+vDual_Buf
+2../../rtl/Dual_Buf/Dual_Buf.v
+!s10a 1740712063
+Z1 !s110 1740704218
+!i10b 1
+!s100 YcE0;:ZVZKE;WG<U8EAl<3
+IDnHDDa]DgTcZVT61686>^1
+R0
+w1740704210
+8../../rtl/Dual_Buf/Dual_Buf.v
+F../../rtl/Dual_Buf/Dual_Buf.v
+!i122 0
+L0 2 71
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OP;L;2024.2;79
+r1
+!s85 0
+31
+Z4 !s108 1740704218.000000
+!s107 ../../rtl/Dual_Buf/Dual_Buf.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/Dual_Buf/Dual_Buf.v|
+!i113 1
+Z5 o+acc
+Z6 tCvgOpt 0
+n@dual_@buf
+vDual_Buf_tb
+2Dual_Buf_tb.v
+!s110 1740713903
+!i10b 1
+!s100 >0:oGD7e35z^4hE]fjGUl2
+I0RzeN[>_:UEB^PCaZF82>0
+R0
+w1740713894
+8Dual_Buf_tb.v
+FDual_Buf_tb.v
+!i122 6
+L0 3 155
+R2
+R3
+r1
+!s85 0
+31
+!s108 1740713903.000000
+!s107 Dual_Buf_tb.v|
+!s90 -reportprogress|300|+acc|-incr|Dual_Buf_tb.v|
+!i113 1
+R5
+R6
+n@dual_@buf_tb
+vfsm_sync
+2../../rtl/fsm_sync/fsm_sync.v
+!s10a 1740601453
+R1
+!i10b 1
+!s100 1T@aSTjR8MPHKmXnXd3SM2
+IZEggi=zHSAY6?iL`Z`zj^2
+R0
+w1740601453
+8../../rtl/fsm_sync/fsm_sync.v
+F../../rtl/fsm_sync/fsm_sync.v
+!i122 1
+L0 2 54
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 ../../rtl/fsm_sync/fsm_sync.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/fsm_sync/fsm_sync.v|
+!i113 1
+R5
+R6
+vShift_Buffer
+2../../rtl/Shift_Buffer/Shift_Buffer.v
+!s10a 1740712059
+R1
+!i10b 1
+!s100 TS5Y_>XNb^;]2F0YIbhbD1
+I[M7];Uf9;Q6ZEF>H;=ac52
+R0
+w1740168837
+8../../rtl/Shift_Buffer/Shift_Buffer.v
+F../../rtl/Shift_Buffer/Shift_Buffer.v
+!i122 2
+L0 2 39
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 ../../rtl/Shift_Buffer/Shift_Buffer.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/Shift_Buffer/Shift_Buffer.v|
+!i113 1
+R5
+R6
+n@shift_@buffer

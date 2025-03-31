@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : Shift_Buffer
 Version: V-2023.12-SP1
-Date   : Tue Mar 18 13:01:51 2025
+Date   : Fri Mar 28 19:39:22 2025
 ****************************************
 
 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   2.3702 uW   (98%)
-  Net Switching Power  =  38.3205 nW    (2%)
+  Cell Internal Power  =   2.2786 uW   (99%)
+  Net Switching Power  =  21.3682 nW    (1%)
                          ---------
-Total Dynamic Power    =   2.4085 uW  (100%)
+Total Dynamic Power    =   2.3000 uW  (100%)
 
-Cell Leakage Power     =   1.0141 uW
+Cell Leakage Power     = 813.5380 nW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  2.3315e-03            0.0000            0.0000        2.3315e-03  (  68.12%)  i
-register       2.2049e-05        1.4493e-05          803.1887        8.3973e-04  (  24.53%)
+clock_network  2.2620e-03            0.0000            0.0000        2.2620e-03  (  72.65%)  i
+register       3.1341e-06        2.5073e-06          679.5585        6.8520e-04  (  22.01%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  1.6665e-05        2.3827e-05          210.9049        2.5140e-04  (   7.35%)
+combinational  1.3489e-05        1.8861e-05          133.9795        1.6633e-04  (   5.34%)
 --------------------------------------------------------------------------------------------------
-Total          2.3702e-03 mW     3.8320e-05 mW     1.0141e+03 nW     3.4226e-03 mW
+Total          2.2786e-03 mW     2.1368e-05 mW       813.5380 nW     3.1135e-03 mW
 1

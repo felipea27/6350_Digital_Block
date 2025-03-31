@@ -1,0 +1,3 @@
+sync bits 3 are: 0 0 0 0 1
+sync bits 2 are: 1 0 0 1 1
+sync bits 1 are: 0 0 0 0 0

@@ -3,42 +3,30 @@
 Report : area
 Design : fsm_sync
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 20:06:14 2025
+Date   : Thu Mar 27 01:57:02 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
-Information: Timing loop detected. (OPT-150)
-	U6/A1 U6/X U13/A1 U13/X 
-Information: Timing loop detected. (OPT-150)
-	U7/A1 U7/X U13/A2 U13/X 
-Warning: Disabling timing arc between pins 'A1' and 'X' on cell 'U6'
-         to break a timing loop. (OPT-314)
-Warning: Disabling timing arc between pins 'A1' and 'X' on cell 'U7'
-         to break a timing loop. (OPT-314)
-Warning: Disabling timing arc between pins 'A1' and 'X' on cell 'U9'
-         to break a timing loop. (OPT-314)
-Warning: Disabling timing arc between pins 'A2' and 'X' on cell 'U10'
-         to break a timing loop. (OPT-314)
 Library(s) Used:
 
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
-Number of ports:                            5
-Number of nets:                            16
-Number of cells:                           12
-Number of combinational cells:              9
+Number of ports:                            6
+Number of nets:                            18
+Number of cells:                           13
+Number of combinational cells:             10
 Number of sequential cells:                 3
 Number of macros/black boxes:               0
-Number of buf/inv:                          1
+Number of buf/inv:                          4
 Number of references:                       8
 
-Combinational area:                  2.192400
-Buf/Inv area:                        0.125280
-Noncombinational area:               3.570480
+Combinational area:                  1.941840
+Buf/Inv area:                        0.501120
+Noncombinational area:               3.633120
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                     5.762880
+Total cell area:                     5.574960
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -49,8 +37,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-fsm_sync                             5.7629    100.0    2.1924     3.5705  0.0000  fsm_sync
+fsm_sync                             5.5750    100.0    1.9418     3.6331  0.0000  fsm_sync
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                   2.1924     3.5705  0.0000
+Total                                                   1.9418     3.6331  0.0000
 
 1

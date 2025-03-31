@@ -1,0 +1,185 @@
+# //  ModelSim DE 2024.2 May 20 2024 Linux 4.18.0-553.37.1.el8_10.x86_64
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do runsim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim DE vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:42 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/APB_interface.v 
+# -- Skipping module APB_interface_2
+# 
+# Top level modules:
+# 	APB_interface_2
+# End time: 22:14:42 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_master.v 
+# -- Skipping module spi_master5
+# 
+# Top level modules:
+# 	spi_master5
+# End time: 22:14:43 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_slave.v 
+# -- Skipping module SPI_SLAVE
+# 
+# Top level modules:
+# 	SPI_SLAVE
+# End time: 22:14:43 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_testmodul2.v 
+# -- Skipping module SPI_testmodul2
+# 
+# Top level modules:
+# 	SPI_testmodul2
+# End time: 22:14:43 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/TOP/TOP.v 
+# -- Skipping module TOP
+# 
+# Top level modules:
+# 	TOP
+# End time: 22:14:43 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/fsm_sync/fsm_sync.v 
+# -- Skipping module fsm_sync
+# 
+# Top level modules:
+# 	fsm_sync
+# End time: 22:14:43 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/Pkt_reg/Pkt_reg.v 
+# -- Skipping module Pkt_reg
+# 
+# Top level modules:
+# 	Pkt_reg
+# End time: 22:14:43 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/Shift_Buffer/Shift_Buffer.v 
+# -- Skipping module Shift_Buffer
+# 
+# Top level modules:
+# 	Shift_Buffer
+# End time: 22:14:43 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:43 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr ../../rtl/TX_Buffer/TX_Buffer.v 
+# -- Skipping module TX_Buffer
+# 
+# Top level modules:
+# 	TX_Buffer
+# End time: 22:14:44 on Feb 27,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 22:14:44 on Feb 27,2025
+# vlog -reportprogress 300 "+acc" -incr APB_interface_testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 22:14:44 on Feb 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-8690) Ignoring plusarg '+acc' with -novopt in effect.
+# vsim "+acc" -t ps -lib work testbench 
+# Start time: 22:14:44 on Feb 27,2025
+# Loading work.testbench
+# Loading work.APB_interface_2
+# Loading work.SPI_testmodul2
+# Loading work.spi_master5
+# Loading work.SPI_SLAVE
+# Loading work.TOP
+# Loading work.fsm_sync
+# Loading work.Shift_Buffer
+# Loading work.Pkt_reg
+# Loading work.TX_Buffer
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: APB_interface_testbench.v Line: 345
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'SPI_MASTER_2'.  Expected 20, found 19.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/SPI_MASTER_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 40
+# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(40): [TFMPC] - Missing connection for port 'i_SPI_CLK'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave0_00_2'.  Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave0_00_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 67
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../rtl/SPI/SPI_slave.v(11).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave0_00_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 67
+# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(67): [TFMPC] - Missing connection for port 'PRESETn'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave1_01_2'.  Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave1_01_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 78
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../rtl/SPI/SPI_slave.v(11).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave1_01_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 78
+# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(78): [TFMPC] - Missing connection for port 'PRESETn'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'spi_slave2_10_2'.  Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave2_10_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 89
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'OUT'. The port definition is at: ../../rtl/SPI/SPI_slave.v(11).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/uut/SPI_modul2/spi_slave2_10_2 File: ../../rtl/SPI/SPI_testmodul2.v Line: 89
+# ** Warning: (vsim-3722) ../../rtl/SPI/SPI_testmodul2.v(89): [TFMPC] - Missing connection for port 'PRESETn'.
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/testbench/spi_clk'.
+# Executing ONERROR command at macro ./waveformat.do line 30
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/testbench/PSLVERR'.
+# Executing ONERROR command at macro ./waveformat.do line 37
+# Iteration: 1
+# Iteration: 2
+# Iteration: 3
+# Iteration: 4
+# Iteration: 5
+# Iteration: 6
+# Iteration: 7
+# Iteration: 8
+# Iteration: 9
+# Iteration: 10
+# Iteration: 11
+# Iteration: 12
+# Iteration: 13
+# Iteration: 14
+# Iteration: 15
+# Iteration: 16
+# Iteration: 17
+# Iteration: 18
+# Iteration: 19
+# Iteration: 20
+# Iteration: 21
+# Iteration: 22
+# Iteration: 23
+# Iteration: 24
+# Iteration: 25
+# Iteration: 26
+# Iteration: 27
+# Iteration: 28
+# Iteration: 29
+# Iteration: 30
+# Iteration: 31
+# Iteration: 32
+# Iteration: 33
+# Iteration: 34
+# Iteration: 35
+# Break key hit
+# Break in Module TOP at ../../rtl/TOP/TOP.v line 99
+# End time: 22:16:04 on Feb 27,2025, Elapsed time: 0:01:20
+# Errors: 0, Warnings: 13

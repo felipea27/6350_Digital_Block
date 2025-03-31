@@ -3,7 +3,7 @@
 Report : area
 Design : TX_Buffer
 Version: V-2023.12-SP1
-Date   : Tue Mar 18 14:41:53 2025
+Date   : Thu Mar 27 01:53:26 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,21 +12,21 @@ Library(s) Used:
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
 Number of ports:                           13
-Number of nets:                            44
-Number of cells:                           32
-Number of combinational cells:             23
+Number of nets:                            43
+Number of cells:                           31
+Number of combinational cells:             22
 Number of sequential cells:                 9
 Number of macros/black boxes:               0
-Number of buf/inv:                          8
-Number of references:                      13
+Number of buf/inv:                          6
+Number of references:                      12
 
-Combinational area:                  7.454160
-Buf/Inv area:                        1.127520
+Combinational area:                  7.203600
+Buf/Inv area:                        0.751680
 Noncombinational area:              10.586160
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                    18.040320
+Total cell area:                    17.789760
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -37,8 +37,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-TX_Buffer                           18.0403    100.0    7.4542    10.5862  0.0000  TX_Buffer
+TX_Buffer                           17.7898    100.0    7.2036    10.5862  0.0000  TX_Buffer
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                   7.4542    10.5862  0.0000
+Total                                                   7.2036    10.5862  0.0000
 
 1

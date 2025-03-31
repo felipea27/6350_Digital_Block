@@ -3,6 +3,7 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate /Shift_Buffer_tb/clk
 add wave -noupdate /Shift_Buffer_tb/din
 add wave -noupdate /Shift_Buffer_tb/rst
+add wave -noupdate /Shift_Buffer_tb/uut/shift_reg
 add wave -noupdate /Shift_Buffer_tb/dout
 add wave -noupdate /Shift_Buffer_tb/pkt_rec
 add wave -noupdate /Shift_Buffer_tb/sr_r

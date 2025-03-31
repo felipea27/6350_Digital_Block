@@ -131,9 +131,9 @@ module SH_SYNC_tb;
 
     initial begin
 	    
-	    rst = 1;
-	    #200;
 	    rst = 0;
+	    #200;
+	    rst = 1;
 	    #200;
 
 	    SEND_SYNC(1);

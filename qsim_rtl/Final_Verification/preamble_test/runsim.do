@@ -7,11 +7,11 @@ vlib work
 vmap work work
 
 # include netlist and testbench files
-vlog +acc -incr ../../../rtl/SPI3/APB_interface.v
-vlog +acc -incr ../../../rtl/SPI3/SPI_master.v
-vlog +acc -incr ../../../rtl/SPI3/SPI_slave.v
-vlog +acc -incr ../../../rtl/SPI3/SPI_testmodul2.v
-vlog +acc -incr ../../../rtl/TOP/TOP3.v
+vlog +acc -incr ../../../rtl/SPI/APB_interface.v
+vlog +acc -incr ../../../rtl/SPI/SPI_master.v
+vlog +acc -incr ../../../rtl/SPI/SPI_slave.v
+vlog +acc -incr ../../../rtl/SPI/SPI_testmodul2.v
+vlog +acc -incr ../../../rtl/TOP/TOP.v
 vlog +acc -incr ../../../rtl/fsm_sync/fsm_sync.v
 vlog +acc -incr ../../../rtl/Pkt_reg/Pkt_reg.v
 vlog +acc -incr ../../../rtl/Shift_Buffer/Shift_Buffer.v
