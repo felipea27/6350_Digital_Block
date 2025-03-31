@@ -28,9 +28,9 @@ module APB_interface_2(
 	output reg [7:0] o_PWDATA,
 
 	input RX,
-	input sh_en,
 	input rfin,
 	output pkt_rec,
+	output sh_en,
 	output TX_OUT
 	);
 	
@@ -135,7 +135,7 @@ SPI_testmodul2 SPI_modul2(
 	.PWDATA(o_PWDATA),
 
 	.rfin(rfin),
-	.sh_en(sh_en),
+	.sh_en(sh_en), //delete
 	.pkt_rec(pkt_rec),
 	.RX(RX),
 	.TX_OUT(TX_OUT)
@@ -146,4 +146,4 @@ SPI_testmodul2 SPI_modul2(
 endmodule 
 
 
-
+ 

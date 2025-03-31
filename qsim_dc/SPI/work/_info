@@ -1,0 +1,105 @@
+m255
+K4
+z2
+!s11f vlog 2021.3 2021.07, Jul 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/users/fandrade/ee6350/6350_Digital_Block/qsim_dc/SPI
+vAPB_interface_2
+!s10a 1743102946
+!s110 1743362511
+!i10b 1
+!s100 o3W8TQA^Ng=2PK3LDMCIM1
+IdR<B__CjlL`I@DT]1mHZU0
+R0
+w1743102946
+8../../rtl/SPI/APB_interface.v
+F../../rtl/SPI/APB_interface.v
+!i122 2
+L0 3 144
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 OL;L;2021.3;73
+r1
+!s85 0
+31
+!s108 1743362511.000000
+!s107 ../../rtl/SPI/APB_interface.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/APB_interface.v|
+!i113 0
+Z3 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z4 tCvgOpt 0
+n@a@p@b_interface_2
+vspi_master5
+!s10a 1741237640
+!s110 1743362510
+!i10b 1
+!s100 k2ZFTA`_V78d`?a2z85[P0
+I25G[KcZ<_>9KA0OfB<W6H3
+R0
+w1741237640
+8../../rtl/SPI/SPI_master.v
+F../../rtl/SPI/SPI_master.v
+!i122 0
+L0 3 344
+R1
+R2
+r1
+!s85 0
+31
+!s108 1743362510.000000
+!s107 ../../rtl/SPI/SPI_master.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/SPI_master.v|
+!i113 0
+R3
+R4
+vSPI_slave
+!s110 1743391757
+!i10b 1
+!s100 ^9<JA>=8ebzGEf3VicU653
+IIJ`GGW>^o^I?<J<O2AA[X0
+R0
+w1743387167
+8../../dc/SPI/SPI_slave.nl.v
+F../../dc/SPI/SPI_slave.nl.v
+!i122 6
+L0 8 101
+R1
+R2
+r1
+!s85 0
+31
+!s108 1743391757.000000
+!s107 ../../dc/SPI/SPI_slave.nl.v|
+!s90 -reportprogress|300|+acc|-incr|../../dc/SPI/SPI_slave.nl.v|
+!i113 0
+R3
+R4
+n@s@p@i_slave
+vSPI_testmodul_3
+!s10a 1743362696
+!s110 1743362705
+!i10b 1
+!s100 Z?79nPVf5E5DcYAkVg6Q72
+In<5FFzZ5[3G9J>VKFozJ41
+R0
+w1743362696
+8SPI_testmodul_3.v
+FSPI_testmodul_3.v
+!i122 5
+L0 3 109
+R1
+R2
+r1
+!s85 0
+31
+!s108 1743362704.000000
+!s107 SPI_testmodul_3.v|
+!s90 -reportprogress|300|+acc|-incr|SPI_testmodul_3.v|
+!i113 0
+R3
+R4
+n@s@p@i_testmodul_3

@@ -9,7 +9,7 @@ module Pkt_reg (din, pkt_rec, en, clk, rst, dout, SPI_en);
 	reg [PACKET_SIZE-1:0] pkt_reg;
 
 	always @(posedge clk) begin
-		if (rst) begin
+		if (rst == 0) begin
 			pkt_reg <= 0;
 			dout <= 1'b0;
 		end

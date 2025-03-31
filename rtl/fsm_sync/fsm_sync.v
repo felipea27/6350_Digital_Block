@@ -6,7 +6,6 @@ module fsm_sync (
     input wire rfin,       // Input signal
     input wire sh_en,
     input wire fsm_rst,    // Allow sync-ing
-    output reg rfin_sync,  // Synchronized input signal
     output reg state       // Output signal
 );
 
@@ -20,7 +19,7 @@ module fsm_sync (
 
     // State Transition Logic for positive edge triggered
     always @(posedge clk) begin
-        if (rst)
+        if (rst == 0)
             state_pos <= IDLE;
         else
             state_pos <= next_state_pos;
@@ -28,14 +27,14 @@ module fsm_sync (
 
     // State Transition Logic for negative edge triggered
     always @(negedge clk) begin
-        if (rst)
+        if (rst == 0)
             state_neg <= IDLE;
         else
             state_neg <= next_state_neg;
     end
 
     always @(posedge clk) begin
-	    if (rst) begin
+	    if (rst == 0) begin
 		    sh_en_prev <= 1'b0;
 	    end else begin
 		    sh_en_prev <= sh_en;

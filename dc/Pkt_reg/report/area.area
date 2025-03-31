@@ -3,7 +3,7 @@
 Report : area
 Design : Pkt_reg
 Version: V-2023.12-SP1
-Date   : Tue Mar 18 14:24:50 2025
+Date   : Thu Mar 27 01:38:27 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,21 +12,21 @@ Library(s) Used:
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
 Number of ports:                           77
-Number of nets:                           297
-Number of cells:                          228
-Number of combinational cells:            156
+Number of nets:                           412
+Number of cells:                          343
+Number of combinational cells:            271
 Number of sequential cells:                72
 Number of macros/black boxes:               0
-Number of buf/inv:                         78
-Number of references:                      16
+Number of buf/inv:                        137
+Number of references:                      15
 
-Combinational area:                 56.062800
-Buf/Inv area:                       13.467600
+Combinational area:                 59.883839
+Buf/Inv area:                       20.859120
 Noncombinational area:              85.691522
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   141.754322
+Total cell area:                   145.575361
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -37,8 +37,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Pkt_reg                            141.7543    100.0   56.0628    85.6915  0.0000  Pkt_reg
+Pkt_reg                            145.5754    100.0   59.8838    85.6915  0.0000  Pkt_reg
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                  56.0628    85.6915  0.0000
+Total                                                  59.8838    85.6915  0.0000
 
 1

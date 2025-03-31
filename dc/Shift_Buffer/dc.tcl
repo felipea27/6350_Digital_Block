@@ -24,11 +24,11 @@ set_fix_multiple_port_nets -all -buffer_constants
 check_design
 current_design $top_level
 
-link
+link > ./report/link.txt
 
 compile_ultra
 
-check_design
+check_design > ./report/check_design.txt
 
 file mkdir report 
 write -hierarchy -format verilog -output "${top_level}.nl.v"

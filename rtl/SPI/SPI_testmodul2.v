@@ -18,8 +18,8 @@ module SPI_testmodul2(
 
 	input RX,
         input rfin,
-	input sh_en,
 	output pkt_rec,
+	output sh_en,
 	output TX_OUT
     );
 	 
@@ -72,9 +72,9 @@ TOP top_slave (
 	.MISO(w_MISO),
 	.SCK(w_SCK),
         .rfin(rfin),
-	.rst(!PRESETn),
-	.sh_en(sh_en),
+	.rst(PRESETn),
 	.pkt_rec(pkt_rec),
+	.sh_en(sh_en),
 	.RX(RX),
 	.TX_OUT(TX_OUT)
 );

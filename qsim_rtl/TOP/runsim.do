@@ -6,15 +6,23 @@
 vlib work 
 vmap work work
 
-# Include Netlist and Testbench
-vlog +acc -incr ../../rtl/TOP/TOP.v 
-vlog +acc -incr ../../rtl/Shift_Buffer/Shift_Buffer.v 
-vlog +acc -incr ../../rtl/SPI_pkt/SPI_pkt.v 
-vlog +acc -incr ../../rtl/Pkt_reg/Pkt_reg.v 
-vlog +acc -incr ../../rtl/SPI/SPI_slave.v
-vlog +acc -incr TOP_tb.v 
+# include netlist and testbench files
+vlog +acc -incr ../../rtl/SPI3/APB_interface.v
+vlog +acc -incr ../../rtl/SPI3/SPI_master.v
+vlog +acc -incr ../../rtl/SPI3/SPI_slave.v
+vlog +acc -incr ../../rtl/SPI3/SPI_testmodul2.v
+vlog +acc -incr ../../rtl/TOP/TOP3.v
+vlog +acc -incr ../../rtl/fsm_sync/fsm_sync.v
+vlog +acc -incr ../../rtl/Pkt_reg/Pkt_reg.v
+vlog +acc -incr ../../rtl/Shift_Buffer/Shift_Buffer.v
+vlog +acc -incr ../../rtl/TX_Buffer/TX_Buffer.v
+vlog +acc -incr ../../rtl/SH_SYNC/SH_SYNC.v
 
-# Run Simulator 
-vsim +acc -t ps -lib work TOP_tb 
+
+vlog +acc -incr APB_interface_testbench.v
+
+# run simulation 
+vsim +acc -t ps -lib work testbench
 do waveformat.do   
 run -all
+#quit -f

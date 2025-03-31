@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : TOP
 Version: V-2023.12-SP1
-Date   : Sun Mar 23 20:30:38 2025
+Date   : Fri Mar 28 11:27:45 2025
 ****************************************
 
 
@@ -36,12 +36,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   8.6503 uW   (98%)
-  Net Switching Power  = 138.6134 nW    (2%)
+  Cell Internal Power  =   8.5697 uW   (98%)
+  Net Switching Power  = 132.1865 nW    (2%)
                          ---------
-Total Dynamic Power    =   8.7889 uW  (100%)
+Total Dynamic Power    =   8.7019 uW  (100%)
 
-Cell Leakage Power     =   3.9927 uW
+Cell Leakage Power     =   4.1615 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -50,10 +50,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  8.4851e-03            0.0000            0.0000        8.4851e-03  (  66.39%)  i
-register       3.2254e-05        6.8867e-06        2.1817e+03        2.2208e-03  (  17.38%)
-sequential     3.8266e-05        2.3939e-06          177.6105        2.1827e-04  (   1.71%)
-combinational  9.4653e-05        1.2933e-04        1.6334e+03        1.8574e-03  (  14.53%)
+clock_network  8.4042e-03            0.0000            0.0000        8.4042e-03  (  65.33%)  i
+register       3.3705e-05        7.6641e-06        2.3684e+03        2.4098e-03  (  18.73%)
+sequential     3.7998e-05        2.3996e-06          175.4268        2.1582e-04  (   1.68%)
+combinational  9.3795e-05        1.2212e-04        1.6177e+03        1.8336e-03  (  14.25%)
 --------------------------------------------------------------------------------------------------
-Total          8.6503e-03 mW     1.3861e-04 mW     3.9927e+03 nW     1.2782e-02 mW
+Total          8.5697e-03 mW     1.3219e-04 mW     4.1615e+03 nW     1.2863e-02 mW
 1

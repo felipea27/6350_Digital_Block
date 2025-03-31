@@ -1,49 +1,51 @@
-# //  ModelSim DE 2024.2 May 20 2024 Linux 4.18.0-553.37.1.el8_10.x86_64
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 3.10.0-1160.66.1.el7.x86_64
 # //
-# // Unpublished work. Copyright 2024 Siemens
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
 # //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
 # //
 # do runsim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
-# Model Technology ModelSim DE vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# Model Technology ModelSim SE-64 vmap 2021.3 Lib Mapping Utility 2021.07 Jul 13 2021
 # vmap work work 
 # Modifying modelsim.ini
-# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 12:43:46 on Feb 28,2025
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 00:58:56 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SH_SYNC/SH_SYNC.v 
-# -- Compiling module SH_SYNC
+# -- Skipping module SH_SYNC
 # 
 # Top level modules:
 # 	SH_SYNC
-# End time: 12:43:46 on Feb 28,2025, Elapsed time: 0:00:00
+# End time: 00:58:56 on Mar 31,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim DE vlog 2024.2 Compiler 2024.05 May 20 2024
-# Start time: 12:43:46 on Feb 28,2025
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 00:58:56 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" -incr SH_SYNC_tb.v 
 # -- Compiling module SH_SYNC_tb
 # 
 # Top level modules:
 # 	SH_SYNC_tb
-# End time: 12:43:47 on Feb 28,2025, Elapsed time: 0:00:01
+# End time: 00:58:56 on Mar 31,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# ** Warning: (vsim-8690) Ignoring plusarg '+acc' with -novopt in effect.
+# ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
 # vsim "+acc" -t ps -lib work SH_SYNC_tb 
-# Start time: 12:43:47 on Feb 28,2025
-# Loading work.SH_SYNC_tb
-# Loading work.SH_SYNC
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/SH_SYNC_tb/uut/tx'.
+# Start time: 00:58:56 on Mar 31,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 7, found 6.
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'fsm_rst'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.SH_SYNC_tb(fast)
+# Loading work.SH_SYNC(fast)
+# ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/tx'.
 # Executing ONERROR command at macro ./waveformat.do line 11
 # ** Note: $stop    : SH_SYNC_tb.v(145)
 #    Time: 83001700 ns  Iteration: 0  Instance: /SH_SYNC_tb
 # Break in Module SH_SYNC_tb at SH_SYNC_tb.v line 145
-# End time: 12:44:55 on Feb 28,2025, Elapsed time: 0:01:08
-# Errors: 0, Warnings: 1

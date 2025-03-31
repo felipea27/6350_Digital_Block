@@ -2,7 +2,7 @@ set top_level TOP
 
 source -verbose "../common_scripts/libs.tcl" 
 
-analyze -format verilog "../../rtl/$top_level/TOP3.v"
+analyze -format verilog "../../rtl/$top_level/TOP.v"
 elaborate $top_level
 list_designs
 
@@ -24,11 +24,16 @@ set_fix_multiple_port_nets -all -buffer_constants
 check_design
 current_design $top_level
 
-link
+link > ./report/link.txt
 
 compile_ultra
 
-check_design
+#write -hierarchy -format db -xg_force_db -output $top_level.db
+
+check_design > ./report/check_design.txt
+
+set_propagated_clock [all_clocks]
+#write_sdc $top_level.sdc
 
 file mkdir report 
 write -hierarchy -format verilog -output "${top_level}.nl.v"

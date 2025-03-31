@@ -9,7 +9,7 @@ module TX_Buffer (clk, rst, din, dout, en, load);
 	reg [7:0] buffer;
 
         always @(posedge clk) begin
-                if (rst) begin
+                if (rst == 0) begin
                         dout <= 1'b0;
 			buffer <= 8'b0;
                 end else begin

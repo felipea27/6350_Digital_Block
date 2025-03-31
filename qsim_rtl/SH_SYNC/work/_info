@@ -1,59 +1,72 @@
 m255
 K4
 z2
-!s11f vlog 2024.2 2024.05, May 20 2024
+Z0 !s99 nomlopt
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/SH_SYNC
+d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/SH_SYNC
+T_opt
+!s110 1743397138
+Vo4C6XaJ_=fZM_M5YTdLYL3
+04 10 4 work SH_SYNC_tb fast 0
+=1-5667e9aff8b2-67ea2111-8eb15-7db7
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.3;73
 vSH_SYNC
-2../../rtl/SH_SYNC/SH_SYNC.v
-!s110 1740764626
+!s10a 1743396977
+!s110 1743397015
 !i10b 1
-!s100 7E8M@=o7=nX2REcLTXGd[2
-IWMe>Rc^mdAK7;T3:8:odj3
-R0
-w1740764486
+!s100 PIJ`GA>Li3HT6eKoOJn6o2
+IX6d^<I0c9i;8^86C>:WZV0
+Z2 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/SH_SYNC
+w1743396977
 8../../rtl/SH_SYNC/SH_SYNC.v
 F../../rtl/SH_SYNC/SH_SYNC.v
-!i122 6
-L0 1 176
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 OP;L;2024.2;79
+!i122 11
+L0 1 209
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z3 !s108 1740764626.000000
+!s108 1743397015.000000
 !s107 ../../rtl/SH_SYNC/SH_SYNC.v|
 !s90 -reportprogress|300|+acc|-incr|../../rtl/SH_SYNC/SH_SYNC.v|
-!i113 1
-Z4 o+acc
-Z5 tCvgOpt 0
+!i113 0
+Z5 o+acc
+R1
 n@s@h_@s@y@n@c
 vSH_SYNC_tb
-2SH_SYNC_tb.v
-!s110 1740764627
+!s110 1743397136
 !i10b 1
-!s100 =R`MQzL7iGK?b]Doeik_G2
-IHNO3TlVJk2[K8c`dT7G=32
-R0
-w1740764592
+!s100 M8kB?a?eQYOD6SgR3gPQg0
+ILTABIHoN8KDMVlA^4H03b3
+R2
+w1743397130
 8SH_SYNC_tb.v
 FSH_SYNC_tb.v
-!i122 7
+!i122 12
 L0 3 146
-R1
-R2
+R3
+R4
 r1
 !s85 0
 31
-R3
+!s108 1743397136.000000
 !s107 SH_SYNC_tb.v|
 !s90 -reportprogress|300|+acc|-incr|SH_SYNC_tb.v|
-!i113 1
-R4
+!i113 0
 R5
+R1
 n@s@h_@s@y@n@c_tb

@@ -1,0 +1,82 @@
+ 
+****************************************
+Report : area
+Design : SPI_slave
+Version: V-2023.12-SP1
+Date   : Sun Mar 30 22:12:47 2025
+****************************************
+
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	U46/A U46/X U48/A2 U48/X SS_neg_flag_reg/G SS_neg_flag_reg/Q 
+Information: Timing loop detected. (OPT-150)
+	counter_reg[0]/Q U44/A1 U44/X U45/A2 U45/X U47/A U47/X U48/B U48/X SS_neg_flag_reg/G SS_neg_flag_reg/Q U49/A2 U49/X counter_reg[0]/G 
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'SS_neg_flag_reg'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[0]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[1]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'G' and 'Q' on cell 'counter_reg[2]'
+         to break a timing loop. (OPT-314)
+Library(s) Used:
+
+    gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
+
+Number of ports:                           21
+Number of nets:                            73
+Number of cells:                           61
+Number of combinational cells:             39
+Number of sequential cells:                22
+Number of macros/black boxes:               0
+Number of buf/inv:                         17
+Number of references:                      15
+
+Combinational area:                  9.270720
+Buf/Inv area:                        2.255040
+Noncombinational area:              21.109680
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                    30.380400
+Total area:                 undefined
+
+Information: This design contains unmapped logic. (RPT-7)
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+SPI_slave                           30.3804    100.0    9.2707    21.1097  0.0000  SPI_slave
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                   9.2707    21.1097  0.0000
+
+1

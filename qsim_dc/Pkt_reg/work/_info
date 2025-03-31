@@ -1,0 +1,69 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.3 2021.07, Jul 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/users/fandrade/ee6350/6350_Digital_Block/qsim_dc/Pkt_reg
+T_opt
+!s110 1743209193
+VYVNCF]G^Q@MMigokm8hoM1
+04 10 4 work Pkt_reg_tb fast 0
+=1-5667e9aff8b2-67e742e9-38da8-11b86
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.3;73
+vPkt_reg
+!s10a 1743050040
+!s110 1743209163
+!i10b 1
+!s100 K_AGK9HgC=R7hRJmf[0Fz1
+I4filPDKEL9Y8RQcMVTf<i1
+R0
+w1743050040
+8../../rtl/Pkt_reg/Pkt_reg.v
+F../../rtl/Pkt_reg/Pkt_reg.v
+!i122 0
+L0 2 26
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.3;73
+r1
+!s85 0
+31
+!s108 1743209163.000000
+!s107 ../../rtl/Pkt_reg/Pkt_reg.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/Pkt_reg/Pkt_reg.v|
+!i113 0
+Z4 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@pkt_reg
+vPkt_reg_tb
+!s110 1743209192
+!i10b 1
+!s100 5WECPR;J@gRP[VTUIXcbe2
+I@bfLcGYn;3a48@:d4ECbL3
+R0
+w1743209183
+8Pkt_reg_tb.v
+FPkt_reg_tb.v
+!i122 2
+L0 2 54
+R2
+R3
+r1
+!s85 0
+31
+!s108 1743209192.000000
+!s107 Pkt_reg_tb.v|
+!s90 -reportprogress|300|+acc|-incr|Pkt_reg_tb.v|
+!i113 0
+R4
+R1
+n@pkt_reg_tb

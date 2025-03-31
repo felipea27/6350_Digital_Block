@@ -1,0 +1,301 @@
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Sun Mar 30 23:45:16 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1161' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1166' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1177' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1178' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1182' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1183' does not drive any nets. (LINT-1)
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Sun Mar 30 23:45:16 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1161' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1166' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1177' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1178' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1182' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1183' does not drive any nets. (LINT-1)
+1
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Sun Mar 30 23:57:40 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1161' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1166' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1177' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1178' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1182' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1183' does not drive any nets. (LINT-1)
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Sun Mar 30 23:57:40 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1161' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1166' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1177' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1178' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1182' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1183' does not drive any nets. (LINT-1)
+1
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 00:33:16 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 00:33:16 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 01:10:45 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 01:10:45 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 01:38:10 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 01:38:10 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 02:09:47 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 02:09:47 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 02:25:17 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+ 
+****************************************
+check_design summary:
+Version:     V-2023.12-SP1
+Date:        Mon Mar 31 02:25:17 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+--------------------------------------------------------------------------------
+
+Warning: In design 'SH_SYNC', cell 'B_29' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1154' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1159' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1170' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1171' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1175' does not drive any nets. (LINT-1)
+Warning: In design 'SH_SYNC', cell 'C1176' does not drive any nets. (LINT-1)
+1
+1

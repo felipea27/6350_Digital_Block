@@ -24,22 +24,21 @@ module SH_SYNC (
     reg [2:0] state, next_state;
 
     // Internal registers
-    reg [15:0] counter;
+    reg [14:0] counter;
     reg [31:0] interval_sum;
     reg [3:0] pulse_count;
-    reg [15:0] avg_interval;
+    reg [13:0] avg_interval;
     reg [6:0] pulse_gen_count;
-    reg [15:0] timeout_counter;
+    reg [13:0] timeout_counter;
     reg first_pulse_flag;
     reg rfin_prev, rfin_sync1, rfin_sync2, rfin_edge;
-    reg rfin2_prev, rfin2_sync1, rfin2_sync2;
     reg [6:0] pulse_pack_count; 
     reg tx_rdy_prev;
     reg tx_rdy_p;
 
     // State transition logic
     always @(posedge clk) begin
-        if (rst) 
+        if (rst == 0) 
             state <= IDLE;
         else 
             state <= next_state;
@@ -100,18 +99,20 @@ module SH_SYNC (
     end
     
     always @(posedge clk) begin
-        if (rst) begin
-            counter <= 0;
-            interval_sum <= 0;
-            pulse_count <= 0;
-            avg_interval <= 0;
-            pulse_gen_count <= 0;
-            pulse_pack_count <= 0;
+        if (rst == 0) begin
+            counter <= 14'd0;
+            interval_sum <= 31'd0;
+            pulse_count <= 4'b0000;
+	    pulse_count[1] <= 0;
+            avg_interval <= 14'd0;
+            pulse_gen_count <= 7'd0;
+            pulse_pack_count <= 7'd0;
             sh_en <= 0;
-            timeout_counter <= 0;
+            timeout_counter <= 14'd0;
             rfin_sync1 <= 0;
             rfin_sync2 <= 0;
             rfin_prev <= 0;
+            rfin_edge <= 0;
             first_pulse_flag <= 1;
 	    fsm_rst <= 0;
 	    tx_rdy_prev <= 0;
@@ -128,7 +129,7 @@ module SH_SYNC (
                 IDLE: begin
                     counter <= 0;
                     interval_sum <= 0;
-                    pulse_count <= 0;
+                    pulse_count <= 4'b0000;
                     pulse_gen_count <= 0;
                     pulse_pack_count <= 0;
                     sh_en <= 0;
@@ -167,12 +168,13 @@ module SH_SYNC (
                 GENERATE: begin
                     if (pulse_gen_count < PACKET_SIZE + 2) begin
                         if ((first_pulse_flag && counter == avg_interval / 2) || 
-                           // (!first_pulse_flag && counter == 10000)) begin
                             (!first_pulse_flag && counter == avg_interval)) begin
-                            sh_en <= 1;
+                            
+			    sh_en <= 1;
                             counter <= 0;
                             pulse_gen_count <= pulse_gen_count + 1;
                             first_pulse_flag <= 0;
+
                         end else begin
                             sh_en <= 0;
                             counter <= counter + 1;
