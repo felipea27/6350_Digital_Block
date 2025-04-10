@@ -11,7 +11,7 @@ module Pkt_reg (din, pkt_rec, en, clk, rst, dout, SPI_en);
 	always @(posedge clk) begin
 		if (rst == 0) begin
 			pkt_reg <= 0;
-			dout <= 1'b0;
+			dout <= 8'b0;
 		end
 		else if (pkt_rec) begin
 			pkt_reg <= din;

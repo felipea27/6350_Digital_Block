@@ -4,11 +4,15 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate /fsm_sync_tb/clk
 add wave -noupdate /fsm_sync_tb/rst
 add wave -noupdate /fsm_sync_tb/rfin
+add wave -noupdate /fsm_sync_tb/fsm_rst
 add wave -noupdate /fsm_sync_tb/state
 add wave -noupdate /fsm_sync_tb/sh_en
+add wave -noupdate /fsm_sync_tb/uut/next_state_pos
+add wave -noupdate /fsm_sync_tb/uut/next_state_neg
+add wave -noupdate /fsm_sync_tb/uut/state_pos
+add wave -noupdate /fsm_sync_tb/uut/state_neg
 add wave -noupdate /fsm_sync_tb/uut/sh_en_prev
-add wave -noupdate /fsm_sync_tb/uut/sh_en_sync1
-add wave -noupdate /fsm_sync_tb/uut/sh_en_sync2
+
 
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {3 ns} 0}

@@ -1,9 +1,12 @@
 `timescale 1ns/1ps
 module Pkt_reg_tb;
 
-    reg clk, rst, pkt_rec, pkt_flg;
-    reg [63:0] din;
-    wire dout;
+    reg clk, rst, pkt_rec, en, SPI_en;
+    localparam PACKET_SIZE = 64;
+
+    reg [PACKET_SIZE-1:0] din;
+    // reg [7:0] dout;
+    wire [7:0] dout;
 
     reg [63:0] hold;
 
@@ -13,6 +16,8 @@ module Pkt_reg_tb;
         .pkt_rec(pkt_rec),
         .clk(clk),
         .rst(rst),
+	.en(en),
+	.SPI_en(SPI_en),
         .dout(dout)
     );
 
@@ -24,24 +29,27 @@ module Pkt_reg_tb;
         clk = 1;
         rst = 1;
         pkt_rec = 0;
-	pkt_flg = 0;
+	SPI_en = 0;
 	hold = 64'b0;
-        din = 64'hAAAAAAAAAAAAAAAA;
+        din = 64'hABACABADABAEABAF;
+	en = 0;
 
         // Reset release
         #100 rst = 0;
+        #100 rst = 1;
 
         // New packet received
         #100 pkt_rec = 1;
         #100 
 	pkt_rec = 0;
         din = 64'h0;
-       	pkt_flg = 1; 
-	repeat (64) begin
-		#100
-		din = din << 1;
-		hold = {hold[62:0], dout};	
-	end
+       	SPI_en = 1; 
+	repeat(8) begin
+		#100;
+		en = 1;
+		#100;
+		en = 0;	
+	end	
 
         // End simulation
         #100 $finish;

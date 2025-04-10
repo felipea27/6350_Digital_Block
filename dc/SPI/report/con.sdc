@@ -1,10 +1,6 @@
 ###################################################################
 
-<<<<<<< HEAD:dc/SPI/report/con.sdc
-# Created by write_sdc on Sun Mar 30 22:12:47 2025
-=======
-# Created by write_sdc on Thu Mar 27 12:32:01 2025
->>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8:dc/SPI3/report/con.sdc
+# Created by write_sdc on Wed Apr 9 11:14:36 2025
 
 ###################################################################
 set sdc_version 2.0
@@ -44,26 +40,30 @@ set_max_fanout 4 [get_ports {DATA[3]}]
 set_max_fanout 4 [get_ports {DATA[2]}]
 set_max_fanout 4 [get_ports {DATA[1]}]
 set_max_fanout 4 [get_ports {DATA[0]}]
-create_clock -name vclk  -period 100  -waveform {0 50}
-set_clock_uncertainty 0.1  [get_clocks vclk]
-set_input_delay -clock vclk  0.02  [get_ports rst]
-set_input_delay -clock vclk  0.02  [get_ports MOSI]
-set_input_delay -clock vclk  0.02  [get_ports SCK]
-set_input_delay -clock vclk  0.02  [get_ports SS]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[7]}]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[6]}]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[5]}]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[4]}]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[3]}]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[2]}]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[1]}]
-set_input_delay -clock vclk  0.02  [get_ports {DATA[0]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[7]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[6]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[5]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[4]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[3]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[2]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[1]}]
-set_output_delay -clock vclk  0.02  [get_ports {OUT[0]}]
-set_output_delay -clock vclk  0.02  [get_ports MISO]
+set_ideal_network [get_ports SCK]
+create_clock [get_ports SCK]  -period 100  -waveform {0 50}
+set_clock_uncertainty 0.1  [get_clocks SCK]
+set_clock_transition -max -rise 0.06 [get_clocks SCK]
+set_clock_transition -max -fall 0.06 [get_clocks SCK]
+set_clock_transition -min -rise 0.06 [get_clocks SCK]
+set_clock_transition -min -fall 0.06 [get_clocks SCK]
+set_input_delay -clock SCK  0.02  [get_ports rst]
+set_input_delay -clock SCK  0.02  [get_ports MOSI]
+set_input_delay -clock SCK  0.02  [get_ports SS]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[7]}]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[6]}]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[5]}]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[4]}]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[3]}]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[2]}]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[1]}]
+set_input_delay -clock SCK  0.02  [get_ports {DATA[0]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[7]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[6]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[5]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[4]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[3]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[2]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[1]}]
+set_output_delay -clock SCK  0.02  [get_ports {OUT[0]}]
+set_output_delay -clock SCK  0.02  [get_ports MISO]

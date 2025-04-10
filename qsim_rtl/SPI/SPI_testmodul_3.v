@@ -3,13 +3,13 @@
 module SPI_testmodul_3;
 
     // Testbench Signals
-    reg MOSI;    
+    reg MOSI;
+    reg rst;    
     wire MISO;    
     reg SS;        
     reg SCK;        
     reg [7:0] MDATA; 
     reg [7:0] DATA;  
-    reg [1:0] MODE;   
     reg [3:0] i;
     reg clk;    
     integer file;
@@ -21,14 +21,14 @@ module SPI_testmodul_3;
     reg [7:0] slave_data_received;
 
     // Instantiate
-    SPI_SLAVE uut (
+    SPI_slave uut (
         .MOSI(MOSI),
         .MISO(MISO),
         .SS(SS),
         .SCK(SCK),
         .DATA(DATA),
-        .MODE(MODE),
-	.OUT(OUT)
+	.OUT(OUT),
+	.rst(rst)
     );
     
     always #50 clk = ~clk;
@@ -39,8 +39,8 @@ module SPI_testmodul_3;
         		SCK_int = ~SCK_int;	
 		else
 			SCK = 0;
+	//assign SCK = SCK_int;
 	end
-	assign SCK = SCK_int;
 
 
     task send_packet(input [7:0] mdata, input [7:0] data);
@@ -50,7 +50,7 @@ module SPI_testmodul_3;
         SCK = 0;
 	MDATA = mdata;
 	DATA = data;
-	#50;
+	#150;
         SS = 0;  // Reactivate Slave (SS low)
         // Send another byte 
         i = 3'd7;  // Reset counter
@@ -82,12 +82,19 @@ endtask
         SCK = 0;
         SS = 1;   
         MOSI = 0;
-
-        MODE = 2'b00; 
+	MDATA = 0;
+	DATA = 0;
+	rst = 1;
         i = 4'd7;
         master_data_received = 8'b00000000;
         slave_data_received = 8'b00000000;
 	
+	#100;
+	rst = 0;
+	#100;
+	rst = 1;
+	#100;
+
 	file = $fopen("spi_data.txt", "w");
 	if (file == 0) begin
     		$display("Error opening file for writing!");

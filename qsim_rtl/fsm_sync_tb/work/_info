@@ -1,69 +1,64 @@
 m255
 K4
 z2
-Z0 !s99 nomlopt
-R0
-R0
-R0
-R0
-!s11f MIXED_VERSIONS
+!s99 nomlopt
+!s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-d/courses/ee6350/proj_2025Spring/lpxcvr/Digital_Block/qsim_rtl/fsm_sync_tb
+Z0 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/fsm_sync_tb
 T_opt
-!s110 1742771788
-VMRh]=cGO5@Wnne;;ogR6k3
+!s110 1743651643
+VMbMO54A]N:fPdRP7`INQ>3
 04 11 4 work fsm_sync_tb fast 0
-=1-5667e9aff8b2-67e0964c-13e61-10d1a
+=1-5667e9aff8b2-67ee033a-c4268-90f3
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
 Z1 tCvgOpt 0
 n@_opt
 OL;O;2021.3;73
 vfsm_sync
-!s110 1742771787
+!s110 1743651641
 !i10b 1
-!s100 =BUL[kRjl3KcVoQ1A>YBK1
-I5d2nIo01Qc_kA@b[4d`[U1
-Z2 d/users/ssokolovskiy/65GXCVR/6350_Digital_Block/qsim_rtl/fsm_sync_tb
-w1742771774
+!s100 99ga4R3;>JoW:KS2TR?bH2
+Ic]S?fA2K>TVKan7YC0]cT1
+R0
+w1743651587
 8../../rtl/fsm_sync/fsm_sync.v
 F../../rtl/fsm_sync/fsm_sync.v
-!i122 14
-L0 2 50
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 OL;L;2021.3;73
+!i122 0
+L0 3 89
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.3;73
 r1
 !s85 0
 31
-!s108 1742771786.000000
+Z4 !s108 1743651641.000000
 !s107 ../../rtl/fsm_sync/fsm_sync.v|
 !s90 -reportprogress|300|+acc|-incr|../../rtl/fsm_sync/fsm_sync.v|
 !i113 0
-Z5 o+acc
+Z5 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R1
 vfsm_sync_tb
-!s10a 1742770759
-!s110 1742770985
+!s110 1743651642
 !i10b 1
 !s100 jZ2VNo]F@>`9h:E:]<:[z1
-IhB<_2XP<7e]P26nz<5P_33
-R2
-w1742770759
+IXf_HRhZgK@HMhh:[Bi9EJ2
+R0
+w1742782180
 8fsm_sync_tb.v
 Ffsm_sync_tb.v
-!i122 13
+!i122 1
 L0 2 108
+R2
 R3
-R4
 r1
 !s85 0
 31
-!s108 1742770985.000000
+R4
 !s107 fsm_sync_tb.v|
 !s90 -reportprogress|300|+acc|-incr|fsm_sync_tb.v|
 !i113 0

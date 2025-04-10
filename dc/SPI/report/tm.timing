@@ -6,47 +6,44 @@ Report : timing
         -max_paths 1
 Design : SPI_slave
 Version: V-2023.12-SP1
-<<<<<<< HEAD:dc/SPI/report/tm.timing
-Date   : Sun Mar 30 22:12:47 2025
-=======
-Date   : Thu Mar 27 12:32:01 2025
->>>>>>> 8334d12b4657a094ccdd22848e8853946d20d6e8:dc/SPI3/report/tm.timing
+Date   : Wed Apr  9 11:14:36 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 Wire Load Model Mode: enclosed
 
-  Startpoint: SS (input port clocked by vclk)
-  Endpoint: MISO (output port clocked by vclk)
-  Path Group: vclk
+  Startpoint: SHIFT_IN_reg
+              (rising edge-triggered flip-flop clocked by SCK)
+  Endpoint: SHIFT_IN_reg
+            (rising edge-triggered flip-flop clocked by SCK)
+  Path Group: SCK
   Path Type: max
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   SPI_slave          ZeroWLM               gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock vclk (rise edge)                   0.00       0.00
-  clock network delay (ideal)              0.00       0.00
-  input external delay                     0.02       0.02 f
-  SS (in)                                  0.00       0.02 f
-  U35/X (UDB116SVT24_INV_0P75)             0.01       0.03 r
-  U36/X (UDB116SVT24_INV_0P75)             0.01       0.04 f
-  MISO_tri/output (**TSGEN**)              0.00       0.04 f
-  MISO (out)                               0.00       0.04 f
-  data arrival time                                   0.04
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock SCK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  SHIFT_IN_reg/CK (UDB116SVT24_FDPRBQ_V2_1)               0.00       0.00 r
+  SHIFT_IN_reg/Q (UDB116SVT24_FDPRBQ_V2_1)                0.06       0.06 r
+  U75/X (UDB116SVT24_AO22_1)                              0.02       0.08 r
+  SHIFT_IN_reg/D (UDB116SVT24_FDPRBQ_V2_1)                0.00       0.08 r
+  data arrival time                                                  0.08
 
-  clock vclk (rise edge)                 100.00     100.00
-  clock network delay (ideal)              0.00     100.00
-  clock uncertainty                       -0.10      99.90
-  output external delay                   -0.02      99.88
-  data required time                                 99.88
-  -----------------------------------------------------------
-  data required time                                 99.88
-  data arrival time                                  -0.04
-  -----------------------------------------------------------
-  slack (MET)                                        99.84
+  clock SCK (rise edge)                                 100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  clock uncertainty                                      -0.10      99.90
+  SHIFT_IN_reg/CK (UDB116SVT24_FDPRBQ_V2_1)               0.00      99.90 r
+  library setup time                                     -0.01      99.89
+  data required time                                                99.89
+  --------------------------------------------------------------------------
+  data required time                                                99.89
+  data arrival time                                                 -0.08
+  --------------------------------------------------------------------------
+  slack (MET)                                                       99.81
 
 
 1

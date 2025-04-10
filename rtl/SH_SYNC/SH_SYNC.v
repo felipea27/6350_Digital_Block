@@ -36,6 +36,7 @@ module SH_SYNC (
     reg tx_rdy_prev;
     reg tx_rdy_p;
 
+
     // State transition logic
     always @(posedge clk) begin
         if (rst == 0) 
@@ -98,12 +99,11 @@ module SH_SYNC (
         endcase
     end
     
-    always @(posedge clk) begin
+    always @(posedge clk or negedge rst) begin
         if (rst == 0) begin
+            pulse_count <= 4'b0000;
             counter <= 14'd0;
             interval_sum <= 31'd0;
-            pulse_count <= 4'b0000;
-	    pulse_count[1] <= 0;
             avg_interval <= 14'd0;
             pulse_gen_count <= 7'd0;
             pulse_pack_count <= 7'd0;
@@ -127,9 +127,9 @@ module SH_SYNC (
 	    tx_rdy_p <= tx_rdy && !tx_rdy_prev;
             case (state)
                 IDLE: begin
+                    pulse_count <= 4'b0000;
                     counter <= 0;
                     interval_sum <= 0;
-                    pulse_count <= 4'b0000;
                     pulse_gen_count <= 0;
                     pulse_pack_count <= 0;
                     sh_en <= 0;
@@ -160,9 +160,7 @@ module SH_SYNC (
 
                 COMPUTE: begin
 		    fsm_rst <= 0;
-		    if (pulse_count == PREAMBLE_SIZE) begin
-                        avg_interval <= interval_sum / (PREAMBLE_SIZE-1);
-		    end
+                    avg_interval <= interval_sum / (PREAMBLE_SIZE-1);
                 end
 
                 GENERATE: begin

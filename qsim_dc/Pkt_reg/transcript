@@ -18,41 +18,45 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 20:46:31 on Mar 28,2025
+# Start time: 15:07:21 on Apr 02,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/Pkt_reg/Pkt_reg.v 
 # -- Skipping module Pkt_reg
 # 
 # Top level modules:
 # 	Pkt_reg
-# End time: 20:46:32 on Mar 28,2025, Elapsed time: 0:00:01
+# End time: 15:07:21 on Apr 02,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 20:46:32 on Mar 28,2025
+# Start time: 15:07:21 on Apr 02,2025
 # vlog -reportprogress 300 "+acc" -incr Pkt_reg_tb.v 
-# -- Compiling module Pkt_reg_tb
+# -- Skipping module Pkt_reg_tb
 # 
 # Top level modules:
 # 	Pkt_reg_tb
-# End time: 20:46:32 on Mar 28,2025, Elapsed time: 0:00:00
+# End time: 15:07:21 on Apr 02,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
 # vsim "+acc" -t ps -lib work Pkt_reg_tb 
-# Start time: 20:46:32 on Mar 28,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: Pkt_reg_tb.v(11): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 7, found 5.
-# ** Warning: Pkt_reg_tb.v(11): (vopt-2718) [TFMPC] - Missing connection for port 'SPI_en'.
-# ** Warning: Pkt_reg_tb.v(11): (vopt-2718) [TFMPC] - Missing connection for port 'en'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# Start time: 15:07:21 on Apr 02,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.Pkt_reg_tb(fast)
 # Loading work.Pkt_reg(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'dout'. The port definition is at: ../../rtl/Pkt_reg/Pkt_reg.v(2).
-#    Time: 0 ps  Iteration: 0  Instance: /Pkt_reg_tb/uut File: Pkt_reg_tb.v Line: 11
-# Time=0 | din=aaaaaaaaaaaaaaaa | pkt_rec=0 | dout=0
-# Time=200000 | din=aaaaaaaaaaaaaaaa | pkt_rec=1 | dout=0
-# Time=300000 | din=0000000000000000 | pkt_rec=0 | dout=0
-# ** Note: $finish    : Pkt_reg_tb.v(47)
-#    Time: 6800 ns  Iteration: 0  Instance: /Pkt_reg_tb
+# ** UI-Msg: (vish-4014) No objects found matching '/Pkt_reg_tb/'.
+# Executing ONERROR command at macro ./waveformat.do line 9
+# Time=0 | din=abacabadabaeabaf | pkt_rec=0 | dout=00
+# Time=300000 | din=abacabadabaeabaf | pkt_rec=1 | dout=00
+# Time=400000 | din=0000000000000000 | pkt_rec=0 | dout=ab
+# Time=600000 | din=0000000000000000 | pkt_rec=0 | dout=ac
+# Time=800000 | din=0000000000000000 | pkt_rec=0 | dout=ab
+# Time=1000000 | din=0000000000000000 | pkt_rec=0 | dout=ad
+# Time=1200000 | din=0000000000000000 | pkt_rec=0 | dout=ab
+# Time=1400000 | din=0000000000000000 | pkt_rec=0 | dout=ae
+# Time=1600000 | din=0000000000000000 | pkt_rec=0 | dout=ab
+# Time=1800000 | din=0000000000000000 | pkt_rec=0 | dout=af
+# Time=2000000 | din=0000000000000000 | pkt_rec=0 | dout=00
+# ** Note: $finish    : Pkt_reg_tb.v(55)
+#    Time: 2100 ns  Iteration: 0  Instance: /Pkt_reg_tb
 # 1
-# Break in Module Pkt_reg_tb at Pkt_reg_tb.v line 47
-# End time: 20:46:45 on Mar 28,2025, Elapsed time: 0:00:13
-# Errors: 0, Warnings: 5
+# Break in Module Pkt_reg_tb at Pkt_reg_tb.v line 55
+# End time: 15:08:18 on Apr 02,2025, Elapsed time: 0:00:57
+# Errors: 0, Warnings: 1

@@ -12,18 +12,6 @@ add wave -noupdate /SH_SYNC_tb/uut/rfin_sync1
 add wave -noupdate /SH_SYNC_tb/uut/rfin_sync2
 add wave -noupdate /SH_SYNC_tb/uut/state
 
-add wave -noupdate /SH_SYNC_tb/uut/n243 #state2
-add wave -noupdate /SH_SYNC_tb/uut/n227 #state1
-add wave -noupdate /SH_SYNC_tb/uut/n205 #state0
-add wave -noupdate /SH_SYNC_tb/uut/n223 #rfin_edge
-add wave -noupdate /SH_SYNC_tb/uut/n208 #pc1
-add wave -noupdate /SH_SYNC_tb/uut/n203 #pc0
-
-add wave -noupdate /SH_SYNC_tb/uut/n553 #pc1 int
-add wave -noupdate /SH_SYNC_tb/uut/n554 #pc1 int
-add wave -noupdate /SH_SYNC_tb/uut/n555 #pc1 int
-
-
 add wave -noupdate /SH_SYNC_tb/uut/tx
 add wave -noupdate /SH_SYNC_tb/uut/tx_rdy
 add wave -noupdate /SH_SYNC_tb/uut/tx_rdy_p

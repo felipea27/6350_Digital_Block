@@ -7,6 +7,7 @@
 # FO4 delay of the technology in nanosecond
 set fo4 0.02
 set clk_period 100
+set sck_period 400
 
 # Used as setup/hold check pessimism margin, please adjust as needed
 set clk_uncertainty [expr 5*$fo4] 
@@ -21,6 +22,10 @@ set typical_wire_load 0.002
 # Create real clock if clock port is found
 set clk_name "clk"
 set clk_port "clk"
+
+set sck_name "SCK"
+set sck_port "SCK"
+
 set rst_name "rst"
 set rst_port "rst"
 
@@ -30,6 +35,12 @@ if {[sizeof_collection [get_ports $clk_port]] > 0} {
   set_drive 0 [get_clocks $clk_name] 
 }
 
+if {[sizeof_collection [get_ports $sck_port]] > 0} {
+  set clk_name $sck_name
+  set clk_port $sck_port
+  create_clock -name $clk_name -period $clk_period [get_ports $clk_port] 
+  set_drive 0 [get_clocks $clk_name] 
+}
 
 if {[sizeof_collection [get_ports $clk_port]] == 0} {
 

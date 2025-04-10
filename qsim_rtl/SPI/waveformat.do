@@ -8,7 +8,7 @@ add wave -noupdate /SPI_testmodul_3/DATA
 add wave -noupdate /SPI_testmodul_3/MDATA
 add wave -noupdate /SPI_testmodul_3/master_data_received
 add wave -noupdate /SPI_testmodul_3/slave_data_received
-add wave -noupdate /SPI_testmodul_3/MODE
+add wave -noupdate /SPI_testmodul_3/uut/OUT
 add wave -noupdate /SPI_testmodul_3/uut/SHIFT_IN
 add wave -noupdate /SPI_testmodul_3/uut/SHIFT_REG
 add wave -noupdate /SPI_testmodul_3/uut/DATA

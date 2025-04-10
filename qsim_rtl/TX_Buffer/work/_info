@@ -1,0 +1,68 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.3 2021.07, Jul 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/TX_Buffer
+T_opt
+!s110 1743653532
+V`IcQ7kDT6`PfFb1SHz@6T0
+04 12 4 work TX_Buffer_tb fast 0
+=1-5667e9aff8b2-67ee0a9b-b9909-e0ca
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.3;73
+vTX_Buffer
+!s110 1743653530
+!i10b 1
+!s100 g4OV54fXaSFJ]8hde7lk91
+I[o06<DUj]7_TFS_YhWSPA2
+R0
+w1743050510
+8../../rtl/TX_Buffer/TX_Buffer.v
+F../../rtl/TX_Buffer/TX_Buffer.v
+!i122 0
+L0 3 27
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.3;73
+r1
+!s85 0
+31
+Z4 !s108 1743653530.000000
+!s107 ../../rtl/TX_Buffer/TX_Buffer.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/TX_Buffer/TX_Buffer.v|
+!i113 0
+Z5 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@t@x_@buffer
+vTX_Buffer_tb
+!s110 1743653531
+!i10b 1
+!s100 4ldb3W;7XYlliWd>070dJ1
+I6KzaReB>az_WcR<=0PilK1
+R0
+w1743653497
+8TX_Buffer_tb.v
+FTX_Buffer_tb.v
+!i122 1
+L0 3 58
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 TX_Buffer_tb.v|
+!s90 -reportprogress|300|+acc|-incr|TX_Buffer_tb.v|
+!i113 0
+R5
+R1
+n@t@x_@buffer_tb

@@ -6,6 +6,7 @@ add wave -noupdate /Pkt_reg_tb/hold
 add wave -noupdate /Pkt_reg_tb/rst
 add wave -noupdate /Pkt_reg_tb/din
 add wave -noupdate /Pkt_reg_tb/pkt_rec
+add wave -noupdate /Pkt_reg_tb/ *
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {3 ns} 0}
 quietly wave cursor active 1

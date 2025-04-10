@@ -17,6 +17,10 @@ module fsm_sync (
     reg sh_en_prev;
 
 
+   always @(*) begin
+	state = (next_state_neg|next_state_pos);
+   end
+
     // State Transition Logic for positive edge triggered
     always @(posedge clk) begin
         if (rst == 0)
@@ -81,8 +85,5 @@ module fsm_sync (
     end
 
 
-   always @(*) begin
-	state = (next_state_neg|next_state_pos);
-   end
 
 endmodule

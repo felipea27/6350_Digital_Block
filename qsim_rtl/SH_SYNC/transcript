@@ -18,30 +18,37 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 00:58:56 on Mar 31,2025
+# Start time: 23:45:13 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SH_SYNC/SH_SYNC.v 
-# -- Skipping module SH_SYNC
+# -- Compiling module SH_SYNC
 # 
 # Top level modules:
 # 	SH_SYNC
-# End time: 00:58:56 on Mar 31,2025, Elapsed time: 0:00:00
+# End time: 23:45:13 on Mar 31,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 00:58:56 on Mar 31,2025
+# Start time: 23:45:13 on Mar 31,2025
 # vlog -reportprogress 300 "+acc" -incr SH_SYNC_tb.v 
-# -- Compiling module SH_SYNC_tb
+# -- Skipping module SH_SYNC_tb
 # 
 # Top level modules:
 # 	SH_SYNC_tb
-# End time: 00:58:56 on Mar 31,2025, Elapsed time: 0:00:00
+# End time: 23:45:14 on Mar 31,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
 # vsim "+acc" -t ps -lib work SH_SYNC_tb 
-# Start time: 00:58:56 on Mar 31,2025
+# Start time: 23:45:14 on Mar 31,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: SH_SYNC_tb.v(24): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 7, found 6.
+# ** Note: (vopt-143) Recognized 1 FSM in module "SH_SYNC(fast)".
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 13, found 6.
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'rfin_sync2_test'.
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'rfin_sync1_test'.
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'rfin_prev_test'.
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'counter_test'.
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'pc_test'.
+# ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'state_test'.
 # ** Warning: SH_SYNC_tb.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'fsm_rst'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=9.
 # Loading work.SH_SYNC_tb(fast)
 # Loading work.SH_SYNC(fast)
 # ** UI-Msg: (vish-4014) No objects found matching '/SH_SYNC_tb/uut/tx'.
@@ -49,3 +56,5 @@
 # ** Note: $stop    : SH_SYNC_tb.v(145)
 #    Time: 83001700 ns  Iteration: 0  Instance: /SH_SYNC_tb
 # Break in Module SH_SYNC_tb at SH_SYNC_tb.v line 145
+# End time: 23:45:41 on Mar 31,2025, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 9

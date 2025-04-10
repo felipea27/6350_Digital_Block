@@ -29,6 +29,7 @@ module SH_SYNC_tb;
 		.RX(RX),
 		.tx_rdy(tx_rdy),
 		.fsm_rst(fsm_rst)
+
 	);
 
 	initial begin
@@ -53,8 +54,8 @@ module SH_SYNC_tb;
 
             rand_index = $random;
             rand_index = ((rand_index < 0 ? -rand_index : rand_index) % 10000);
-            rand_factor = gaussian_values[rand_index];
-            //rand_factor = 0;
+            //rand_factor = gaussian_values[rand_index];
+            rand_factor = 0;
             //$fwrite(rand_file, "%f\n",  rand_factor);
             percent = 100;
 
@@ -123,14 +124,17 @@ module SH_SYNC_tb;
 
     initial begin
 	    
-	    rst = 0;
+	    rst = 1;
 	    rfin = 0;
 	    tx_rdy = 0;
+	    rfdata1c = 0;
+	    rfdata2c = 0;
+	    rfdata3c = 0;
 	    RX = 1;
 	    #200;
+	    rst = 0;
+	    #800;
 	    rst = 1;
-	    #200;
-
 	    SEND_SYNC(1);
 	    #800;
 	    RX = 0;

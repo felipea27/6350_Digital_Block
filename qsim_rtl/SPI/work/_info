@@ -1,0 +1,121 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+!s11f vlog 2021.3 2021.07, Jul 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/SPI
+T_opt
+!s110 1744211389
+VmlenJ?=k_8o``1K[PgECS3
+04 15 4 work SPI_testmodul_3 fast 0
+=1-5667e9aff8b2-67f68dbc-c9129-f25e
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.3;73
+R1
+vAPB_interface_2
+!s10a 1743102946
+Z3 !s110 1744210354
+!i10b 1
+!s100 o3W8TQA^Ng=2PK3LDMCIM1
+IdR<B__CjlL`I@DT]1mHZU0
+R1
+w1743102946
+8../../rtl/SPI/APB_interface.v
+F../../rtl/SPI/APB_interface.v
+!i122 2
+L0 3 144
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.3;73
+r1
+!s85 0
+31
+!s108 1744210354.000000
+!s107 ../../rtl/SPI/APB_interface.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/APB_interface.v|
+!i113 0
+Z6 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@a@p@b_interface_2
+vspi_master5
+!s10a 1741237640
+R3
+!i10b 1
+!s100 k2ZFTA`_V78d`?a2z85[P0
+I25G[KcZ<_>9KA0OfB<W6H3
+R1
+w1741237640
+8../../rtl/SPI/SPI_master.v
+F../../rtl/SPI/SPI_master.v
+!i122 0
+L0 3 344
+R4
+R5
+r1
+!s85 0
+31
+!s108 1744210353.000000
+!s107 ../../rtl/SPI/SPI_master.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/SPI_master.v|
+!i113 0
+R6
+R2
+vSPI_slave
+!s10a 1744213411
+!s110 1744211387
+!i10b 1
+!s100 oYJG[Y@lmVaMoKh;P9]>O2
+In4nkmQECjb`@WAj]9NzHe1
+R1
+w1744211372
+8../../rtl/SPI/SPI_slave.v
+F../../rtl/SPI/SPI_slave.v
+!i122 8
+L0 1 73
+R4
+R5
+r1
+!s85 0
+31
+!s108 1744211387.000000
+!s107 ../../rtl/SPI/SPI_slave.v|
+!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/SPI_slave.v|
+!i113 0
+R6
+R2
+n@s@p@i_slave
+vSPI_testmodul_3
+!s10a 1744211041
+!s110 1744211053
+!i10b 1
+!s100 =Pz8z=f1AQ3NT?ULg@?Vc0
+InLh9KnWH8KD=RK;16eB2:0
+R1
+w1744211041
+8SPI_testmodul_3.v
+FSPI_testmodul_3.v
+!i122 7
+L0 3 116
+R4
+R5
+r1
+!s85 0
+31
+!s108 1744211053.000000
+!s107 SPI_testmodul_3.v|
+!s90 -reportprogress|300|+acc|-incr|SPI_testmodul_3.v|
+!i113 0
+R6
+R2
+n@s@p@i_testmodul_3

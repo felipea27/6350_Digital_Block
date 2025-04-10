@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : TX_Buffer
 Version: V-2023.12-SP1
-Date   : Mon Mar 31 14:30:44 2025
+Date   : Thu Apr  3 22:58:26 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C

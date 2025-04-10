@@ -5,17 +5,17 @@ module fsm_sync_tb;
     reg clk;
     reg rst; 
     reg rfin;
-    wire state;
+    reg fsm_rst;
     reg sh_en;
-    wire SH_EN;
-
+    wire state;
 
     fsm_sync uut( 
         .clk(clk),
         .rst(rst),
         .rfin(rfin),
-		.sh_en(sh_en),
-		.state(state)
+	.sh_en(sh_en),
+	.fsm_rst(fsm_rst),
+	.state(state)
     );
 
     always begin
@@ -50,7 +50,6 @@ module fsm_sync_tb;
 	begin
 	    // Randomness factor between -2% and +2%
 	    temp_rand = $random;  
-	    rand_factor = ((temp_rand < 0 ? -temp_rand : temp_rand) % 5 - 2)/5;
 	    rand_factor = 0;
 
 	    // Adjust values with randomness
@@ -70,6 +69,8 @@ module fsm_sync_tb;
 	    rfin = rfin_value;
 	    #adj_high_time;
 	    rfin = 0;
+	    #400 fsm_rst = 1;
+	    #100 fsm_rst = 0;
 	    #delay_after;
 		
         end
@@ -79,22 +80,23 @@ module fsm_sync_tb;
     initial begin
 
         clk = 0;
-        rst = 0;
+        rst = 1;
         rfin = 0;
 	sh_en = 0;
+	fsm_rst = 0;
 
         // Reset the circuit
+        rst = 0; 
+        #100;
         rst = 1; 
         #100;
-        rst = 0; 
-        #51;
 	
-	repeat (64) begin
-
-		RFIN(1, 1000000, 30, 100);  
-		RFIN(1, 1000000, 30, 100);  
-		RFIN(1, 1000000, 30, 100);  
-		RFIN(1, 1000000, 30, 100);  
+	repeat (10) begin
+		
+		#15 RFIN(1, 1000000, 30, 80);  
+		#15 RFIN(1, 1000000, 30, 80);  
+		#15 RFIN(1, 1000000, 30, 80);  
+		#15 RFIN(1, 1000000, 30, 80);  
 	end	
 	$finish;
            
