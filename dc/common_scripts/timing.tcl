@@ -23,8 +23,8 @@ set typical_wire_load 0.002
 set clk_name "clk"
 set clk_port "clk"
 
-set sck_name "SCK"
-set sck_port "SCK"
+#set sck_name "SCK"
+#set sck_port "SCK"
 
 set rst_name "rst"
 set rst_port "rst"
@@ -35,12 +35,12 @@ if {[sizeof_collection [get_ports $clk_port]] > 0} {
   set_drive 0 [get_clocks $clk_name] 
 }
 
-if {[sizeof_collection [get_ports $sck_port]] > 0} {
-  set clk_name $sck_name
-  set clk_port $sck_port
-  create_clock -name $clk_name -period $clk_period [get_ports $clk_port] 
-  set_drive 0 [get_clocks $clk_name] 
-}
+#if {[sizeof_collection [get_ports $sck_port]] > 0} {
+#  set clk_name $sck_name
+#  set clk_port $sck_port
+#  create_clock -name $clk_name -period $clk_period [get_ports $clk_port] 
+#  set_drive 0 [get_clocks $clk_name] 
+#}
 
 if {[sizeof_collection [get_ports $clk_port]] == 0} {
 

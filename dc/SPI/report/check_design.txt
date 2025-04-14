@@ -277,3 +277,29 @@ Cells                                                               1
 Warning: In design 'SPI_slave', cell 'C157' does not drive any nets. (LINT-1)
 1
 1
+1
+1
+1
+1
+1
+1
+Error: Current design is not defined. (UID-4)
+0
+Error: Current design is not defined. (UID-4)
+0
+Error: Current design is not defined. (UID-4)
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1

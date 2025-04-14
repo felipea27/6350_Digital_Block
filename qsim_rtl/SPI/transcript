@@ -18,104 +18,116 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:14:24 on Apr 10,2025
+# Start time: 15:48:12 on Apr 10,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_master.v 
 # -- Skipping module spi_master5
 # 
 # Top level modules:
 # 	spi_master5
-# End time: 13:14:24 on Apr 10,2025, Elapsed time: 0:00:00
+# End time: 15:48:12 on Apr 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:14:24 on Apr 10,2025
+# Start time: 15:48:12 on Apr 10,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_slave.v 
 # -- Skipping module SPI_slave
 # 
 # Top level modules:
 # 	SPI_slave
-# End time: 13:14:25 on Apr 10,2025, Elapsed time: 0:00:01
+# End time: 15:48:12 on Apr 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:14:25 on Apr 10,2025
+# Start time: 15:48:12 on Apr 10,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/APB_interface.v 
 # -- Skipping module APB_interface_2
 # 
 # Top level modules:
 # 	APB_interface_2
-# End time: 13:14:25 on Apr 10,2025, Elapsed time: 0:00:00
+# End time: 15:48:13 on Apr 10,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:14:25 on Apr 10,2025
+# Start time: 15:48:13 on Apr 10,2025
 # vlog -reportprogress 300 "+acc" -incr SPI_testmodul_3.v 
-# -- Skipping module SPI_testmodul_3
+# -- Compiling module SPI_testmodul_3
 # 
 # Top level modules:
 # 	SPI_testmodul_3
-# End time: 13:14:25 on Apr 10,2025, Elapsed time: 0:00:00
+# End time: 15:48:13 on Apr 10,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
 # vsim "+acc" -t ps -lib work SPI_testmodul_3 
-# Start time: 13:14:25 on Apr 10,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 15:48:13 on Apr 10,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: SPI_testmodul_3.v(24): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 9, found 8.
+# ** Warning: SPI_testmodul_3.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'SS_sync'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
 # Loading work.SPI_testmodul_3(fast)
 # Loading work.SPI_slave(fast)
-# Time=0 | SS=1 | MOSI=0 | MISO=0 | SCK=0
-# Time=450000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=500000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=550000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=600000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=650000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=700000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=750000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=800000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=850000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=900000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=950000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=1000000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=1050000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=1100000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=1150000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=1200000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=1250000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=1300000 | SS=1 | MOSI=1 | MISO=0 | SCK=0
-# Time=1500000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=1550000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=1600000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=1650000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=1700000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=1750000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=1800000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=1850000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=1900000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=1950000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=2000000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=2050000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=2100000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=2150000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=2200000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=2250000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=2300000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=2350000 | SS=1 | MOSI=0 | MISO=0 | SCK=0
-# Time=2550000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=2600000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=2650000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=2700000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=2750000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=2800000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=2850000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=2900000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=2950000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=3000000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
+# Time=0 | SS=1 | MOSI=0 | MISO=x | SCK=0
+# Time=100000 | SS=1 | MOSI=0 | MISO=0 | SCK=0
+# Time=650000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
+# Time=850000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=1050000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=1250000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
+# Time=1450000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
+# Time=1650000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=1850000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=2050000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
+# Time=2250000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=2450000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
+# Time=2650000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
+# Time=2850000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
 # Time=3050000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=3100000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=3150000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=3200000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=3250000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=3300000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=3350000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=3250000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
+# Time=3450000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
+# Time=3650000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=3850000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
+# Time=4250000 | SS=1 | MOSI=1 | MISO=1 | SCK=0
+# Time=4350000 | SS=1 | MOSI=1 | MISO=0 | SCK=0
+# Time=6200000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
+# Time=6350000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=6400000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
+# Time=6450000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
+# Time=6600000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
+# Time=6800000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
+# Time=7000000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
+# Time=7200000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
+# Time=7400000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
+# Time=7600000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
+# Time=7650000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=7800000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
+# Time=8000000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=8200000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
+# Time=8400000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=8600000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=8800000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
+# Time=9000000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=9200000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
+# Time=9400000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=9650000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
+# Time=9800000 | SS=1 | MOSI=0 | MISO=0 | SCK=0
+# Time=11750000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
+# Time=11950000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=12150000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
+# Time=12350000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=12550000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
+# Time=12750000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
+# Time=12950000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
+# Time=13150000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
+# Time=13350000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
+# Time=13550000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
+# Time=13750000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=13950000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
+# Time=14150000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
+# Time=14350000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
+# Time=14550000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=14750000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
+# Time=14950000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
+# Time=15150000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
+# Time=15350000 | SS=1 | MOSI=0 | MISO=1 | SCK=0
+# Time=15450000 | SS=1 | MOSI=0 | MISO=0 | SCK=0
 # ** Note: $finish    : SPI_testmodul_3.v(110)
-#    Time: 3400 ns  Iteration: 0  Instance: /SPI_testmodul_3
+#    Time: 16350 ns  Iteration: 0  Instance: /SPI_testmodul_3
 # 1
 # Break in Module SPI_testmodul_3 at SPI_testmodul_3.v line 110
-# End time: 13:15:34 on Apr 10,2025, Elapsed time: 0:01:09
-# Errors: 0, Warnings: 1
+# End time: 15:48:50 on Apr 10,2025, Elapsed time: 0:00:37
+# Errors: 0, Warnings: 3

@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 module Pkt_reg (din, pkt_rec, en, clk, rst, dout, SPI_en);
-	localparam PACKET_SIZE = 64;
+	localparam PACKET_SIZE = 24;
 
 	input clk, rst, pkt_rec, en, SPI_en;
 	input [PACKET_SIZE-1:0] din;
@@ -8,7 +8,7 @@ module Pkt_reg (din, pkt_rec, en, clk, rst, dout, SPI_en);
 
 	reg [PACKET_SIZE-1:0] pkt_reg;
 
-	always @(posedge clk) begin
+	always @(posedge clk or negedge rst) begin
 		if (rst == 0) begin
 			pkt_reg <= 0;
 			dout <= 8'b0;

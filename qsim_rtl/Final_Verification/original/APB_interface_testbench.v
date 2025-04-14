@@ -3,6 +3,10 @@
 
 module testbench;
 
+	localparam PACKET_SIZE = 24;
+	localparam BYTES_P_PS = (PACKET_SIZE + 8)/8;
+	localparam BYTES_PS = PACKET_SIZE/8;
+	
 	// Inputs
 	reg i_PRESETn;
 	reg i_PCLK;
@@ -15,12 +19,13 @@ module testbench;
 	reg [9:0] i_BASE_ADDR;
 
 	reg rfin;
-	reg [71:0] MDATA;
-	reg [63:0] MDATA_I;
-	reg [63:0] data_sent;
+	reg [PACKET_SIZE + 7 :0] MDATA;
+	reg [PACKET_SIZE - 1 :0] MDATA_I;
+	reg [PACKET_SIZE - 1 :0] data_sent;
 	reg [1:0] slave;
 	reg [1:0] mode;
 	reg RX_MODE;
+	reg TX_BY;
 
 	// Outputs
 	wire o_WR0;
@@ -46,7 +51,7 @@ module testbench;
 	integer i = 0;
 	integer i2 = 0;
 	real gaussian_values[0:9999]; // Array to store 10,000 values
-	reg [63:0] packets [0:9999]; // Array to store 10,000 values
+	reg [PACKET_SIZE - 1 :0] packets [0:9999]; // Array to store 10,000 values
 
 
 //	assign sh_en = .uut.SPI_modul2.top_slave.SH_EN;
@@ -78,7 +83,8 @@ module testbench;
 		.pkt_rec(pkt_rec),
 		.RX(RX_MODE),
 		.sh_en(sh_en),
-		.TX_OUT(TX_OUT)
+		.TX_OUT(TX_OUT),
+		.TX_BY(TX_BY)
 	);
 	//READ parameters
 	localparam STATUS	= 4'b0000;
@@ -146,7 +152,7 @@ module testbench;
 		end
 	endtask
 	
-	task BYTE_WRITE (SCK, input [63:0] mdata);
+	task BYTE_WRITE (SCK, input [PACKET_SIZE - 1 :0] mdata);
 		begin
 			MDATA = {PREAMBLE, mdata};
 			slave = 2'b11;
@@ -154,8 +160,8 @@ module testbench;
 			RX_MODE = 0;
 	    		$fwrite(tx_file, "Data sent: %b\n", MDATA);
 			#1000000;
-			repeat (9) begin // ADJUST FOR PREAMBLE/PS
-				APB_WRITE(mode, 2'b11, SCK, MDATA[71:64]); // ADJUST FOR PREAMBLE/PS
+			repeat (BYTES_P_PS) begin // ADJUST FOR PREAMBLE/PS
+				APB_WRITE(mode, 2'b11, SCK, MDATA[PACKET_SIZE + 7 : PACKET_SIZE]); // ADJUST FOR PREAMBLE/PS
 				repeat (8) #999900; //#1000000;
 				//$display($time);
 				MDATA = MDATA << 8;
@@ -166,7 +172,7 @@ module testbench;
 	task BYTE_RD ();
 		begin
 			#800;
-			repeat (8) begin
+			repeat (BYTES_PS) begin
 				RX_MODE = 1;
 				APB_WRITE(MODE00,SLAVE3,SCK4,8'b00000000);
 				#7200;
@@ -182,7 +188,7 @@ module testbench;
 	endtask
 
 	task SEND_SYNC;
-		input reg [63:0] mdata;
+		input reg [PACKET_SIZE - 1 :0] mdata;
 		input integer mean_high;
 		input integer mean_period; 
 		begin
@@ -195,8 +201,8 @@ module testbench;
 
 			$fwrite(rx_file, "Sending: %h\n", MDATA_I);
 			
-			repeat (64) begin
-				RFIN(MDATA_I[63], mean_period, 50, mean_high);
+			repeat (PACKET_SIZE) begin
+				RFIN(MDATA_I[PACKET_SIZE - 1], mean_period, 50, mean_high);
 				MDATA_I = MDATA_I << 1;	
 			end
 		end
@@ -278,8 +284,9 @@ module testbench;
 		i_PWDATA = 0;
 		i_PRDATA = 0;
 		i_BASE_ADDR = 10'b0000000001;
-		MDATA = 64'b0;
+		MDATA = 0;
 		rfin = 0;
+		TX_BY = 0;
 
 		// Wait 100 ns for global reset to finish
 	
@@ -289,7 +296,7 @@ module testbench;
 			$finish;
 		end
 
-		rx_file = $fopen("../DATA/std0/PRDATA.txt", "w");
+		rx_file = $fopen("DATA/std0/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
@@ -311,7 +318,7 @@ module testbench;
 
 		$fclose(gaus_file);
 
-		$readmemb("../packets_bs.txt", packets); // read in array of packets
+		$readmemb("../packets_bs_24.txt", packets); // read in array of packets
 
 		#50
 		#100

@@ -11,6 +11,13 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -20,81 +27,80 @@ R0
 cModel Technology
 Z1 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/Final_Verification/original
 T_opt
-!s110 1743102996
-V@33e@2cz:Q0[oM?Zz`oLV2
+!s110 1744602853
+V]k1<F8z5;XXBCOeo]BVN71
 04 9 4 work testbench fast 0
-=1-5667e9aff8b2-67e5a414-5b3ec-c108
+=1-5667e9aff8b2-67fc86e5-4c2e9-d324
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
 Z2 tCvgOpt 0
 n@_opt
 OL;O;2021.3;73
-R1
 vAPB_interface_2
-!s10a 1743102946
-!s110 1742849149
+Z3 !s10a 1744599430
+!s110 1744320109
 !i10b 1
-!s100 o3W8TQA^Ng=2PK3LDMCIM1
-Iha:kWf]]KP<coGSPcmiaj3
+!s100 61XzFEVRI8?Fc;=MP8QoM3
+Ii4d9=Rh>W`B=io40dcodo3
 R1
-Z3 w1741237640
-8../../../rtl/SPI3/APB_interface.v
-F../../../rtl/SPI3/APB_interface.v
-!i122 0
-L0 3 144
+w1744320100
+8../../../rtl/SPI/APB_interface.v
+F../../../rtl/SPI/APB_interface.v
+!i122 42
+L0 3 146
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2021.3;73
 r1
 !s85 0
 31
-!s108 1742849149.000000
-!s107 ../../../rtl/SPI3/APB_interface.v|
-!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/APB_interface.v|
+!s108 1744320108.000000
+!s107 ../../../rtl/SPI/APB_interface.v|
+!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI/APB_interface.v|
 !i113 0
 Z6 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 n@a@p@b_interface_2
 vfsm_sync
-!s10a 1743050563
-Z7 !s110 1743102964
+R3
+!s110 1744319524
 !i10b 1
-!s100 =G_ijA;[?Sd>ZoMVjn6Te2
-I@k9i6zI9B298g=R9gMlZ31
+!s100 Wd=Z^2W8_Vh?o]P1CZo3H2
+I>O;CIhoSLdW[jH2c1:7bb1
 R1
-w1743050563
+w1743652099
 8../../../rtl/fsm_sync/fsm_sync.v
 F../../../rtl/fsm_sync/fsm_sync.v
-!i122 24
-L0 3 86
+!i122 35
+L0 3 87
 R4
 R5
 r1
 !s85 0
 31
-Z8 !s108 1743102964.000000
+!s108 1744319524.000000
 !s107 ../../../rtl/fsm_sync/fsm_sync.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/fsm_sync/fsm_sync.v|
 !i113 0
 R6
 R2
 vPkt_reg
-!s10a 1743050040
-R7
+!s10a 1744599772
+Z7 !s110 1744602631
 !i10b 1
-!s100 K_AGK9HgC=R7hRJmf[0Fz1
-Il^FVUYWj5W^2:YGfN5`I90
+!s100 AeBJX@WSg@Jhd@Y;4jQek1
+II2TfHg5?TIcjLlW05kf?X0
 R1
-w1743050040
+w1744599772
 8../../../rtl/Pkt_reg/Pkt_reg.v
 F../../../rtl/Pkt_reg/Pkt_reg.v
-!i122 25
+!i122 47
 L0 2 26
 R4
 R5
 r1
 !s85 0
 31
-R8
+!s108 1744602631.000000
 !s107 ../../../rtl/Pkt_reg/Pkt_reg.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/Pkt_reg/Pkt_reg.v|
 !i113 0
@@ -102,23 +108,23 @@ R6
 R2
 n@pkt_reg
 vSH_SYNC
-!s10a 1743050716
-Z9 !s110 1743102965
+!s10a 1744599827
+!s110 1744602633
 !i10b 1
-!s100 D=h]GXlZ>X^<==T3n8YTH0
-Ijf46eIbKmcCPi42RMj[K70
+!s100 ^QbEzH90i_7jL;MmZJ5iz1
+Iz[P`BK?k^MKMCYIjf_2oP0
 R1
-w1743050716
+w1744599827
 8../../../rtl/SH_SYNC/SH_SYNC.v
 F../../../rtl/SH_SYNC/SH_SYNC.v
-!i122 28
-L0 1 209
+!i122 50
+L0 1 211
 R4
 R5
 r1
 !s85 0
 31
-Z10 !s108 1743102965.000000
+Z8 !s108 1744602632.000000
 !s107 ../../../rtl/SH_SYNC/SH_SYNC.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/SH_SYNC/SH_SYNC.v|
 !i113 0
@@ -126,23 +132,23 @@ R6
 R2
 n@s@h_@s@y@n@c
 vShift_Buffer
-!s10a 1743050483
-R9
+!s10a 1744600954
+Z9 !s110 1744602632
 !i10b 1
-!s100 1dfIeZd;G5dIk4g2?]1D[3
-IbzN]cCoCGPXhDHSllM2@Y0
+!s100 a=`c8Li:oE[Gf>YIg3;h`2
+IofKGb5W[OMCaV7MiNE[zC0
 R1
-w1743050483
+w1744600954
 8../../../rtl/Shift_Buffer/Shift_Buffer.v
 F../../../rtl/Shift_Buffer/Shift_Buffer.v
-!i122 26
-L0 2 36
+!i122 48
+L0 2 38
 R4
 R5
 r1
 !s85 0
 31
-R10
+R8
 !s107 ../../../rtl/Shift_Buffer/Shift_Buffer.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/Shift_Buffer/Shift_Buffer.v|
 !i113 0
@@ -150,141 +156,140 @@ R6
 R2
 n@shift_@buffer
 vspi_master5
-!s10a 1741237640
-!s110 1742849150
+R3
+!s110 1744319303
 !i10b 1
 !s100 k2ZFTA`_V78d`?a2z85[P0
-IYZ6CDAZPT]KcFF]BEZ:bR3
+IkVS;Z_IOHUU3F2MGfPOCC2
 R1
-R3
-8../../../rtl/SPI3/SPI_master.v
-F../../../rtl/SPI3/SPI_master.v
-!i122 1
+w1741237640
+8../../../rtl/SPI/SPI_master.v
+F../../../rtl/SPI/SPI_master.v
+!i122 31
 L0 3 344
 R4
 R5
 r1
 !s85 0
 31
-!s108 1742849150.000000
-!s107 ../../../rtl/SPI3/SPI_master.v|
-!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/SPI_master.v|
+!s108 1744319302.000000
+!s107 ../../../rtl/SPI/SPI_master.v|
+!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI/SPI_master.v|
 !i113 0
 R6
 R2
 vSPI_slave
-!s10a 1743102863
-Z11 !s110 1743102963
+!s10a 1744599860
+!s110 1744319570
 !i10b 1
-!s100 9W;d6^C<FTeLjdX^[5Pi=3
-IG4i<j>?zd5UYFb4dHhaXb3
+!s100 GllN;eV<JAQf^gQf94iWb3
+IcMH<<hDen@V@hJ=if0L<e0
 R1
-w1743102863
-8../../../rtl/SPI3/SPI_slave.v
-F../../../rtl/SPI3/SPI_slave.v
-!i122 21
-L0 1 71
+w1744319561
+8../../../rtl/SPI/SPI_slave.v
+F../../../rtl/SPI/SPI_slave.v
+!i122 39
+L0 3 97
 R4
 R5
 r1
 !s85 0
 31
-Z12 !s108 1743102963.000000
-!s107 ../../../rtl/SPI3/SPI_slave.v|
-!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/SPI_slave.v|
+!s108 1744319570.000000
+!s107 ../../../rtl/SPI/SPI_slave.v|
+!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI/SPI_slave.v|
 !i113 0
 R6
 R2
 n@s@p@i_slave
 vSPI_testmodul2
-!s10a 1743102919
-R11
+R3
+!s110 1744320110
 !i10b 1
-!s100 Bk?9<O<BB_a_PR`8joJ[L3
-Id8e5<H9AziP4=WRK=V]DU1
+!s100 i?U=7Z0`j@k<dUIgclcEO1
+IVmY^b[oMQEQgF^H3]`z:V1
 R1
-w1743102919
-8../../../rtl/SPI3/SPI_testmodul2.v
-F../../../rtl/SPI3/SPI_testmodul2.v
-!i122 22
-L0 3 82
+w1744320073
+8../../../rtl/SPI/SPI_testmodul2.v
+F../../../rtl/SPI/SPI_testmodul2.v
+!i122 43
+L0 3 84
 R4
 R5
 r1
 !s85 0
 31
-R12
-!s107 ../../../rtl/SPI3/SPI_testmodul2.v|
-!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI3/SPI_testmodul2.v|
+!s108 1744320109.000000
+!s107 ../../../rtl/SPI/SPI_testmodul2.v|
+!s90 -reportprogress|300|+acc|-incr|../../../rtl/SPI/SPI_testmodul2.v|
 !i113 0
 R6
 R2
 n@s@p@i_testmodul2
 vtestbench
-!s10a 1743102985
-!s110 1743102995
+!s110 1744602852
 !i10b 1
-!s100 IkP94fmKbkY@cz3;P3b9j0
-IYHI<8UG;2>Ra2g;aoDDA12
+!s100 JL1^b;?iHUJQ;ZWKVGD_K2
+IYBi81TWQUL=[e3R]RH_AD2
 R1
-w1743102985
+w1744602842
 8APB_interface_testbench.v
 FAPB_interface_testbench.v
-!i122 29
-L0 4 347
+!i122 52
+L0 4 354
 R4
 R5
 r1
 !s85 0
 31
-!s108 1743102995.000000
+!s108 1744602852.000000
 !s107 APB_interface_testbench.v|
 !s90 -reportprogress|300|+acc|-incr|APB_interface_testbench.v|
 !i113 0
 R6
 R2
 vTOP
-!s10a 1743102801
+!s10a 1744600335
 R7
 !i10b 1
-!s100 BG>X5A>]:Z?5BV>DeLF6c2
-IRk1b:L=A0GG9QSgGJhPVf0
+!s100 kdnIEe06XO[mXB[_Q];9E1
+IL5IDhYRQ>>lSeQHUf4DoJ1
 R1
-w1743102801
-8../../../rtl/TOP/TOP3.v
-F../../../rtl/TOP/TOP3.v
-!i122 23
-L0 2 198
+w1744600335
+8../../../rtl/TOP/TOP.v
+F../../../rtl/TOP/TOP.v
+!i122 46
+L0 2 203
 R4
 R5
 r1
 !s85 0
 31
-R8
-!s107 ../../../rtl/TOP/TOP3.v|
-!s90 -reportprogress|300|+acc|-incr|../../../rtl/TOP/TOP3.v|
+!s108 1744602630.000000
+!s107 ../../../rtl/TOP/TOP.v|
+!s90 -reportprogress|300|+acc|-incr|../../../rtl/TOP/TOP.v|
 !i113 0
 R6
 R2
 n@t@o@p
 vTX_Buffer
-!s10a 1743050510
+!s10a 1744600074
 R9
 !i10b 1
-!s100 g4OV54fXaSFJ]8hde7lk91
-I4[lZ<0OEC`8KXWj^jSz]Z0
+!s100 [:V5?b2d@L7Pk@WLIajY^2
+IbU>5mBPJe:`fN>>ZLjKb41
 R1
-w1743050510
+w1744600074
 8../../../rtl/TX_Buffer/TX_Buffer.v
 F../../../rtl/TX_Buffer/TX_Buffer.v
-!i122 27
+!i122 49
 L0 3 27
 R4
 R5
 r1
 !s85 0
 31
-R10
+R8
 !s107 ../../../rtl/TX_Buffer/TX_Buffer.v|
 !s90 -reportprogress|300|+acc|-incr|../../../rtl/TX_Buffer/TX_Buffer.v|
 !i113 0

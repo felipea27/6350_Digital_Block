@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : Pkt_reg
 Version: V-2023.12-SP1
-Date   : Wed Apr  2 15:03:10 2025
+Date   : Sun Apr 13 23:58:55 2025
 ****************************************
 
 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   2.2165 uW   (97%)
-  Net Switching Power  =  63.0834 nW    (3%)
+  Cell Internal Power  = 830.6002 nW   (96%)
+  Net Switching Power  =  38.0043 nW    (4%)
                          ---------
-Total Dynamic Power    =   2.2796 uW  (100%)
+Total Dynamic Power    = 868.6045 nW  (100%)
 
-Cell Leakage Power     =   1.0398 uW
+Cell Leakage Power     = 355.1357 nW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  2.0602e-03            0.0000            0.0000        2.0602e-03  (  62.07%)  i
-register       9.9814e-05        1.3915e-05          716.1253        8.2985e-04  (  25.00%)
+clock_network  7.7715e-04            0.0000            0.0000        7.7715e-04  (  63.51%)  i
+register       2.5422e-05        4.7459e-06          204.1641        2.3433e-04  (  19.15%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  5.6457e-05        4.9168e-05          323.6919        4.2932e-04  (  12.93%)
+combinational  2.8030e-05        3.3258e-05          150.9716        2.1226e-04  (  17.35%)
 --------------------------------------------------------------------------------------------------
-Total          2.2165e-03 mW     6.3083e-05 mW     1.0398e+03 nW     3.3194e-03 mW
+Total          8.3060e-04 mW     3.8004e-05 mW       355.1357 nW     1.2237e-03 mW
 1

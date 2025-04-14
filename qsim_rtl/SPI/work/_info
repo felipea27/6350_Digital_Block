@@ -5,6 +5,17 @@ Z0 !s99 nomlopt
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -14,16 +25,15 @@ R0
 cModel Technology
 Z1 d/users/fandrade/ee6350/6350_Digital_Block/qsim_rtl/SPI
 T_opt
-!s110 1744211389
-VmlenJ?=k_8o``1K[PgECS3
+!s110 1744314494
+V?C5gNJg0VPE]HelXK:]0Z0
 04 15 4 work SPI_testmodul_3 fast 0
-=1-5667e9aff8b2-67f68dbc-c9129-f25e
+=1-5667e9aff8b2-67f8207e-3e995-439c
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work
 Z2 tCvgOpt 0
 n@_opt
 OL;O;2021.3;73
-R1
 vAPB_interface_2
 !s10a 1743102946
 Z3 !s110 1744210354
@@ -71,48 +81,70 @@ r1
 !i113 0
 R6
 R2
-vSPI_slave
-!s10a 1744213411
-!s110 1744211387
+vSPI_SLAVE
+!s110 1744309281
 !i10b 1
-!s100 oYJG[Y@lmVaMoKh;P9]>O2
-In4nkmQECjb`@WAj]9NzHe1
+!s100 k]kf<JB94caSk2[cLFV:e2
+I7m2U7zg^_G7FD:8UCCYF@3
 R1
-w1744211372
-8../../rtl/SPI/SPI_slave.v
-F../../rtl/SPI/SPI_slave.v
-!i122 8
-L0 1 73
+w1744309268
+Z7 8../../rtl/SPI/SPI_slave.v
+Z8 F../../rtl/SPI/SPI_slave.v
+!i122 9
+L0 3 80
 R4
 R5
 r1
 !s85 0
 31
-!s108 1744211387.000000
-!s107 ../../rtl/SPI/SPI_slave.v|
-!s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/SPI_slave.v|
+!s108 1744309281.000000
+Z9 !s107 ../../rtl/SPI/SPI_slave.v|
+Z10 !s90 -reportprogress|300|+acc|-incr|../../rtl/SPI/SPI_slave.v|
+!i113 0
+R6
+R2
+n@s@p@i_@s@l@a@v@e
+vSPI_slave
+!s10a 1744313814
+!s110 1744313826
+!i10b 1
+!s100 @;_R3cnzAFJ:o63NX6CiQ0
+Ik86MOF:16LD>1SmlWT4[E3
+R1
+w1744313814
+R7
+R8
+!i122 16
+L0 3 94
+R4
+R5
+r1
+!s85 0
+31
+!s108 1744313826.000000
+R9
+R10
 !i113 0
 R6
 R2
 n@s@p@i_slave
 vSPI_testmodul_3
-!s10a 1744211041
-!s110 1744211053
+!s110 1744314493
 !i10b 1
-!s100 =Pz8z=f1AQ3NT?ULg@?Vc0
-InLh9KnWH8KD=RK;16eB2:0
+!s100 =0N_We_8I[;D6A1=JOf1D1
+If;f>JTo`LZYVY7Z>mRO2V3
 R1
-w1744211041
+w1744314484
 8SPI_testmodul_3.v
 FSPI_testmodul_3.v
-!i122 7
+!i122 20
 L0 3 116
 R4
 R5
 r1
 !s85 0
 31
-!s108 1744211053.000000
+!s108 1744314493.000000
 !s107 SPI_testmodul_3.v|
 !s90 -reportprogress|300|+acc|-incr|SPI_testmodul_3.v|
 !i113 0

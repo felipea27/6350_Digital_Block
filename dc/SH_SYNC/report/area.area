@@ -3,7 +3,7 @@
 Report : area
 Design : SH_SYNC
 Version: V-2023.12-SP1
-Date   : Tue Apr  1 17:14:17 2025
+Date   : Mon Apr 14 00:02:03 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -11,22 +11,22 @@ Library(s) Used:
 
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
-Number of ports:                            7
-Number of nets:                           901
-Number of cells:                          883
-Number of combinational cells:            778
-Number of sequential cells:               105
+Number of ports:                            8
+Number of nets:                           891
+Number of cells:                          873
+Number of combinational cells:            769
+Number of sequential cells:               104
 Number of macros/black boxes:               0
-Number of buf/inv:                        252
+Number of buf/inv:                        251
 Number of references:                      47
 
-Combinational area:                200.635916
-Buf/Inv area:                       33.073918
-Noncombinational area:             125.280004
+Combinational area:                199.946876
+Buf/Inv area:                       34.264079
+Noncombinational area:             124.027204
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   325.915919
+Total cell area:                   323.974080
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -37,8 +37,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-SH_SYNC                            325.9159    100.0  200.6359   125.2800  0.0000  SH_SYNC
+SH_SYNC                            323.9741    100.0  199.9469   124.0272  0.0000  SH_SYNC
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                 200.6359   125.2800  0.0000
+Total                                                 199.9469   124.0272  0.0000
 
 1

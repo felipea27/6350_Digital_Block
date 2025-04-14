@@ -2,16 +2,28 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /SPI_testmodul_3/MOSI
 add wave -noupdate /SPI_testmodul_3/MISO
+add wave -noupdate /SPI_testmodul_3/clk
 add wave -noupdate /SPI_testmodul_3/SS
+add wave -noupdate /SPI_testmodul_3/uut/SS_sync_0
+add wave -noupdate /SPI_testmodul_3/uut/SS_sync_1
+add wave -noupdate /SPI_testmodul_3/uut/SS_prev
+add wave -noupdate /SPI_testmodul_3/uut/SS_rising_edge
+add wave -noupdate /SPI_testmodul_3/uut/SS_falling_edge
 add wave -noupdate /SPI_testmodul_3/SCK
+add wave -noupdate /SPI_testmodul_3/uut/SCK_sync_0
+add wave -noupdate /SPI_testmodul_3/uut/SCK_sync_1
+add wave -noupdate /SPI_testmodul_3/uut/SCK_prev
+add wave -noupdate /SPI_testmodul_3/uut/SCK_rising_edge
+add wave -noupdate /SPI_testmodul_3/uut/SCK_falling_edge
 add wave -noupdate /SPI_testmodul_3/DATA
 add wave -noupdate /SPI_testmodul_3/MDATA
 add wave -noupdate /SPI_testmodul_3/master_data_received
 add wave -noupdate /SPI_testmodul_3/slave_data_received
-add wave -noupdate /SPI_testmodul_3/MODE
+add wave -noupdate /SPI_testmodul_3/uut/OUT
 add wave -noupdate /SPI_testmodul_3/uut/SHIFT_IN
 add wave -noupdate /SPI_testmodul_3/uut/SHIFT_REG
 add wave -noupdate /SPI_testmodul_3/uut/DATA
+add wave -noupdate /SPI_testmodul_3/uut/SS_asserted
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {3 ns} 0}
 quietly wave cursor active 1

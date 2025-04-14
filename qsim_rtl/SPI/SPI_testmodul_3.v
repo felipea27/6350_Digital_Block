@@ -28,19 +28,20 @@ module SPI_testmodul_3;
         .SCK(SCK),
         .DATA(DATA),
 	.OUT(OUT),
-	.rst(rst)
+	.rst(rst),
+	.clk(clk)
     );
     
     always #50 clk = ~clk;
 	
-    	reg SCK_int;
-	always @(posedge clk) begin
-    		if (SS == 0)  // Only toggle SCK when SS is low
-        		SCK_int = ~SCK_int;	
-		else
-			SCK = 0;
+//    	reg SCK_int;
+//	always @(posedge clk) begin
+//    		if (SS == 0)  // Only toggle SCK when SS is low
+//        		SCK_int = ~SCK_int;	
+//		else
+//			SCK = 0;
 	//assign SCK = SCK_int;
-	end
+//	end
 
 
     task send_packet(input [7:0] mdata, input [7:0] data);
@@ -50,7 +51,7 @@ module SPI_testmodul_3;
         SCK = 0;
 	MDATA = mdata;
 	DATA = data;
-	#150;
+	#350;
         SS = 0;  // Reactivate Slave (SS low)
         // Send another byte 
         i = 3'd7;  // Reset counter
@@ -58,17 +59,15 @@ module SPI_testmodul_3;
 		SCK = 0;
         	MOSI = MDATA[i]; 
         	i = i - 1;
-		#50;
+		#200;
 		SCK = 1;	
-		master_data_received = {master_data_received[6:0], MISO};
-		#50;
+		#200 master_data_received = {master_data_received[6:0], MISO};
         end
 	SCK = 0;
-	#50;
-	slave_data_received = OUT; 
+	#400;
 	SS = 1;
 	SCK = 0;	
-	
+	#150 slave_data_received = OUT; 	
 	$fwrite(file, "Master Sent: %h\n", MDATA);
         $fwrite(file, "Slave Received: %h\n", slave_data_received);
         $fwrite(file, "Slave Sent: %h\n", DATA);
@@ -79,6 +78,7 @@ endtask
 
     initial begin
         // Initialize
+        clk = 0;
         SCK = 0;
         SS = 1;   
         MOSI = 0;
@@ -102,9 +102,9 @@ endtask
 	end
 
 	send_packet(8'hA5, 8'hB1);
-	#50;
+	#600;
     	send_packet(8'h3C, 8'h1F);
-    	#50;
+    	#600;
 	send_packet(8'hF0, 8'hEA);
 
         $finish;

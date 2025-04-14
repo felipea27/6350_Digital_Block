@@ -5,7 +5,4 @@
   gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (library)
                               /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db
 
-Information: Building the design '**TSGEN**'. (HDL-193)
-Warning: Cannot find the design '**TSGEN**' in the library 'WORK'. (LBR-1)
-Warning: Unable to resolve reference '**TSGEN**' in 'SPI_slave'. (LINK-5)
-0
+1

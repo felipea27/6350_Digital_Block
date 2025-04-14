@@ -3,7 +3,7 @@
 Report : area
 Design : Pkt_reg
 Version: V-2023.12-SP1
-Date   : Wed Apr  2 15:03:10 2025
+Date   : Sun Apr 13 23:58:55 2025
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -11,22 +11,22 @@ Library(s) Used:
 
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
-Number of ports:                           77
-Number of nets:                           412
-Number of cells:                          343
-Number of combinational cells:            271
-Number of sequential cells:                72
+Number of ports:                           37
+Number of nets:                           178
+Number of cells:                          149
+Number of combinational cells:            117
+Number of sequential cells:                32
 Number of macros/black boxes:               0
-Number of buf/inv:                        137
-Number of references:                      15
+Number of buf/inv:                         65
+Number of references:                      10
 
-Combinational area:                 59.883839
-Buf/Inv area:                       20.859120
-Noncombinational area:              85.691522
+Combinational area:                 25.807679
+Buf/Inv area:                        9.897120
+Noncombinational area:              38.085121
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   145.575361
+Total cell area:                    63.892801
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -37,8 +37,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Pkt_reg                            145.5754    100.0   59.8838    85.6915  0.0000  Pkt_reg
+Pkt_reg                             63.8928    100.0   25.8077    38.0851  0.0000  Pkt_reg
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                  59.8838    85.6915  0.0000
+Total                                                  25.8077    38.0851  0.0000
 
 1

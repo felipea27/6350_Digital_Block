@@ -6,14 +6,15 @@ Report : timing
         -max_paths 1
 Design : Shift_Buffer
 Version: V-2023.12-SP1
-Date   : Mon Mar 31 14:28:44 2025
+Date   : Mon Apr 14 00:02:25 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 Wire Load Model Mode: enclosed
 
-  Startpoint: rst (input port clocked by clk)
-  Endpoint: shift_reg_reg[60]
+  Startpoint: shift_reg_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: shift_reg_reg[12]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -26,29 +27,25 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  input external delay                                    0.02       0.02 r
-  rst (in)                                                0.00       0.02 r
-  U201/X (UDB116SVT24_NR2B_0P75)                          0.02       0.04 r
-  U202/X (UDB116SVT24_INV_0P75)                           0.01       0.05 f
-  U199/X (UDB116SVT24_NR2B_0P75)                          0.02       0.07 r
-  U212/X (UDB116SVT24_BUF_1)                              0.02       0.10 r
-  U213/X (UDB116SVT24_BUF_1)                              0.02       0.11 r
-  U233/X (UDB116SVT24_BUF_1)                              0.02       0.13 r
-  U271/X (UDB116SVT24_AO22_1)                             0.02       0.15 r
-  shift_reg_reg[60]/D (UDB116SVT24_FDPQ_V2_3)             0.00       0.15 r
-  data arrival time                                                  0.15
+  shift_reg_reg[11]/CK (UDB116SVT24_FDPRBQ_V2_1)          0.00       0.00 r
+  shift_reg_reg[11]/Q (UDB116SVT24_FDPRBQ_V2_1)           0.07       0.07 r
+  U88/X (UDB116SVT24_INV_0P75)                            0.01       0.09 f
+  U91/X (UDB116SVT24_NR2_0P75)                            0.01       0.10 r
+  U106/X (UDB116SVT24_OA22_1)                             0.02       0.12 r
+  shift_reg_reg[12]/D (UDB116SVT24_FDPRBQ_V2_1)           0.00       0.12 r
+  data arrival time                                                  0.12
 
   clock clk (rise edge)                                 100.00     100.00
   clock network delay (ideal)                             0.00     100.00
   clock uncertainty                                      -0.10      99.90
-  shift_reg_reg[60]/CK (UDB116SVT24_FDPQ_V2_3)            0.00      99.90 r
-  library setup time                                      0.00      99.90
-  data required time                                                99.90
+  shift_reg_reg[12]/CK (UDB116SVT24_FDPRBQ_V2_1)          0.00      99.90 r
+  library setup time                                     -0.01      99.89
+  data required time                                                99.89
   --------------------------------------------------------------------------
-  data required time                                                99.90
-  data arrival time                                                 -0.15
+  data required time                                                99.89
+  data arrival time                                                 -0.12
   --------------------------------------------------------------------------
-  slack (MET)                                                       99.74
+  slack (MET)                                                       99.77
 
 
 1

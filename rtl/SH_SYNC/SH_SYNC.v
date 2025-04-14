@@ -5,7 +5,8 @@ module SH_SYNC (
     input wire RX,
     input wire tx_rdy,
     output reg sh_en,
-    output reg fsm_rst
+    output reg fsm_rst,
+    output reg sh_en_done
 );
 
     // State encoding
@@ -18,7 +19,7 @@ module SH_SYNC (
 
     localparam TIMEOUT_THRESHOLD = 14000; // 1.4 ms timeout
     localparam PULSE_INTERVAL_1MS = 9999; // 1 ms - 100ns for 1 clk cycle 
-    localparam PACKET_SIZE = 64; 
+    localparam PACKET_SIZE = 24; 
     localparam PREAMBLE_SIZE = 8; 
 
     reg [2:0] state, next_state;
@@ -36,9 +37,8 @@ module SH_SYNC (
     reg tx_rdy_prev;
     reg tx_rdy_p;
 
-
     // State transition logic
-    always @(posedge clk) begin
+    always @(posedge clk or negedge rst) begin
         if (rst == 0) 
             state <= IDLE;
         else 
@@ -117,6 +117,7 @@ module SH_SYNC (
 	    fsm_rst <= 0;
 	    tx_rdy_prev <= 0;
 	    tx_rdy_p <= 0;
+	    sh_en_done <= 1;
         end else begin
             rfin_sync1 <= rfin;
             rfin_sync2 <= rfin_sync1;
@@ -135,6 +136,7 @@ module SH_SYNC (
                     sh_en <= 0;
                     first_pulse_flag <= 1;
 		    fsm_rst <= 0;
+		    sh_en_done <= 1;
                 end
 
                 COLLECTING: begin
@@ -185,6 +187,7 @@ module SH_SYNC (
                 WAIT_TXRDY: begin
                     sh_en <= 0; // Wait without sending pulses
 		    counter <= PULSE_INTERVAL_1MS/2;
+		    sh_en_done <= 0;
                 end
 
                 SEND_TX_PULSES: begin

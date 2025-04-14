@@ -7,15 +7,18 @@ module TOP (
     // Internal signals
     wire pkt_flg, byte_flg;
     wire [7:0] SPI_IN;
-    wire [63:0] SHIFT_OUT;
+    wire [23:0] SHIFT_OUT; // [packet size - 1 : 0]
     wire [7:0] SPI_OUT;
     wire DIN;
     wire SH_EN;
     wire FSM_RST;
     wire TX_OUT_I;
+    wire CS_sync;
+    wire SH_EN_DONE;
+    wire SPI_OUT_RDY;
 
     assign sh_en = SH_EN; //delete
-    assign TX_OUT = (TX_BY || TX_OUT_I);
+    assign TX_OUT = (TX_BY | TX_OUT_I);
 
     //RX registers
     reg [2:0] rx_state;
@@ -29,7 +32,6 @@ module TOP (
    
     //TX registers 
     reg [1:0] tx_state;
-    reg [3:0] counter2;
     reg [3:0] counter3;
     reg TX_EN;
     reg TX_LD;
@@ -53,7 +55,7 @@ module TOP (
     SH_SYNC sh_sync_inst (
 	    .clk(clk), .rst(rst), .rfin(DIN),
 	    .sh_en(SH_EN), .RX(RX), .tx_rdy(TX_SH),
-	    .fsm_rst(FSM_RST)
+	    .fsm_rst(FSM_RST), .sh_en_done(SH_EN_DONE)
     );
 
     // Shift Buffer
@@ -72,8 +74,9 @@ module TOP (
     // SPI Slave module
     SPI_slave SPI_slave_inst (
 	    .rst(rst), .MOSI(MOSI), .SCK(SCK),
-	    .SS(CS), .DATA(SPI_IN),
-	    .MISO(MISO), .OUT(SPI_OUT)
+	    .SS(CS), .CS_sync(CS_sync), .DATA(SPI_IN),
+	    .MISO(MISO), .OUT(SPI_OUT), .clk(clk),
+	    .SPI_OUT_RDY(SPI_OUT_RDY)
     );
 
     // TX Buffer
@@ -83,7 +86,7 @@ module TOP (
     ); 
 
     // State Machine
-    always @(posedge clk) begin
+    always @(posedge clk or negedge rst) begin
         if (rst == 0) begin
             
 	    //RX Stuff	
@@ -98,10 +101,10 @@ module TOP (
 
 	    //TX Stuff
 	    tx_state <= TX_INIT;
-	    counter2 <= 0;
 	    TX_EN <= 0;
 	    TX_LD <= 0;
 	    TX_SH <= 0;
+	    counter3 <= 0;
 
         end else if (RX) begin
 	    pkt_rec_prev <= pkt_rec;
@@ -121,7 +124,7 @@ module TOP (
 		    SPI_LD <= 0;
 		    PKT_EN <= 0;
 		    PKT_RST <= 0;
-                    counter <= 4'd8;
+                    counter <= 4'd3; // number of bytes in packet
 			if (pkt_rec_prev == 0 && pkt_rec == 1) begin //needs to be posedge of of pkt_rec
 				rx_state <= PKT_STORE;
 				PKT_LD <= 1;
@@ -139,7 +142,7 @@ module TOP (
         
 		SPI_SHIFT: begin
 			PKT_RST <= 0;
-			if (CS == 0) begin
+			if (CS_sync == 0) begin
 				rx_state <= SPI_TRANSFER;
                     		SPI_RDY <= 1;
                     	end
@@ -148,7 +151,7 @@ module TOP (
                 end
         
 		SPI_TRANSFER: begin
-		    if (CS == 1) begin
+		    if (CS_sync == 1) begin
 			rx_state <= PKT_STORE;
 			PKT_EN <= 1;
                     	counter <= counter - 1;
@@ -156,13 +159,14 @@ module TOP (
 		end
 	endcase
         end else begin
+	    rx_state <= INIT;
             case (tx_state)
                 TX_INIT: begin
 			counter3 <= 4'b0; // Track when transmit one byte
 		        TX_EN <= 0;
 			TX_LD <= 0;
 			TX_SH <= 0;
-			if (CS == 0) begin
+			if (CS_sync == 0) begin
 				tx_state <= TX_IDLE;
 		
 			end
@@ -172,8 +176,7 @@ module TOP (
 			TX_EN <= 0;
 			TX_LD <= 0;
 			TX_SH <= 0;
-			if (CS == 1) begin
-				counter2 <= 0;
+			if (SPI_OUT_RDY == 1) begin
 				TX_LD <= 1;
 				tx_state <= TX_RDY;
 			end
@@ -182,7 +185,7 @@ module TOP (
 		TX_RDY: begin
 			TX_LD <= 0;
 			TX_SH <= 1;
-			if (counter3 == 4'b1000) begin
+			if (counter3 == 4'b1000 || SH_EN_DONE) begin
 				counter3 <= 4'b0;
 				tx_state <= TX_INIT;
 				TX_EN <= 0;

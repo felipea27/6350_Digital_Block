@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : SH_SYNC
 Version: V-2023.12-SP1
-Date   : Tue Apr  1 17:14:17 2025
+Date   : Mon Apr 14 00:02:03 2025
 ****************************************
 
 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   2.6856 uW   (96%)
-  Net Switching Power  =  97.9237 nW    (4%)
+  Cell Internal Power  =   2.6661 uW   (96%)
+  Net Switching Power  =  98.7283 nW    (4%)
                          ---------
-Total Dynamic Power    =   2.7835 uW  (100%)
+Total Dynamic Power    =   2.7649 uW  (100%)
 
-Cell Leakage Power     =   1.5790 uW
+Cell Leakage Power     =   1.5891 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  2.6101e-03            0.0000            0.0000        2.6101e-03  (  59.83%)  i
-register       2.6362e-05        7.2705e-06          644.0463        6.7768e-04  (  15.53%)
+clock_network  2.5818e-03            0.0000            0.0000        2.5818e-03  (  59.30%)  i
+register       2.7833e-05        9.6623e-06          633.6010        6.7110e-04  (  15.41%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  4.9104e-05        9.0653e-05          934.9797        1.0747e-03  (  24.64%)
+combinational  5.6513e-05        8.9066e-05          955.4885        1.1011e-03  (  25.29%)
 --------------------------------------------------------------------------------------------------
-Total          2.6856e-03 mW     9.7924e-05 mW     1.5790e+03 nW     4.3625e-03 mW
+Total          2.6661e-03 mW     9.8728e-05 mW     1.5891e+03 nW     4.3540e-03 mW
 1

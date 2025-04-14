@@ -1,15 +1,15 @@
 Master Sent: a5
-Slave Received: 00
+Slave Received: a5
 Slave Sent: b1
 Master Received: b1
 
 Master Sent: 3c
-Slave Received: a5
+Slave Received: 3c
 Slave Sent: 1f
 Master Received: 1f
 
 Master Sent: f0
-Slave Received: 3c
+Slave Received: f0
 Slave Sent: ea
 Master Received: ea
 
