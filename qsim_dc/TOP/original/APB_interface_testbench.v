@@ -291,13 +291,13 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("/simulation/fandrade/dc/DATA/std0/TX_OUT.txt", "w");
+		tx_file = $fopen("/simulation/fandrade/dc/DATA/std9/TX_OUT.txt", "w");
 		if (tx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rx_file = $fopen("/simulation/fandrade/dc/DATA/std0/PRDATA.txt", "w");
+		rx_file = $fopen("/simulation/fandrade/dc/DATA/std9/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
@@ -310,7 +310,7 @@ module testbench;
 //		end
 
 		
-		gaus_file = $fopen("../std/gaussian_values0.txt", "r");
+		gaus_file = $fopen("../std/gaussian_values9.txt", "r");
 
 		// Read the file and store values in the array
 		for (i2 = 0; i2 < 10000; i2 = i2 + 1) begin
