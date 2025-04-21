@@ -1,12 +1,15 @@
-#!/bin/bash
-
-# Find all directories in the current directory
+#go though all dc script except TOP
 for dir in */; do
-    (
-        cd "$dir" && ./dc.sh
-    )
+    dir=${dir%/}  # Remove trailing slash
+    if [ "$dir" != "TOP" ]; then
+        echo "Entering $dir"
+        (cd "$dir" && ./dc.sh)
+    fi
 done
 
-# Wait for all background processes to finish
-wait
+# Handle TOP directory last
+if [ -d "TOP" ]; then
+    echo "Entering TOP"
+    (cd TOP && ./dc.sh)
+fi
 

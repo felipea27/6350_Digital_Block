@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : TOP
+Version: V-2023.12-SP1
+Date   : Fri Apr 18 13:27:38 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: fsm_sync_inst/state_neg_reg
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TOP                ZeroWLM               gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.00       0.00
+  input external delay                                    0.02       0.02 f
+  rst (in)                                                0.00       0.02 f
+  U1089/X (UDB116SVT24_BUF_1)                             0.02       0.04 f
+  U1118/X (UDB116SVT24_BUF_1)                             0.02       0.06 f
+  U1178/X (UDB116SVT24_BUF_1)                             0.02       0.08 f
+  U1863/X (UDB116SVT24_OAI21_0P75)                        0.01       0.09 r
+  U1864/X (UDB116SVT24_AOI21_0P75)                        0.01       0.09 f
+  fsm_sync_inst/state_neg_reg/D (UDB116SVT24_FDNQ_V2_1)
+                                                          0.00       0.09 f
+  data arrival time                                                  0.09
+
+  clock clk (fall edge)                                  50.00      50.00
+  clock network delay (propagated)                        0.00      50.00
+  clock uncertainty                                      -0.10      49.90
+  fsm_sync_inst/state_neg_reg/CK (UDB116SVT24_FDNQ_V2_1)
+                                                          0.00      49.90 f
+  library setup time                                     -0.01      49.89
+  data required time                                                49.89
+  --------------------------------------------------------------------------
+  data required time                                                49.89
+  data arrival time                                                 -0.09
+  --------------------------------------------------------------------------
+  slack (MET)                                                       49.79
+
+
+1

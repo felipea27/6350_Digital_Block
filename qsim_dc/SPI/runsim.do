@@ -18,6 +18,6 @@ vlog +acc -incr ../../rtl/SPI/APB_interface.v
 vlog +acc -incr SPI_testmodul_3.v 
 
 # Run Simulator 
-vsim +acc -t ps -lib work SPI_testmodul_3 
+vsim +acc -t ps -lib work -sdftyp uut=../../dc/SPI/SPI_slave.syn.sdf SPI_testmodul_3
 do waveformat.do   
 run -all

@@ -40,6 +40,11 @@ module testbench;
 	wire [7:0] o_PWDATA;
 	wire [7:0] o_PRDATA;
 
+	wire MOSI;
+	wire MISO;
+	wire SCK;
+	wire SS3;
+
 	wire pkt_rec;
 	wire TX_OUT;
 	integer tx_file;
@@ -79,13 +84,36 @@ module testbench;
 		.o_PWDATA(o_PWDATA), 
 		.o_PRDATA(o_PRDATA),
 
-		.rfin(rfin),
-		.pkt_rec(pkt_rec),
-		.RX(RX_MODE),
-		.sh_en(sh_en),
-		.TX_OUT(TX_OUT),
-		.TX_BY(TX_BY)
+		.MOSI(MOSI),
+		.SS3(SS3),
+		.SCK(SCK),
+		.MISO(MISO)
+
+//		.rfin(rfin),
+//		.pkt_rec(pkt_rec),
+//		.RX(RX_MODE),
+//		.sh_en(sh_en),
+//		.TX_OUT(TX_OUT),
+//		.TX_BY(TX_BY)
 	);
+
+	TOP top_slave (
+		.clk(i_PCLK),
+
+		.MOSI(MOSI),
+		.CS(SS3),
+		.MISO(MISO),
+		.SCK(SCK),
+
+		.rfin(rfin),
+		.rst(i_PRESETn),
+		.pkt_rec(pkt_rec),
+		.sh_en(sh_en),
+		.RX(RX_MODE),
+		.TX_BY(TX_BY),
+		.TX_OUT(TX_OUT)
+	);
+
 	//READ parameters
 	localparam STATUS	= 4'b0000;
 	localparam RX		= 4'b0001;
@@ -287,16 +315,17 @@ module testbench;
 		MDATA = 0;
 		rfin = 0;
 		TX_BY = 0;
+		RX_MODE = 0;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("DATA/std0/TX_OUT.txt", "w");
+		tx_file = $fopen("/simulation/fandrade/rtl/original/DATA/std0/TX_OUT.txt", "w");
 		if (tx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rx_file = $fopen("DATA/std0/PRDATA.txt", "w");
+		rx_file = $fopen("/simulation/fandrade/rtl/original/DATA/std0/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
@@ -326,8 +355,8 @@ module testbench;
 		#200
 		
 		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		repeat(100) begin	
-			repeat(10) begin
+		repeat(10) begin	
+			repeat(1) begin
 				i = i + 1; // Increment counter
 				//$display("RX Iteration: %0d", i);
 				MDATA = packets[i];
@@ -335,7 +364,7 @@ module testbench;
 				SEND_SYNC(MDATA, 100, 1000000);
 				#800;
 			end
-			i = i-10;
+		//	i = i-10;
 			#1000000;
 			
 			repeat(10) begin
