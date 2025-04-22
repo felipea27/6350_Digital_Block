@@ -2,3 +2,5 @@ qsim_rtl/Final_Verification/original/vsim.wlf
 qsim_dc/TOP/original/.nfs*
 .nfs*
 *.wlf
+
+apr/example/

@@ -1,7 +1,25 @@
 `timescale 1ns/1ps
 module TOP (
-    input clk, rfin, rst, MOSI, CS, SCK, TX_BY, RX, //RX = 1, TX = 0
-    output pkt_rec, MISO, TX_OUT, sh_en
+    input clk,
+    input rfin,
+    input rst,
+//SPI
+    input MOSI,
+    input CS,
+    input SCK,
+//External TX OUT
+    input TX_BY,
+//MODE
+    input RX, //RX = 1, TX = 0
+
+//Set Period externally
+    input set_ext_counter,
+
+//Outputs
+    output pkt_rec,
+    output MISO,
+    output TX_OUT,
+    output sh_en //delete
 );
 
     // Internal signals
@@ -29,7 +47,14 @@ module TOP (
     reg PKT_LD;
     reg PKT_RST;
     reg pkt_rec_prev;
-   
+    reg [15:0] ext_counter;
+    reg [7:0] ext_counter_msb;
+    //Syncing
+    reg set_ext_sync0;
+    reg set_ext_sync1;
+    reg set_ext_sync;
+    reg set_ext_prev;  
+ 
     //TX registers 
     reg [1:0] tx_state;
     reg [3:0] counter3;
@@ -39,8 +64,9 @@ module TOP (
 
     // RX State encoding
     localparam 
-    INIT = 3'b000, LOAD = 3'b001, PKT_STORE = 3'b010,
-               SPI_SHIFT = 3'b011, SPI_TRANSFER = 3'b100;
+    INIT = 3'b000, LOAD = 3'b001, PKT_STORE = 3'b011,
+               SPI_SHIFT = 3'b111, SPI_TRANSFER = 3'b101,
+	       EXT_LOAD_1 = 3'b100, EXT_LOAD_2 = 3'b010;
  
     // TX State encoding
     localparam
@@ -55,7 +81,8 @@ module TOP (
     SH_SYNC sh_sync_inst (
 	    .clk(clk), .rst(rst), .rfin(DIN),
 	    .sh_en(SH_EN), .RX(RX), .tx_rdy(TX_SH),
-	    .fsm_rst(FSM_RST), .sh_en_done(SH_EN_DONE)
+	    .fsm_rst(FSM_RST), .sh_en_done(SH_EN_DONE),
+	    .ext_counter_flag(set_ext_sync1), .ext_counter(ext_counter)
     );
 
     // Shift Buffer
@@ -97,7 +124,14 @@ module TOP (
 	    PKT_EN <= 0;
 	    PKT_LD <= 0;
 	    PKT_RST <= 0;
+	    set_ext_prev <= 0;  
 	    pkt_rec_prev <= 0;
+	    ext_counter <= 0;
+	    ext_counter_msb <= 0;
+	    	    
+	    //Sync
+	    set_ext_sync0 <= 0;
+	    set_ext_sync1 <= 0;
 
 	    //TX Stuff
 	    tx_state <= TX_INIT;
@@ -106,17 +140,29 @@ module TOP (
 	    TX_SH <= 0;
 	    counter3 <= 0;
 
+
         end else if (RX) begin
+	    //Sync
+	    set_ext_sync0 <= set_ext_counter;
+	    set_ext_sync1 <= set_ext_sync0;
+
+	    //Edge Detection
+	    set_ext_prev <= set_ext_sync1;
 	    pkt_rec_prev <= pkt_rec;
+
 	    tx_state <= TX_INIT;
             case (rx_state)
                 INIT: begin
                     counter <= 0;
-                    SPI_RDY <= 0;
-                    rx_state <= LOAD;
+                    if (set_ext_prev == 0 && set_ext_sync1)
+		    	rx_state <= EXT_LOAD_1;
+		    else
+			rx_state <= LOAD;
 		    PKT_EN <= 0;
 		    PKT_LD <= 0;
 		    SPI_LD <= 0;
+                    SPI_RDY <= 0;
+		    PKT_RST <= 0;
                 end
         
 		LOAD: begin
@@ -125,7 +171,9 @@ module TOP (
 		    PKT_EN <= 0;
 		    PKT_RST <= 0;
                     counter <= 4'd3; // number of bytes in packet
-			if (pkt_rec_prev == 0 && pkt_rec == 1) begin //needs to be posedge of of pkt_rec
+                    if (set_ext_prev == 0 && set_ext_sync1)
+		    	rx_state <= EXT_LOAD_1;
+		    else if (pkt_rec_prev == 0 && pkt_rec == 1) begin //needs to be posedge of of pkt_rec
 				rx_state <= PKT_STORE;
 				PKT_LD <= 1;
 				SPI_LD <= 1;
@@ -137,26 +185,48 @@ module TOP (
 		    SPI_RDY <= 0;
 		    PKT_EN <= 0;
 		    PKT_RST <= 1;
-		    rx_state <= SPI_SHIFT;
+                    if (set_ext_prev == 0 && set_ext_sync1)
+		    	rx_state <= EXT_LOAD_1;
+		    else
+		    	rx_state <= SPI_SHIFT;
                 end
         
 		SPI_SHIFT: begin
 			PKT_RST <= 0;
-			if (CS_sync == 0) begin
+			if (set_ext_prev == 0 && set_ext_sync1)
+				rx_state <= EXT_LOAD_1;
+			else if (CS_sync == 0) begin
 				rx_state <= SPI_TRANSFER;
                     		SPI_RDY <= 1;
-                    	end
-                        if (counter == 0) 
+                    	end else if (counter == 0) 
 			  	rx_state <= LOAD;
                 end
         
 		SPI_TRANSFER: begin
-		    if (CS_sync == 1) begin
+                    if (set_ext_prev == 0 && set_ext_sync1)
+		    	rx_state <= EXT_LOAD_1;
+		    else if (CS_sync == 1) begin
 			rx_state <= PKT_STORE;
 			PKT_EN <= 1;
                     	counter <= counter - 1;
 		    end
 		end
+
+		EXT_LOAD_1: begin
+		    if (SPI_OUT_RDY) begin
+			ext_counter_msb <= SPI_OUT;
+        		rx_state <= EXT_LOAD_2;
+		    end
+		end
+		
+		EXT_LOAD_2: begin
+		    if (SPI_OUT_RDY) begin
+			ext_counter <= {ext_counter_msb, SPI_OUT}; // combine and take 14 bits
+			rx_state <= INIT; // or LOAD to resume normal operation
+		    end
+		end	
+
+
 	endcase
         end else begin
 	    rx_state <= INIT;

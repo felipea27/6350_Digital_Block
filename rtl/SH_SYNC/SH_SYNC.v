@@ -4,6 +4,10 @@ module SH_SYNC (
     input wire rfin,
     input wire RX,
     input wire tx_rdy,
+
+    input wire ext_counter_flag,
+    input wire [13:0] ext_counter, 
+
     output reg sh_en,
     output reg fsm_rst,
     output reg sh_en_done
@@ -25,17 +29,19 @@ module SH_SYNC (
     reg [2:0] state, next_state;
 
     // Internal registers
-    reg [14:0] counter;
-    reg [31:0] interval_sum;
+    reg [13:0] counter;
+    reg [17:0] interval_sum;
     reg [3:0] pulse_count;
     reg [13:0] avg_interval;
     reg [6:0] pulse_gen_count;
     reg [13:0] timeout_counter;
     reg first_pulse_flag;
-    reg rfin_prev, rfin_sync1, rfin_sync2, rfin_edge;
     reg [6:0] pulse_pack_count; 
+    
+    // Synching
     reg tx_rdy_prev;
     reg tx_rdy_p;
+    reg rfin_prev, rfin_sync1, rfin_sync2, rfin_edge;
 
     // State transition logic
     always @(posedge clk or negedge rst) begin
@@ -50,20 +56,20 @@ module SH_SYNC (
         case (state)
             IDLE: begin
                 if (RX) 
-                    next_state = (rfin_sync2 && !rfin_prev) ? COLLECTING : IDLE;
+                    next_state = (rfin_sync2 && !rfin_prev) ? COLLECTING : IDLE; // If rfinput arrives, state = collecting
                 else 
                     next_state = WAIT_TXRDY;
             end
 
             COLLECTING: begin
-                if (pulse_count == PREAMBLE_SIZE) 
+                if (pulse_count == PREAMBLE_SIZE) // if PREAMBLE_SIZE # of inputs, no more preamble receiving real data
                     next_state = COMPUTE;
-                else if (timeout_counter >= TIMEOUT_THRESHOLD) 
+                else if (timeout_counter >= TIMEOUT_THRESHOLD) // TIMEOUT to go back to IDLE
                     next_state = IDLE;
-                else if (!RX)
+                else if (!RX)			// If move to TX suddenly go to TX
 		    next_state = WAIT_TXRDY;
 	    	else
-                    next_state = COLLECTING;
+                    next_state = COLLECTING;	
             end
 
             COMPUTE: next_state = GENERATE;
@@ -103,21 +109,24 @@ module SH_SYNC (
         if (rst == 0) begin
             pulse_count <= 4'b0000;
             counter <= 14'd0;
-            interval_sum <= 31'd0;
+            interval_sum <= 18'd0;
             avg_interval <= 14'd0;
             pulse_gen_count <= 7'd0;
             pulse_pack_count <= 7'd0;
             sh_en <= 0;
             timeout_counter <= 14'd0;
-            rfin_sync1 <= 0;
+            first_pulse_flag <= 1;
+	    fsm_rst <= 0;
+	    sh_en_done <= 1;
+            
+ 	    // Sync rst
+	    rfin_sync1 <= 0;
             rfin_sync2 <= 0;
             rfin_prev <= 0;
             rfin_edge <= 0;
-            first_pulse_flag <= 1;
-	    fsm_rst <= 0;
 	    tx_rdy_prev <= 0;
 	    tx_rdy_p <= 0;
-	    sh_en_done <= 1;
+
         end else begin
             rfin_sync1 <= rfin;
             rfin_sync2 <= rfin_sync1;
@@ -162,7 +171,10 @@ module SH_SYNC (
 
                 COMPUTE: begin
 		    fsm_rst <= 0;
-                    avg_interval <= interval_sum / (PREAMBLE_SIZE-1);
+		    if (ext_counter_flag)
+			avg_interval <= ext_counter;
+	 	    else 
+                    	avg_interval <= interval_sum / (PREAMBLE_SIZE-1);
                 end
 
                 GENERATE: begin

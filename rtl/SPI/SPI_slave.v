@@ -31,8 +31,8 @@ module SPI_slave(
 
 	always @(posedge clk or negedge rst) begin
 		if (rst ==0) begin
-			SS_sync_0 <= 0;
-			SS_sync_1 <= 0;
+			SS_sync_0 <= 1;
+			SS_sync_1 <= 1;
 			SCK_sync_0 <= 0;
 			SCK_sync_1 <= 0;
 			MOSI_sync_0 <= 0;
@@ -94,6 +94,8 @@ module SPI_slave(
 				OUT <= SHIFT_REG;
 				SPI_OUT_RDY <= 1;
 			end
+			else
+				SPI_OUT_RDY <= 0;
 		end
 	end
 endmodule

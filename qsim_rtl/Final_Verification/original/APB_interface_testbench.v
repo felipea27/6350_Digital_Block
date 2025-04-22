@@ -356,7 +356,7 @@ module testbench;
 		
 		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
 		repeat(10) begin	
-			repeat(1) begin
+			repeat(10) begin
 				i = i + 1; // Increment counter
 				//$display("RX Iteration: %0d", i);
 				MDATA = packets[i];

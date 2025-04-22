@@ -1,0 +1,80 @@
+VERSION 5.7 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+#---------------------------------------------------------------------
+# Revision: 0.3
+#---------------------------------------------------------------------
+# pre-defined unique SITE / UNIT definition to be used in stdcell.lef
+#---------------------------------------------------------------------
+# Note: this lef must be loaded as a separate file in addition to
+#       tech.lef and std-cell.lef  OR  the related definition must be
+#       copied into std-cell.lef
+#---------------------------------------------------------------------
+
+SITE unit_100cpp_8t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.100 BY 0.640 ;
+END unit_100cpp_8t
+
+SITE unit_100cpp_9t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.100 BY 0.720 ;
+END unit_100cpp_9t
+
+SITE unit_100cpp_12t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.100 BY 0.960 ;
+END unit_100cpp_12t
+
+SITE unit_104cpp_7p5t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.104 BY 0.600 ;
+END unit_104cpp_7p5t
+
+SITE unit_104cpp_8t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.104 BY 0.640 ;
+END unit_104cpp_8t
+
+SITE unit_104cpp_9t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.104 BY 0.720 ;
+END unit_104cpp_9t
+
+SITE unit_104cpp_12t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.104 BY 0.960 ;
+END unit_104cpp_12t
+
+SITE unit_116cpp_7p5t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.116 BY 0.600 ;
+END unit_116cpp_7p5t
+
+SITE unit_116cpp_8t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.116 BY 0.640 ;
+END unit_116cpp_8t
+
+SITE unit_116cpp_9t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.116 BY 0.720 ;
+END unit_116cpp_9t
+
+SITE unit_116cpp_12t
+  CLASS CORE ;
+  SYMMETRY X Y ;
+  SIZE 0.116 BY 0.960 ;
+END unit_116cpp_12t
+
+END LIBRARY
