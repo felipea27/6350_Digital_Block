@@ -33,6 +33,7 @@ check_design
 file mkdir report 
 write -hierarchy -format verilog -output "${top_level}.nl.v"
 write_sdc -nosplit -version 2.0 ./report/con.sdc
+write_sdf "${top_level}.syn.sdf"
 report_area -hierarchy > ./report/area.area
 report_timing > ./report/tm.timing
 report_power > ./report/pwr.power

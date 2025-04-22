@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : fsm_sync
 Version: V-2023.12-SP1
-Date   : Mon Apr 14 00:03:02 2025
+Date   : Fri Apr 18 13:23:17 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C

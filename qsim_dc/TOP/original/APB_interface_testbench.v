@@ -40,6 +40,11 @@ module testbench;
 	wire [7:0] o_PWDATA;
 	wire [7:0] o_PRDATA;
 
+	wire MOSI;
+	wire MISO;
+	wire SCK;
+	wire SS3;
+
 	wire pkt_rec;
 	wire TX_OUT;
 	integer tx_file;
@@ -79,13 +84,36 @@ module testbench;
 		.o_PWDATA(o_PWDATA), 
 		.o_PRDATA(o_PRDATA),
 
-		.rfin(rfin),
-		.pkt_rec(pkt_rec),
-		.RX(RX_MODE),
-		.sh_en(sh_en),
-		.TX_OUT(TX_OUT),
-		.TX_BY(TX_BY)
+		.MOSI(MOSI),
+		.SS3(SS3),
+		.SCK(SCK),
+		.MISO(MISO)
+
+//		.rfin(rfin),
+//		.pkt_rec(pkt_rec),
+//		.RX(RX_MODE),
+//		.sh_en(sh_en),
+//		.TX_OUT(TX_OUT),
+//		.TX_BY(TX_BY)
 	);
+
+	TOP top_slave (
+		.clk(i_PCLK),
+
+		.MOSI(MOSI),
+		.CS(SS3),
+		.MISO(MISO),
+		.SCK(SCK),
+
+		.rfin(rfin),
+		.rst(i_PRESETn),
+		.pkt_rec(pkt_rec),
+		.sh_en(sh_en),
+		.RX(RX_MODE),
+		.TX_BY(TX_BY),
+		.TX_OUT(TX_OUT)
+	);
+
 	//READ parameters
 	localparam STATUS	= 4'b0000;
 	localparam RX		= 4'b0001;
@@ -291,13 +319,13 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("/simulation/fandrade/dc/DATA/std9/TX_OUT.txt", "w");
+		tx_file = $fopen("/simulation/fandrade/dc/original/DATA/std0/TX_OUT.txt", "w");
 		if (tx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rx_file = $fopen("/simulation/fandrade/dc/DATA/std9/PRDATA.txt", "w");
+		rx_file = $fopen("/simulation/fandrade/dc/original/DATA/std0/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
@@ -310,7 +338,7 @@ module testbench;
 //		end
 
 		
-		gaus_file = $fopen("../std/gaussian_values9.txt", "r");
+		gaus_file = $fopen("../std/gaussian_values0.txt", "r");
 
 		// Read the file and store values in the array
 		for (i2 = 0; i2 < 10000; i2 = i2 + 1) begin

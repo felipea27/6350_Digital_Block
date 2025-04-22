@@ -18,7 +18,7 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:49 on Apr 10,2025
+# Start time: 14:44:26 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/3.0/gf22nspslogl24edl116f.v 
 # -- Skipping module UDB116SVT24_ADDABCD_0P75
 # -- Skipping module UDB116SVT24_ADDABCD_1
@@ -2764,10 +2764,10 @@
 # 	UDB116SVT24_TIE1_V1_1
 # 	UDB116SVT24_TIEDIN_1
 # 	UDB116SVT24_TIEDIN_ECOCT_1
-# End time: 16:16:51 on Apr 10,2025, Elapsed time: 0:00:02
+# End time: 14:44:28 on Apr 18,2025, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:54 on Apr 10,2025
+# Start time: 14:44:32 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/rtl_primitives.v 
 # -- Compiling module snps_mux2
 # -- Compiling module snps_mux4
@@ -2814,10 +2814,10 @@
 # 	snps_dff_sr_0
 # 	snps_dff_sr_1
 # 	snps_x_out_latch
-# End time: 16:16:55 on Apr 10,2025, Elapsed time: 0:00:01
+# End time: 14:44:33 on Apr 18,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:55 on Apr 10,2025
+# Start time: 14:44:33 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/std_primitives.v 
 # -- Compiling UDP snps_mux2
 # -- Compiling UDP snps_mux4
@@ -2846,10 +2846,10 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 16:16:55 on Apr 10,2025, Elapsed time: 0:00:00
+# End time: 14:44:33 on Apr 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:55 on Apr 10,2025
+# Start time: 14:44:33 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" "+neg_tchk" -incr /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/atpg_primitives.v 
 # -- Compiling module snps_mux2
 # -- Compiling module snps_mux4
@@ -2897,51 +2897,52 @@
 # 	snps_dff_sr_0
 # 	snps_dff_sr_1
 # 	snps_x_out_latch
-# End time: 16:16:56 on Apr 10,2025, Elapsed time: 0:00:01
+# End time: 14:44:33 on Apr 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:56 on Apr 10,2025
+# Start time: 14:44:33 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/SPI_master.v 
 # -- Skipping module spi_master5
 # 
 # Top level modules:
 # 	spi_master5
-# End time: 16:16:56 on Apr 10,2025, Elapsed time: 0:00:00
+# End time: 14:44:34 on Apr 18,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:56 on Apr 10,2025
+# Start time: 14:44:34 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" -incr ../../dc/SPI/SPI_slave.nl.v 
 # -- Skipping module SPI_slave
 # 
 # Top level modules:
 # 	SPI_slave
-# End time: 16:16:56 on Apr 10,2025, Elapsed time: 0:00:00
+# End time: 14:44:34 on Apr 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:56 on Apr 10,2025
+# Start time: 14:44:34 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" -incr ../../rtl/SPI/APB_interface.v 
 # -- Skipping module APB_interface_2
 # 
 # Top level modules:
 # 	APB_interface_2
-# End time: 16:16:57 on Apr 10,2025, Elapsed time: 0:00:01
+# End time: 14:44:34 on Apr 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:16:57 on Apr 10,2025
+# Start time: 14:44:35 on Apr 18,2025
 # vlog -reportprogress 300 "+acc" -incr SPI_testmodul_3.v 
-# -- Compiling module SPI_testmodul_3
+# -- Skipping module SPI_testmodul_3
 # 
 # Top level modules:
 # 	SPI_testmodul_3
-# End time: 16:16:57 on Apr 10,2025, Elapsed time: 0:00:00
+# End time: 14:44:35 on Apr 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
-# vsim "+acc" -t ps -lib work SPI_testmodul_3 
-# Start time: 16:16:57 on Apr 10,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: SPI_testmodul_3.v(24): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 9, found 8.
-# ** Warning: SPI_testmodul_3.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'SS_sync'.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# vsim "+acc" -t ps -lib work -sdftyp "uut=../../dc/SPI/SPI_slave.syn.sdf" SPI_testmodul_3 
+# Start time: 14:44:35 on Apr 18,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: SPI_testmodul_3.v(24): (vopt-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 10, found 8.
+# ** Warning: SPI_testmodul_3.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'CS_sync'.
+# ** Warning: SPI_testmodul_3.v(24): (vopt-2718) [TFMPC] - Missing connection for port 'SPI_OUT_RDY'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
 # Loading work.SPI_testmodul_3(fast)
 # Loading work.SPI_slave(fast)
 # Loading work.UDB116SVT24_FDPRBQ_V2_1(fast)
@@ -2951,6 +2952,7 @@
 # Loading work.UDB116SVT24_INV_1(fast)
 # Loading work.UDB116SVT24_INV_0P75(fast)
 # Loading work.UDB116SVT24_BUF_1(fast)
+# Loading work.UDB116SVT24_AOI21_0P75(fast)
 # Loading work.UDB116SVT24_NR2B_0P75(fast)
 # Loading work.UDB116SVT24_NR4_0P75(fast)
 # Loading work.UDB116SVT24_MUX2_0P75(fast)
@@ -2960,94 +2962,40 @@
 # Loading work.UDB116SVT24_AO21B_0P75(fast)
 # Loading work.UDB116SVT24_NR2_0P75(fast)
 # Loading work.UDB116SVT24_OA22_1(fast)
-# ** UI-Msg: (vish-4014) No objects found matching '/SPI_testmodul_3/uut/SS_sync_1'.
-# Executing ONERROR command at macro ./waveformat.do line 8
-# ** UI-Msg: (vish-4014) No objects found matching '/SPI_testmodul_3/uut/SS_rising_edge'.
-# Executing ONERROR command at macro ./waveformat.do line 10
-# ** UI-Msg: (vish-4014) No objects found matching '/SPI_testmodul_3/uut/SS_falling_edge'.
-# Executing ONERROR command at macro ./waveformat.do line 11
-# ** UI-Msg: (vish-4014) No objects found matching '/SPI_testmodul_3/uut/SCK_rising_edge'.
-# Executing ONERROR command at macro ./waveformat.do line 16
-# ** UI-Msg: (vish-4014) No objects found matching '/SPI_testmodul_3/uut/SCK_falling_edge'.
-# Executing ONERROR command at macro ./waveformat.do line 17
-# ** UI-Msg: (vish-4014) No objects found matching '/SPI_testmodul_3/uut/SS_asserted'.
-# Executing ONERROR command at macro ./waveformat.do line 26
-# Time=0 | SS=1 | MOSI=0 | MISO=x | SCK=0
-# Time=100000 | SS=1 | MOSI=0 | MISO=0 | SCK=0
-# Time=650000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=850000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=950000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=1050000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=1250000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=1350000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=1450000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=1650000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=1750000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=1850000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=2050000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=2250000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=2450000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=2550000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=2650000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=2850000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=3050000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=3250000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=3450000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=3650000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=3750000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=3850000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=4250000 | SS=1 | MOSI=1 | MISO=1 | SCK=0
-# Time=4450000 | SS=1 | MOSI=1 | MISO=0 | SCK=0
-# Time=5350000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=5550000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=5650000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=5750000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=5950000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=6150000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=6350000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=6550000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=6750000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=6850000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=6950000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=7150000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=7350000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=7550000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=7750000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=7950000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=8150000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=8350000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=8550000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=8850000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=8950000 | SS=1 | MOSI=0 | MISO=0 | SCK=0
-# Time=10050000 | SS=0 | MOSI=1 | MISO=0 | SCK=0
-# Time=10250000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=10350000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=10450000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=10650000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=10850000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=11050000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=11250000 | SS=0 | MOSI=1 | MISO=1 | SCK=0
-# Time=11450000 | SS=0 | MOSI=1 | MISO=1 | SCK=1
-# Time=11550000 | SS=0 | MOSI=1 | MISO=0 | SCK=1
-# Time=11650000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=11850000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=11950000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=12050000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=12250000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=12350000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=12450000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=12650000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=12750000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=12850000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=13050000 | SS=0 | MOSI=0 | MISO=1 | SCK=1
-# Time=13150000 | SS=0 | MOSI=0 | MISO=0 | SCK=1
-# Time=13250000 | SS=0 | MOSI=0 | MISO=0 | SCK=0
-# Time=13550000 | SS=0 | MOSI=0 | MISO=1 | SCK=0
-# Time=13650000 | SS=1 | MOSI=0 | MISO=1 | SCK=0
-# Time=13850000 | SS=1 | MOSI=0 | MISO=0 | SCK=0
-# ** Note: $finish    : SPI_testmodul_3.v(110)
-#    Time: 14 us  Iteration: 0  Instance: /SPI_testmodul_3
-# 1
-# Break in Module SPI_testmodul_3 at SPI_testmodul_3.v line 110
-# End time: 16:18:00 on Apr 10,2025, Elapsed time: 0:01:03
-# Errors: 0, Warnings: 3
+# Loading instances from ../../dc/SPI/SPI_slave.syn.sdf
+# Loading timing data from ../../dc/SPI/SPI_slave.syn.sdf
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1011): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1035): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1059): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1083): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1107): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1131): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1155): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1179): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1203): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1227): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1251): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1275): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1299): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1323): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1347): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1371): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1395): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1419): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1443): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1467): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1491): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1515): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1539): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1563): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1587): Failed to find matching specify timing constraint for HOLD. 
+# ** Error (suppressible): (vsim-SDF-12090) ../../dc/SPI/SPI_slave.syn.sdf(1611): Failed to find matching specify timing constraint for HOLD. 
+# ** Fatal: (vsim-SDF-3444) Failed to annotate from SDF file "../../dc/SPI/SPI_slave.syn.sdf".
+#    Time: 0 ps  Iteration: 0  Instance: /SPI_testmodul_3 File: SPI_testmodul_3.v
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./runsim.do PAUSED at line 21
+# End time: 14:44:48 on Apr 18,2025, Elapsed time: 0:00:13
+# Errors: 27, Warnings: 4

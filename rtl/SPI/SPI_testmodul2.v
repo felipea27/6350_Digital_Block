@@ -16,22 +16,27 @@ module SPI_testmodul2(
 	output[7:0] PRDATA,
 	input [7:0] PWDATA,
 
-	input RX,
-	input TX_BY,
-        input rfin,
-	output pkt_rec,
-	output sh_en,
-	output TX_OUT
+	output w_MOSI,
+	output w_SS3,
+	output w_SCK,
+	input w_MISO
+
+//	input RX,
+//	input TX_BY,
+//      input rfin,
+//	output pkt_rec,
+//	output sh_en,
+//	output TX_OUT
     );
 	 
 
-	wire w_MISO;
-	wire w_MOSI;
-	wire w_SCK;
+//	wire w_MISO;
+//	wire w_MOSI;
+//	wire w_SCK;
 	wire w_SS0;
 	wire w_SS1;
 	wire w_SS2;
-	wire w_SS3;
+//	wire w_SS3;
 
 	wire o_S0;
 	wire o_S1;
@@ -66,20 +71,20 @@ spi_master5 SPI_MASTER_2(
 
 
 
-TOP top_slave (
-	.clk(PCLK),
-	.MOSI(w_MOSI),
-	.CS(w_SS3),
-	.MISO(w_MISO),
-	.SCK(w_SCK),
-        .rfin(rfin),
-	.rst(PRESETn),
-	.pkt_rec(pkt_rec),
-	.sh_en(sh_en),
-	.RX(RX),
-	.TX_BY(TX_BY),
-	.TX_OUT(TX_OUT)
-);
+//TOP top_slave (
+//	.clk(PCLK),
+//	.MOSI(w_MOSI),
+//	.CS(w_SS3),
+//	.MISO(w_MISO),
+//	.SCK(w_SCK),
+//      .rfin(rfin),
+//	.rst(PRESETn),
+//	.pkt_rec(pkt_rec),
+//	.sh_en(sh_en),
+//	.RX(RX),
+//	.TX_BY(TX_BY),
+//	.TX_OUT(TX_OUT)
+//);
 
 
 
