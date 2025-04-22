@@ -1,0 +1,206 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Mon Apr 21 16:19:11 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v23.10-p003_1 (64bit) 02/01/2024 13:54 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 23.10-p003_1 NR240109-1512/23_10-UB (database version 18.20.618) {superthreading v2.20}
+#@(#)CDS: AAE 23.10-p002 (64bit) 02/01/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 23.10-p003_1 () Dec  5 2023 19:42:23 ( )
+#@(#)CDS: SYNTECH 23.10-p002_1 () Nov 29 2023 02:17:21 ( )
+#@(#)CDS: CPE v23.10-p004
+#@(#)CDS: IQuantus/TQuantus 22.1.1-s215 (64bit) Mon Nov 20 10:05:08 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+set_message -id IMPLF-200 -suppress
+set_message -id IMPLF-201 -suppress
+set_message -id TECHLIB-302 -suppress
+set_message -id IMPFP-3961 -suppress
+set_message -id IMPSP-9025 -suppress
+set init_gnd_net gnd
+set init_lef_file {/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef}
+set init_design_settop 0
+set init_verilog ../../dc/TOP/TOP.nl.v
+set init_mmmc_file ../mmmc_setup.tcl
+set init_pwr_net vdd
+init_design
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site GF22_DST -s 50 50 2 2 2 2
+uiSetTool select
+getIoFlowFlag
+fit
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+globalNetConnect vdd -type pgpin -pin VDD -instanceBasename * -hierarchicalInstance {}
+globalNetConnect gnd -type pgpin -pin VSS -instanceBasename * -hierarchicalInstance {}
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer LB -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {vdd gnd} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 0.4 bottom 0.4 left 0.4 right 0.4} -spacing {top 0.4 bottom 0.4 left 0.4 right 0.4} -offset {top 0.4 bottom 0.4 left 0.4 right 0.4} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setSrouteMode -viaConnectToShape { noshape }
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { M1(1) LB(11) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { M1(1) LB(11) } -nets { vdd gnd } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { M1(1) LB(11) }
+getMultiCpuUsage -localCpu
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -disable_rules {} -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report TOP.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+timeDesign -prePlace -pathReports -drvReports -slackReports -numPaths 50 -prefix TOP_prePlace -outDir timingReports
+setPlaceMode -fp false
+setPlaceMode -placeIoPins true
+setPlaceMode -congestionDriven true
+zoomBox -5.21200 5.52400 51.36900 56.01400
+zoomBox -4.27600 12.51400 43.81800 55.43100
+zoomBox -3.48100 18.45600 37.39900 54.93500
+zoomBox -2.80600 23.50600 31.94300 54.51400
+zoomBox -2.23200 27.79900 27.30500 54.15600
+zoomBox -1.74400 31.44800 23.36300 53.85200
+zoomBox -1.32900 34.54900 20.01200 53.59300
+zoomBox -0.97600 37.18600 17.16400 53.37300
+zoomBox -0.67600 39.42700 14.74300 53.18600
+zoomBox -0.42100 41.33200 12.68500 53.02700
+zoomBox -0.20400 42.95100 10.93600 52.89200
+zoomBox -0.02000 44.32700 9.44900 52.77700
+zoomBox 0.81200 48.67700 5.01500 52.42800
+zoomBox 1.12900 50.78800 2.47800 51.99200
+zoomBox 1.15200 50.93800 2.29800 51.96100
+zoomBox 1.17000 51.06500 2.14500 51.93500
+zoomBox 1.18600 51.17300 2.01500 51.91300
+zoomBox 1.17000 51.06500 2.14500 51.93500
+zoomBox 1.15100 50.93700 2.29800 51.96100
+zoomBox 1.06800 50.40200 2.93900 52.07200
+zoomBox -0.66100 41.92600 20.77100 61.05100
+zoomBox -0.08800 47.77800 4.87800 52.20900
+zoomBox -0.06200 48.04200 4.15900 51.80900
+zoomBox -0.04000 48.26700 3.54800 51.46900
+zoomBox 0.35700 49.12700 2.23100 50.79900
+zoomBox 0.28000 48.96000 2.48500 50.92800
+zoomBox -0.36200 47.57000 4.61000 52.00700
+zoomBox -0.62600 47.27100 5.51200 53.44700
+zoomBox -0.93700 46.91800 6.28500 54.18500
+zoomBox -0.62700 47.27000 5.51200 53.44700
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+panPage 0 -1
+zoomBox -0.44600 36.38200 4.77200 41.63200
+zoomBox -0.29300 36.57700 4.14300 41.04000
+zoomBox -0.16300 36.74300 3.60800 40.53700
+zoomBox -0.05200 36.88300 3.15400 40.10900
+zoomBox 0.04200 37.00200 2.76800 39.74500
+zoomBox 0.24300 37.07400 2.56100 39.40600
+zoomBox 0.41400 37.13500 2.38500 39.11800
+zoomBox 0.55900 37.18700 2.23500 38.87300
+zoomBox 0.68300 37.23100 2.10800 38.66500
+zoomBox 0.78800 37.26900 2.00000 38.48800
+zoomBox 1.08000 37.49200 1.62000 38.03500
+zoomBox 1.10400 37.51200 1.56300 37.97400
+zoomBox 1.12400 37.53000 1.51400 37.92200
+zoomBox 1.14100 37.54400 1.47300 37.87800
+zoomBox 1.17800 37.57600 1.38300 37.78200
+zoomBox 1.18700 37.58400 1.36100 37.75900
+zoomBox 1.19500 37.59000 1.34300 37.73900
+zoomBox 1.20100 37.59500 1.32700 37.72200
+zoomBox 1.20700 37.60000 1.31400 37.70800
+zoomBox 1.21200 37.60400 1.30300 37.69600
+zoomBox 1.21500 37.60700 1.29400 37.68600
+zoomBox 1.21100 37.60200 1.30400 37.69600
+zoomBox 1.20600 37.59700 1.31600 37.70800
+zoomBox 1.20000 37.59200 1.33000 37.72300
+zoomBox 1.19300 37.58600 1.34600 37.74000
+zoomBox 1.18500 37.57900 1.36500 37.76000
+zoomBox 1.17500 37.57100 1.38700 37.78400
+zoomBox 1.16400 37.56100 1.41300 37.81200
+zoomBox 1.15100 37.55000 1.44400 37.84500
+zoomBox 1.13600 37.53700 1.48100 37.88400
+zoomBox 1.11800 37.52100 1.52400 37.93000
+zoomBox 1.09700 37.50300 1.57500 37.98400
+zoomBox 1.07200 37.48100 1.63500 38.04700
+zoomBox 0.96900 37.39000 1.88500 38.31200
+zoomBox 0.92200 37.34800 2.00000 38.43300
+zoomBox 0.86600 37.29900 2.13500 38.57600
+zoomBox 0.80100 37.24200 2.29400 38.74400
+zoomBox 0.72400 37.17400 2.48100 38.94200
+zoomBox 0.63300 37.09400 2.70100 39.17500
+zoomBox 0.52700 37.00100 2.96000 39.44900
+zoomBox 0.40200 36.89100 3.26400 39.77100
+getIoFlowFlag
+setIoFlowFlag 1
+floorPlan -flip n -site GF22_DST -r 1.0000800064 0.221613 1.972 2.0 1.972 2.0
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 1
+floorPlan -site GF22_DST -r 0.986810742094 0.221499 1.972 2.0 1.972 2.0
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 1
+floorPlan -flip s -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.06
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 1
+floorPlan -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.14
+uiSetTool select
+getIoFlowFlag
+fit
+getIoFlowFlag
+setIoFlowFlag 1
+floorPlan -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.22
+uiSetTool select
+getIoFlowFlag
+fit
+getIoFlowFlag
+floorPlan -help
+getIoFlowFlag
+getIoFlowFlag
+man IMPSR-4305
+setIoFlowFlag 1
+floorPlan -flip n -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.3
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 1
+floorPlan -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.38
+uiSetTool select
+getIoFlowFlag
+fit
+zoomBox -59.31200 -148.17400 162.18400 74.69100
+zoomBox -17.19200 -55.40600 66.34700 28.64900

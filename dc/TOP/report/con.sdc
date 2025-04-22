@@ -5,7 +5,7 @@
 ###################################################################
 set sdc_version 2.0
 
-set_units -time ns -resistance kOhm -capacitance pF -voltage V -current mA
+#set_units -time ns -resistance kOhm -capacitance pF -voltage V -current mA
 set_max_fanout 4 [current_design]
 set_load -pin_load 0.004 [get_ports pkt_rec]
 set_load -pin_load 0.004 [get_ports MISO]

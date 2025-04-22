@@ -1,0 +1,660 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v23.10-p003_1, built Thu Feb 1 13:54:57 PST 2024
+Options:	
+Date:		Mon Apr 21 16:18:32 2025
+Host:		bioeebeanie.bioeelocal (x86_64 w/Linux 3.10.0-1160.66.1.el7.x86_64) (48cores*96cpus*Intel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz 16384KB)
+OS:		Red Hat Enterprise Linux
+
+License:
+		[16:18:32.494505] Configured Lic search path (23.02-s003): 5280@bioeelincad.ee.columbia.edu
+
+		invs	Innovus Implementation System	23.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (1208 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 23.10 fill procedures
+<CMD> win
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+<CMD> win
+<CMD> set_message -id IMPLF-200 -suppress
+<CMD> set_message -id IMPLF-201 -suppress
+<CMD> set_message -id TECHLIB-302 -suppress
+<CMD> set_message -id IMPFP-3961 -suppress
+<CMD> set_message -id IMPSP-9025 -suppress
+<CMD> set init_gnd_net gnd
+<CMD> set init_lef_file {/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef}
+<CMD> set init_design_settop 0
+<CMD> set init_verilog ../../dc/TOP/TOP.nl.v
+<CMD> set init_mmmc_file ../mmmc_setup.tcl
+<CMD> set init_pwr_net vdd
+<CMD> init_design
+#% Begin Load MMMC data ... (date=04/21 16:19:41, mem=1514.9M)
+#% End Load MMMC data ... (date=04/21 16:19:41, total cpu=0:00:00.1, real=0:00:00.0, peak res=1514.9M, current mem=1514.0M)
+rc_fast rc_slow
+
+Loading LEF file /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef ...
+
+Loading LEF file /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef ...
+
+Loading LEF file /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef ...
+Set DBUPerIGU to M1 pitch 116.
+[16:19:41.261969] Periodic Lic check successful
+[16:19:41.262008] Feature usage summary:
+[16:19:41.262009] Innovus_Impl_System
+[16:19:41.262010] Innovus_20nm_Opt
+
+This command "init_design" required an extra checkout of license invs_20nm.
+Additional license(s) checked out: 1 'Innovus_20nm_Opt' license(s)
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from ../mmmc_setup.tcl
+Reading lib_slow timing library '/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib' ...
+Read 1371 cells in library 'gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C' 
+Reading lib_fast timing library '/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_FFG_0P88V_0P00V_0P00V_0P00V_M40C.lib' ...
+Read 1371 cells in library 'gf22nspslogl24edl116f_FFG_0P88V_0P00V_0P00V_0P00V_M40C' 
+*** End library_loading (cpu=1.50min, real=1.50min, mem=301.1M, fe_cpu=2.07min, fe_real=2.65min, fe_mem=2079.4M) ***
+#% Begin Load netlist data ... (date=04/21 16:21:11, mem=1741.1M)
+*** Begin netlist parsing (mem=2079.4M) ***
+Created 1371 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../../dc/TOP/TOP.nl.v'
+
+*** Memory Usage v#2 (Current mem = 2079.402M, initial mem = 812.863M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=2079.4M) ***
+#% End Load netlist data ... (date=04/21 16:21:11, total cpu=0:00:00.1, real=0:00:00.0, peak res=1793.4M, current mem=1793.4M)
+Top level cell is TOP.
+Hooked 2742 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell TOP ...
+***** UseNewTieNetMode *****.
+*** Netlist is unique.
+** info: there are 2743 modules.
+** info: there are 1382 stdCell insts.
+** info: there are 0 insts with no signal pins.
+
+*** Memory Usage v#2 (Current mem = 2260.828M, initial mem = 812.863M) ***
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+Extraction setup Started for TopCell TOP 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+Generating auto layer map file.
+Importing multi-corner technology file(s) for preRoute extraction...
+/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PEX/QRC/10M_2Mx_5Cx_1Jx_2Qx_LBthick/FuncRCmax/qrcTechFile
+Generating auto layer map file.
+
+/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PEX/QRC/10M_2Mx_5Cx_1Jx_2Qx_LBthick/FuncRCmin/qrcTechFile
+Generating auto layer map file.
+
+Completed (cpu: 0:00:11.1 real: 0:00:32.0)
+Set Shrink Factor to 1.00000
+Summary of Active RC-Corners : 
+ 
+ Analysis View: view_slow_mission
+    RC-Corner Name        : rc_slow
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PEX/QRC/10M_2Mx_5Cx_1Jx_2Qx_LBthick/FuncRCmax/qrcTechFile'
+ 
+ Analysis View: view_fast_mission
+    RC-Corner Name        : rc_fast
+    RC-Corner Index       : 1
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PEX/QRC/10M_2Mx_5Cx_1Jx_2Qx_LBthick/FuncRCmin/qrcTechFile'
+Updating RC Grid density data for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../../dc/TOP/report/con.sdc' ...
+Current (total cpu=0:02:21, real=0:03:18, peak res=3176.9M, current mem=2557.5M)
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2570.1M, current mem=2570.1M)
+Current (total cpu=0:02:21, real=0:03:19, peak res=3176.9M, current mem=2570.1M)
+Total number of combinational cells: 890
+Total number of sequential cells: 456
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 25
+List of usable buffers: UDB116SVT24_BUF_1 UDB116SVT24_BUF_10 UDB116SVT24_BUF_12 UDB116SVT24_BUF_12P5 UDB116SVT24_BUF_16 UDB116SVT24_BUF_16P5 UDB116SVT24_BUF_1P5 UDB116SVT24_BUF_2 UDB116SVT24_BUF_1P75 UDB116SVT24_BUF_24 UDB116SVT24_BUF_2P75 UDB116SVT24_BUF_3 UDB116SVT24_BUF_32 UDB116SVT24_BUF_3P5 UDB116SVT24_BUF_4 UDB116SVT24_BUF_3P75 UDB116SVT24_BUF_5P5 UDB116SVT24_BUF_5 UDB116SVT24_BUF_6 UDB116SVT24_BUF_7P5 UDB116SVT24_BUF_6P5 UDB116SVT24_BUF_9 UDB116SVT24_BUF_8 UDB116SVT24_BUF_D_16 UDB116SVT24_BUF_D_32 UDB116SVT24_BUF_D_4 UDB116SVT24_BUF_D_8 UDB116SVT24_BUF_L_1 UDB116SVT24_BUF_MN_8 UDB116SVT24_BUF_M_2 UDB116SVT24_BUF_S_1 UDB116SVT24_BUF_M_3 UDB116SVT24_BUF_M_4 UDB116SVT24_BUF_M_6 UDB116SVT24_BUF_S_10 UDB116SVT24_BUF_S_12 UDB116SVT24_BUF_S_16 UDB116SVT24_BUF_S_2 UDB116SVT24_BUF_S_1P5 UDB116SVT24_BUF_S_20 UDB116SVT24_BUF_S_24 UDB116SVT24_BUF_S_3 UDB116SVT24_BUF_S_2P5 UDB116SVT24_BUF_S_32 UDB116SVT24_BUF_S_4 UDB116SVT24_BUF_S_5 UDB116SVT24_BUF_S_6 UDB116SVT24_BUF_S_8
+Total number of usable buffers: 48
+List of unusable buffers: UDB116SVT24_BUF_20 UDB116SVT24_BUF_ECOCT_1 UDB116SVT24_BUF_ECOCT_2 UDB116SVT24_BUF_ECOCT_4
+Total number of unusable buffers: 4
+List of usable inverters: UDB116SVT24_INV_1 UDB116SVT24_INV_0P75 UDB116SVT24_INV_10 UDB116SVT24_INV_12 UDB116SVT24_INV_15 UDB116SVT24_INV_16 UDB116SVT24_INV_18 UDB116SVT24_INV_2 UDB116SVT24_INV_1P5 UDB116SVT24_INV_3 UDB116SVT24_INV_20 UDB116SVT24_INV_24 UDB116SVT24_INV_32 UDB116SVT24_INV_4 UDB116SVT24_INV_5 UDB116SVT24_INV_6 UDB116SVT24_INV_8 UDB116SVT24_INV_9 UDB116SVT24_INV_S_1 UDB116SVT24_INV_S_0P75 UDB116SVT24_INV_S_10 UDB116SVT24_INV_S_12 UDB116SVT24_INV_S_16 UDB116SVT24_INV_S_1P25 UDB116SVT24_INV_S_2 UDB116SVT24_INV_S_1P5 UDB116SVT24_INV_S_20 UDB116SVT24_INV_S_24 UDB116SVT24_INV_S_3 UDB116SVT24_INV_S_2P5 UDB116SVT24_INV_S_32 UDB116SVT24_INV_S_4 UDB116SVT24_INV_S_5 UDB116SVT24_INV_S_6 UDB116SVT24_INV_S_7 UDB116SVT24_INV_S_8 UDB116SVT24_INV_S_9
+Total number of usable inverters: 37
+List of unusable inverters: UDB116SVT24_INV_ECOCT_2 UDB116SVT24_INV_ECOCT_1 UDB116SVT24_INV_ECOCT_4
+Total number of unusable inverters: 3
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells: UDB116SVT24_DEL_L10D250_2 UDB116SVT24_DEL_L10D250_1 UDB116SVT24_DEL_L10D250_4 UDB116SVT24_DEL_L10D250_8 UDB116SVT24_DEL_L10D300_2 UDB116SVT24_DEL_L10D300_1 UDB116SVT24_DEL_L10D300_4 UDB116SVT24_DEL_L10D300_8 UDB116SVT24_DEL_L14D500_2 UDB116SVT24_DEL_L14D500_1 UDB116SVT24_DEL_L14D500_4 UDB116SVT24_DEL_L14D500_8 UDB116SVT24_DEL_L22D1000_2 UDB116SVT24_DEL_L22D1000_1 UDB116SVT24_DEL_L22D1000_4 UDB116SVT24_DEL_L22D1000_8 UDB116SVT24_DEL_L4D50_2 UDB116SVT24_DEL_L4D50_1 UDB116SVT24_DEL_L4D50_4 UDB116SVT24_DEL_L4D50_8 UDB116SVT24_DEL_L4D75_2 UDB116SVT24_DEL_L4D75_1 UDB116SVT24_DEL_L4D75_4 UDB116SVT24_DEL_L4D75_8 UDB116SVT24_DEL_L6D100_2 UDB116SVT24_DEL_L6D100_1 UDB116SVT24_DEL_L6D100_4 UDB116SVT24_DEL_L6D100_8 UDB116SVT24_DEL_L6D125_2 UDB116SVT24_DEL_L6D125_1 UDB116SVT24_DEL_L6D125_4 UDB116SVT24_DEL_L6D125_8 UDB116SVT24_DEL_L6D150_2 UDB116SVT24_DEL_L6D150_1 UDB116SVT24_DEL_L6D150_4 UDB116SVT24_DEL_L6D150_8 UDB116SVT24_DEL_L8D175_2 UDB116SVT24_DEL_L8D175_1 UDB116SVT24_DEL_L8D175_4 UDB116SVT24_DEL_L8D175_8 UDB116SVT24_DEL_L8D200_2 UDB116SVT24_DEL_L8D200_1 UDB116SVT24_DEL_L8D200_4 UDB116SVT24_DEL_L8D200_8
+Total number of identified unusable delay cells: 44
+All delay cells are dont_use. Buffers will be used to fix hold violations.
+*** Message Summary: 0 warning(s), 0 error(s)
+
+<CMD> getIoFlowFlag
+<CMD> setIoFlowFlag 0
+<CMD> floorPlan -site GF22_DST -s 50 50 2 2 2 2
+The core width changes from 50.000000 to 49.996000 when snapping to grid "PlacementGrid".
+**WARN: (IMPFP-4026):	Adjusting core to 'Left' to 1.972000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+**WARN: (IMPFP-4026):	Adjusting core to 'Right' to 1.972000 due to track/row misalignment. To force the value, specify the -noSnapToGrid option or use fpiSetSnapRule command to specify the die/core to different grid.
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> globalNetConnect vdd -type pgpin -pin VDD -instanceBasename * -hierarchicalInstance {}
+<CMD> globalNetConnect gnd -type pgpin -pin VSS -instanceBasename * -hierarchicalInstance {}
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer LB -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {vdd gnd} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 0.4 bottom 0.4 left 0.4 right 0.4} -spacing {top 0.4 bottom 0.4 left 0.4 right 0.4} -offset {top 0.4 bottom 0.4 left 0.4 right 0.4} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=04/21 16:21:51, mem=2602.8M)
+
+
+viaInitial starts at Mon Apr 21 16:21:51 2025
+viaInitial ends at Mon Apr 21 16:21:51 2025
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 2709.6M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   M1   |        4       |       NA       |
+|   V1   |        8       |        0       |
+|   M2   |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=04/21 16:21:51, total cpu=0:00:00.1, real=0:00:00.0, peak res=2605.0M, current mem=2605.0M)
+<CMD> setSrouteMode -viaConnectToShape { noshape }
+<CMD> sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { M1(1) LB(11) } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { M1(1) LB(11) } -nets { vdd gnd } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { M1(1) LB(11) }
+#% Begin sroute (date=04/21 16:21:51, mem=2605.1M)
+*** Begin SPECIAL ROUTE on Mon Apr 21 16:21:51 2025 ***
+SPECIAL ROUTE ran on directory: /users/ssokolovskiy/65GXCVR/6350_Digital_Block/apr/apr
+SPECIAL ROUTE ran on machine: bioeebeanie.bioeelocal (Linux 3.10.0-1160.66.1.el7.x86_64 Xeon 2.69Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "vdd gnd"
+routeSpecial set to true
+srouteBlockPin set to "useLef"
+srouteBottomLayerLimit set to 1
+srouteBottomTargetLayerLimit set to 1
+srouteConnectConverterPin set to false
+srouteCrossoverViaBottomLayer set to 1
+srouteCrossoverViaTopLayer set to 11
+srouteFloatingStripeTarget set to "blockring padring ring stripe ringpin blockpin followpin"
+srouteFollowCorePinEnd set to 3
+srouteJogControl set to "preferWithChanges differentLayer"
+srouteNoViaOnWireShape set to "padring ring stripe blockring blockpin coverpin blockwire corewire followpin iowire"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteStopBlockPin set to "nearestTarget"
+srouteTopLayerLimit set to 11
+srouteTopTargetLayerLimit set to 11
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 1058.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+**WARN: (IMPSR-4302):	Cap-table/qrcTechFile is found in the design, so the same information from the technology file will be ignored.
+Read in 23 layers, 11 routing layers, 1 overlap layer
+Read in 1371 macros, 58 used
+Read in 56 components
+  56 core components: 56 unplaced, 0 placed, 0 fixed
+Read in 12 logical pins
+Read in 12 nets
+Read in 2 special nets, 2 routed
+Read in 112 terminals
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the up vias on single M1 layer. The excess vias will be ignored.
+**WARN: (IMPSR-4305):	Reached the limit of the 128 candidates for the down vias on single M2 layer. The excess vias will be ignored.
+**WARN: (EMS-27):	Message (IMPSR-4305) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the vdd net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the vdd net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net vdd. Check net list, or change port class in the technology file, or change option to include pin in given range.
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the gnd net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the gnd net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net gnd. Check net list, or change port class in the technology file, or change option to include pin in given range.
+CPU time for vdd FollowPin 0 seconds
+CPU time for gnd FollowPin 0 seconds
+  Number of IO ports routed: 0
+  Number of Block ports routed: 0
+  Number of Stripe ports routed: 0
+  Number of Core ports routed: 186
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+  Number of Followpin connections: 93
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 1113.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 0 via definition ...Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+
+sroute created 279 wires.
+ViaGen created 186 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   M1   |       279      |       NA       |
+|   V1   |       186      |        0       |
++--------+----------------+----------------+
+#% End sroute (date=04/21 16:21:52, total cpu=0:00:01.3, real=0:00:01.0, peak res=2642.1M, current mem=2642.1M)
+<CMD> getMultiCpuUsage -localCpu
+<CMD> get_verify_drc_mode -disable_rules -quiet
+<CMD> get_verify_drc_mode -quiet -area
+<CMD> get_verify_drc_mode -quiet -layer_range
+<CMD> get_verify_drc_mode -check_ndr_spacing -quiet
+<CMD> get_verify_drc_mode -check_only -quiet
+<CMD> get_verify_drc_mode -check_same_via_cell -quiet
+<CMD> get_verify_drc_mode -exclude_pg_net -quiet
+<CMD> get_verify_drc_mode -ignore_trial_route -quiet
+<CMD> get_verify_drc_mode -max_wrong_way_halo -quiet
+<CMD> get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+<CMD> get_verify_drc_mode -limit -quiet
+<CMD> set_verify_drc_mode -disable_rules {} -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report TOP.drc.rpt -limit 1000
+<CMD> verify_drc
+#-check_ndr_spacing auto                 # enums={true false auto}, default=auto,  user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+#-report TOP.drc.rpt                     # string, default="", user setting
+ *** Starting Verify DRC (MEM: 2761.9) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+ VERIFY_DRC: checking all layers except LB to LB ...
+  VERIFY DRC ...... Using new threading
+ VERIFY_DRC: checking layers from LB to LB ...
+  VERIFY DRC ...... Using new threading
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU TIME: 0:00:00.0  ELAPSED TIME: 0:00:00.0  MEM: 256.1M) ***
+
+<CMD> set_verify_drc_mode -area {0 0 0 0}
+<CMD> redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
+<CMD> timeDesign -prePlace -pathReports -drvReports -slackReports -numPaths 50 -prefix TOP_prePlace -outDir timingReports
+*** timeDesign #1 [begin] () : totSession cpu/real = 0:02:22.8/0:03:16.6 (0.7), mem = 3018.0M
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Setting High Fanout Nets ( > 100 ) as ideal temporarily for -prePlace option
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Set Default Input Pin Transition as 1 ps.
+INFO: setAnalysisMode clkSrcPath true -> false
+INFO: setAnalysisMode clockPropagation sdcControl -> forcedIdeal
+
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 0
+AAE DB initialization (MEM=2916.07 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: TOP
+# Design Mode: 90nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=3088.17)
+Total number of fetched objects 1403
+End delay calculation. (MEM=2579.09 CPU=0:00:00.4 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2529.64 CPU=0:00:03.7 REAL=0:00:07.0)
+*** Done Building Timing Graph (cpu=0:00:05.3 real=0:00:09.0 totSessionCpu=0:02:29 mem=3038.1M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ view_slow_mission 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):| 49.752  | 49.752  | 49.770  |
+|           TNS (ns):|  0.000  |  0.000  |  0.000  |
+|    Violating Paths:|    0    |    0    |    0    |
+|          All Paths:|   450   |   221   |   257   |
++--------------------+---------+---------+---------+
+
+Density: 22.304%
+------------------------------------------------------------------
+Resetting back High Fanout Nets as non-ideal
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Input Pin Transition as 0.1 ps.
+Set Default Net Load as 0.5 pF. 
+Reported timing to dir timingReports
+Total CPU time: 6.46 sec
+Total Real time: 11.0 sec
+Total Memory Usage: 2959.542969 Mbytes
+*** timeDesign #1 [finish] () : cpu/real = 0:00:06.5/0:00:10.2 (0.6), totSession cpu/real = 0:02:29.2/0:03:26.8 (0.7), mem = 2959.5M
+<CMD> setPlaceMode -fp false
+<CMD> setPlaceMode -placeIoPins true
+<CMD> setPlaceMode -congestionDriven true
+
+Usage: setPlaceMode [-help] [-reset] [-place_design_floorplan_mode {true|false}] [-place_design_integrity_ir_fix_effort {low|medium|high}]
+                    [-place_design_refine_macro {true|false}] [-place_design_refine_place {true|false}] [-place_detail_activity_power_driven {true|false}]
+                    [-place_detail_allow_border_pin_abut {true|false}] [-place_detail_allow_single_height_row_symmetry_x <siteName>]
+                    [-place_detail_check_cut_spacing {true|false}] [-place_detail_check_inst_space_group {true|false}]
+                    [-place_detail_check_route {true|false}] [-place_detail_color_aware_legal {true|false}]
+                    [-place_detail_context_aware_legal {none|all|optional|required|user|ignore_soft}] [-place_detail_eco_max_distance <micron>]
+                    [-place_detail_eco_priority_insts {placed|fixed|eco}] [-place_detail_fixed_shifter {true|false}]
+                    [-place_detail_honor_inst_pad {true|false}] [-place_detail_io_pin_blockage {true|false}]
+                    [-place_detail_iraware_max_drive_strength <value>] [-place_detail_irdrop_aware_effort {none|low|medium|high}]
+                    [-place_detail_irdrop_aware_timing_effort {none|standard|high}] [-place_detail_irdrop_region_number <value>]
+                    [-place_detail_legalization_inst_gap <site>] [-place_detail_max_shifter_column_depth <value>] [-place_detail_max_shifter_depth <value>]
+                    [-place_detail_max_shifter_row_depth <value>] [-place_detail_no_filler_without_implant {true|false}]
+                    [-place_detail_pad_fixed_insts {true|false}] [-place_detail_pad_physical_cells {true|false}]
+                    [-place_detail_preroute_as_obs {layerNum ...}] [-place_detail_preserve_routing {true|false}]
+                    [-place_detail_remove_affected_routing {true|false}] [-place_detail_swap_eeq_cells {true|false}]
+                    [-place_detail_use_check_drc {true|false}] [-place_detail_use_diffusion_transition_fill {true|false}]
+                    [-place_detail_use_GA_filler_groups {true|false}] [-place_detail_use_no_diffusion_one_site_filler {true|false}]
+                    [-place_detail_wire_length_opt_effort {none|medium|high}] [-place_global_activity_power_driven {false|true}]
+                    [-place_global_activity_power_driven_effort {standard|high}] [-place_global_align_macro {true|false}]
+                    [-place_global_allow_3d_stack {true|false}] [-place_global_auto_blockage_in_channel {none|soft|partial}]
+                    [-place_global_clock_gate_aware {true|false}] [-place_global_clock_power_driven {true|false}]
+                    [-place_global_clock_power_driven_effort {low|standard|high}] [-place_global_cong_effort {low|medium|high|extreme|auto}]
+                    [-place_global_cpg_effort {low|medium|high}] [-place_global_cpg_file <macro_loc_ori_file_name>]
+                    [-place_global_enable_advanced_pipeline {true|false}] [-place_global_enable_distributed_place {true|false}]
+                    [-place_global_ignore_scan {true|1|false|0|auto}] [-place_global_ignore_spare {true|false}] [-place_global_max_density <value>]
+                    [-place_global_module_aware_spare {true|false}] [-place_global_module_padding {<module> <factor>}]
+                    [-place_global_place_io_pins {true|false}] [-place_global_reorder_scan {true|false}]
+                    [-place_global_soft_guide_strength {low|medium|high}] [-place_global_timing_effort {medium|high}]
+                    [-place_global_uniform_density {false|true}] [-place_hard_fence {true|false}] [-place_hierarchical_flow {true|false}]
+                    [-place_opt_post_place_tcl <string>] [-place_opt_run_global_place {none|seed|full}] [-place_spare_update_timing_graph {true|false}]
+
+**ERROR: (IMPTCM-48):	"-congestionDriven" is not a legal option for command "setPlaceMode". Either the current option or an option prior to it is not specified correctly.
+
+<CMD> zoomBox -5.21200 5.52400 51.36900 56.01400
+<CMD> zoomBox -4.27600 12.51400 43.81800 55.43100
+<CMD> zoomBox -3.48100 18.45600 37.39900 54.93500
+<CMD> zoomBox -2.80600 23.50600 31.94300 54.51400
+<CMD> zoomBox -2.23200 27.79900 27.30500 54.15600
+<CMD> zoomBox -1.74400 31.44800 23.36300 53.85200
+<CMD> zoomBox -1.32900 34.54900 20.01200 53.59300
+<CMD> zoomBox -0.97600 37.18600 17.16400 53.37300
+<CMD> zoomBox -0.67600 39.42700 14.74300 53.18600
+<CMD> zoomBox -0.42100 41.33200 12.68500 53.02700
+<CMD> zoomBox -0.20400 42.95100 10.93600 52.89200
+<CMD> zoomBox -0.02000 44.32700 9.44900 52.77700
+<CMD> zoomBox 0.81200 48.67700 5.01500 52.42800
+<CMD> zoomBox 1.12900 50.78800 2.47800 51.99200
+<CMD> zoomBox 1.15200 50.93800 2.29800 51.96100
+<CMD> zoomBox 1.17000 51.06500 2.14500 51.93500
+<CMD> zoomBox 1.18600 51.17300 2.01500 51.91300
+<CMD> zoomBox 1.17000 51.06500 2.14500 51.93500
+<CMD> zoomBox 1.15100 50.93700 2.29800 51.96100
+<CMD> zoomBox 1.06800 50.40200 2.93900 52.07200
+<CMD> zoomBox -0.66100 41.92600 20.77100 61.05100
+<CMD> zoomBox -0.08800 47.77800 4.87800 52.20900
+<CMD> zoomBox -0.06200 48.04200 4.15900 51.80900
+<CMD> zoomBox -0.04000 48.26700 3.54800 51.46900
+<CMD> zoomBox 0.35700 49.12700 2.23100 50.79900
+<CMD> zoomBox 0.28000 48.96000 2.48500 50.92800
+<CMD> zoomBox -0.36200 47.57000 4.61000 52.00700
+<CMD> zoomBox -0.62600 47.27100 5.51200 53.44700
+<CMD> zoomBox -0.93700 46.91800 6.28500 54.18500
+<CMD> zoomBox -0.62700 47.27000 5.51200 53.44700
+<CMD> panPage 0 -1
+<CMD> panPage 0 -1
+<CMD> panPage 0 -1
+<CMD> panPage 0 -1
+<CMD> panPage 0 -1
+<CMD> panPage 0 -1
+<CMD> zoomBox -0.44600 36.38200 4.77200 41.63200
+<CMD> zoomBox -0.29300 36.57700 4.14300 41.04000
+<CMD> zoomBox -0.16300 36.74300 3.60800 40.53700
+<CMD> zoomBox -0.05200 36.88300 3.15400 40.10900
+<CMD> zoomBox 0.04200 37.00200 2.76800 39.74500
+<CMD> zoomBox 0.24300 37.07400 2.56100 39.40600
+<CMD> zoomBox 0.41400 37.13500 2.38500 39.11800
+<CMD> zoomBox 0.55900 37.18700 2.23500 38.87300
+<CMD> zoomBox 0.68300 37.23100 2.10800 38.66500
+<CMD> zoomBox 0.78800 37.26900 2.00000 38.48800
+<CMD> zoomBox 1.08000 37.49200 1.62000 38.03500
+<CMD> zoomBox 1.10400 37.51200 1.56300 37.97400
+<CMD> zoomBox 1.12400 37.53000 1.51400 37.92200
+<CMD> zoomBox 1.14100 37.54400 1.47300 37.87800
+<CMD> zoomBox 1.17800 37.57600 1.38300 37.78200
+<CMD> zoomBox 1.18700 37.58400 1.36100 37.75900
+<CMD> zoomBox 1.19500 37.59000 1.34300 37.73900
+<CMD> zoomBox 1.20100 37.59500 1.32700 37.72200
+<CMD> zoomBox 1.20700 37.60000 1.31400 37.70800
+<CMD> zoomBox 1.21200 37.60400 1.30300 37.69600
+<CMD> zoomBox 1.21500 37.60700 1.29400 37.68600
+<CMD> zoomBox 1.21100 37.60200 1.30400 37.69600
+<CMD> zoomBox 1.20600 37.59700 1.31600 37.70800
+<CMD> zoomBox 1.20000 37.59200 1.33000 37.72300
+<CMD> zoomBox 1.19300 37.58600 1.34600 37.74000
+<CMD> zoomBox 1.18500 37.57900 1.36500 37.76000
+<CMD> zoomBox 1.17500 37.57100 1.38700 37.78400
+<CMD> zoomBox 1.16400 37.56100 1.41300 37.81200
+<CMD> zoomBox 1.15100 37.55000 1.44400 37.84500
+<CMD> zoomBox 1.13600 37.53700 1.48100 37.88400
+<CMD> zoomBox 1.11800 37.52100 1.52400 37.93000
+<CMD> zoomBox 1.09700 37.50300 1.57500 37.98400
+<CMD> zoomBox 1.07200 37.48100 1.63500 38.04700
+<CMD> zoomBox 0.96900 37.39000 1.88500 38.31200
+<CMD> zoomBox 0.92200 37.34800 2.00000 38.43300
+<CMD> zoomBox 0.86600 37.29900 2.13500 38.57600
+<CMD> zoomBox 0.80100 37.24200 2.29400 38.74400
+<CMD> zoomBox 0.72400 37.17400 2.48100 38.94200
+<CMD> zoomBox 0.63300 37.09400 2.70100 39.17500
+<CMD> zoomBox 0.52700 37.00100 2.96000 39.44900
+<CMD> zoomBox 0.40200 36.89100 3.26400 39.77100
+<CMD> getIoFlowFlag
+<CMD> setIoFlowFlag 1
+<CMD> floorPlan -flip n -site GF22_DST -r 1.0000800064 0.221613 1.972 2.0 1.972 2.0
+Adjusting core size to PlacementGrid : width :50.344 height : 49.68
+Initializing I/O Placement ...
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> setIoFlowFlag 1
+<CMD> floorPlan -site GF22_DST -r 0.986810742094 0.221499 1.972 2.0 1.972 2.0
+Adjusting core size to PlacementGrid : width :50.924 height : 49.2
+Initializing I/O Placement ...
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> setIoFlowFlag 1
+<CMD> floorPlan -flip s -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.06
+Adjusting coreMargin top     to finFet grid (PlacementGrid) : after adjusting :2.08
+Adjusting core size to PlacementGrid : width :50.924 height : 49.2
+Initializing I/O Placement ...
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> setIoFlowFlag 1
+<CMD> floorPlan -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.14
+Adjusting coreMargin top     to finFet grid (PlacementGrid) : after adjusting :2.16
+Adjusting core size to PlacementGrid : width :50.924 height : 49.2
+Initializing I/O Placement ...
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> getIoFlowFlag
+<CMD> setIoFlowFlag 1
+<CMD> floorPlan -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.22
+Adjusting coreMargin top     to finFet grid (PlacementGrid) : after adjusting :2.24
+Adjusting core size to PlacementGrid : width :50.924 height : 49.2
+Initializing I/O Placement ...
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> getIoFlowFlag
+<CMD> floorPlan -help
+
+Usage: floorPlan [-help] [-adjustToSite] [-coreMarginsBy {io die}] [-dieSizeByIoHeight {min max}] [-flip {n s f}] [-fplanOrigin {center llcorner}]
+                 [-noResize] [-noSnapToGrid] [-overlapSameSiteRow] {-b <die_box io_box core_box> | -s <W H Left Bottom Right Top> | -d <W H Left Bottom Right Top> | -r <aspectRatio [rowDensity [Left Bottom Right Top]]> | -su <aspectRatio [stdCellDensity [Left Bottom Right Top]]> | -keepShape <util>} [-site <site> | -siteOnly <site>]
+
+-help                                   # Prints out the command usage
+-adjustToSite                           # floorplan boxes is multiple times of io site or core site's width (bool, optional)
+-b <die_box io_box core_box>            # specify all 3 boxes of floorplan (list, required)
+-coreMarginsBy {io die}                 # core margin to io or die (enum, optional)
+-d <W H Left Bottom Right Top>          # by DIE size and core to edge (list, required)
+-dieSizeByIoHeight {min max}            # use max or min io height for inital die size (enum, optional)
+-flip {n s f}                           # to flip rows (enum, optional)
+-fplanOrigin {center llcorner}          # set fplan origin at center or lower left (enum, optional)
+-keepShape <util>                       # target utilization after resize (float, required)
+-noResize                               # check if need do floorplan if everthing is same (bool, optional)
+-noSnapToGrid                           # do not change input floorplan boxes (bool, optional)
+-overlapSameSiteRow                     # allow same site row overlapping (bool, optional)
+-r <aspectRatio [rowDensity [Left Bottom Right Top]]>
+                                        # by aspectRatio, density and core to edge (list, required)
+-s <W H Left Bottom Right Top>          # by core size and core to edge (list, required)
+-site <site>                            # default tech site name ((site), optional)
+-siteOnly <site>                        # default tech site name, only create row for the site ((site), optional)
+-su <aspectRatio [stdCellDensity [Left Bottom Right Top]]>
+                                        # by aspectRatio, density and core to edge
+                                        # (list, required)
+
+
+<CMD> getIoFlowFlag
+<CMD> getIoFlowFlag
+<CMD> man IMPSR-4305
+<CMD> setIoFlowFlag 1
+<CMD> floorPlan -flip n -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.3
+Adjusting coreMargin top     to finFet grid (PlacementGrid) : after adjusting :2.32
+Adjusting core size to PlacementGrid : width :50.924 height : 49.2
+Initializing I/O Placement ...
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> setIoFlowFlag 1
+<CMD> floorPlan -site GF22_DST -r 0.964967402404 0.221382 1.972 2.0 1.972 2.38
+Adjusting coreMargin top     to finFet grid (PlacementGrid) : after adjusting :2.4
+Adjusting core size to PlacementGrid : width :50.924 height : 49.2
+Initializing I/O Placement ...
+
+Honor LEF defined pitches for advanced node
+Start create_tracks
+<CMD> uiSetTool select
+<CMD> getIoFlowFlag
+<CMD> fit
+<CMD> zoomBox -59.31200 -148.17400 162.18400 74.69100
+<CMD> zoomBox -17.19200 -55.40600 66.34700 28.64900
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon Apr 21 17:35:11 2025
+  Total CPU time:     0:17:21
+  Total real time:    1:16:42
+  Peak memory (main): 3349.41MB
+
+
+*** Memory Usage v#2 (Current mem = 3710.262M, initial mem = 812.863M) ***
+*** Message Summary: 581 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:17:12, real=1:16:39, mem=3710.3M) ---
