@@ -17,6 +17,7 @@ vlog +acc -incr ../../../rtl/Pkt_reg/Pkt_reg.v
 vlog +acc -incr ../../../rtl/Shift_Buffer/Shift_Buffer.v
 vlog +acc -incr ../../../rtl/TX_Buffer/TX_Buffer.v
 vlog +acc -incr ../../../rtl/SH_SYNC/SH_SYNC.v
+vlog +acc -incr ../../../rtl/CONFIG/CONFIG.v
 
 
 vlog +acc -incr APB_interface_testbench.v

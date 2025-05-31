@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : CONFIG
+Version: V-2023.12-SP1
+Date   : Fri May 30 22:43:46 2025
+****************************************
+
+
+Library(s) Used:
+
+    gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
+
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+CONFIG                 ZeroWLM           gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
+
+
+Global Operating Voltage = 0.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  =   1.5688 uW   (98%)
+  Net Switching Power  =  33.0619 nW    (2%)
+                         ---------
+Total Dynamic Power    =   1.6019 uW  (100%)
+
+Cell Leakage Power     = 617.4553 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  1.5499e-03            0.0000            0.0000        1.5499e-03  (  69.84%)  i
+register       5.2373e-06        8.3855e-07          368.4668        3.7454e-04  (  16.88%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  1.3665e-05        3.2223e-05          248.9885        2.9488e-04  (  13.29%)
+--------------------------------------------------------------------------------------------------
+Total          1.5688e-03 mW     3.3062e-05 mW       617.4553 nW     2.2193e-03 mW
+1

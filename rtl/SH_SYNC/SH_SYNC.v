@@ -5,8 +5,10 @@ module SH_SYNC (
     input wire RX,
     input wire tx_rdy,
 
-    input wire ext_counter_flag,
-    input wire [13:0] ext_counter, 
+    input wire ext_counter_flag_RX,
+    input wire [13:0] ext_counter_RX, 
+    input wire ext_counter_flag_TX,
+    input wire [13:0] ext_counter_TX, 
 
     output reg sh_en,
     output reg fsm_rst,
@@ -171,8 +173,8 @@ module SH_SYNC (
 
                 COMPUTE: begin
 		    fsm_rst <= 0;
-		    if (ext_counter_flag)
-			avg_interval <= ext_counter;
+		    if (ext_counter_flag_RX)
+			avg_interval <= ext_counter_RX;
 	 	    else 
                     	avg_interval <= interval_sum / (PREAMBLE_SIZE-1);
                 end
@@ -203,7 +205,11 @@ module SH_SYNC (
                 end
 
                 SEND_TX_PULSES: begin
-                    if (counter == PULSE_INTERVAL_1MS) begin
+                    if (!ext_counter_flag_TX && counter == PULSE_INTERVAL_1MS) begin
+                        sh_en <= 1;
+                        counter <= 0;
+                        pulse_pack_count <= pulse_pack_count + 1;
+                    end else if (ext_counter_flag_TX && counter == ext_counter_TX) begin
                         sh_en <= 1;
                         counter <= 0;
                         pulse_pack_count <= pulse_pack_count + 1;

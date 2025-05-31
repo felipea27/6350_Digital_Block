@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Fri Apr 18 13:14:54 2025
+# Created by write_sdc on Fri May 30 22:43:47 2025
 
 ###################################################################
 set sdc_version 2.0
@@ -37,11 +37,15 @@ set_max_capacitance 0.005 [get_ports clk]
 set_max_capacitance 0.005 [get_ports rst]
 set_max_capacitance 0.005 [get_ports en]
 set_max_capacitance 0.005 [get_ports pkt_rst]
+set_max_capacitance 0.005 [get_ports i_CONFIG]
+set_max_capacitance 0.005 [get_ports RX_MODE]
 set_max_fanout 4 [get_ports din]
 set_max_fanout 4 [get_ports clk]
 set_max_fanout 4 [get_ports rst]
 set_max_fanout 4 [get_ports en]
 set_max_fanout 4 [get_ports pkt_rst]
+set_max_fanout 4 [get_ports i_CONFIG]
+set_max_fanout 4 [get_ports RX_MODE]
 set_ideal_network [get_ports clk]
 create_clock [get_ports clk]  -period 100  -waveform {0 50}
 set_clock_uncertainty 0.1  [get_clocks clk]
@@ -53,6 +57,8 @@ set_input_delay -clock clk  0.02  [get_ports din]
 set_input_delay -clock clk  0.02  [get_ports rst]
 set_input_delay -clock clk  0.02  [get_ports en]
 set_input_delay -clock clk  0.02  [get_ports pkt_rst]
+set_input_delay -clock clk  0.02  [get_ports i_CONFIG]
+set_input_delay -clock clk  0.02  [get_ports RX_MODE]
 set_output_delay -clock clk  0.02  [get_ports {dout[23]}]
 set_output_delay -clock clk  0.02  [get_ports {dout[22]}]
 set_output_delay -clock clk  0.02  [get_ports {dout[21]}]

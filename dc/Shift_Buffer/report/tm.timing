@@ -6,14 +6,13 @@ Report : timing
         -max_paths 1
 Design : Shift_Buffer
 Version: V-2023.12-SP1
-Date   : Fri Apr 18 13:14:54 2025
+Date   : Fri May 30 22:43:47 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
 Wire Load Model Mode: enclosed
 
-  Startpoint: shift_reg_reg[11]
-              (rising edge-triggered flip-flop clocked by clk)
+  Startpoint: i_CONFIG (input port clocked by clk)
   Endpoint: shift_reg_reg[12]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
@@ -27,11 +26,13 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  shift_reg_reg[11]/CK (UDB116SVT24_FDPRBQ_V2_1)          0.00       0.00 r
-  shift_reg_reg[11]/Q (UDB116SVT24_FDPRBQ_V2_1)           0.07       0.07 r
-  U88/X (UDB116SVT24_INV_0P75)                            0.01       0.09 f
-  U91/X (UDB116SVT24_NR2_0P75)                            0.01       0.10 r
-  U106/X (UDB116SVT24_OA22_1)                             0.02       0.12 r
+  input external delay                                    0.02       0.02 f
+  i_CONFIG (in)                                           0.00       0.02 f
+  U75/X (UDB116SVT24_OR3B_0P75)                           0.02       0.04 f
+  U83/X (UDB116SVT24_OR2_0P75)                            0.03       0.07 f
+  U90/X (UDB116SVT24_BUF_1)                               0.02       0.09 f
+  U94/X (UDB116SVT24_INV_0P75)                            0.01       0.10 r
+  U111/X (UDB116SVT24_OA22_1)                             0.02       0.12 r
   shift_reg_reg[12]/D (UDB116SVT24_FDPRBQ_V2_1)           0.00       0.12 r
   data arrival time                                                  0.12
 

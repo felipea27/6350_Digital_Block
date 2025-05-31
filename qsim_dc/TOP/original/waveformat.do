@@ -4,6 +4,16 @@ add wave -noupdate /testbench/i_PCLK
 add wave -noupdate /testbench/RX_MODE
 add wave -noupdate /testbench/MOSI
 add wave -noupdate /testbench/MISO
+add wave -noupdate /testbench/osc_freq
+add wave -noupdate /testbench/arthur
+add wave -noupdate /testbench/sh_en
+add wave -noupdate /testbench/i_CONFIG
+add wave -noupdate /testbench/test_ext_count_val_RX
+add wave -noupdate /testbench/test_ext_count_val_TX
+add wave -noupdate /testbench/test_ext_count_RX
+add wave -noupdate /testbench/test_ext_count_TX
+add wave -noupdate /testbench/test_SPI_OUT_RDY
+add wave -noupdate /testbench/test_spi_rdy_edge
 
 add wave -noupdate /testbench/uut/SPI_modul2/w_SCK
 add wave -noupdate /testbench/top_slave/SPI_slave_inst/SS
@@ -12,12 +22,20 @@ add wave -noupdate /testbench/top_slave/SPI_slave_inst/SS_neg_flag
 add wave -noupdate /testbench/top_slave/SPI_slave_inst/counter
 add wave -noupdate /testbench/top_slave/DIN
 add wave -noupdate /testbench/top_slave/rfin
-add wave -noupdate /testbench/top_slave/sh_en
+add wave -noupdate /testbench/top_slave/SH_EN
 add wave -noupdate /testbench/top_slave/SH_EN_DONE
 add wave -noupdate /testbench/top_slave/FSM_RST
 add wave -noupdate /testbench/top_slave/counter
 add wave -noupdate /testbench/top_slave/counter3
 add wave -noupdate /testbench/top_slave/CS_sync
+add wave -noupdate /testbench/top_slave/ext_count_val
+add wave -noupdate /testbench/top_slave/ext_counter_flag
+add wave -noupdate /testbench/top_slave/CONFIG_inst/state
+add wave -noupdate /testbench/top_slave/CONFIG_inst/ext_counter_flag
+add wave -noupdate /testbench/top_slave/CONFIG_inst/opcode_q
+add wave -noupdate /testbench/top_slave/CONFIG_inst/spi_rx_data
+add wave -noupdate /testbench/top_slave/CONFIG_inst/spi_rx_valid
+add wave -noupdate /testbench/top_slave/CONFIG_inst/i_CONFIG
 
 add wave -noupdate /testbench/top_slave/fsm_sync_inst/state_pos
 add wave -noupdate /testbench/top_slave/fsm_sync_inst/state_neg
@@ -48,7 +66,6 @@ add wave -noupdate /testbench/top_slave/pkt_reg_inst/pkt_reg
 
 add wave -noupdate /testbench/o_PWDATA
 add wave -noupdate /testbench/o_PRDATA
-add wave -noupdate /testbench/top_slave/
 
 
 

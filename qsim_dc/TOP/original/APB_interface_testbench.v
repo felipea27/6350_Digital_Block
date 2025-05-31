@@ -26,6 +26,9 @@ module testbench;
 	reg [1:0] mode;
 	reg RX_MODE;
 	reg TX_BY;
+	reg CONFIG;
+	wire [3:0] arthur;
+	wire [1:0] osc_freq;
 
 	// Outputs
 	wire o_WR0;
@@ -44,6 +47,14 @@ module testbench;
 	wire MISO;
 	wire SCK;
 	wire SS3;
+
+	wire [13:0] test_ext_count_val_RX;
+	wire [13:0] test_ext_count_val_TX;
+	wire [15:0] test_ext_count_RX;
+	wire [15:0] test_ext_count_TX;
+	wire test_SPI_OUT_RDY;
+	wire [7:0] test_SPI_OUT;
+	wire test_spi_rdy_edge;	
 
 	wire pkt_rec;
 	wire TX_OUT;
@@ -111,7 +122,11 @@ module testbench;
 		.sh_en(sh_en),
 		.RX(RX_MODE),
 		.TX_BY(TX_BY),
-		.TX_OUT(TX_OUT)
+		.TX_OUT(TX_OUT),
+
+		.i_CONFIG(CONFIG),
+		.arthur(arthur),
+		.osc_freq(osc_freq)
 	);
 
 	//READ parameters
@@ -190,7 +205,7 @@ module testbench;
 			#1000000;
 			repeat (BYTES_P_PS) begin // ADJUST FOR PREAMBLE/PS
 				APB_WRITE(mode, 2'b11, SCK, MDATA[PACKET_SIZE + 7 : PACKET_SIZE]); // ADJUST FOR PREAMBLE/PS
-				repeat (8) #999900; //#1000000;
+				repeat (8) #999900; //#1000000; //947100
 				//$display($time);
 				MDATA = MDATA << 8;
 			end
@@ -279,6 +294,42 @@ module testbench;
 	    #delay_after;
     end
         endtask
+
+	task configuration;
+		input reg [7:0] osc_freq;
+		input reg [7:0] arthur;
+		input reg [15:0] ext_count_val_RX;
+		input reg [15:0] ext_count_val_TX;
+	
+		begin
+			CONFIG = 1;
+			//SET EXTERNAL COUNTER
+			APB_WRITE(MODE00, SLAVE3, SCK4, 8'hF8);
+			#7200;
+			APB_WRITE(MODE00, SLAVE3, SCK4, ext_count_val_RX[15:8]);
+			#7200;
+			APB_WRITE(MODE00, SLAVE3, SCK4, ext_count_val_RX[7:0]);
+			#7200;
+			APB_WRITE(MODE00, SLAVE3, SCK4, 8'hF9);
+			#7200;
+			APB_WRITE(MODE00, SLAVE3, SCK4, ext_count_val_TX[15:8]);
+			#7200;
+			APB_WRITE(MODE00, SLAVE3, SCK4, ext_count_val_TX[7:0]);
+			#7200;
+			//SET OSCILLATOR FREQUENCY
+			APB_WRITE(MODE00, SLAVE3, SCK4, 8'hFA);
+			#7200;
+			APB_WRITE(MODE00, SLAVE3, SCK4, osc_freq);
+			#7200;
+			//SET ARTHUR BITS
+			APB_WRITE(MODE00, SLAVE3, SCK4, 8'hFB);
+			#7200;
+			APB_WRITE(MODE00, SLAVE3, SCK4, arthur);
+			#7200;
+			#300;
+			CONFIG = 0;
+		end
+	endtask
 	
 	always @(posedge pkt_rec) begin
 		BYTE_RD();
@@ -316,16 +367,17 @@ module testbench;
 		rfin = 0;
 		TX_BY = 0;
 		RX_MODE = 0;
+		CONFIG = 0;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("/simulation/fandrade/dc/original/DATA/std0/TX_OUT.txt", "w");
+		tx_file = $fopen("/simulation/fandrade/rtl/original/DATA/std0/TX_OUT.txt", "w");
 		if (tx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rx_file = $fopen("/simulation/fandrade/dc/original/DATA/std0/PRDATA.txt", "w");
+		rx_file = $fopen("/simulation/fandrade/rtl/original/DATA/std0/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
@@ -355,7 +407,81 @@ module testbench;
 		#200
 		
 		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		repeat(10) begin	
+		configuration(8'b00000011, 8'b00001101, 16'h2710, 16'h2500); //~9500
+
+		/*CONFIG = 1;
+		#300;	
+		APB_WRITE(MODE00, SLAVE3, SCK4, 8'hF8);
+		#7200;
+		APB_WRITE(MODE00, SLAVE3, SCK4, 8'h27);
+		#7200;
+		APB_WRITE(MODE00, SLAVE3, SCK4, 8'h10);
+		#7200;
+		#300;
+		CONFIG = 0;
+		*/
+
+		#700;
+		CONFIG = 0;
+		repeat(1) begin	
+			repeat(50) begin
+				i = i + 1; // Increment counter
+				//$display("RX Iteration: %0d", i);
+				MDATA = packets[i];
+				//$display("%b", MDATA);
+				SEND_SYNC(MDATA, 100, 1000000);
+				#800;
+			end
+			i = i-50;
+			#1000000;
+			
+			repeat(50) begin
+				i = i + 1; // Increment counter
+				$display("TX Iteration: %0d", i);
+				MDATA = packets[i];
+				BYTE_WRITE(SCK4, MDATA);
+			end
+		
+		end
+	
+		CONFIG = 1;
+		#300;	
+		APB_WRITE(MODE00, SLAVE3, SCK4, 8'hFC);
+		#700;
+		#7200;
+		#300;
+		CONFIG = 0;
+
+		repeat(1) begin	
+			repeat(50) begin
+				i = i + 1; // Increment counter
+				//$display("RX Iteration: %0d", i);
+				MDATA = packets[i];
+				//$display("%b", MDATA);
+				SEND_SYNC(MDATA, 100, 1000000);
+				#800;
+			end
+			i = i-50;
+			#1000000;
+			
+			repeat(10) begin
+				i = i + 1; // Increment counter
+				$display("TX Iteration: %0d", i);
+				MDATA = packets[i];
+				BYTE_WRITE(SCK4, MDATA);
+			end
+		
+		end
+
+		CONFIG = 1;
+		#300;	
+		APB_WRITE(MODE00, SLAVE3, SCK4, 8'hFD);
+		#700;
+		#7200;
+		#300;
+		CONFIG = 0;
+
+		repeat(1) begin	
 			repeat(10) begin
 				i = i + 1; // Increment counter
 				//$display("RX Iteration: %0d", i);
@@ -367,14 +493,95 @@ module testbench;
 			i = i-10;
 			#1000000;
 			
-			repeat(10) begin
+			repeat(50) begin
 				i = i + 1; // Increment counter
 				$display("TX Iteration: %0d", i);
 				MDATA = packets[i];
 				BYTE_WRITE(SCK4, MDATA);
 			end
+		
 		end
-	
+		#8000;
+		
+		configuration(8'b00000001, 8'b00000001, 16'h2510, 16'h2900); //~9500
+		
+		repeat(1) begin	
+			repeat(20) begin
+				i = i + 1; // Increment counter
+				//$display("RX Iteration: %0d", i);
+				MDATA = packets[i];
+				//$display("%b", MDATA);
+				SEND_SYNC(MDATA, 100, 1000000);
+				#800;
+			end
+			#1000000;
+			
+			repeat(20) begin
+				i = i + 1; // Increment counter
+				$display("TX Iteration: %0d", i);
+				MDATA = packets[i];
+				BYTE_WRITE(SCK4, MDATA);
+			end
+		
+		end
+		#8000;
+
+		configuration(8'b00000011, 8'b00000101, 16'h2710, 16'h2710); //~9500
+		
+		repeat(1) begin	
+			repeat(20) begin
+				i = i + 1; // Increment counter
+				//$display("RX Iteration: %0d", i);
+				MDATA = packets[i];
+				//$display("%b", MDATA);
+				SEND_SYNC(MDATA, 100, 1000000);
+				#800;
+			end
+			#1000000;
+			
+			repeat(20) begin
+				i = i + 1; // Increment counter
+				$display("TX Iteration: %0d", i);
+				MDATA = packets[i];
+				BYTE_WRITE(SCK4, MDATA);
+			end
+		
+		end
+		#8000;
+		
+		CONFIG = 1;
+		#300;	
+		APB_WRITE(MODE00, SLAVE3, SCK4, 8'hFC);
+		#700;
+		#7200;
+		#300;
+		APB_WRITE(MODE00, SLAVE3, SCK4, 8'hFD);
+		#700;
+		#7200;
+		CONFIG = 0;
+		#300;	
+		
+		repeat(1) begin	
+			repeat(50) begin
+				i = i + 1; // Increment counter
+				//$display("RX Iteration: %0d", i);
+				MDATA = packets[i];
+				//$display("%b", MDATA);
+				SEND_SYNC(MDATA, 100, 1000000);
+				#800;
+			end
+			#1000000;
+			
+			repeat(50) begin
+				i = i + 1; // Increment counter
+				$display("TX Iteration: %0d", i);
+				MDATA = packets[i];
+				BYTE_WRITE(SCK4, MDATA);
+			end
+		
+		end
+
+		#80000;
 		$fclose(tx_file);
 		$fclose(rx_file);
 		

@@ -7,3 +7,4 @@ rm *.log
 rm *svf
 rm *.pvl
 rm *.syn
+rm -r *.txt

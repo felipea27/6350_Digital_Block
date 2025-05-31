@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
-module Shift_Buffer (din, clk, rst, dout, pkt_rec, en, pkt_rst);
+module Shift_Buffer (din, clk, rst, dout, pkt_rec, en, pkt_rst, i_CONFIG, RX_MODE);
 	localparam PACKET_SIZE = 24;
-	input din, clk, rst, en, pkt_rst;
+	input din, clk, rst, en, pkt_rst, i_CONFIG, RX_MODE;
 	output [PACKET_SIZE -1:0] dout;
 	output reg pkt_rec;
 
@@ -16,7 +16,7 @@ module Shift_Buffer (din, clk, rst, dout, pkt_rec, en, pkt_rst);
 			pkt_rec <= 0;
 			sync <= 3'b0;	
 		end else begin 
-			if (pkt_rst) begin
+			if (pkt_rst || i_CONFIG || !RX_MODE) begin
 				shift_reg <= 0;
 				sync <= 3'b0;
 			end

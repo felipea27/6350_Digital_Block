@@ -75,4 +75,13 @@ remove_input_delay -clock $clk_name [find port $clk_port]
 set_output_delay $typical_output_delay [all_outputs] -clock $clk_name
 
 # Set loading of outputs 
-set_load 0.004 [all_outputs] 
+set_load 0.004 [all_outputs]
+
+#set_load 10 [get_ports { \
+    osc_freq[*] \
+    arthur[*]   \
+    pkt_rec     \
+    MISO        \
+    TX_OUT      \
+    sh_en       \
+}] 

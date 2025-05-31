@@ -24,6 +24,7 @@ vlog +acc -incr ../../../dc/Pkt_reg/Pkt_reg.nl.v
 vlog +acc -incr ../../../dc/Shift_Buffer/Shift_Buffer.nl.v
 vlog +acc -incr ../../../dc/TX_Buffer/TX_Buffer.nl.v
 vlog +acc -incr ../../../dc/SH_SYNC/SH_SYNC.nl.v
+vlog +acc -incr ../../../dc/CONFIG/CONFIG.nl.v
 
 
 vlog +acc -incr APB_interface_testbench.v

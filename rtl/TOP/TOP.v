@@ -12,8 +12,10 @@ module TOP (
 //MODE
     input RX, //RX = 1, TX = 0
 
-//Set Period externally
-    input set_ext_counter,
+//CONFIG
+    input i_CONFIG,
+    output [1:0] osc_freq,
+    output [3:0] arthur,
 
 //Outputs
     output pkt_rec,
@@ -35,8 +37,16 @@ module TOP (
     wire SH_EN_DONE;
     wire SPI_OUT_RDY;
 
+    wire [13:0] ext_count_val_RX;
+    wire [15:0] ext_count_RX;
+    wire [13:0] ext_count_val_TX;
+    wire [15:0] ext_count_TX;
+
     assign sh_en = SH_EN; //delete
     assign TX_OUT = (TX_BY | TX_OUT_I);
+    assign ext_count_val_RX = ext_count_RX[13:0];
+    assign ext_count_val_TX = ext_count_TX[13:0];
+    
 
     //RX registers
     reg [2:0] rx_state;
@@ -47,13 +57,6 @@ module TOP (
     reg PKT_LD;
     reg PKT_RST;
     reg pkt_rec_prev;
-    reg [15:0] ext_counter;
-    reg [7:0] ext_counter_msb;
-    //Syncing
-    reg set_ext_sync0;
-    reg set_ext_sync1;
-    reg set_ext_sync;
-    reg set_ext_prev;  
  
     //TX registers 
     reg [1:0] tx_state;
@@ -82,13 +85,17 @@ module TOP (
 	    .clk(clk), .rst(rst), .rfin(DIN),
 	    .sh_en(SH_EN), .RX(RX), .tx_rdy(TX_SH),
 	    .fsm_rst(FSM_RST), .sh_en_done(SH_EN_DONE),
-	    .ext_counter_flag(set_ext_sync1), .ext_counter(ext_counter)
+	    .ext_counter_flag_RX(ext_counter_flag_RX), 
+	    .ext_counter_RX(ext_count_val_RX),
+	    .ext_counter_flag_TX(ext_counter_flag_TX), 
+	    .ext_counter_TX(ext_count_val_TX)
     );
 
     // Shift Buffer
     Shift_Buffer shift_buf_inst (
         .din(DIN), .clk(clk), .rst(rst), .dout(SHIFT_OUT),
-        .pkt_rec(pkt_rec), .en(SH_EN), .pkt_rst(PKT_RST)
+        .pkt_rec(pkt_rec), .en(SH_EN), .pkt_rst(PKT_RST),
+	.i_CONFIG(i_CONFIG), .RX_MODE(RX)
     );
 
     // Packet Register
@@ -112,6 +119,17 @@ module TOP (
 	    .dout(TX_OUT_I), .en(TX_EN), .load(TX_LD)
     ); 
 
+    // CONFIG
+    CONFIG CONFIG_inst (
+	    .clk(clk), .rst(rst), .spi_rx_data(SPI_OUT),
+	    .ext_counter_flag_RX(ext_counter_flag_RX), 
+	    .ext_counter_value_RX(ext_count_RX),
+	    .ext_counter_flag_TX(ext_counter_flag_TX), 
+	    .ext_counter_value_TX(ext_count_TX),
+	    .osc_freq(osc_freq), .arthur(arthur),
+	    .i_CONFIG(i_CONFIG), .spi_rx_valid(SPI_OUT_RDY)
+    );
+    
     // State Machine
     always @(posedge clk or negedge rst) begin
         if (rst == 0) begin
@@ -124,15 +142,8 @@ module TOP (
 	    PKT_EN <= 0;
 	    PKT_LD <= 0;
 	    PKT_RST <= 0;
-	    set_ext_prev <= 0;  
 	    pkt_rec_prev <= 0;
-	    ext_counter <= 0;
-	    ext_counter_msb <= 0;
 	    	    
-	    //Sync
-	    set_ext_sync0 <= 0;
-	    set_ext_sync1 <= 0;
-
 	    //TX Stuff
 	    tx_state <= TX_INIT;
 	    TX_EN <= 0;
@@ -141,135 +152,108 @@ module TOP (
 	    counter3 <= 0;
 
 
-        end else if (RX) begin
-	    //Sync
-	    set_ext_sync0 <= set_ext_counter;
-	    set_ext_sync1 <= set_ext_sync0;
+        end 
+	else begin
+		if (!i_CONFIG) begin
+			if (RX) begin
+			    //Edge Detection
+			    pkt_rec_prev <= pkt_rec;
 
-	    //Edge Detection
-	    set_ext_prev <= set_ext_sync1;
-	    pkt_rec_prev <= pkt_rec;
-
-	    tx_state <= TX_INIT;
-            case (rx_state)
-                INIT: begin
-                    counter <= 0;
-                    if (set_ext_prev == 0 && set_ext_sync1)
-		    	rx_state <= EXT_LOAD_1;
-		    else
-			rx_state <= LOAD;
-		    PKT_EN <= 0;
-		    PKT_LD <= 0;
-		    SPI_LD <= 0;
-                    SPI_RDY <= 0;
-		    PKT_RST <= 0;
-                end
-        
-		LOAD: begin
-		    SPI_RDY <= 0;
-		    SPI_LD <= 0;
-		    PKT_EN <= 0;
-		    PKT_RST <= 0;
-                    counter <= 4'd3; // number of bytes in packet
-                    if (set_ext_prev == 0 && set_ext_sync1)
-		    	rx_state <= EXT_LOAD_1;
-		    else if (pkt_rec_prev == 0 && pkt_rec == 1) begin //needs to be posedge of of pkt_rec
-				rx_state <= PKT_STORE;
-				PKT_LD <= 1;
-				SPI_LD <= 1;
-			end
-                end
-
-		PKT_STORE: begin
-		    PKT_LD <= 0;
-		    SPI_RDY <= 0;
-		    PKT_EN <= 0;
-		    PKT_RST <= 1;
-                    if (set_ext_prev == 0 && set_ext_sync1)
-		    	rx_state <= EXT_LOAD_1;
-		    else
-		    	rx_state <= SPI_SHIFT;
-                end
-        
-		SPI_SHIFT: begin
-			PKT_RST <= 0;
-			if (set_ext_prev == 0 && set_ext_sync1)
-				rx_state <= EXT_LOAD_1;
-			else if (CS_sync == 0) begin
-				rx_state <= SPI_TRANSFER;
-                    		SPI_RDY <= 1;
-                    	end else if (counter == 0) 
-			  	rx_state <= LOAD;
-                end
-        
-		SPI_TRANSFER: begin
-                    if (set_ext_prev == 0 && set_ext_sync1)
-		    	rx_state <= EXT_LOAD_1;
-		    else if (CS_sync == 1) begin
-			rx_state <= PKT_STORE;
-			PKT_EN <= 1;
-                    	counter <= counter - 1;
-		    end
-		end
-
-		EXT_LOAD_1: begin
-		    if (SPI_OUT_RDY) begin
-			ext_counter_msb <= SPI_OUT;
-        		rx_state <= EXT_LOAD_2;
-		    end
-		end
-		
-		EXT_LOAD_2: begin
-		    if (SPI_OUT_RDY) begin
-			ext_counter <= {ext_counter_msb, SPI_OUT}; // combine and take 14 bits
-			rx_state <= INIT; // or LOAD to resume normal operation
-		    end
-		end	
-
-
-	endcase
-        end else begin
-	    rx_state <= INIT;
-            case (tx_state)
-                TX_INIT: begin
-			counter3 <= 4'b0; // Track when transmit one byte
-		        TX_EN <= 0;
-			TX_LD <= 0;
-			TX_SH <= 0;
-			if (CS_sync == 0) begin
-				tx_state <= TX_IDLE;
-		
-			end
-		end
-
-		TX_IDLE: begin
-			TX_EN <= 0;
-			TX_LD <= 0;
-			TX_SH <= 0;
-			if (SPI_OUT_RDY == 1) begin
-				TX_LD <= 1;
-				tx_state <= TX_RDY;
-			end
-		end
-
-		TX_RDY: begin
-			TX_LD <= 0;
-			TX_SH <= 1;
-			if (counter3 == 4'b1000 || SH_EN_DONE) begin
-				counter3 <= 4'b0;
-				tx_state <= TX_INIT;
-				TX_EN <= 0;
-			end
+			    tx_state <= TX_INIT;
+			    case (rx_state)
+				INIT: begin
+				    counter <= 0;
+				    rx_state <= LOAD;
+				    PKT_EN <= 0;
+				    PKT_LD <= 0;
+				    SPI_LD <= 0;
+				    SPI_RDY <= 0;
+				    PKT_RST <= 0;
+				end
 			
-			else if (SH_EN) begin
-				counter3 <= counter3 + 1;
-				TX_EN <= 1;
+				LOAD: begin
+				    SPI_RDY <= 0;
+				    SPI_LD <= 0;
+				    PKT_EN <= 0;
+				    PKT_RST <= 0;
+				    counter <= 4'd3; // number of bytes in packet
+				    if (pkt_rec_prev == 0 && pkt_rec == 1) begin //needs to be posedge of of pkt_rec
+					rx_state <= PKT_STORE;
+					PKT_LD <= 1;
+					SPI_LD <= 1;
+				    end
+				end
+
+				PKT_STORE: begin
+				    PKT_LD <= 0;
+				    SPI_RDY <= 0;
+				    PKT_EN <= 0;
+				    PKT_RST <= 1;
+				    rx_state <= SPI_SHIFT;
+				end
+			
+				SPI_SHIFT: begin
+					PKT_RST <= 0;
+					if (CS_sync == 0) begin
+						rx_state <= SPI_TRANSFER;
+						SPI_RDY <= 1;
+					end else if (counter == 0) 
+						rx_state <= LOAD;
+				end
+			
+				SPI_TRANSFER: begin
+				    if (CS_sync == 1) begin
+					rx_state <= PKT_STORE;
+					PKT_EN <= 1;
+					counter <= counter - 1;
+				    end
+				end
+
+			endcase
+			end else begin
+			    rx_state <= INIT;
+			    case (tx_state)
+				TX_INIT: begin
+					counter3 <= 4'b0; // Track when transmit 1 byte
+					TX_EN <= 0;
+					TX_LD <= 0;
+					TX_SH <= 0;
+					if (CS_sync == 0) begin
+						tx_state <= TX_IDLE;
+				
+					end
+				end
+
+				TX_IDLE: begin
+					TX_EN <= 0;
+					TX_LD <= 0;
+					TX_SH <= 0;
+					if (SPI_OUT_RDY == 1) begin
+						TX_LD <= 1;
+						tx_state <= TX_RDY;
+					end
+				end
+
+				TX_RDY: begin
+					TX_LD <= 0;
+					TX_SH <= 1;
+					if (counter3 == 4'b1000 || SH_EN_DONE) begin
+						counter3 <= 4'b0;
+						tx_state <= TX_INIT;
+						TX_EN <= 0;
+					end
+					
+					else if (SH_EN) begin
+						counter3 <= counter3 + 1;
+						TX_EN <= 1;
+					end
+					else
+						TX_EN <= 0;
+				end
+			    endcase
 			end
-			else
-				TX_EN <= 0;
+		    end
 		end
-	    endcase
-	end
-    end
+	    end
 endmodule
 

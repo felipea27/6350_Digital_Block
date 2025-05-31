@@ -8,5 +8,6 @@ analyze -format verilog "../SH_SYNC/SH_SYNC.nl.v"
 analyze -format verilog "../Pkt_reg/Pkt_reg.nl.v"
 analyze -format verilog "../SPI/SPI_slave.nl.v"
 analyze -format verilog "../TX_Buffer/TX_Buffer.nl.v"
+analyze -format verilog "../CONFIG/CONFIG.nl.v"
 #analyze -format verilog "../TOP/TOP.nl.v"
 

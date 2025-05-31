@@ -1,0 +1,368 @@
+# //  ModelSim SE-64 2021.3 Jul 13 2021 Linux 3.10.0-1160.66.1.el7.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do runsim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vmap 2021.3 Lib Mapping Utility 2021.07 Jul 13 2021
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:00 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI/APB_interface.v 
+# -- Skipping module APB_interface_2
+# 
+# Top level modules:
+# 	APB_interface_2
+# End time: 22:55:01 on May 30,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:01 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI/SPI_master.v 
+# -- Skipping module spi_master5
+# 
+# Top level modules:
+# 	spi_master5
+# End time: 22:55:01 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:01 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI/SPI_slave.v 
+# -- Skipping module SPI_slave
+# 
+# Top level modules:
+# 	SPI_slave
+# End time: 22:55:01 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:01 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/SPI/SPI_testmodul2.v 
+# -- Skipping module SPI_testmodul2
+# 
+# Top level modules:
+# 	SPI_testmodul2
+# End time: 22:55:02 on May 30,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:02 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/TOP/TOP.v 
+# -- Skipping module TOP
+# 
+# Top level modules:
+# 	TOP
+# End time: 22:55:02 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:02 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/fsm_sync/fsm_sync.v 
+# -- Skipping module fsm_sync
+# 
+# Top level modules:
+# 	fsm_sync
+# End time: 22:55:02 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:02 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/Pkt_reg/Pkt_reg.v 
+# -- Skipping module Pkt_reg
+# 
+# Top level modules:
+# 	Pkt_reg
+# End time: 22:55:03 on May 30,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:03 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/Shift_Buffer/Shift_Buffer.v 
+# -- Skipping module Shift_Buffer
+# 
+# Top level modules:
+# 	Shift_Buffer
+# End time: 22:55:03 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:03 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/TX_Buffer/TX_Buffer.v 
+# -- Skipping module TX_Buffer
+# 
+# Top level modules:
+# 	TX_Buffer
+# End time: 22:55:04 on May 30,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:04 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/SH_SYNC/SH_SYNC.v 
+# -- Skipping module SH_SYNC
+# 
+# Top level modules:
+# 	SH_SYNC
+# End time: 22:55:04 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:04 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr ../../../rtl/CONFIG/CONFIG.v 
+# -- Skipping module CONFIG
+# 
+# Top level modules:
+# 	CONFIG
+# End time: 22:55:04 on May 30,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 22:55:04 on May 30,2025
+# vlog -reportprogress 300 "+acc" -incr APB_interface_testbench.v 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 22:55:05 on May 30,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
+# vsim "+acc" -t ps -lib work testbench 
+# Start time: 22:55:05 on May 30,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 2 FSMs in module "TOP(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "SH_SYNC(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "CONFIG(fast)".
+# ** Warning: ../../../rtl/SPI/SPI_testmodul2.v(46): (vopt-2685) [TFMPC] - Too few port connections for 'SPI_MASTER_2'.  Expected 20, found 19.
+# ** Warning: ../../../rtl/SPI/SPI_testmodul2.v(46): (vopt-2718) [TFMPC] - Missing connection for port 'i_SPI_CLK'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.testbench(fast)
+# Loading work.APB_interface_2(fast)
+# Loading work.SPI_testmodul2(fast)
+# Loading work.spi_master5(fast)
+# Loading work.TOP(fast)
+# Loading work.fsm_sync(fast)
+# Loading work.SH_SYNC(fast)
+# Loading work.Shift_Buffer(fast)
+# Loading work.Pkt_reg(fast)
+# Loading work.SPI_slave(fast)
+# Loading work.TX_Buffer(fast)
+# Loading work.CONFIG(fast)
+# ** Warning: (vsim-PLI-3691) Expected a system task, not a system function '$fscanf'.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: APB_interface_testbench.v Line: 397
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/i_CONFIG'.
+# Executing ONERROR command at macro ./waveformat.do line 10
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_slave/SPI_slave_inst/SS_neg_flag'.
+# Executing ONERROR command at macro ./waveformat.do line 21
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_slave/SPI_slave_inst/counter'.
+# Executing ONERROR command at macro ./waveformat.do line 22
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_slave/ext_count_val'.
+# Executing ONERROR command at macro ./waveformat.do line 31
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_slave/ext_counter_flag'.
+# Executing ONERROR command at macro ./waveformat.do line 32
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_slave/CONFIG_inst/ext_counter_flag'.
+# Executing ONERROR command at macro ./waveformat.do line 34
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_slave/sh_sync_inst/fsm_en'.
+# Executing ONERROR command at macro ./waveformat.do line 45
+# TX Iteration: 1
+# TX Iteration: 2
+# TX Iteration: 3
+# TX Iteration: 4
+# TX Iteration: 5
+# TX Iteration: 6
+# TX Iteration: 7
+# TX Iteration: 8
+# TX Iteration: 9
+# TX Iteration: 10
+# TX Iteration: 11
+# TX Iteration: 12
+# TX Iteration: 13
+# TX Iteration: 14
+# TX Iteration: 15
+# TX Iteration: 16
+# TX Iteration: 17
+# TX Iteration: 18
+# TX Iteration: 19
+# TX Iteration: 20
+# TX Iteration: 21
+# TX Iteration: 22
+# TX Iteration: 23
+# TX Iteration: 24
+# TX Iteration: 25
+# TX Iteration: 26
+# TX Iteration: 27
+# TX Iteration: 28
+# TX Iteration: 29
+# TX Iteration: 30
+# TX Iteration: 31
+# TX Iteration: 32
+# TX Iteration: 33
+# TX Iteration: 34
+# TX Iteration: 35
+# TX Iteration: 36
+# TX Iteration: 37
+# TX Iteration: 38
+# TX Iteration: 39
+# TX Iteration: 40
+# TX Iteration: 41
+# TX Iteration: 42
+# TX Iteration: 43
+# TX Iteration: 44
+# TX Iteration: 45
+# TX Iteration: 46
+# TX Iteration: 47
+# TX Iteration: 48
+# TX Iteration: 49
+# TX Iteration: 50
+# TX Iteration: 51
+# TX Iteration: 52
+# TX Iteration: 53
+# TX Iteration: 54
+# TX Iteration: 55
+# TX Iteration: 56
+# TX Iteration: 57
+# TX Iteration: 58
+# TX Iteration: 59
+# TX Iteration: 60
+# TX Iteration: 61
+# TX Iteration: 62
+# TX Iteration: 63
+# TX Iteration: 64
+# TX Iteration: 65
+# TX Iteration: 66
+# TX Iteration: 67
+# TX Iteration: 68
+# TX Iteration: 69
+# TX Iteration: 70
+# TX Iteration: 71
+# TX Iteration: 72
+# TX Iteration: 73
+# TX Iteration: 74
+# TX Iteration: 75
+# TX Iteration: 76
+# TX Iteration: 77
+# TX Iteration: 78
+# TX Iteration: 79
+# TX Iteration: 80
+# TX Iteration: 81
+# TX Iteration: 82
+# TX Iteration: 83
+# TX Iteration: 84
+# TX Iteration: 85
+# TX Iteration: 86
+# TX Iteration: 87
+# TX Iteration: 88
+# TX Iteration: 89
+# TX Iteration: 90
+# TX Iteration: 91
+# TX Iteration: 92
+# TX Iteration: 93
+# TX Iteration: 94
+# TX Iteration: 95
+# TX Iteration: 96
+# TX Iteration: 97
+# TX Iteration: 98
+# TX Iteration: 99
+# TX Iteration: 100
+# TX Iteration: 101
+# TX Iteration: 102
+# TX Iteration: 103
+# TX Iteration: 104
+# TX Iteration: 105
+# TX Iteration: 106
+# TX Iteration: 107
+# TX Iteration: 108
+# TX Iteration: 109
+# TX Iteration: 110
+# TX Iteration: 131
+# TX Iteration: 132
+# TX Iteration: 133
+# TX Iteration: 134
+# TX Iteration: 135
+# TX Iteration: 136
+# TX Iteration: 137
+# TX Iteration: 138
+# TX Iteration: 139
+# TX Iteration: 140
+# TX Iteration: 141
+# TX Iteration: 142
+# TX Iteration: 143
+# TX Iteration: 144
+# TX Iteration: 145
+# TX Iteration: 146
+# TX Iteration: 147
+# TX Iteration: 148
+# TX Iteration: 149
+# TX Iteration: 150
+# TX Iteration: 171
+# TX Iteration: 172
+# TX Iteration: 173
+# TX Iteration: 174
+# TX Iteration: 175
+# TX Iteration: 176
+# TX Iteration: 177
+# TX Iteration: 178
+# TX Iteration: 179
+# TX Iteration: 180
+# TX Iteration: 181
+# TX Iteration: 182
+# TX Iteration: 183
+# TX Iteration: 184
+# TX Iteration: 185
+# TX Iteration: 186
+# TX Iteration: 187
+# TX Iteration: 188
+# TX Iteration: 189
+# TX Iteration: 190
+# TX Iteration: 241
+# TX Iteration: 242
+# TX Iteration: 243
+# TX Iteration: 244
+# TX Iteration: 245
+# TX Iteration: 246
+# TX Iteration: 247
+# TX Iteration: 248
+# TX Iteration: 249
+# TX Iteration: 250
+# TX Iteration: 251
+# TX Iteration: 252
+# TX Iteration: 253
+# TX Iteration: 254
+# TX Iteration: 255
+# TX Iteration: 256
+# TX Iteration: 257
+# TX Iteration: 258
+# TX Iteration: 259
+# TX Iteration: 260
+# TX Iteration: 261
+# TX Iteration: 262
+# TX Iteration: 263
+# TX Iteration: 264
+# TX Iteration: 265
+# TX Iteration: 266
+# TX Iteration: 267
+# TX Iteration: 268
+# TX Iteration: 269
+# TX Iteration: 270
+# TX Iteration: 271
+# TX Iteration: 272
+# TX Iteration: 273
+# TX Iteration: 274
+# TX Iteration: 275
+# TX Iteration: 276
+# TX Iteration: 277
+# TX Iteration: 278
+# TX Iteration: 279
+# TX Iteration: 280
+# TX Iteration: 281
+# TX Iteration: 282
+# TX Iteration: 283
+# TX Iteration: 284
+# TX Iteration: 285
+# TX Iteration: 286
+# TX Iteration: 287
+# TX Iteration: 288
+# TX Iteration: 289
+# TX Iteration: 290
+# ** Note: $stop    : APB_interface_testbench.v(589)
+#    Time: 13106542850 ns  Iteration: 0  Instance: /testbench
+# Break in Module testbench at APB_interface_testbench.v line 589
