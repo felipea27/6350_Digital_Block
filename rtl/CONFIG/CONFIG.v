@@ -16,7 +16,7 @@ module CONFIG #(
     output reg [15:0] ext_counter_value_TX,
     output reg        ext_counter_flag_TX,
     output reg [1:0]  osc_freq,
-    output reg [3:0]  arthur
+    output reg [7:0]  arthur
 );
 
 
@@ -141,7 +141,7 @@ always @(posedge clk or negedge rst) begin
 				    osc_freq <= spi_rx_data[1:0];
 				end
 				OP_ARTHUR: begin
-				    arthur <= spi_rx_data[3:0];
+				    arthur <= spi_rx_data[7:0];
 				end
 				default: ;
 			    endcase

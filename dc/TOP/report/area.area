@@ -3,29 +3,29 @@
 Report : area
 Design : TOP
 Version: V-2023.12-SP1
-Date   : Fri May 30 22:50:13 2025
+Date   : Sun Jun  1 04:15:29 2025
 ****************************************
 
 Library(s) Used:
 
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
-Number of ports:                           19
-Number of nets:                          1461
-Number of cells:                         1440
-Number of combinational cells:           1176
-Number of sequential cells:               264
+Number of ports:                           23
+Number of nets:                          1472
+Number of cells:                         1451
+Number of combinational cells:           1183
+Number of sequential cells:               268
 Number of macros/black boxes:               0
-Number of buf/inv:                        494
+Number of buf/inv:                        497
 Number of references:                      55
 
-Combinational area:                285.826315
-Buf/Inv area:                       69.593038
-Noncombinational area:             314.515450
+Combinational area:                288.331914
+Buf/Inv area:                       70.219438
+Noncombinational area:             319.276090
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   600.341764
+Total cell area:                   607.608004
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,8 +36,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-TOP                                600.3418    100.0  285.8263   314.5154  0.0000  TOP
+TOP                                607.6080    100.0  288.3319   319.2761  0.0000  TOP
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                 285.8263   314.5154  0.0000
+Total                                                 288.3319   319.2761  0.0000
 
 1

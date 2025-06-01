@@ -27,7 +27,7 @@ module testbench;
 	reg RX_MODE;
 	reg TX_BY;
 	reg CONFIG;
-	wire [3:0] arthur;
+	wire [7:0] arthur;
 	wire [1:0] osc_freq;
 
 	// Outputs
@@ -407,7 +407,7 @@ module testbench;
 		#200
 		
 		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		configuration(8'b00000011, 8'b00001101, 16'h2710, 16'h2500); //~9500
+		configuration(8'b00000011, 8'b01001101, 16'h2710, 16'h2500); //~9500
 
 		/*CONFIG = 1;
 		#300;	
@@ -503,7 +503,7 @@ module testbench;
 		end
 		#8000;
 		
-		configuration(8'b00000001, 8'b00000001, 16'h2510, 16'h2900); //~9500
+		configuration(8'b00000001, 8'b10000001, 16'h2510, 16'h2900); //~9500
 		
 		repeat(1) begin	
 			repeat(20) begin

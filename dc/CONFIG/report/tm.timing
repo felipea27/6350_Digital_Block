@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : CONFIG
 Version: V-2023.12-SP1
-Date   : Fri May 30 22:43:46 2025
+Date   : Sun Jun  1 04:10:27 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
@@ -14,7 +14,7 @@ Wire Load Model Mode: enclosed
 
   Startpoint: spi_rx_valid_prev_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: ext_counter_value_RX_reg[0]
+  Endpoint: ext_counter_flag_TX_reg
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -29,34 +29,31 @@ Wire Load Model Mode: enclosed
   clock network delay (propagated)                        0.00       0.00
   spi_rx_valid_prev_reg/CK (UDB116SVT24_FDPRBQ_V2_1)      0.00       0.00 r
   spi_rx_valid_prev_reg/Q (UDB116SVT24_FDPRBQ_V2_1)       0.04       0.04 f
-  U175/X (UDB116SVT24_INV_0P75)                           0.01       0.05 r
-  U176/X (UDB116SVT24_ND3_0P75)                           0.02       0.07 f
-  U180/X (UDB116SVT24_NR4_0P75)                           0.03       0.10 r
-  U203/X (UDB116SVT24_ND2_MM_0P75)                        0.02       0.11 f
-  U204/X (UDB116SVT24_NR2_0P75)                           0.02       0.13 r
-  U139/X (UDB116SVT24_INV_0P75)                           0.01       0.14 f
-  U140/X (UDB116SVT24_INV_0P75)                           0.01       0.16 r
-  U105/X (UDB116SVT24_INV_0P75)                           0.01       0.17 f
-  U106/X (UDB116SVT24_INV_0P75)                           0.01       0.18 r
-  U148/X (UDB116SVT24_BUF_1)                              0.02       0.20 r
-  U108/X (UDB116SVT24_INV_0P75)                           0.01       0.21 f
-  U249/X (UDB116SVT24_OA22_1)                             0.02       0.23 f
-  ext_counter_value_RX_reg[0]/D (UDB116SVT24_FDPRBQ_V2_1)
-                                                          0.00       0.23 f
-  data arrival time                                                  0.23
+  U185/X (UDB116SVT24_INV_0P75)                           0.01       0.05 r
+  U186/X (UDB116SVT24_ND3_0P75)                           0.02       0.07 f
+  U190/X (UDB116SVT24_NR4_0P75)                           0.03       0.10 r
+  U207/X (UDB116SVT24_ND2_MM_0P75)                        0.02       0.11 f
+  U159/X (UDB116SVT24_OR2_0P75)                           0.02       0.14 f
+  U161/X (UDB116SVT24_INV_0P75)                           0.01       0.15 r
+  U110/X (UDB116SVT24_INV_0P75)                           0.01       0.16 f
+  U111/X (UDB116SVT24_INV_0P75)                           0.01       0.17 r
+  U236/X (UDB116SVT24_AOI21_0P75)                         0.01       0.18 f
+  U238/X (UDB116SVT24_OAI21_0P75)                         0.01       0.19 r
+  ext_counter_flag_TX_reg/D (UDB116SVT24_FDPRBQ_V2_1)     0.00       0.19 r
+  data arrival time                                                  0.19
 
   clock clk (rise edge)                                 100.00     100.00
   clock network delay (propagated)                        0.00     100.00
   clock uncertainty                                      -0.10      99.90
-  ext_counter_value_RX_reg[0]/CK (UDB116SVT24_FDPRBQ_V2_1)
+  ext_counter_flag_TX_reg/CK (UDB116SVT24_FDPRBQ_V2_1)
                                                           0.00      99.90 r
-  library setup time                                      0.00      99.90
-  data required time                                                99.90
+  library setup time                                     -0.02      99.88
+  data required time                                                99.88
   --------------------------------------------------------------------------
-  data required time                                                99.90
-  data arrival time                                                 -0.23
+  data required time                                                99.88
+  data arrival time                                                 -0.19
   --------------------------------------------------------------------------
-  slack (MET)                                                       99.67
+  slack (MET)                                                       99.69
 
 
 1

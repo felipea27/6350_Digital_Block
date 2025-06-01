@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : TOP
 Version: V-2023.12-SP1
-Date   : Fri May 30 22:50:13 2025
+Date   : Sun Jun  1 04:15:29 2025
 ****************************************
 
 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   6.7896 uW   (98%)
-  Net Switching Power  = 159.5094 nW    (2%)
+  Cell Internal Power  =   6.8923 uW   (98%)
+  Net Switching Power  = 161.1019 nW    (2%)
                          ---------
-Total Dynamic Power    =   6.9491 uW  (100%)
+Total Dynamic Power    =   7.0534 uW  (100%)
 
-Cell Leakage Power     =   3.0602 uW
+Cell Leakage Power     =   3.1021 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  6.6796e-03            0.0000            0.0000        6.6796e-03  (  66.73%)  i
-register       3.3039e-05        5.9061e-06        1.6048e+03        1.6437e-03  (  16.42%)
+clock_network  6.7818e-03            0.0000            0.0000        6.7818e-03  (  66.78%)  i
+register       3.3075e-05        6.1733e-06        1.6287e+03        1.6680e-03  (  16.42%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  7.6971e-05        1.5360e-04        1.4554e+03        1.6859e-03  (  16.84%)
+combinational  7.7421e-05        1.5493e-04        1.4734e+03        1.7057e-03  (  16.80%)
 --------------------------------------------------------------------------------------------------
-Total          6.7896e-03 mW     1.5951e-04 mW     3.0602e+03 nW     1.0009e-02 mW
+Total          6.8923e-03 mW     1.6110e-04 mW     3.1021e+03 nW     1.0156e-02 mW
 1

@@ -3,29 +3,29 @@
 Report : area
 Design : CONFIG
 Version: V-2023.12-SP1
-Date   : Fri May 30 22:43:46 2025
+Date   : Sun Jun  1 04:10:27 2025
 ****************************************
 
 Library(s) Used:
 
     gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C (File: /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C.db)
 
-Number of ports:                           52
-Number of nets:                           234
-Number of cells:                          222
-Number of combinational cells:            161
-Number of sequential cells:                61
+Number of ports:                           56
+Number of nets:                           248
+Number of cells:                          236
+Number of combinational cells:            171
+Number of sequential cells:                65
 Number of macros/black boxes:               0
-Number of buf/inv:                         80
+Number of buf/inv:                         86
 Number of references:                      20
 
-Combinational area:                 41.968799
-Buf/Inv area:                       11.337840
-Noncombinational area:              72.599762
+Combinational area:                 44.411759
+Buf/Inv area:                       12.089520
+Noncombinational area:              77.360402
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   114.568561
+Total cell area:                   121.772161
 Total area:                 undefined
 
 Hierarchical area distribution
@@ -36,8 +36,8 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
                                   Total      Total    national  national   boxes   Design
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-CONFIG                             114.5686    100.0   41.9688    72.5998  0.0000  CONFIG
+CONFIG                             121.7722    100.0   44.4118    77.3604  0.0000  CONFIG
 --------------------------------  ---------  -------  --------  ---------  ------  ---------
-Total                                                  41.9688    72.5998  0.0000
+Total                                                  44.4118    77.3604  0.0000
 
 1
