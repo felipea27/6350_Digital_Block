@@ -1,0 +1,47 @@
+[05/31 18:24:48      0s] 
+[05/31 18:24:48      0s] Cadence Innovus(TM) Implementation System.
+[05/31 18:24:48      0s] Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+[05/31 18:24:48      0s] 
+[05/31 18:24:48      0s] Version:	v23.10-p003_1, built Thu Feb 1 13:54:57 PST 2024
+[05/31 18:24:48      0s] Options:	
+[05/31 18:24:48      0s] Date:		Sat May 31 18:24:48 2025
+[05/31 18:24:48      0s] Host:		linrack7.bioeelocal (x86_64 w/Linux 3.10.0-1160.21.1.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) CPU E5-2667 v3 @ 3.20GHz 20480KB)
+[05/31 18:24:48      0s] OS:		Red Hat Enterprise Linux
+[05/31 18:24:48      0s] 
+[05/31 18:24:48      0s] License:
+[05/31 18:24:48      0s] 		[18:24:48.494553] Configured Lic search path (23.02-s003): 5280@bioeelincad.ee.columbia.edu
+
+[05/31 18:24:48      0s] 		invs	Innovus Implementation System	23.1	checkout succeeded
+[05/31 18:24:48      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[05/31 18:24:48      0s] **WARN: (IMPSYT-1507):	The display is invalid and will start in no window mode
+[05/31 18:24:49      1s] {{{ isCertus 0,  isCertusOrDistOptClient = 0, isInnovusCertusClient = 0}}}
+[05/31 18:25:06     15s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v23.10-p003_1 (64bit) 02/01/2024 13:54 (Linux 3.10.0-693.el7.x86_64)
+[05/31 18:25:10     18s] @(#)CDS: NanoRoute 23.10-p003_1 NR240109-1512/23_10-UB (database version 18.20.618) {superthreading v2.20}
+[05/31 18:25:10     18s] @(#)CDS: AAE 23.10-p002 (64bit) 02/01/2024 (Linux 3.10.0-693.el7.x86_64)
+[05/31 18:25:10     18s] @(#)CDS: CTE 23.10-p003_1 () Dec  5 2023 19:42:23 ( )
+[05/31 18:25:10     18s] @(#)CDS: SYNTECH 23.10-p002_1 () Nov 29 2023 02:17:21 ( )
+[05/31 18:25:10     18s] @(#)CDS: CPE v23.10-p004
+[05/31 18:25:10     18s] @(#)CDS: IQuantus/TQuantus 22.1.1-s215 (64bit) Mon Nov 20 10:05:08 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[05/31 18:25:10     18s] @(#)CDS: OA 22.61-p007 Wed Sep 27 19:40:10 2023
+[05/31 18:25:10     18s] @(#)CDS: SGN 23.10-d005 (03-Oct-2023) (64 bit executable, TkQt5.15.9)
+[05/31 18:25:10     18s] @(#)CDS: RCDB 11.15.0
+[05/31 18:25:10     18s] @(#)CDS: STYLUS 23.10-a001_1 (12/04/2023 04:39 PST)
+[05/31 18:25:10     18s] @(#)CDS: IntegrityPlanner-23.10-12651 (23.10) (2023-09-06 08:32:42+0800)
+[05/31 18:25:10     18s] @(#)CDS: SYNTHESIS_ENGINE 23.10-b027
+[05/31 18:25:10     18s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_5219_linrack7.bioeelocal_ssokolovskiy_B6hrYQ.
+
+[05/31 18:25:10     18s] Change the soft stacksize limit to 0.2%RAM (515 mbytes). Set global soft_stack_size_limit to change the value.
+[05/31 18:25:12     19s] 
+[05/31 18:25:12     19s] **INFO:  MMMC transition support version v31-84 
+[05/31 18:25:12     19s] 
+[05/31 18:25:12     19s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[05/31 18:25:12     19s] <CMD> suppressMessage ENCEXT-2799
+[05/31 18:25:12     19s] <CMD> getVersion
+[05/31 18:25:12     19s] [INFO] Loading PVS 23.10 fill procedures
+[05/31 18:25:13     19s] **WARN: Tk package not loaded. The PVS fill DRC monitor is disabled.
+[05/31 18:25:41     20s] invalid command name "loadDesign"
+[05/31 18:26:03     20s] 
+[05/31 18:26:03     20s] *** Memory Usage v#2 (Current mem = 1571.379M, initial mem = 820.656M) ***
+[05/31 18:26:03     20s] *** Message Summary: 0 warning(s), 0 error(s)
+[05/31 18:26:03     20s] 
+[05/31 18:26:03     20s] --- Ending "Innovus" (totcpu=0:00:20.0, real=0:01:15, mem=1571.4M) ---

@@ -1,0 +1,70 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sat May 31 18:26:34 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v23.10-p003_1 (64bit) 02/01/2024 13:54 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 23.10-p003_1 NR240109-1512/23_10-UB (database version 18.20.618) {superthreading v2.20}
+#@(#)CDS: AAE 23.10-p002 (64bit) 02/01/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 23.10-p003_1 () Dec  5 2023 19:42:23 ( )
+#@(#)CDS: SYNTECH 23.10-p002_1 () Nov 29 2023 02:17:21 ( )
+#@(#)CDS: CPE v23.10-p004
+#@(#)CDS: IQuantus/TQuantus 22.1.1-s215 (64bit) Mon Nov 20 10:05:08 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+restoreDesign TOPv7
+restoreDesign -help
+man IMPSYt-7338
+restoreDesign TOPv7.dat
+verify_drc
+editDelete -regular_wire_with_drc
+routeDesign
+verify_drc
+setMultiCpuUsage -localCpu max
+setNanoRouteMode -route_detail_end_iteration 100
+editDelete -regular_wire_with_drc
+routeDesign
+verify_drc
+editDelete -regular_wire_with_drc
+routeDesign
+verify_drc
+ecoRoute -fix_drc
+verify_drc
+setNanoRouteMode -route_detail_auto_stop false
+editDelete -regular_wire_with_drc
+routeDesign
+verify_drc
+ecoRoute -target
+verify_drc
+ecoRoute -fix_drc
+verify_drc
+ecoRoute -fix_drc
+verify_drc
+setDesignMode -bottomRoutingLayer M2
+editDelete -regular_wire_with_drc
+ecoRoute
+verify_drc
+ecoRoute -fix_drc
+verify_drc
+verify_connectivity
+setNanoRouteMode -route_detail_end_iteration 30
+editDelete -regular_wire_with_drc
+ecoRoute
+verify_connectivity
+setDesignMode -bottomRoutingLayer M1
+ecoRoute -fix_drc
+ecoRoute -fix_drc
+verify_drc
+ecoRoute -target
+editDelete -regular_wire_with_drc
+ecoRoute -target
+verify_drc
+timeDesign -postRoute -hold
+timeDesign -postRoute -setup
+verify_connectivity
+verify_antenna
+saveDesign TOPv7drcclean

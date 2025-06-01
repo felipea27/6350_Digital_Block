@@ -1,0 +1,31 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v23.10-p003_1, built Thu Feb 1 13:54:57 PST 2024
+Options:	
+Date:		Sat May 31 18:24:48 2025
+Host:		linrack7.bioeelocal (x86_64 w/Linux 3.10.0-1160.21.1.el7.x86_64) (8cores*32cpus*Intel(R) Xeon(R) CPU E5-2667 v3 @ 3.20GHz 20480KB)
+OS:		Red Hat Enterprise Linux
+
+License:
+		[18:24:48.494553] Configured Lic search path (23.02-s003): 5280@bioeelincad.ee.columbia.edu
+
+		invs	Innovus Implementation System	23.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPSYT-1507):	The display is invalid and will start in no window mode
+Change the soft stacksize limit to 0.2%RAM (515 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 23.10 fill procedures
+**WARN: Tk package not loaded. The PVS fill DRC monitor is disabled.
+invalid command name "loadDesign"
+
+*** Memory Usage v#2 (Current mem = 1571.379M, initial mem = 820.656M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:20.0, real=0:01:15, mem=1571.4M) ---

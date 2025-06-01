@@ -1,0 +1,106 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sat May 31 22:04:41 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v23.10-p003_1 (64bit) 02/01/2024 13:54 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 23.10-p003_1 NR240109-1512/23_10-UB (database version 18.20.618) {superthreading v2.20}
+#@(#)CDS: AAE 23.10-p002 (64bit) 02/01/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 23.10-p003_1 () Dec  5 2023 19:42:23 ( )
+#@(#)CDS: SYNTECH 23.10-p002_1 () Nov 29 2023 02:17:21 ( )
+#@(#)CDS: CPE v23.10-p004
+#@(#)CDS: IQuantus/TQuantus 22.1.1-s215 (64bit) Mon Nov 20 10:05:08 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+restoreDesign TOPv7drcclean.dat
+zoomBox 5.28800 11.36100 36.90400 39.57300
+zoomBox 10.25900 16.72100 24.28800 29.24000
+zoomBox 12.46400 19.09800 18.69100 24.65500
+zoomBox 13.30600 20.00500 16.55700 22.90600
+zoomBox 13.74400 20.47800 15.44200 21.99300
+zoomBox 13.97300 20.72400 14.86000 21.51600
+zoomBox 13.55700 20.27600 15.91000 22.37600
+zoomBox -9.55800 -4.63800 74.52300 70.39100
+zoomBox -31.32800 -28.10500 129.74400 115.62700
+zoomBox -2.96200 2.47200 57.78800 56.68200
+getMultiCpuUsage -localCpu
+get_verify_drc_mode -disable_rules -quiet
+get_verify_drc_mode -quiet -area
+get_verify_drc_mode -quiet -layer_range
+get_verify_drc_mode -check_ndr_spacing -quiet
+get_verify_drc_mode -check_only -quiet
+get_verify_drc_mode -check_same_via_cell -quiet
+get_verify_drc_mode -exclude_pg_net -quiet
+get_verify_drc_mode -ignore_trial_route -quiet
+get_verify_drc_mode -max_wrong_way_halo -quiet
+get_verify_drc_mode -use_min_spacing_on_block_obs -quiet
+get_verify_drc_mode -limit -quiet
+set_verify_drc_mode -disable_rules {} -check_ndr_spacing auto -check_only default -check_same_via_cell true -exclude_pg_net false -ignore_trial_route false -ignore_cell_blockage false -use_min_spacing_on_block_obs auto -report TOP.drc.rpt -limit 1000
+verify_drc
+set_verify_drc_mode -area {0 0 0 0}
+zoomBox -1.26900 17.38500 30.44500 45.68500
+zoomBox -0.99100 19.82800 25.96600 43.88300
+zoomBox -0.75600 21.90500 22.15800 42.35200
+zoomBox -0.55600 23.67000 18.92100 41.05000
+zoomBox 0.21400 30.46500 6.45900 36.03800
+zoomBox 0.35300 31.70200 4.19000 35.12600
+zoomBox 0.31300 31.35300 4.82800 35.38200
+zoomBox 0.26600 30.94400 5.57800 35.68400
+zoomBox -1.35900 27.32400 10.61500 38.00900
+zoomBox -13.95500 16.60100 17.79700 44.93500
+zoomBox 5.12800 27.27000 17.10500 37.95800
+zoomBox 6.86100 28.23900 17.04200 37.32400
+zoomBox 8.33400 29.06300 16.98800 36.78500
+zoomBox 9.58700 29.76300 16.94300 36.32700
+zoomBox 16.35000 33.52300 16.68600 33.82300
+zoomBox 16.39700 33.54800 16.68300 33.80300
+zoomBox 16.43700 33.56900 16.68000 33.78600
+zoomBox 12.40100 31.42200 16.94900 35.48000
+zoomBox 11.64800 31.02100 16.99900 35.79600
+zoomBox 10.76200 30.55000 17.05800 36.16800
+zoomBox 5.35500 27.67700 17.41700 38.44000
+zoomBox 0.54000 23.36400 23.64800 43.98400
+verifyConnectivity -type all -geomConnect -error 1000 -warning 50
+zoomBox -22.42800 9.50500 38.84300 64.18000
+panPage 1 0
+zoomBox 20.45300 26.10400 52.43800 54.64600
+zoomBox 30.77700 33.09900 50.42100 50.62800
+zoomBox 38.06000 37.62800 48.31400 46.77800
+zoomBox 43.24900 41.28400 45.62600 43.40500
+panPage -1 0
+panPage -1 0
+zoomBox 42.37000 41.79700 43.83100 43.10100
+zoomBox 42.50100 41.92000 43.74300 43.02800
+zoomBox 42.85500 42.25100 43.50400 42.83000
+zoomBox 42.49900 41.91700 43.74400 43.02800
+zoomBox 41.81500 41.27700 44.20200 43.40700
+panPage 1 0
+panPage 1 0
+panPage 0 1
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+panPage 1 0
+zoomBox 38.21300 33.84200 55.00600 48.82700
+zoomBox 15.35700 13.31300 76.98800 68.30900
+zoomBox -4.38300 -4.41600 95.97300 85.13600
+zoomBox -2.35900 18.60600 35.49200 52.38200
+zoomBox -7.05500 8.29200 45.33400 55.04100
+zoomBox -10.80800 3.90300 50.82600 58.90200
+zoomBox -382.25500 -430.43700 594.34200 441.02700
+zoomBox -192.74800 -208.84000 317.04200 246.07000
+zoomBox -65.48200 -67.59500 160.71600 134.25200
+zoomBox -14.72600 -7.04600 85.64100 82.51600
+zoomBox -1.01200 9.02800 60.62500 64.03000
+reportCongestion -h
+reportCongestion -hotSpot
+reportCongestion -overflow
+zoomBox -15.81300 -4.23700 69.49900 71.89100
+uiSetTool ruler
+verify_drc

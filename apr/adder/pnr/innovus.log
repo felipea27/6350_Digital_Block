@@ -1,0 +1,614 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v23.10-p003_1, built Thu Feb 1 13:54:57 PST 2024
+Options:	
+Date:		Sat May 31 13:35:55 2025
+Host:		linrack12.bioeelocal (x86_64 w/Linux 4.18.0-553.22.1.el8_10.x86_64) (24cores*48cpus*Intel(R) Xeon(R) Gold 6240R CPU @ 2.40GHz 36608KB)
+OS:		Red Hat Enterprise Linux 8.10 (Ootpa)
+
+License:
+		[13:35:55.494513] Configured Lic search path (23.02-s003): 5280@bioeelincad.ee.columbia.edu
+
+		invs	Innovus Implementation System	23.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (1544 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 23.10 fill procedures
+<CMD> win
+<CMD> set_message -id IMPLF-200 -suppress
+<CMD> set_message -id IMPLF-201 -suppress
+<CMD> set_message -id IMPFP-3961 -suppress
+<CMD> set_message -id IMPSP-9025 -suppress
+<CMD> set init_gnd_net gnd
+<CMD> set init_lef_file {/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef}
+<CMD> set init_design_settop 0
+<CMD> set init_verilog ../addder_nl.v
+<CMD> set init_mmmc_file mmmc_setup.tcl
+<CMD> set init_pwr_net vdd
+<CMD> init_design -setup view_slow_mission -hold view_fast_mission
+#% Begin Load MMMC data ... (date=05/31 13:39:07, mem=1773.6M)
+#% End Load MMMC data ... (date=05/31 13:39:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=1774.5M, current mem=1774.5M)
+rc_fast rc_slow
+INFO: New setup and hold views overwrite old settings during design initialization
+
+Loading LEF file /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef ...
+
+Loading LEF file /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef ...
+
+Loading LEF file /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef ...
+Set DBUPerIGU to M1 pitch 116.
+[13:39:07.274952] Periodic Lic check successful
+[13:39:07.799298] Feature usage summary:
+[13:39:07.799299] Innovus_Impl_System
+[13:39:07.799299] Innovus_20nm_Opt
+
+This command "init_design -setup view_slow_mission -hold view_fast_mission" required an extra checkout of license invs_20nm.
+Additional license(s) checked out: 1 'Innovus_20nm_Opt' license(s)
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from mmmc_setup.tcl
+Reading lib_slow timing library '/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_TIEDIN_1'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT9'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT8'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT7'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT6'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT5'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT4'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT3'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT20'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT2'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT19'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT18'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT17'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT16'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT15'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT14'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT13'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT12'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT11'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'UDB116SVT24_FILL_ECOCT10'. The cell will only be used for analysis. (File /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C.lib)
+Message <TECHLIB-302> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+Read 1371 cells in library 'gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C' 
+Reading lib_fast timing library '/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/liberty/logic_synth_lvf/gf22nspslogl24edl116f_FFG_0P88V_0P00V_0P00V_0P00V_M40C.lib' ...
+Read 1371 cells in library 'gf22nspslogl24edl116f_FFG_0P88V_0P00V_0P00V_0P00V_M40C' 
+*** End library_loading (cpu=1.19min, real=1.20min, mem=1026.1M, fe_cpu=1.72min, fe_real=4.42min, fe_mem=2686.5M) ***
+**ERROR: (IMPSYT-16038):	The specified file '../addder_nl.v' could not be found. Check your file system, correct the file name.
+**ERROR: (IMPIMEX-7008):	No netlist files are found.
+
+<CMD> set_message -id IMPLF-200 -suppress
+<CMD> set_message -id IMPLF-201 -suppress
+<CMD> set_message -id IMPFP-3961 -suppress
+<CMD> set_message -id IMPSP-9025 -suppress
+<CMD> set init_gnd_net gnd
+<CMD> set init_lef_file {/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef}
+<CMD> set init_design_settop 0
+<CMD> set init_verilog ../adder_nl.v
+<CMD> set init_mmmc_file mmmc_setup.tcl
+<CMD> set init_pwr_net vdd
+<CMD> init_design -setup view_slow_mission -hold view_fast_mission
+#% Begin Load MMMC data ... (date=05/31 13:46:20, mem=2025.3M)
+**WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+Type 'man IMPOPT-3000' for more detail.
+**WARN: (IMPOPT-3001):	Inverter footprint is not defined or is an invalid inverter footprint.
+Type 'man IMPOPT-3001' for more detail.
+Extraction setup Started 
+Innovus terminated by internal (SEGV) error/signal.
+Crashing Thread ID: 0
+------------------------------------------------------------
+*** Stack trace:
+*** Stack trace:
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x212c74e5]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(syStackTrace+0xad)[0x212c7a17]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0xd6929e6]
+/lib64/libpthread.so.0(+0x12d0f)[0x7fac8103cd0f]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN8pesTrack8getPitchEi+0xa)[0x18a5b6aa]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN14peEngineClient16getLayerInfoByIdERSt6vectorI11eeLayerInfoSaIS1_EE+0x5ef)[0x18a5002f]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN14peEngineClient12getLayerInfoERSt6vectorI11eeLayerInfoSaIS1_EE+0x63a)[0x18a50d6a]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN21eeExtEngineDesignData12setLayerInfoEv+0x37)[0xddee747]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x18903cff]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_Z10dbMCRCInitv+0x15)[0x1890ec75]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_Z28peiInitializeExtractionSetUpb+0x67)[0x1890fb77]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x1cbf8475]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN6TAMmmc14updateRcCornerEP14TAMmmcRcCornerPKcf9tabooleanR18TAMmmcTripleFactorS4_fS4_S6_S4_S6_S4_fS4_fS4_S6_S4_S6_S4_S6_S4_S3_S3_S3_fS4_S3_S3_+0x416)[0x217796f6]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_Z30TaCmd_createOrUpdate_rc_cornerPvP10Tcl_InterpiPPc9tabooleanP6tcmCmd+0x1190)[0x2367d9d0]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN10tcmBaseCmd7executeEP10Tcl_InterpiPPc+0x22f)[0x24921c6f]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN6tcmMgr9cmdParserEPvP10Tcl_InterpiPPc+0xa9e)[0x2491491e]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(TclInvokeStringCommand+0x7a)[0x336ad2da]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x336b1dd1]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x336b3ffe]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(Tcl_CDNSEvalEx+0x12)[0x336b4b52]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(TclNREvalObjEx+0x72)[0x336b4c12]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x3376b184]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x336c8334]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x336b1dd1]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x336b3ffe]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(Tcl_CDNSEvalEx+0x12)[0x336b4b52]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(TclNREvalObjEx+0x72)[0x336b4c12]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x3376b184]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x336c8334]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x71)[0x336b1dd1]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(Tcl_RecordAndEvalObj+0xd3)[0x337501d3]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(Tcl_RecordAndEval+0x38)[0x33750348]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_Z17rdaEditCmdLineEndPc+0x1c6)[0xd78fcd6]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN9seConsole7sesMode9DoExecuteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPv+0xf0)[0x1ccded90]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline9EmacsMode10AcceptLineEv+0x3f)[0x1e811adf]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline11ModeCommandINS_9EmacsModeEE15CommandFnNoKeysERKN5boost8functionIFvRS1_EEERNS_6EditorE+0x60)[0x1e819ea0]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN5boost6detail8function26void_function_obj_invoker2INS_3_bi6bind_tINS3_11unspecifiedENS_8functionIFvRN7Redline6EditorEEEENS3_5list1INS_3argILi1EEEEEEEvS9_RKNS7_14KeyCombinationEE6invokeERNS1_15function_bufferES9_SJ_+0x1a)[0x1e828f6a]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZNK7Redline7Command3RunERNS_6EditorERKNS_14KeyCombinationE+0x1b)[0x1e82878b]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline6Editor9Internals3RunEb+0xc6)[0x1e80eb76]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0x337b6c8d]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(Tcl_ServiceEvent+0x88)[0x337773b8]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(Tcl_DoOneEvent+0x148)[0x337776c8]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/libtq.so(_ZN17TqEventDispatcher13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE+0x8e)[0x7fac91fdd50e]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE+0x11a)[0x7fac90ab1eca]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5(_ZN16QCoreApplication4execEv+0x7b)[0x7fac90ab991b]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/libtq.so(_ZN13TqApplication4execEv+0x169)[0x7fac91fdce49]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(_Z12edi_app_initP10Tcl_Interp+0x2eb)[0xd76ca7b]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(Tcl_MainEx+0x17b)[0x33771dfb]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus(main+0x800)[0x701d810]
+/lib64/libc.so.6(__libc_start_main+0xe4)[0x7fac804767e4]
+/tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/innovus[0xd68f36a]
+========================================
+               pstack
+========================================
+Thread 10 (Thread 0x7fac18711700 (LWP 1000309)):
+#0  0x00007fac8103847c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007fac908cdb43 in QWaitCondition::wait(QMutex*, QDeadlineTimer) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007fac904dde22 in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007fac908c7f6f in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x00000000213085b4 in create_head(void*) ()
+#5  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 9 (Thread 0x7fac461c1700 (LWP 1000301)):
+#0  0x00007fac8056ebb6 in ppoll () from /lib64/libc.so.6
+#1  0x00007fac90b05819 in qt_safe_poll(pollfd*, unsigned long, timespec const*) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007fac90b06ca3 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#3  0x00007fac90ab1ecb in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x00007fac908c6f1e in QThread::exec() () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x00007fac7c1072c7 in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5DBus.so.5
+#6  0x00007fac908c7f6f in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#7  0x00000000213085b4 in create_head(void*) ()
+#8  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#9  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 8 (Thread 0x7fac51bbd700 (LWP 1000300)):
+#0  0x00007fac8048b30c in sigtimedwait () from /lib64/libc.so.6
+#1  0x00007fac8103c89c in sigwait () from /lib64/libpthread.so.0
+#2  0x000000000d690200 in ctrlCHandle(void*) ()
+#3  0x00000000213085b4 in create_head(void*) ()
+#4  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 7 (Thread 0x7fac52953700 (LWP 1000299)):
+#0  0x00007fac805711ff in select () from /lib64/libc.so.6
+#1  0x00000000337b6988 in NotifierThreadProc ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 6 (Thread 0x7fac5366f700 (LWP 1000298)):
+#0  0x00007fac8056eac1 in poll () from /lib64/libc.so.6
+#1  0x00007fac81f2a6cf in _xcb_conn_wait () from /lib64/libxcb.so.1
+#2  0x00007fac81f2c35a in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007fac7ee08390 in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/../../Qt/v5/64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007fac908c7f6f in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x00000000213085b4 in create_head(void*) ()
+#6  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#7  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 5 (Thread 0x7fac53f76700 (LWP 1000297)):
+#0  0x00007fac80544098 in nanosleep () from /lib64/libc.so.6
+#1  0x00007fac80543f9e in sleep () from /lib64/libc.so.6
+#2  0x00000000212e37b2 in syiPeakMem(void*) ()
+#3  0x00000000213085b4 in create_head(void*) ()
+#4  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 4 (Thread 0x7fac54f78700 (LWP 1000295)):
+#0  0x00007fac8103c1a0 in nanosleep () from /lib64/libpthread.so.0
+#1  0x000000000f76bb5d in rdaiLicRecheck(void*) ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 3 (Thread 0x7fac561c2700 (LWP 1000286)):
+#0  0x00007fac805711ff in select () from /lib64/libc.so.6
+#1  0x0000000031e0fabb in ProcessInfo::sampleUsage(void*) ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 2 (Thread 0x7fac569c3700 (LWP 1000285)):
+#0  0x00007fac8103bbf7 in accept () from /lib64/libpthread.so.0
+#1  0x0000000031e17e57 in ProcessInfo::handleConnection(void*) ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7fac77b9da40 (LWP 1000265)):
+#0  0x00007fac80543e42 in waitpid () from /lib64/libc.so.6
+#1  0x00007fac80497747 in do_system () from /lib64/libc.so.6
+#2  0x00000000212c7611 in syStackTraceDump(_IO_FILE*, bool) ()
+#3  0x00000000212c7a18 in syStackTrace ()
+#4  0x000000000d6929e7 in rdaiErrorHandler1(int) ()
+#5  <signal handler called>
+#6  0x0000000018a5b6aa in pesTrack::getPitch(int) ()
+#7  0x0000000018a50030 in peEngineClient::getLayerInfoById(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#8  0x0000000018a50d6b in peEngineClient::getLayerInfo(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#9  0x000000000ddee748 in eeExtEngineDesignData::setLayerInfo() ()
+#10 0x0000000018903d00 in eeExtEngineDesignData::resetDesignData ()
+#11 0x000000001890ec76 in dbMCRCInit() ()
+#12 0x000000001890fb78 in peiInitializeExtractionSetUp(bool) ()
+#13 0x000000001cbf8476 in toiCteUpdateRcCornerPostCallback(TAMmmcRcCorner*, TAMmmcUpdateRcCornerCbkInfo*) ()
+#14 0x00000000217796f7 in TAMmmc::updateRcCorner(TAMmmcRcCorner*, char const*, float, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, char const*, char const*, char const*, float, taboolean, char const*, char const*) ()
+#15 0x000000002367d9d1 in TaCmd_createOrUpdate_rc_corner(void*, Tcl_Interp*, int, char**, taboolean, tcmCmd*) ()
+#16 0x0000000024921c70 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#17 0x000000002491491f in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#18 0x00000000336ad2db in TclInvokeStringCommand ()
+#19 0x00000000336b1dd2 in TclNRRunCallbacks ()
+#20 0x00000000336b3fff in TclEvalEx ()
+#21 0x00000000336b4b53 in Tcl_CDNSEvalEx ()
+#22 0x00000000336b4c13 in TclNREvalObjEx ()
+#23 0x000000003376b185 in TclNREvalFile ()
+#24 0x00000000336c8335 in TclNRSourceObjCmd ()
+#25 0x00000000336b1dd2 in TclNRRunCallbacks ()
+#26 0x00000000336b3fff in TclEvalEx ()
+#27 0x00000000336b4b53 in Tcl_CDNSEvalEx ()
+#28 0x00000000336b4c13 in TclNREvalObjEx ()
+#29 0x000000003376b185 in TclNREvalFile ()
+#30 0x00000000336c8335 in TclNRSourceObjCmd ()
+#31 0x00000000336b1dd2 in TclNRRunCallbacks ()
+#32 0x00000000337501d4 in Tcl_RecordAndEvalObj ()
+#33 0x0000000033750349 in Tcl_RecordAndEval ()
+#34 0x000000000d78fcd7 in rdaEditCmdLineEnd(char*) ()
+#35 0x000000001ccded91 in seConsole::sesMode::DoExecute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void*) ()
+#36 0x000000001e811ae0 in Redline::EmacsMode::AcceptLine() ()
+#37 0x000000001e819ea1 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#38 0x000000001e828f6b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#39 0x000000001e82878c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#40 0x000000001e80eb77 in Redline::Editor::Internals::Run(bool) ()
+#41 0x00000000337b6c8e in FileHandlerEventProc ()
+#42 0x00000000337773b9 in Tcl_ServiceEvent ()
+#43 0x00000000337776c9 in Tcl_DoOneEvent ()
+#44 0x00007fac91fdd50f in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/libtq.so
+#45 0x00007fac90ab1ecb in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#46 0x00007fac90ab991c in QCoreApplication::exec() () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#47 0x00007fac91fdce4a in TqApplication::exec() () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/libtq.so
+#48 0x000000000d76ca7c in edi_app_init(Tcl_Interp*) ()
+#49 0x0000000033771dfc in Tcl_MainEx ()
+#50 0x000000000701d811 in main ()
+========================================
+                gdb
+========================================
+Using: gdb
+[New LWP 1000285]
+[New LWP 1000286]
+[New LWP 1000295]
+[New LWP 1000297]
+[New LWP 1000298]
+[New LWP 1000299]
+[New LWP 1000300]
+[New LWP 1000301]
+[New LWP 1000309]
+
+warning: Unable to open "librpm.so.8" (/lib64/librpm.so.8: undefined symbol: sqlite3_errstr), missing debuginfos notifications will not be displayed
+Missing separate debuginfo for /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/IntegrityPlanner/jre/lib/server/libjvm.so
+Missing separate debuginfo for /lib64/libXm.so.4
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/e8/c801fff4373bfcced0c2b54834b9eb8ec3469d.debug
+Missing separate debuginfo for /lib64/libjpeg.so.62
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/4d/a723800be14b6fd76f34a275b9123b284de737.debug
+Missing separate debuginfo for /lib64/libXft.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/04/e9d7974df28a7d22cb19c3728713c18f3f5449.debug
+Missing separate debuginfo for /lib64/libXp.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/0a/60251c3021a666729452dc10870ed35b24794e.debug
+Missing separate debuginfo for /lib64/libXmu.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/93/9853c47a49393af2ab3509b430af6f537ed77a.debug
+Missing separate debuginfo for /lib64/libXt.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/45/185348cfed1ae41a5ef4f18db7a7ed22871aa7.debug
+Missing separate debuginfo for /lib64/libfreetype.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/ca/0072a9069c130e4b35a7a973cc2d19db1f9835.debug
+Missing separate debuginfo for /lib64/libGLU.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/a1/f562766c9646eb89e48a52cd293dc2e338a852.debug
+Missing separate debuginfo for /lib64/libGL.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/c4/45828b333cedbe3ca1bc77e9de58843a306507.debug
+Missing separate debuginfo for /lib64/libelf.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/36/8d14e88991a2d0022c1f119fe4c36760c7ebac.debug
+Missing separate debuginfo for /lib64/libuuid.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/2b/6b569cf9370b368b32c0ee5f423a1b98ef8e1a.debug
+Missing separate debuginfo for /lib64/libz.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/62/ece8438c1f4533f1b5574038ab614100d3627b.debug
+Missing separate debuginfo for /lib64/libXext.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/d0/d3fed59aedaa7b98cf7c4cfdb9a571abcc8430.debug
+Missing separate debuginfo for /lib64/libXss.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/c6/d0e6f8430fc20e2b8937b8190c99acee1c88b4.debug
+Missing separate debuginfo for /lib64/libX11.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/b6/292d756bb41eca677d4bd44449244222fb4094.debug
+Missing separate debuginfo for /lib64/libX11-xcb.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/34/c85147eb1f7be7ee0a5b4ada2f0952ddb6d14e.debug
+Missing separate debuginfo for /lib64/libxcb.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/8c/031c407fb15b9838ba7971cbf02009a1b608e3.debug
+Missing separate debuginfo for /lib64/libxcb-render.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/58/0b101a7f1ad16e1b4d73530fe6c902cfd95bfa.debug
+Missing separate debuginfo for /lib64/libfontconfig.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/15/166e0d08b9459da063c39a062c87248eea788b.debug
+Missing separate debuginfo for /lib64/libutil.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/a0/5cccdcb3ca60c344b0cdaaf24e659d3f8e19b6.debug
+Missing separate debuginfo for /lib64/libcrypt.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/af/5b9011636532935d5a5992ce7db0adab49ac2a.debug
+Missing separate debuginfo for /lib64/libncurses.so.5
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/a6/4b5f4ede7ab54a9607864b94e4d1364a4da3c6.debug
+Missing separate debuginfo for /lib64/libtinfo.so.5
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/67/02632ac72ecd6773ee7f92d4794d2642792e25.debug
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+Missing separate debuginfo for /lib64/libm.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/2d/f599a619ef168eda0636dd072a6528ecc3f16a.debug
+Missing separate debuginfo for /lib64/libc.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/37/e4ac6a7fb96950b0e6bf72d73d94f3296c77eb.debug
+Missing separate debuginfo for /lib64/libpng16.so.16
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/7f/c99a855abeb475492414861e37adf0c08bf530.debug
+Missing separate debuginfo for /lib64/libXrender.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/6e/de5108603b3a5d0aa46149c5447e6b3be2feb1.debug
+Missing separate debuginfo for /lib64/libXau.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/3b/12ac62afc7e358d64dc651d03cedd23cc430ef.debug
+Missing separate debuginfo for /lib64/libSM.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/63/ba411e6d16f21d54a1891636a3fb82f2a40870.debug
+Missing separate debuginfo for /lib64/libICE.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/42/7cfcb4073c093fc09919fe2eeccabea55ee3f8.debug
+Missing separate debuginfo for /lib64/libbz2.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/6f/780fa3d7d8c7d098d995fe92928af289ed0587.debug
+Missing separate debuginfo for /lib64/libGLX.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/02/768c6a8e1ae4d113152802b20c93f5376d42f9.debug
+Missing separate debuginfo for /lib64/libGLdispatch.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/68/60ffd93150d1ace9a559ac80acbad0e8f30bc9.debug
+Missing separate debuginfo for /lib64/libgssapi_krb5.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/43/8e91787a2424419633895a6f100cf3d1c5bd44.debug
+Missing separate debuginfo for /lib64/libzstd.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/fd/cb787a51c046cefb6d6c745834bff93ba6c359.debug
+Missing separate debuginfo for /lib64/liblzma.so.5
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/c5/8c4ba116cedc45f221eec1fe99f6686a564939.debug
+Missing separate debuginfo for /lib64/libnuma.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/68/6fbc5cd7e0ab6af4264752a5d92b525fc929d7.debug
+Missing separate debuginfo for /lib64/libexpat.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/2d/5d5e3e2f52a19ceade11f80a2202989f1727d8.debug
+Missing separate debuginfo for /lib64/libxcb-icccm.so.4
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/53/28951f98dad753f74e04df3d8fbb22cff1e9fc.debug
+Missing separate debuginfo for /lib64/libxcb-image.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/70/38515d0a4d0f4d4c9e9738f9765eeb91a3dc19.debug
+Missing separate debuginfo for /lib64/libxcb-shm.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/60/9a0da45128999fd69a40f32b1535dd16e3f82e.debug
+Missing separate debuginfo for /lib64/libxcb-keysyms.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/76/ab2b829c4f34eed308117fa67d2c5032d64b3f.debug
+Missing separate debuginfo for /lib64/libxcb-randr.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/31/aa08b2aed39d033d452ccad5e03f51c9882fba.debug
+Missing separate debuginfo for /lib64/libxcb-render-util.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/8a/9bc96230a3697e5beea02aed31dd5c17d623aa.debug
+Missing separate debuginfo for /lib64/libxcb-shape.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/2d/df327e6624b25ef3458ef15b4917ea46595148.debug
+Missing separate debuginfo for /lib64/libxcb-sync.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/98/21a701dc2abb1a65eec963492b098d5d9e47a2.debug
+Missing separate debuginfo for /lib64/libxcb-xfixes.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/22/5832f9effc8c7f4cb542868a10b3a4961874d2.debug
+Missing separate debuginfo for /lib64/libxcb-xinerama.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/5d/c876c21fc4233d0c62e5d7f8a12827f247d8de.debug
+Missing separate debuginfo for /lib64/libxcb-xkb.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/9f/a30bbf78ce3eb7b7912a11837e7ba40da43d33.debug
+Missing separate debuginfo for /lib64/libxkbcommon-x11.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/76/c0a43d21839205145c89e38ba46a693441f116.debug
+Missing separate debuginfo for /lib64/libxkbcommon.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/dd/32581e2248833243f3f646324ae9b98469f025.debug
+Missing separate debuginfo for /lib64/libkrb5.so.3
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/14/3dd947bafa7bc9eb6c9d6be0c0794710bbf77a.debug
+Missing separate debuginfo for /lib64/libk5crypto.so.3
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/7c/b2e5e33652c8a747e2cc30dd538d2509345c5f.debug
+Missing separate debuginfo for /lib64/libcom_err.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/65/245f9ed92e83314cfe4bc8ebda3eba827a3908.debug
+Missing separate debuginfo for /lib64/libkrb5support.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/27/6be05afc9d4bb430b0872479085d31bceea743.debug
+Missing separate debuginfo for /lib64/libkeyutils.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/62/6187ac0349a9cb5b116ca0b660692705aadfe5.debug
+Missing separate debuginfo for /lib64/libcrypto.so.1.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/8e/7d8a1b05c6fcffd34d2ae09398334a327648ed.debug
+Missing separate debuginfo for /lib64/libresolv.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/ff/60e72cb858326e6cd6b6d0814423d0c204eb6c.debug
+Missing separate debuginfo for /lib64/libdbus-1.so.3
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/44/93ae3a1de9e920869f272596f4f1156ea020d4.debug
+Missing separate debuginfo for /lib64/libxcb-util.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/c5/ed882b44c5042116b2e99478d25821a0a12280.debug
+Missing separate debuginfo for /lib64/libselinux.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/9e/62372489a1a17a06f7a7f93c917cbeec84fc52.debug
+Missing separate debuginfo for /lib64/libsystemd.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/5a/2598316e42bf1d2b904ec735b508d3f4ee77a7.debug
+Missing separate debuginfo for /lib64/libpcre2-8.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/fb/6f8c4e86e8c48432f60eb77b33905491b2c5bf.debug
+Missing separate debuginfo for /lib64/libcap.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/ce/ad2c393d24cbe335121c18623f47a49f6bfc69.debug
+Missing separate debuginfo for /lib64/libmount.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/59/ad97cea64b51e49e987aeeeaa48b6288fafb33.debug
+Missing separate debuginfo for /lib64/libgcrypt.so.20
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/b4/14a61a983376dce2d482c943e2e0c0d0eb74f8.debug
+Missing separate debuginfo for /lib64/libblkid.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/9c/a46ccf1b771b2ec51035a7433d34b6cf6b1bfa.debug
+Missing separate debuginfo for /lib64/libgpg-error.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/31/055d02dc73c4a23a83a0696f44d9a0f0ca0aff.debug
+Missing separate debuginfo for /lib64/libnss_files.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/34/5a530b3d06e49c6fdb8022be2ff28d084264c4.debug
+Missing separate debuginfo for /lib64/libnss_sss.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/fb/9c1ea56d8baf543efaf8950f2ea3a2665ec4c1.debug
+Missing separate debuginfo for /lib64/libnss_dns.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/25/4f29c29d2b06fb3b6f5e1d1cde6dc8e41ad076.debug
+Missing separate debuginfo for /lib64/libXcursor.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/e5/342139ca152eb301009c096fa55d5cfbf1cfa8.debug
+Missing separate debuginfo for /lib64/libXfixes.so.3
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/c0/73c4934337020302da586f701e1428b4b0cd73.debug
+Missing separate debuginfo for /lib64/libxcb-glx.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/e0/8d3d1309e317aab99b071f5108068c04565568.debug
+Missing separate debuginfo for /lib64/libGLX_mesa.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/bf/65d4dcf5e0ae7d8dbd5e9e0064cf6752a592af.debug
+Missing separate debuginfo for /lib64/libglapi.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/d7/65ca06f618a63e2e72709911f1e93ced9bf247.debug
+Missing separate debuginfo for /lib64/libdrm.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/8f/6aa6a2bee102ddebd7d218f4fe8b84a9fe7b2f.debug
+Missing separate debuginfo for /lib64/libxcb-dri2.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/8d/a81f03c38b01e47a75dc0615e81ba6efedddda.debug
+Missing separate debuginfo for /lib64/libXxf86vm.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/31/5ce5c59822e8bc033f7b651b72cdbef41d0911.debug
+Missing separate debuginfo for /lib64/libxshmfence.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/a3/02f0af598866c5a85c9e77ba2b6b0536d0da84.debug
+Missing separate debuginfo for /lib64/libxcb-dri3.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/3c/94f1c5b90bb748a6e51a4bf3464cc5e03066df.debug
+Missing separate debuginfo for /lib64/libxcb-present.so.0
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/9c/036119fe158b0481d0204f274611e89cbd5430.debug
+Missing separate debuginfo for /usr/lib64/dri/swrast_dri.so
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/5d/be8f2e207eb9bdc662a3ee4d9f621f21ab877e.debug
+Missing separate debuginfo for /lib64/libLLVM-17.so
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/8a/1b09784c898b663fa882159dea3a3d22eb2c09.debug
+Missing separate debuginfo for /lib64/libdrm_radeon.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/de/e5b7873715c14b6e7e99b0a24f492015696578.debug
+Missing separate debuginfo for /lib64/libdrm_amdgpu.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/ea/cb68c3394f07800fd9dd1fc5d1c02e0423ff63.debug
+Missing separate debuginfo for /lib64/libdrm_nouveau.so.2
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/a6/7d51fbaab391fd6fa36a3c0c7b1a12cdb1d7ef.debug
+Missing separate debuginfo for /lib64/libffi.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/f7/5387f2d27805f833650f5ece14535ab8792134.debug
+Missing separate debuginfo for /lib64/libtinfo.so.6
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/ac/8ca34595aa69d3dcb5a3151b34a1bef09cc071.debug
+Missing separate debuginfo for /lib64/libnsl.so.1
+Try: yum --enablerepo='*debug*' install /usr/lib/debug/.build-id/b4/f0f94359c0560c79249b962e438cd242cdfc05.debug
+0x00007fac80543e42 in waitpid () from /lib64/libc.so.6
+
+Thread 10 (Thread 0x7fac18711700 (LWP 1000309)):
+#0  0x00007fac8103847c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007fac908cdb43 in QWaitCondition::wait(QMutex*, QDeadlineTimer) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007fac904dde22 in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Widgets.so.5
+#3  0x00007fac908c7f6f in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x00000000213085b4 in create_head(void*) ()
+#5  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 9 (Thread 0x7fac461c1700 (LWP 1000301)):
+#0  0x00007fac8056ebb6 in ppoll () from /lib64/libc.so.6
+#1  0x00007fac90b05819 in qt_safe_poll(pollfd*, unsigned long, timespec const*) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#2  0x00007fac90b06ca3 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#3  0x00007fac90ab1ecb in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#4  0x00007fac908c6f1e in QThread::exec() () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x00007fac7c1072c7 in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5DBus.so.5
+#6  0x00007fac908c7f6f in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#7  0x00000000213085b4 in create_head(void*) ()
+#8  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#9  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 8 (Thread 0x7fac51bbd700 (LWP 1000300)):
+#0  0x00007fac8048b30c in sigtimedwait () from /lib64/libc.so.6
+#1  0x00007fac8103c89c in sigwait () from /lib64/libpthread.so.0
+#2  0x000000000d690200 in ctrlCHandle(void*) ()
+#3  0x00000000213085b4 in create_head(void*) ()
+#4  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 7 (Thread 0x7fac52953700 (LWP 1000299)):
+#0  0x00007fac805711ff in select () from /lib64/libc.so.6
+#1  0x00000000337b6988 in NotifierThreadProc ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 6 (Thread 0x7fac5366f700 (LWP 1000298)):
+#0  0x00007fac8056eac1 in poll () from /lib64/libc.so.6
+#1  0x00007fac81f2a6cf in _xcb_conn_wait () from /lib64/libxcb.so.1
+#2  0x00007fac81f2c35a in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007fac7ee08390 in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/../../Qt/v5/64bit/lib/libcdsQt5XcbQpa.so.5
+#4  0x00007fac908c7f6f in ?? () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#5  0x00000000213085b4 in create_head(void*) ()
+#6  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#7  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x7fac53f76700 (LWP 1000297)):
+#0  0x00007fac80544098 in nanosleep () from /lib64/libc.so.6
+#1  0x00007fac80543f9e in sleep () from /lib64/libc.so.6
+#2  0x00000000212e37b2 in syiPeakMem(void*) ()
+#3  0x00000000213085b4 in create_head(void*) ()
+#4  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x7fac54f78700 (LWP 1000295)):
+#0  0x00007fac8103c1a0 in nanosleep () from /lib64/libpthread.so.0
+#1  0x000000000f76bb5d in rdaiLicRecheck(void*) ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x7fac561c2700 (LWP 1000286)):
+#0  0x00007fac805711ff in select () from /lib64/libc.so.6
+#1  0x0000000031e0fabb in ProcessInfo::sampleUsage(void*) ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7fac569c3700 (LWP 1000285)):
+#0  0x00007fac8103bbf7 in accept () from /lib64/libpthread.so.0
+#1  0x0000000031e17e57 in ProcessInfo::handleConnection(void*) ()
+#2  0x00000000213085b4 in create_head(void*) ()
+#3  0x00007fac810321ca in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fac804758d3 in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7fac77b9da40 (LWP 1000265)):
+#0  0x00007fac80543e42 in waitpid () from /lib64/libc.so.6
+#1  0x00007fac80497747 in do_system () from /lib64/libc.so.6
+#2  0x00000000212c7611 in syStackTraceDump(_IO_FILE*, bool) ()
+#3  0x00000000212c7a18 in syStackTrace ()
+#4  0x000000000d6929e7 in rdaiErrorHandler1(int) ()
+#5  <signal handler called>
+#6  0x0000000018a5b6aa in pesTrack::getPitch(int) ()
+#7  0x0000000018a50030 in peEngineClient::getLayerInfoById(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#8  0x0000000018a50d6b in peEngineClient::getLayerInfo(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#9  0x000000000ddee748 in eeExtEngineDesignData::setLayerInfo() ()
+#10 0x0000000018903d00 in eeExtEngineDesignData::resetDesignData ()
+#11 0x000000001890ec76 in dbMCRCInit() ()
+#12 0x000000001890fb78 in peiInitializeExtractionSetUp(bool) ()
+#13 0x000000001cbf8476 in toiCteUpdateRcCornerPostCallback(TAMmmcRcCorner*, TAMmmcUpdateRcCornerCbkInfo*) ()
+#14 0x00000000217796f7 in TAMmmc::updateRcCorner(TAMmmcRcCorner*, char const*, float, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, char const*, char const*, char const*, float, taboolean, char const*, char const*) ()
+#15 0x000000002367d9d1 in TaCmd_createOrUpdate_rc_corner(void*, Tcl_Interp*, int, char**, taboolean, tcmCmd*) ()
+#16 0x0000000024921c70 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#17 0x000000002491491f in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#18 0x00000000336ad2db in TclInvokeStringCommand ()
+#19 0x00000000336b1dd2 in TclNRRunCallbacks ()
+#20 0x00000000336b3fff in TclEvalEx ()
+#21 0x00000000336b4b53 in Tcl_CDNSEvalEx ()
+#22 0x00000000336b4c13 in TclNREvalObjEx ()
+#23 0x000000003376b185 in TclNREvalFile ()
+#24 0x00000000336c8335 in TclNRSourceObjCmd ()
+#25 0x00000000336b1dd2 in TclNRRunCallbacks ()
+#26 0x00000000336b3fff in TclEvalEx ()
+#27 0x00000000336b4b53 in Tcl_CDNSEvalEx ()
+#28 0x00000000336b4c13 in TclNREvalObjEx ()
+#29 0x000000003376b185 in TclNREvalFile ()
+#30 0x00000000336c8335 in TclNRSourceObjCmd ()
+#31 0x00000000336b1dd2 in TclNRRunCallbacks ()
+#32 0x00000000337501d4 in Tcl_RecordAndEvalObj ()
+#33 0x0000000033750349 in Tcl_RecordAndEval ()
+#34 0x000000000d78fcd7 in rdaEditCmdLineEnd(char*) ()
+#35 0x000000001ccded91 in seConsole::sesMode::DoExecute(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void*) ()
+#36 0x000000001e811ae0 in Redline::EmacsMode::AcceptLine() ()
+#37 0x000000001e819ea1 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#38 0x000000001e828f6b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#39 0x000000001e82878c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#40 0x000000001e80eb77 in Redline::Editor::Internals::Run(bool) ()
+#41 0x00000000337b6c8e in FileHandlerEventProc ()
+#42 0x00000000337773b9 in Tcl_ServiceEvent ()
+#43 0x00000000337776c9 in Tcl_DoOneEvent ()
+#44 0x00007fac91fdd50f in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/libtq.so
+#45 0x00007fac90ab1ecb in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#46 0x00007fac90ab991c in QCoreApplication::exec() () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/Qt/v5//64bit/lib/libcdsQt5Core.so.5
+#47 0x00007fac91fdce4a in TqApplication::exec() () from /tools/cad/cds/DDI_23.10.000/INNOVUS231/tools.lnx86/innovus/bin/64bit/../../../lib/64bit/libtq.so
+#48 0x000000000d76ca7c in edi_app_init(Tcl_Interp*) ()
+#49 0x0000000033771dfc in Tcl_MainEx ()
+#50 0x000000000701d811 in main ()
+A debugging session is active.
+
+	Inferior 1 [process 1000265] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Inferior 1 (process 1000265) detached]

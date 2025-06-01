@@ -1,0 +1,118 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sat May 31 13:48:06 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v23.10-p003_1 (64bit) 02/01/2024 13:54 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 23.10-p003_1 NR240109-1512/23_10-UB (database version 18.20.618) {superthreading v2.20}
+#@(#)CDS: AAE 23.10-p002 (64bit) 02/01/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 23.10-p003_1 () Dec  5 2023 19:42:23 ( )
+#@(#)CDS: SYNTECH 23.10-p002_1 () Nov 29 2023 02:17:21 ( )
+#@(#)CDS: CPE v23.10-p004
+#@(#)CDS: IQuantus/TQuantus 22.1.1-s215 (64bit) Mon Nov 20 10:05:08 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+set_message -id IMPLF-200 -suppress
+set_message -id IMPLF-201 -suppress
+set_message -id IMPFP-3961 -suppress
+set_message -id IMPSP-9025 -suppress
+set init_gnd_net gnd
+set init_lef_file {/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef}
+set init_design_settop 0
+set init_verilog ../adder_nl.v
+set init_mmmc_file mmmc_setup.tcl
+set init_pwr_net vdd
+init_design -setup view_slow_mission -hold view_fast_mission
+setDesignMode -process 22
+setDesignMode -congEffort high -flowEffort extreme
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site GF22_DST -s 5 5 1 1 1 1
+uiSetTool select
+getIoFlowFlag
+fit
+clearGlobalNets
+globalNetConnect vdd -type pgpin -pin VDD -inst * -verbose
+globalNetConnect gnd -type pgpin -pin VSS -inst * -verbose
+applyGlobalNets
+addRing -nets {vdd gnd} -layer {top M1 bottom M1 left M2 right M2} -width 1.0 -spacing 0.4 -offset 0.4
+sroute -nets {vdd gnd}
+saveDesign floorplan.inn
+checkDesign -all
+check_timing
+timeDesign -preplace -prefix preplace_setup -outDir timingReports
+timeDesign -preplace -hold -prefix preplace_hold -outDir timingReports
+setPlaceMode -place_global_cong_effort high
+setPlaceMode -place_global_clock_power_driven true
+setPlaceMode -place_global_clock_power_driven_effort high
+setPlaceMode -placeIOPins true -checkRoute true
+place_opt_design
+setNanoRouteMode -routeWithTimingDriven true
+setNanoRouteMode -routeWithSiDriven true
+setNanoRouteMode -drouteFixAntenna true
+setNanoRouteMode -routeInsertAntennaDiode false
+setNanoRouteMode -drouteUseMultiCutViaEffort medium
+setNanoRouteMode -route_detail_end_iteration 30
+setNanoRouteMode -route_detail_search_and_repair true
+setNanoRouteMode -route_detail_post_route_spread_wire true
+setAnalysisMode -analysisType onChipVariation -cppr both
+routeDesign
+setOptMode -fixHoldAllowSetupTnsDegrade false
+optDesign -postRoute -setup -hold -drv
+timeDesign -postRoute -prefix postRoute_setup -outDir timingReports
+timeDesign -postRoute -hold -prefix postRoute_hold -outDir timingReports
+verify_drc
+verify_connectivity
+addRing -nets {vdd gnd} -layer {top M1 bottom M1 left M2 right M2} -width 0.5 -spacing 0.1 -offset 0.1
+addRing -nets {vdd gnd} -layer {top M1 bottom M1 left M2 right M2} -width 0.1 -spacing 0.1 -offset 0.1
+zoomBox 3.97500 0.91000 6.69500 3.33700
+zoomBox 4.30600 0.99900 6.61800 3.06200
+zoomBox 3.97500 0.91000 6.69500 3.33700
+zoomBox 3.58500 0.80500 6.78500 3.66100
+sroute -nets {vdd gnd}
+verify_connectivity
+verify_drc
+zoomBox 0.85600 0.03900 8.07200 6.47800
+zoomBox -2.22500 -0.82600 9.52500 9.65900
+zoomBox -0.57100 0.82800 4.64200 5.48000
+editDelete -regular_wire_with_drc
+routeDesign
+verify_drc
+ecoRoute -fix_
+ecoRoute -fix_drc
+verify_drc
+ecoRoute -fix_drc
+verify_drc
+editDelete -regular_wire_with_drc
+ecoRoute
+zoomBox -16.69400 -33.69000 97.66100 68.35400
+zoomBox -10.17000 -20.64200 60.05900 42.02700
+zoomBox -8.62600 -17.50000 51.06900 35.76900
+zoomBox -6.19900 -12.53900 36.93200 25.94900
+zoomBox -4.49300 -7.68100 26.67000 20.12700
+zoomBox -2.19100 -1.81400 14.07700 12.70300
+zoomBox -1.51400 -1.24100 12.31400 11.09800
+zoomBox -0.01100 -0.08900 8.48200 7.49000
+pan -0.93700 -0.36500
+verify_drc
+ecoRoute -fix_drc
+reportCongestion -overflow
+verify_drc
+zoomBox -1.47100 -1.41400 8.52100 7.50200
+zoomBox -2.10900 -2.65900 9.64600 7.83100
+zoomBox -0.92700 -0.37200 7.56800 7.20800
+zoomBox 0.28200 1.92500 5.49900 6.58000
+zoomBox 0.83900 2.93000 4.60900 6.29400
+zoomBox 1.07500 3.31100 4.28000 6.17100
+zoomBox 1.47300 3.87700 3.78800 5.94300
+zoomBox 1.75600 4.29300 3.42900 5.78600
+zoomBox 1.95700 4.60000 3.16600 5.67900
+zoomBox 2.15300 4.92700 2.89500 5.58900
+zoomBox 2.20100 5.00400 2.83200 5.56700
+zoomBox 2.24400 5.06400 2.78100 5.54300
+reportCongestion -hotspot
