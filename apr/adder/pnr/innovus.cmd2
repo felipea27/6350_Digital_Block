@@ -1,0 +1,133 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue Jun  3 14:36:37 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v23.10-p003_1 (64bit) 02/01/2024 13:54 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 23.10-p003_1 NR240109-1512/23_10-UB (database version 18.20.618) {superthreading v2.20}
+#@(#)CDS: AAE 23.10-p002 (64bit) 02/01/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 23.10-p003_1 () Dec  5 2023 19:42:23 ( )
+#@(#)CDS: SYNTECH 23.10-p002_1 () Nov 29 2023 02:17:21 ( )
+#@(#)CDS: CPE v23.10-p004
+#@(#)CDS: IQuantus/TQuantus 22.1.1-s215 (64bit) Mon Nov 20 10:05:08 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+set_message -id IMPLF-200 -suppress
+set_message -id IMPLF-201 -suppress
+set_message -id IMPFP-3961 -suppress
+set_message -id IMPSP-9025 -suppress
+set init_gnd_net gnd
+set init_lef_file {/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_116cpp_tech.lef /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/22fdsoi_standard_site.lef /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/lef/5.8/gf22nspslogl24edl116f.lef /users/ssokolovskiy/v-logic_gf22nspslogl24edf116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edf/svt/1.03a/lef/5.8/gf22nspslogl24edf116f.lef}
+set init_design_settop 0
+set init_verilog ../adder_nl.v
+set init_mmmc_file ../mmmc_setup.tcl
+set init_pwr_net vdd
+init_design -setup view_slow_mission -hold view_fast_mission
+setDesignMode -process 22
+setDesignMode -congEffort high -flowEffort extreme
+setDesignMode -bottomRoutingLayer C1
+setMultiCpuUsage -localCpu max
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -s 8 8 1 1 1 1
+uiSetTool select
+getIoFlowFlag
+fit
+clearGlobalNets
+globalNetConnect vdd -type pgpin -pin VDD -inst * -verbose
+globalNetConnect gnd -type pgpin -pin VSS -inst * -verbose
+applyGlobalNets
+addRing -nets {vdd gnd} -layer {top M1 bottom M1 left M2 right M2} -width 0.2 -spacing 0.1 -offset 0.1
+sroute -nets {vdd gnd}
+saveDesign floorplan
+checkDesign -all
+check_timing
+timeDesign -preplace -prefix preplace_setup -outDir timingReports
+setEndCapMode -bottomEdge UDB116SVT24_CAPT_1
+setEndCapMode -topEdge UDB116SVT24_CAPB_1
+setEndCapMode -rightEdge UDB116SVT24_CAPL9_1
+setEndCapMode -leftEdge UDB116SVT24_CAPR9_1
+setEndCapMode -rightTopCorner UDB116SVT24_CAPBOUCL9_1
+setEndCapMode -rightBottomCorner UDB116SVT24_CAPTOUCL9_1
+setEndCapMode -leftTopCorner UDB116SVT24_CAPBOUCR9_1
+setEndCapMode -leftBottomCorner UDB116SVT24_CAPTOUCR9_1
+addEndCap
+addWellTap -cell UDB116SVT24_TAPSS -cellInterval 100
+setPlaceMode -place_global_cong_effort high
+setPlaceMode -place_global_clock_power_driven true
+setPlaceMode -place_global_clock_power_driven_effort high
+setPlaceMode -placeIOPins true -checkRoute true
+setPlaceMode -place_detail_check_inst_space_group true
+setPlaceMode -place_detail_legalization_inst_gap 1
+place_opt_design
+zoomBox -3.62900 -3.38700 13.29600 11.71600
+zoomBox -0.28400 0.80500 10.11100 10.08100
+zoomBox 2.34600 4.05700 7.77300 8.90000
+zoomBox 1.07400 3.02600 8.58700 9.73000
+zoomBox 0.26600 2.37100 9.10500 10.25800
+pan 0.02300 0.44200
+zoomBox 1.12500 1.47000 8.63800 8.17400
+pan 0.24400 3.92100
+zoomBox 0.30700 3.08700 10.70600 12.36700
+zoomBox 1.34600 4.00200 10.18600 11.89000
+zoomBox 3.90100 6.43100 8.51600 10.54900
+zoomBox 5.39500 7.87600 7.44500 9.70500
+pan -0.68600 2.63200
+zoomBox 4.92200 8.40200 6.18200 9.52600
+zoomBox 4.35000 7.41700 7.69400 10.40100
+zoomBox 3.97800 6.88500 8.60600 11.01500
+pan -0.73800 1.71300
+zoomBox 2.54200 4.86500 8.94800 10.58100
+zoomBox 1.92000 3.98500 9.45700 10.71100
+pan -0.48900 0.06100
+zoomBox 0.38900 0.63200 10.82200 9.94200
+addFiller
+editDelete -type Regular
+setFillerMode -core {UDB116SVT24_FILL64 UDB116SVT24_FILL32 UDB116SVT24_FILL16 UDB116SVT24_FILL8 UDB116SVT24_FILL5 UDB116SVT24_FILL4 UDB116SVT24_FILL3 UDB116SVT24_FILL1 UDB116SVT24_FILL1 } -diffCellViol true -fitGap true
+addFiller
+streamOut adder.gds -mapFile /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_edi2gds_colored.layermap
+checkPlace
+addFiller -fixDRC
+verify_drc
+checkPlace
+streamOut adder.gds -mapFile /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_edi2gds_colored.layermap
+setFillerMode -core {UDB116SVT24_FILL_ECOCT4 UDB116SVT24_FILL_ECOCT2 UDB116SVT24_FILL_ECOCT1 } -diffCellViol true -fitGap true
+addFiller
+addFiller
+setFillerMode -core UDB116SVT24_FILL_ECOCT1 -diffCellViol true -fitGap true
+addFiller
+setFillerMode -reset
+setFillerMode -core UDB116SVT24_FILL_ECOCT1 -diffCellViol true
+addFiller
+setFillerMode -core UDB116SVT24_FILL_ECOCT1 -diffCellViol false -fitGap true
+addFiller
+addFiller -fitGap
+deleteFiller -cell {UDB116SVT24_FILL64 UDB116SVT24_FILL32 UDB116SVT24_FILL16 UDB116SVT24_FILL8 UDB116SVT24_FILL5 UDB116SVT24_FILL4 UDB116SVT24_FILL3 UDB116SVT24_FILL1 UDB116SVT24_FILL1 }
+addFiller
+pan -1.25900 -0.42000
+setFillerMode -core UDB116SVT24_FILL_ECOCT1 -diffCellViol true -fitGap true
+addFiller
+addFiller -minHole
+setFillerMode -reset
+setFillerMode -core {UDB116SVT24_FILL64 UDB116SVT24_FILL32 UDB116SVT24_FILL16 UDB116SVT24_FILL8 UDB116SVT24_FILL5 UDB116SVT24_FILL4 UDB116SVT24_FILL3 UDB116SVT24_FILL1 UDB116SVT24_FILL1 } -diffCellViol true -fitGap true
+addFiller -minHole
+streamOut adder.gds -mapFile /tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/PlaceRoute/Innovus/Techfiles/10M_2Mx_5Cx_1Jx_2Qx_LB/22FDSOI_10M_2Mx_5Cx_1Jx_2Qx_LB_edi2gds_colored.layermap
+selectInst ENDCAP_68
+deselectAll
+selectInst FILLER_T_0_40
+is_innovus_plus
+deselectAll
+selectInst FILLER_T_0_40
+is_innovus_plus
+deselectAll
+selectInst FILLER_T_0_48
+deleteFiller
+deselectAll
+selectInst FILLER_T_0_29
+deselectAll
+selectInst FILLER_T_0_30

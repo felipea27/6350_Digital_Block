@@ -4,3 +4,6 @@ qsim_dc/TOP/original/.nfs*
 *.wlf
 
 apr/example/
+apr/old
+apr/adder
+
