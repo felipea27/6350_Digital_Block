@@ -4,7 +4,7 @@ Report : power
         -analysis_effort low
 Design : CONFIG
 Version: V-2023.12-SP1
-Date   : Sun Jun  1 04:10:27 2025
+Date   : Fri Jun  6 13:01:24 2025
 ****************************************
 
 
@@ -35,12 +35,12 @@ Attributes
 i - Including register clock pin internal power
 
 
-  Cell Internal Power  =   1.6721 uW   (98%)
-  Net Switching Power  =  34.5064 nW    (2%)
+  Cell Internal Power  =   1.7226 uW   (98%)
+  Net Switching Power  =  35.1849 nW    (2%)
                          ---------
-Total Dynamic Power    =   1.7066 uW  (100%)
+Total Dynamic Power    =   1.7578 uW  (100%)
 
-Cell Leakage Power     = 657.0139 nW
+Cell Leakage Power     = 671.6324 nW
 
 
                  Internal         Switching           Leakage            Total
@@ -49,10 +49,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network  1.6522e-03            0.0000            0.0000        1.6522e-03  (  69.90%)  i
-register       5.2780e-06        8.3855e-07          392.4289        3.9855e-04  (  16.86%)
+clock_network  1.7029e-03            0.0000            0.0000        1.7029e-03  (  70.09%)  i
+register       5.3267e-06        8.3768e-07          404.4884        4.1065e-04  (  16.90%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational  1.4695e-05        3.3668e-05          264.5850        3.1295e-04  (  13.24%)
+combinational  1.4436e-05        3.4347e-05          267.1441        3.1593e-04  (  13.00%)
 --------------------------------------------------------------------------------------------------
-Total          1.6721e-03 mW     3.4506e-05 mW       657.0139 nW     2.3637e-03 mW
+Total          1.7226e-03 mW     3.5185e-05 mW       671.6324 nW     2.4294e-03 mW
 1

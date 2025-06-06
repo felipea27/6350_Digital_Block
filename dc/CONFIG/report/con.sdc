@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Sun Jun 1 04:10:27 2025
+# Created by write_sdc on Fri Jun 6 13:01:24 2025
 
 ###################################################################
 set sdc_version 2.0
@@ -41,6 +41,8 @@ set_load -pin_load 0.004 [get_ports {ext_counter_value_TX[2]}]
 set_load -pin_load 0.004 [get_ports {ext_counter_value_TX[1]}]
 set_load -pin_load 0.004 [get_ports {ext_counter_value_TX[0]}]
 set_load -pin_load 0.004 [get_ports ext_counter_flag_TX]
+set_load -pin_load 0.004 [get_ports {osc_freq[3]}]
+set_load -pin_load 0.004 [get_ports {osc_freq[2]}]
 set_load -pin_load 0.004 [get_ports {osc_freq[1]}]
 set_load -pin_load 0.004 [get_ports {osc_freq[0]}]
 set_load -pin_load 0.004 [get_ports {arthur[7]}]
@@ -128,6 +130,8 @@ set_output_delay -clock clk  0.02  [get_ports {ext_counter_value_TX[2]}]
 set_output_delay -clock clk  0.02  [get_ports {ext_counter_value_TX[1]}]
 set_output_delay -clock clk  0.02  [get_ports {ext_counter_value_TX[0]}]
 set_output_delay -clock clk  0.02  [get_ports ext_counter_flag_TX]
+set_output_delay -clock clk  0.02  [get_ports {osc_freq[3]}]
+set_output_delay -clock clk  0.02  [get_ports {osc_freq[2]}]
 set_output_delay -clock clk  0.02  [get_ports {osc_freq[1]}]
 set_output_delay -clock clk  0.02  [get_ports {osc_freq[0]}]
 set_output_delay -clock clk  0.02  [get_ports {arthur[7]}]

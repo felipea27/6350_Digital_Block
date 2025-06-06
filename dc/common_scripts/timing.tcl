@@ -77,11 +77,14 @@ set_output_delay $typical_output_delay [all_outputs] -clock $clk_name
 # Set loading of outputs 
 set_load 0.004 [all_outputs]
 
-#set_load 10 [get_ports { \
-    osc_freq[*] \
-    arthur[*]   \
+set_load 10 [get_ports { \
     pkt_rec     \
     MISO        \
-    TX_OUT      \
     sh_en       \
+}] 
+
+set_load .06 [get_ports { \
+    osc_freq[*] \
+    arthur[*]   \
+    TX_OUT      \
 }] 

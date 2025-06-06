@@ -1,26 +1,28 @@
 ###################################################################
 
-# Created by write_sdc on Sun Jun 1 04:15:28 2025
+# Created by write_sdc on Fri Jun 6 13:10:07 2025
 
 ###################################################################
 set sdc_version 2.0
 
 set_units -time ns -resistance kOhm -capacitance pF -voltage V -current mA
 set_max_fanout 4 [current_design]
-set_load -pin_load 0.004 [get_ports {osc_freq[1]}]
-set_load -pin_load 0.004 [get_ports {osc_freq[0]}]
-set_load -pin_load 0.004 [get_ports {arthur[7]}]
-set_load -pin_load 0.004 [get_ports {arthur[6]}]
-set_load -pin_load 0.004 [get_ports {arthur[5]}]
-set_load -pin_load 0.004 [get_ports {arthur[4]}]
-set_load -pin_load 0.004 [get_ports {arthur[3]}]
-set_load -pin_load 0.004 [get_ports {arthur[2]}]
-set_load -pin_load 0.004 [get_ports {arthur[1]}]
-set_load -pin_load 0.004 [get_ports {arthur[0]}]
-set_load -pin_load 0.004 [get_ports pkt_rec]
-set_load -pin_load 0.004 [get_ports MISO]
-set_load -pin_load 0.004 [get_ports TX_OUT]
-set_load -pin_load 0.004 [get_ports sh_en]
+set_load -pin_load 0.06 [get_ports {osc_freq[3]}]
+set_load -pin_load 0.06 [get_ports {osc_freq[2]}]
+set_load -pin_load 0.06 [get_ports {osc_freq[1]}]
+set_load -pin_load 0.06 [get_ports {osc_freq[0]}]
+set_load -pin_load 0.06 [get_ports {arthur[7]}]
+set_load -pin_load 0.06 [get_ports {arthur[6]}]
+set_load -pin_load 0.06 [get_ports {arthur[5]}]
+set_load -pin_load 0.06 [get_ports {arthur[4]}]
+set_load -pin_load 0.06 [get_ports {arthur[3]}]
+set_load -pin_load 0.06 [get_ports {arthur[2]}]
+set_load -pin_load 0.06 [get_ports {arthur[1]}]
+set_load -pin_load 0.06 [get_ports {arthur[0]}]
+set_load -pin_load 10 [get_ports pkt_rec]
+set_load -pin_load 10 [get_ports MISO]
+set_load -pin_load 0.06 [get_ports TX_OUT]
+set_load -pin_load 10 [get_ports sh_en]
 set_max_capacitance 0.005 [get_ports clk]
 set_max_capacitance 0.005 [get_ports rfin]
 set_max_capacitance 0.005 [get_ports rst]
@@ -55,6 +57,8 @@ set_input_delay -clock clk  0.02  [get_ports SCK]
 set_input_delay -clock clk  0.02  [get_ports TX_BY]
 set_input_delay -clock clk  0.02  [get_ports RX]
 set_input_delay -clock clk  0.02  [get_ports i_CONFIG]
+set_output_delay -clock clk  0.02  [get_ports {osc_freq[3]}]
+set_output_delay -clock clk  0.02  [get_ports {osc_freq[2]}]
 set_output_delay -clock clk  0.02  [get_ports {osc_freq[1]}]
 set_output_delay -clock clk  0.02  [get_ports {osc_freq[0]}]
 set_output_delay -clock clk  0.02  [get_ports {arthur[7]}]

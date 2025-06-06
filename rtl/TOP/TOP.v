@@ -14,7 +14,7 @@ module TOP (
 
 //CONFIG
     input i_CONFIG,
-    output [1:0] osc_freq,
+    output [3:0] osc_freq,
     output [7:0] arthur,
 
 //Outputs

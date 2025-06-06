@@ -15,7 +15,7 @@ module CONFIG #(
     output reg        ext_counter_flag_RX,
     output reg [15:0] ext_counter_value_TX,
     output reg        ext_counter_flag_TX,
-    output reg [1:0]  osc_freq,
+    output reg [3:0]  osc_freq,
     output reg [7:0]  arthur
 );
 
@@ -80,7 +80,7 @@ always @(posedge clk or negedge rst) begin
         ext_counter_value_TX <= RESET_EXT_COUNTER;
         ext_counter_flag_RX  <= 1'b0;
         ext_counter_flag_TX  <= 1'b0;
-        osc_freq          <= 2'b00;
+        osc_freq          <= 4'b00;
         arthur            <= 4'b0000;
 	i_CONFIG_sync1 	  <= 1'b0;
 	i_CONFIG_sync2 	  <= 1'b0;
@@ -138,7 +138,7 @@ always @(posedge clk or negedge rst) begin
 				    ext_counter_flag_TX  <= 1'b1; // latch high
 				end
 				OP_OSC_FREQ: begin
-				    osc_freq <= spi_rx_data[1:0];
+				    osc_freq <= spi_rx_data[3:0];
 				end
 				OP_ARTHUR: begin
 				    arthur <= spi_rx_data[7:0];

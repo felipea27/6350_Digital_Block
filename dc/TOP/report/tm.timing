@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : TOP
 Version: V-2023.12-SP1
-Date   : Sun Jun  1 04:15:29 2025
+Date   : Fri Jun  6 13:10:07 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
@@ -31,8 +31,8 @@ Wire Load Model Mode: enclosed
                                                           0.00      50.00 f
   fsm_sync_inst/state_neg_reg/Q (UDB116SVT24_FDNQ_V2_1)
                                                           0.05      50.05 r
-  U1865/X (UDB116SVT24_OAOI211_0P75)                      0.02      50.07 f
-  U1866/X (UDB116SVT24_AOI21_0P75)                        0.01      50.08 r
+  U1891/X (UDB116SVT24_OAOI211_0P75)                      0.02      50.07 f
+  U1892/X (UDB116SVT24_AOI21_0P75)                        0.01      50.08 r
   sh_sync_inst/rfin_sync1_reg/D (UDB116SVT24_FDPRBQ_V2_1)
                                                           0.00      50.08 r
   data arrival time                                                 50.08
