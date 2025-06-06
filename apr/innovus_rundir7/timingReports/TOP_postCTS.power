@@ -2,7 +2,7 @@
 *	Innovus 23.10-p003_1 (64bit) 02/01/2024 13:54 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2025-May-31 16:17:52 (2025-May-31 20:17:52 GMT)
+* 	Date & Time:	2025-Jun-05 07:33:32 (2025-Jun-05 11:33:32 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -43,44 +43,44 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:        0.00498541 	    8.8795%
-Total Switching Power:       0.00171006 	    3.0458%
-Total Leakage Power:         0.04944999 	   88.0748%
-Total Power:                 0.05614546 
+Total Internal Power:        0.00528829 	    8.7979%
+Total Switching Power:       0.00123264 	    2.0507%
+Total Leakage Power:         0.05358786 	   89.1514%
+Total Power:                 0.06010879 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                      0.004023   0.0002574     0.02791     0.03219       57.34 
+Sequential                      0.004718   0.0003021     0.03287     0.03789       63.04 
 Macro                                  0           0           0           0           0 
 IO                                     0           0           0           0           0 
-Combinational                  0.0009626    0.001453     0.02154     0.02395       42.66 
+Combinational                  0.0005704   0.0009305     0.02072     0.02222       36.96 
 Clock (Combinational)                  0           0           0           0           0 
 Clock (Sequential)                     0           0           0           0           0 
 -----------------------------------------------------------------------------------------
-Total                           0.004985     0.00171     0.04945     0.05615         100 
+Total                           0.005288    0.001233     0.05359     0.06011         100 
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-vdd                      0.72   0.004985     0.00171     0.04945     0.05615         100 
+vdd                      0.72   0.005288    0.001233     0.05359     0.06011         100 
 
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*                Highest Average Power: fsm_sync_inst/state_pos_reg (UDB116SVT24_FDPQ_V2_3):        0.0001971 
+*                Highest Average Power: fsm_sync_inst/state_pos_reg (UDB116SVT24_FDPQ_V2_3):         0.000197 
 *                Highest Leakage Power: fsm_sync_inst/state_pos_reg (UDB116SVT24_FDPQ_V2_3):        0.0001687 
-*          Total Cap:      1.95941e-12 F
-*          Total instances in design:  1124
+*          Total Cap:      2.15872e-12 F
+*          Total instances in design:  1146
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap:     0
 -----------------------------------------------------------------------------------------
 
-Total leakage power = 0.04945 mW
+Total leakage power = 0.0535879 mW
 Cell usage statistics:  
-Library gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C , 1124 cells ( 100.000000%) , 0.04945 mW ( 100.000000%  ) 
+Library gf22nspslogl24edl116f_SSG_0P72V_0P00V_0P00V_0P00V_125C , 1146 cells ( 100.000000%) , 0.0535879 mW ( 100.000000%  ) 

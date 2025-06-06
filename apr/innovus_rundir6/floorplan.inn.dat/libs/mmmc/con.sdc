@@ -1,1 +1,0 @@
-/users/ssokolovskiy/65GXCVR/6350_Digital_Block/dc/TOP/report/con.sdc
