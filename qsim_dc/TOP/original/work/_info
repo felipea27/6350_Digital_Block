@@ -32,6 +32,8 @@ R0
 R0
 R0
 R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -41,10 +43,10 @@ R0
 cModel Technology
 Z1 d/users/fandrade/ee6350/6350_Digital_Block/qsim_dc/TOP/original
 T_opt
-!s110 1748650356
-VVhInGc[[P6`V03EHImIUK2
+!s110 1749593235
+V3mG[4PdIWgAIHT7l^P6]O0
 Z2 04 9 4 work testbench fast 0
-=1-5667e9aff8b2-683a4972-7eda2-13c4e
+=1-5667e9aff8b2-6848ac92-30bde-9392
 Z3 !s124 OEM100
 Z4 o-quiet -sdf -auto_acc_if_foreign -work work -sdftyp top_slave=../../../dc/TOP/TOP.syn.sdf -suppress 1948
 Z5 tCvgOpt 0
@@ -52,16 +54,15 @@ n@_opt
 Z6 OL;O;2021.3;73
 R1
 T_opt1
-!s110 1748660055
-V3Z83YWWi1CgL<EaD]aOFL1
+!s110 1749594985
+Vo3TF[]QS6D[9N9DUQ`4Wo0
 R2
-=1-5667e9aff8b2-683a6f56-54e46-61bc
+=1-5667e9aff8b2-6848b368-4631-ff15
 R3
 R4
 R5
 n@_opt1
 R6
-R1
 T_opt2
 !s110 1749229896
 VYiE=U`9^X?h9ChQ]W`8Cb0
@@ -72,6 +73,7 @@ R4
 R5
 n@_opt2
 R6
+R1
 vAPB_interface_2
 !s10a 1745264860
 Z7 !s110 1745006063
@@ -97,22 +99,23 @@ Z10 o+acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R5
 n@a@p@b_interface_2
 vCONFIG
-!s110 1749229894
+!s10a 1749590228
+!s110 1749593232
 !i10b 1
-!s100 z>KdNmJgzYK=Z1X>`FQPK3
-IG1ZI9k5U?14SaMm8T?_]=1
+!s100 P7^hWoz3_:QkDU9K4L9o11
+IUA_]0KzgYM484V37D]3S00
 R1
-w1749229284
+w1749590228
 8../../../dc/CONFIG/CONFIG.nl.v
 F../../../dc/CONFIG/CONFIG.nl.v
-!i122 231
-L0 8 408
+!i122 239
+L0 8 444
 R8
 R9
 r1
 !s85 0
 31
-!s108 1749229894.000000
+!s108 1749593232.000000
 !s107 ../../../dc/CONFIG/CONFIG.nl.v|
 !s90 -reportprogress|300|+acc|-incr|../../../dc/CONFIG/CONFIG.nl.v|
 !i113 0
@@ -120,7 +123,7 @@ R10
 R5
 n@c@o@n@f@i@g
 Udff_primitive
-Z11 !s110 1749229890
+Z11 !s110 1749594978
 !i10b 1
 !s100 8dBeO^oVF[gi7CC0eoNol1
 IA[408N_jRR7f2zi7nNWCZ2
@@ -128,14 +131,14 @@ R1
 Z12 w1741790965
 Z13 8/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/atpg_primitives.v
 Z14 F/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/atpg_primitives.v
-!i122 229
+!i122 243
 L0 274 0
 R8
 R9
 r1
 !s85 0
 31
-Z15 !s108 1749229889.000000
+Z15 !s108 1749594978.000000
 Z16 !s107 /tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/atpg_primitives.v|
 Z17 !s90 -reportprogress|300|+acc|+neg_tchk|-incr|/tech/gf/GF_22nm/IP/synopsys/v-logic_gf22nspslogl24edl116f/DesignWare_logic_libs/globalfoundaries22nhsp/24hd116/edl/svt/3.00a/verilog/atpg_primitives.v|
 !i113 0
@@ -150,7 +153,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 227 0
 R8
 R9
@@ -218,7 +221,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 193 0
 R8
 R9
@@ -335,7 +338,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 122 7
 R8
 R9
@@ -357,7 +360,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 116 5
 R8
 R9
@@ -379,7 +382,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 136 7
 R8
 R9
@@ -401,7 +404,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 130 5
 R8
 R9
@@ -423,7 +426,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 150 7
 R8
 R9
@@ -445,7 +448,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 144 5
 R8
 R9
@@ -467,7 +470,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 164 9
 R8
 R9
@@ -489,7 +492,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 175 9
 R8
 R9
@@ -511,7 +514,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 158 5
 R8
 R9
@@ -533,7 +536,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 66 11
 R8
 R9
@@ -578,7 +581,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 78 7
 R8
 R9
@@ -600,7 +603,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 86 8
 R8
 R9
@@ -622,7 +625,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 95 10
 R8
 R9
@@ -644,7 +647,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 106 9
 R8
 R9
@@ -712,7 +715,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 1 7
 R8
 R9
@@ -734,7 +737,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 9 10
 R8
 R9
@@ -756,7 +759,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 38 16
 R8
 R9
@@ -778,7 +781,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 21 16
 R8
 R9
@@ -800,7 +803,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 57 8
 R8
 R9
@@ -822,7 +825,7 @@ R1
 R12
 R13
 R14
-!i122 229
+!i122 243
 L0 186 5
 R8
 R9
@@ -907,45 +910,45 @@ R10
 R5
 n@s@p@i_testmodul2
 vtestbench
-!s10a 1748660020
-!s110 1748660053
+!s10a 1749593193
+!s110 1749593233
 !i10b 1
-!s100 ;FzlOc9So`kM[K_dkg;^Q0
-Ik]S9_k`g3a<hM;nmAF?ZG0
+!s100 880cS?4J4Y:]0iB4=9NH[1
+IR[6dK[:0NjAZO^l5V0=UG1
 R1
-w1748660020
+w1749593193
 8APB_interface_testbench.v
 FAPB_interface_testbench.v
-!i122 226
-L0 4 590
+!i122 240
+L0 4 593
 R8
 R9
 r1
 !s85 0
 31
-!s108 1748660053.000000
+!s108 1749593233.000000
 !s107 APB_interface_testbench.v|
 !s90 -reportprogress|300|+acc|-incr|APB_interface_testbench.v|
 !i113 0
 R10
 R5
 vTOP
-!s110 1749229892
+!s110 1749594980
 !i10b 1
-!s100 NM2oj6C<n3dD9hn<0Y1n^2
-IhDiRW6gfJ70<VcJTz;9^[1
+!s100 l4PcL[j<4fZZAIMbnBERS2
+IdGWmjDP;GhSa:0n5FMcko1
 R1
-w1749229807
+w1749593665
 8../../../dc/TOP/TOP.nl.v
 F../../../dc/TOP/TOP.nl.v
-!i122 230
-L0 8 2624
+!i122 244
+L0 8 2688
 R8
 R9
 r1
 !s85 0
 31
-!s108 1749229891.000000
+!s108 1749594980.000000
 !s107 ../../../dc/TOP/TOP.nl.v|
 !s90 -reportprogress|300|+acc|-incr|../../../dc/TOP/TOP.nl.v|
 !i113 0

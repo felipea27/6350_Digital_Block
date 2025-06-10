@@ -1,0 +1,4 @@
+This folder has modified verilog files based on original verilog files provided by the foundry pdk
+
+- tpfn65gpgv2od3_pwr.v modified based on /courses/ee6350/pdk2025/tpfn65gpgv2od3_200d/TSMCHOME/digital/Front_End/verilog/tpfn65gpgv2od3_140c/tpfn65gpgv2od3.v
+    - purpose: add power ports to pads used in the chip
