@@ -21,6 +21,10 @@ set METAL_RULEFILE {/tech/gf/GF_22nm/PDK/22FDX-PLUS/V1.0_2.5/FILLGEN/Pegasus/fil
 set MMMC_FILE ../scripts/mmmc_setup.tcl
 
 
+#set IO_FILE ../scripts/pin_placement.io
+set IO_FILE ../scripts/io.tcl
+
+
 #Silince certain warnings
 #antenna diffusion area warning
 set_message -id IMPLF-200 -suppress 
@@ -39,6 +43,7 @@ set init_lef_file $TECH_LEF
 set init_design_settop 0
 set init_verilog $VERILOG_TOPLEVEL
 set init_mmmc_file $MMMC_FILE
+#set init_io_file $IO_FILE
 set init_pwr_net vdd
 init_design -setup view_slow_mission -hold view_fast_mission 
 
@@ -50,13 +55,12 @@ setMultiCpuUsage -localCpu max
 
 
 #Set Floorplanning
-getIoFlowFlag
-setIoFlowFlag 0
 floorPlan -site GF22_DST -s 55 55 4 4 4 4
-uiSetTool select
-getIoFlowFlag
-fit
 generateTracks
+
+#Pin Assignment
+source $IO_FILE
+
 
 #Connect Global Nets
 clearGlobalNets
@@ -106,7 +110,6 @@ addWellTap -cell UDB116SVT24_TAPSS -cellInterval 40 -checkerBoard
 setPlaceMode -place_global_cong_effort high
 setPlaceMode -place_global_clock_power_driven true
 setPlaceMode -place_global_clock_power_driven_effort high
-setPlaceMode -placeIOPins true -checkRoute true
 setPlaceMode -place_detail_check_inst_space_group true
 setPlaceMode -place_detail_legalization_inst_gap 1
 setPlaceMode -place_detail_use_diffusion_transition_fill true
@@ -244,9 +247,9 @@ saveDesign signoff
 # Write SDF timing
 write_sdf TOP_par.sdf -version 3.0 -min_view view_fast_mission -max_view view_slow_mission -collapse_internal_pins
 # Write out placed and routed verilog netlist for LVS
-saveNetlist TOP_netlist_no_phys_inst.v -excludeLeafCell -includePowerGround
+saveNetlist TOP_netlist_no_phys_inst.v -includePowerGround
 # Write verilog netlist without power and ground pins for each instance
-saveNetlist TOP_netlist_no_pwr.v -excludeLeafCell
+saveNetlist TOP_netlist_no_pwr.v
 # Write out netlist (all components - power and physical only)
 saveNetlist TOP_netlist.v -includePowerGround -includePhysicalInst
 # StreamOut
