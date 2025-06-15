@@ -77,7 +77,7 @@ set_output_delay $typical_output_delay [all_outputs] -clock $clk_name
 # Set loading of outputs 
 set_load 0.004 [all_outputs]
 
-set_load 1 [get_ports { \
+set_load 5 [get_ports { \
     pkt_rec     \
     MISO        \
     sh_en       \

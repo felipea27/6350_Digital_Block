@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : TOP
 Version: V-2023.12-SP1
-Date   : Tue Jun 10 18:14:25 2025
+Date   : Sun Jun 15 18:42:37 2025
 ****************************************
 
 Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: gf22nspslogl24edl116f_TT_0P80V_0P00V_0P00V_0P00V_25C
@@ -29,13 +29,13 @@ Wire Load Model Mode: enclosed
   clock network delay (propagated)                        0.00       0.00
   sh_sync_inst/sh_en_reg/CK (UDB116SVT24_FDPRBQ_V2_1)     0.00       0.00 r
   sh_sync_inst/sh_en_reg/Q (UDB116SVT24_FDPRBQ_V2_1)      0.05       0.05 f
-  U1814/X (UDB116SVT24_INV_1)                             0.03       0.08 r
-  U1821/X (UDB116SVT24_AOI21_0P75)                        0.02       0.10 f
-  U1822/X (UDB116SVT24_INV_0P75)                          0.01       0.11 r
-  U1922/X (UDB116SVT24_AOI21_0P75)                        0.01       0.12 f
+  U1062/X (UDB116SVT24_INV_0P75)                          0.02       0.07 r
+  U1823/X (UDB116SVT24_AOI21_0P75)                        0.02       0.09 f
+  U1824/X (UDB116SVT24_INV_0P75)                          0.01       0.10 r
+  U1923/X (UDB116SVT24_AOI21_0P75)                        0.01       0.11 f
   fsm_sync_inst/state_neg_reg/D (UDB116SVT24_FDNQ_V2_1)
-                                                          0.00       0.12 f
-  data arrival time                                                  0.12
+                                                          0.00       0.11 f
+  data arrival time                                                  0.11
 
   clock clk (fall edge)                                  50.00      50.00
   clock network delay (propagated)                        0.00      50.00
@@ -46,9 +46,9 @@ Wire Load Model Mode: enclosed
   data required time                                                49.89
   --------------------------------------------------------------------------
   data required time                                                49.89
-  data arrival time                                                 -0.12
+  data arrival time                                                 -0.11
   --------------------------------------------------------------------------
-  slack (MET)                                                       49.77
+  slack (MET)                                                       49.78
 
 
 1

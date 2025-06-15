@@ -24,14 +24,14 @@ vlog +acc -incr APB_interface_testbench.v
 
 
 #OURS:
-#vlog +acc -incr ../../apr/FINAL_DESIGN/TOP_netlist.v
-vlog +acc -incr ../../apr/innovus_rundir9/TOP_netlist_no_pwr.v
+vlog +acc -incr ../../apr/FINAL_DESIGN/TOP_netlist_no_pwr.v
+#vlog +acc -incr ../../apr/innovus_rundir9/TOP_netlist_no_pwr.v
 vlog +acc -incr ../../rtl/SPI/APB_interface.v
 vlog +acc -incr ../../rtl/SPI/SPI_master.v
 vlog +acc -incr ../../rtl/SPI/SPI_testmodul2.v
 
 vsim -voptargs=+acc -t ps -lib work \
--sdfmax testbench/top_slave=../../apr/innovus_rundir9/TOP_par.sdf \
+-sdfmax testbench/top_slave=../../apr/FINAL_DESIGN/TOP_par.sdf \
 testbench 
 
 do waveformat.do   

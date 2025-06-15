@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Tue Jun 10 18:14:25 2025
+# Created by write_sdc on Sun Jun 15 18:42:37 2025
 
 ###################################################################
 set sdc_version 2.0
@@ -27,10 +27,10 @@ set_load -pin_load 0.06 [get_ports {arthur[3]}]
 set_load -pin_load 0.06 [get_ports {arthur[2]}]
 set_load -pin_load 0.06 [get_ports {arthur[1]}]
 set_load -pin_load 0.06 [get_ports {arthur[0]}]
-set_load -pin_load 1 [get_ports pkt_rec]
-set_load -pin_load 1 [get_ports MISO]
+set_load -pin_load 5 [get_ports pkt_rec]
+set_load -pin_load 5 [get_ports MISO]
 set_load -pin_load 0.06 [get_ports TX_OUT]
-set_load -pin_load 1 [get_ports sh_en]
+set_load -pin_load 5 [get_ports sh_en]
 set_max_capacitance 0.005 [get_ports clk]
 set_max_capacitance 0.005 [get_ports rfin]
 set_max_capacitance 0.005 [get_ports rst]

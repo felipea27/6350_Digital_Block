@@ -27,8 +27,8 @@ module testbench;
 	reg RX_MODE;
 	reg TX_BY;
 	reg CONFIG;
-	wire [3:0] arthur;
-	wire [1:0] osc_freq;
+	wire [15:0] arthur;
+	wire [3:0] osc_freq;
 
 	// Outputs
 	wire o_WR0;
@@ -297,7 +297,7 @@ module testbench;
 
 	task configuration;
 		input reg [7:0] osc_freq;
-		input reg [7:0] arthur;
+		input reg [15:0] arthur;
 		input reg [15:0] ext_count_val_RX;
 		input reg [15:0] ext_count_val_TX;
 	
@@ -324,10 +324,13 @@ module testbench;
 			//SET ARTHUR BITS
 			APB_WRITE(MODE00, SLAVE3, SCK4, 8'hFB);
 			#7200;
-			APB_WRITE(MODE00, SLAVE3, SCK4, arthur);
+			APB_WRITE(MODE00, SLAVE3, SCK4, arthur[15:8]);
 			#7200;
-			#300;
+			APB_WRITE(MODE00, SLAVE3, SCK4, arthur[7:0]);
+			#7200;
+			#2100;
 			CONFIG = 0;
+			#1000;
 		end
 	endtask
 	
@@ -371,13 +374,13 @@ module testbench;
 
 		// Wait 100 ns for global reset to finish
 	
-		tx_file = $fopen("/simulation/fandrade/rtl/original/DATA/std0/TX_OUT.txt", "w");
+		tx_file = $fopen("/simulation/fandrade/apr/original/DATA/std0/TX_OUT.txt", "w");
 		if (tx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
 		end
 
-		rx_file = $fopen("/simulation/fandrade/rtl/original/DATA/std0/PRDATA.txt", "w");
+		rx_file = $fopen("/simulation/fandrade/apr/original/DATA/std0/PRDATA.txt", "w");
 		if (rx_file == 0) begin
 			$display("Error opening file for writing!");
 			$finish;
@@ -407,7 +410,7 @@ module testbench;
 		#200
 		
 		//BYTE_WRITE(SCK4, 64'h8123456789ABCD0F);
-		configuration(8'b00000011, 8'b00001101, 16'h2710, 16'h2500); //~9500
+		configuration(8'hba, 16'h1bae, 16'h2710, 16'h2500); //~9500
 
 		/*CONFIG = 1;
 		#300;	
@@ -429,7 +432,7 @@ module testbench;
 				//$display("RX Iteration: %0d", i);
 				MDATA = packets[i];
 				//$display("%b", MDATA);
-				//SEND_SYNC(MDATA, 100, 1000000);
+				SEND_SYNC(MDATA, 100, 1000000);
 				#800;
 			end
 			i = i-50;
@@ -503,7 +506,7 @@ module testbench;
 		end
 		#8000;
 		
-		configuration(8'b00000001, 8'b00000001, 16'h2510, 16'h2900); //~9500
+		configuration(8'b00000001, 8'b10000001, 16'h2510, 16'h2900); //~9500
 		
 		repeat(1) begin	
 			repeat(20) begin

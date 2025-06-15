@@ -22,6 +22,7 @@ add wave -noupdate /testbench/top_slave/SPI_slave_inst/SS_neg_flag
 add wave -noupdate /testbench/top_slave/SPI_slave_inst/counter
 add wave -noupdate /testbench/top_slave/DIN
 add wave -noupdate /testbench/top_slave/rfin
+add wave -noupdate /testbench/rfin
 add wave -noupdate /testbench/top_slave/SH_EN
 add wave -noupdate /testbench/top_slave/SH_EN_DONE
 add wave -noupdate /testbench/top_slave/FSM_RST
